@@ -6,11 +6,13 @@ import { createStore } from "../src/lib/db";
 import type { DataStore } from "../src/lib/db/store";
 import { checkNetwork, seedReference } from "./sources/reference";
 import { ingestOakOntology } from "./sources/oak_ontology";
+import { ingestOakGraphs } from "./sources/oak_graphs";
 
 type Step = { id: string; run: (s: DataStore) => Promise<unknown> };
 
 export const STEPS: Step[] = [
   { id: "oak_ontology", run: ingestOakOntology },
+  { id: "oak_graphs", run: ingestOakGraphs },
 ];
 
 async function main() {
