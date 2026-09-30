@@ -46,6 +46,7 @@ export async function ingestOakOntology(store: DataStore) {
     const pinned = process.env.EDU_REFRESH ? undefined : ctx.getCheckpoint("commit");
     const { dir, commit } = ensureRepo(REPO, "oak-curriculum-ontology", pinned);
     if (pinned && pinned !== commit) await ctx.log("warn", "commit_changed", `Pinned ${pinned} unavailable, using ${commit}`);
+    if (!ctx.isDone(`ingested@${commit}`) || !ctx.getCheckpoint("retrieved_at")) await ctx.touchRetrieved();
     if (ctx.isDone(`ingested@${commit}`) && !process.env.EDU_FORCE) {
       await ctx.log("info", "skip", `Already ingested at ${commit}`);
       await ctx.finish("ok");
@@ -190,6 +191,11 @@ export async function ingestOakOntology(store: DataStore) {
         });
       }
     }
+    // Fields other ingesters (Oak API) fill in on ontology lessons survive the wholesale replace below.
+    const enriched = await store.select<{ id: string; has_quiz: number; pupil_outcome: string | null }>("lessons", {
+      where: { source_id: SRC.id, has_quiz: 1 },
+      columns: ["id", "has_quiz", "pupil_outcome"],
+    });
     // Replace this source's rows wholesale so re-runs never leave stale records behind.
     for (const t of ["content_blocks", "lessons", "units", "curriculum_statements"]) await store.delete(t, { source_id: SRC.id });
     await store.delete("unit_lessons", { unit_id: { op: "like", value: "oak:unit:%" } });
@@ -313,6 +319,8 @@ export async function ingestOakOntology(store: DataStore) {
     }
     for (const part of chunk(unitRows, 500)) await store.upsert("units", part, ["id"]);
     for (const part of chunk([...lessonRows.values()], 500)) await store.upsert("lessons", part, ["id"]);
+    for (const e of enriched)
+      if (lessonRows.has(e.id)) await store.update("lessons", { id: e.id }, { has_quiz: 1, ...(e.pupil_outcome ? { pupil_outcome: e.pupil_outcome } : {}) });
     for (const part of chunk(ulRows, 1000)) await store.upsert("unit_lessons", part, ["unit_id", "lesson_id"]);
     for (const part of chunk(blocks, 1000)) await store.upsert("content_blocks", part, ["id"]);
     ctx.bump("units", unitRows.length);

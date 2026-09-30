@@ -1,0 +1,342 @@
+{
+ "exported_at": "2026-09-30T23:04:18.662Z",
+ "tables": {
+  "licences": {
+   "rows": 6,
+   "parts": [
+    {
+     "file": "data/jsonl/licences/part-0001.jsonl",
+     "rows": 6,
+     "bytes": 1519,
+     "sha256": "50769e42a05f6a14fe0eb4f5bf475c5d507c6c05646b30544df22590fe620c3b"
+    }
+   ]
+  },
+  "sources": {
+   "rows": 11,
+   "parts": [
+    {
+     "file": "data/jsonl/sources/part-0001.jsonl",
+     "rows": 11,
+     "bytes": 7495,
+     "sha256": "1f4ff75574520dd94963eaf6c41eedc6f08d9baa392c8b3ef6a5cde639e8777c"
+    }
+   ]
+  },
+  "raw_files": {
+   "rows": 85,
+   "parts": [
+    {
+     "file": "data/jsonl/raw_files/part-0001.jsonl",
+     "rows": 85,
+     "bytes": 50557,
+     "sha256": "75bacc75f95c65c93f7c27ec26c2da312d6c40c94e50ecaae1d797f7a7e6308c"
+    }
+   ]
+  },
+  "ingest_checkpoints": {
+   "rows": 7,
+   "parts": [
+    {
+     "file": "data/jsonl/ingest_checkpoints/part-0001.jsonl",
+     "rows": 7,
+     "bytes": 688,
+     "sha256": "ee9f11669d518010148c3a1f16510110e032c423fa6477fd1118de3490f6afa4"
+    }
+   ]
+  },
+  "key_stages": {
+   "rows": 5,
+   "parts": [
+    {
+     "file": "data/jsonl/key_stages/part-0001.jsonl",
+     "rows": 5,
+     "bytes": 582,
+     "sha256": "2cf0cc37f7d24d500b969bb06e10bfe9534245e796a9edfb8c0fb643b99f5d67"
+    }
+   ]
+  },
+  "year_groups": {
+   "rows": 13,
+   "parts": [
+    {
+     "file": "data/jsonl/year_groups/part-0001.jsonl",
+     "rows": 13,
+     "bytes": 766,
+     "sha256": "ad30965798cd7cb34575ec0255281d04fd121d0b6ccfc7ecb31aa9d48c035edc"
+    }
+   ]
+  },
+  "subjects": {
+   "rows": 21,
+   "parts": [
+    {
+     "file": "data/jsonl/subjects/part-0001.jsonl",
+     "rows": 21,
+     "bytes": 1549,
+     "sha256": "7e319d73572c28f7d01ba7262e9bea95af2102ef20901be86d63fd61012a475a"
+    }
+   ]
+  },
+  "curriculum_statements": {
+   "rows": 2325,
+   "parts": [
+    {
+     "file": "data/jsonl/curriculum_statements/part-0001.jsonl",
+     "rows": 2325,
+     "bytes": 2640818,
+     "sha256": "b352aca940189c90708423cf2648014d0d65f7727b01ee4d9f3ca339b3661ead"
+    }
+   ]
+  },
+  "units": {
+   "rows": 1881,
+   "parts": [
+    {
+     "file": "data/jsonl/units/part-0001.jsonl",
+     "rows": 1881,
+     "bytes": 3531148,
+     "sha256": "1c24ec32557ac90c877488574b071a806c90630b750247bddca603b964d9bd43"
+    }
+   ]
+  },
+  "lessons": {
+   "rows": 13288,
+   "parts": [
+    {
+     "file": "data/jsonl/lessons/part-0001.jsonl",
+     "rows": 13288,
+     "bytes": 12557878,
+     "sha256": "82fbf386498967a6c6010a0ff697243397f4947a0f8fe530cd83dbc86b2d2c6b"
+    }
+   ]
+  },
+  "unit_lessons": {
+   "rows": 14676,
+   "parts": [
+    {
+     "file": "data/jsonl/unit_lessons/part-0001.jsonl",
+     "rows": 14676,
+     "bytes": 2091526,
+     "sha256": "37e9c22e5e7efb03486556af76fb2b1b445c741d09895bcca7a22860ee7f9747"
+    }
+   ]
+  },
+  "content_blocks": {
+   "rows": 126393,
+   "parts": [
+    {
+     "file": "data/jsonl/content_blocks/part-0001.jsonl",
+     "rows": 26096,
+     "bytes": 20970948,
+     "sha256": "718980e2c084c6a3b34e42440d84d949f3a41b53f5f85f40fd381202d55cde0c"
+    },
+    {
+     "file": "data/jsonl/content_blocks/part-0002.jsonl",
+     "rows": 26129,
+     "bytes": 20971037,
+     "sha256": "2e6d96b7416ea2cc73fda31718da04f1f8f58ab8e8e88ed27549a17814d4a0b7"
+    },
+    {
+     "file": "data/jsonl/content_blocks/part-0003.jsonl",
+     "rows": 25311,
+     "bytes": 20970593,
+     "sha256": "297e5ab7601481e9d5471ad2fd692185ac7689eba0d813e3163d524da94ad530"
+    },
+    {
+     "file": "data/jsonl/content_blocks/part-0004.jsonl",
+     "rows": 25342,
+     "bytes": 20970719,
+     "sha256": "1fc5c4c929f44eee3aedfce8ffc48f383d8b11356d4977ad4e01ba5d52fa3e96"
+    },
+    {
+     "file": "data/jsonl/content_blocks/part-0005.jsonl",
+     "rows": 23515,
+     "bytes": 18851978,
+     "sha256": "6e56f34475af26001c1763dfef4097c3ca16ae630e462015f214fc293b92e667"
+    }
+   ]
+  },
+  "unit_statement_links": {
+   "rows": 8669,
+   "parts": [
+    {
+     "file": "data/jsonl/unit_statement_links/part-0001.jsonl",
+     "rows": 8669,
+     "bytes": 1703617,
+     "sha256": "3fcca4c666a06ea85e3feb4e7365fd7c30f3afaa98fa54efd18ace4b13a30a71"
+    }
+   ]
+  },
+  "lesson_statement_links": {
+   "rows": 63703,
+   "parts": [
+    {
+     "file": "data/jsonl/lesson_statement_links/part-0001.jsonl",
+     "rows": 63703,
+     "bytes": 12804826,
+     "sha256": "54ab9df2998d62c5d314e23dc8360cb9571ca59e75598c8acdaf68f4e2c2d2c5"
+    }
+   ]
+  },
+  "difficulty": {
+   "rows": 4,
+   "parts": [
+    {
+     "file": "data/jsonl/difficulty/part-0001.jsonl",
+     "rows": 4,
+     "bytes": 155,
+     "sha256": "09dcbcf29920dfa79c36f2e51a5b98dcc7df5c1ac6ea8c51958243637e357325"
+    }
+   ]
+  },
+  "tags": {
+   "rows": 0,
+   "parts": []
+  },
+  "papers": {
+   "rows": 5,
+   "parts": [
+    {
+     "file": "data/jsonl/papers/part-0001.jsonl",
+     "rows": 5,
+     "bytes": 3200,
+     "sha256": "b5a2952f858fd2d4ff2f766cbb15e3e9fdf9e017d3f956e3b4ccf81e9a9dced8"
+    }
+   ]
+  },
+  "questions": {
+   "rows": 36449,
+   "parts": [
+    {
+     "file": "data/jsonl/questions/part-0001.jsonl",
+     "rows": 18245,
+     "bytes": 20970728,
+     "sha256": "1e9330a33d3a910ae391a53ecbe999c38bd07a44cbf20ef1076127527babaaad"
+    },
+    {
+     "file": "data/jsonl/questions/part-0002.jsonl",
+     "rows": 18204,
+     "bytes": 20858659,
+     "sha256": "9385c47949dbf563a53bef9c63e4b53014c9c29fee64018cd6b874d4788b575d"
+    }
+   ]
+  },
+  "question_options": {
+   "rows": 180540,
+   "parts": [
+    {
+     "file": "data/jsonl/question_options/part-0001.jsonl",
+     "rows": 129687,
+     "bytes": 20971463,
+     "sha256": "f665e57a5853e95ed57615653507fca273758e455c38bdaec8b97054f474f395"
+    },
+    {
+     "file": "data/jsonl/question_options/part-0002.jsonl",
+     "rows": 50853,
+     "bytes": 8384525,
+     "sha256": "170ff09d53b165d0dd77283b74a00307fac30132c697860773b27a6f1e532b27"
+    }
+   ]
+  },
+  "accepted_answers": {
+   "rows": 171,
+   "parts": [
+    {
+     "file": "data/jsonl/accepted_answers/part-0001.jsonl",
+     "rows": 171,
+     "bytes": 23030,
+     "sha256": "e60ff40358909bdc76a13d64e855c79e13207d0912b4101b0fb2d89d1d16c581"
+    }
+   ]
+  },
+  "mark_scheme_entries": {
+   "rows": 158,
+   "parts": [
+    {
+     "file": "data/jsonl/mark_scheme_entries/part-0001.jsonl",
+     "rows": 158,
+     "bytes": 53718,
+     "sha256": "de68ad81c0e581fb070f1a4e74027c294be8d56a5924ebbfb83dafded0f4d6a6"
+    }
+   ]
+  },
+  "question_statement_links": {
+   "rows": 175636,
+   "parts": [
+    {
+     "file": "data/jsonl/question_statement_links/part-0001.jsonl",
+     "rows": 117076,
+     "bytes": 20971436,
+     "sha256": "7b6ed7a1c98840b3fb4a33017bf25440f5251eee6c92b93a125993f4b04908fe"
+    },
+    {
+     "file": "data/jsonl/question_statement_links/part-0002.jsonl",
+     "rows": 58560,
+     "bytes": 10484073,
+     "sha256": "8a1cc85827d3dc208d17a74e16aad6ce2dbb8f2ba584fade59031d3b06364f60"
+    }
+   ]
+  },
+  "question_tags": {
+   "rows": 0,
+   "parts": []
+  },
+  "phonics_words": {
+   "rows": 120,
+   "parts": [
+    {
+     "file": "data/jsonl/phonics_words/part-0001.jsonl",
+     "rows": 120,
+     "bytes": 51713,
+     "sha256": "62f43f4d50e711d6ac001b512363cf56cfd074a2d0753ea9272891c82c74d132"
+    }
+   ]
+  },
+  "assessment_rules": {
+   "rows": 13,
+   "parts": [
+    {
+     "file": "data/jsonl/assessment_rules/part-0001.jsonl",
+     "rows": 13,
+     "bytes": 6881,
+     "sha256": "ef6dbd71bf1de061ffa0cd89cadcc7795424741ce57f333f17d4fb0ee0f3809a"
+    }
+   ]
+  },
+  "assets": {
+   "rows": 0,
+   "parts": []
+  },
+  "coverage_matrix": {
+   "rows": 119,
+   "parts": [
+    {
+     "file": "data/jsonl/coverage_matrix/part-0001.jsonl",
+     "rows": 119,
+     "bytes": 33296,
+     "sha256": "92293c8392a063f19fb25d4a8e5075304e0febe35c486ada38b5364154760c2c"
+    }
+   ]
+  },
+  "dataset_stats": {
+   "rows": 12,
+   "parts": [
+    {
+     "file": "data/jsonl/dataset_stats/part-0001.jsonl",
+     "rows": 12,
+     "bytes": 492,
+     "sha256": "c9191c2599cb6fd8dbe32028ace48b21d4d0eacc205e0e7baf6a1dd894089867"
+    }
+   ]
+  },
+  "books": {
+   "rows": 0,
+   "parts": []
+  },
+  "book_codes": {
+   "rows": 0,
+   "parts": []
+  }
+ }
+}

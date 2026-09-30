@@ -1,0 +1,5 @@
+{"id":"ks1","name":"Key Stage 1","phase":"primary","age_range":"5-7","sort":1}
+{"id":"ks2","name":"Key Stage 2","phase":"primary","age_range":"7-11","sort":2}
+{"id":"ks3","name":"Key Stage 3","phase":"secondary","age_range":"11-14","sort":3}
+{"id":"ks4","name":"Key Stage 4","phase":"secondary","age_range":"14-16","sort":4}
+{"id":"ks5","name":"Key Stage 5","phase":"post16","age_range":"16-18","sort":5,"content_policy":"STRUCTURE ONLY. KS5 holds the DfE A level subject content taxonomy. No questions are harvested; every KS5 question, explanation and example must be original."}

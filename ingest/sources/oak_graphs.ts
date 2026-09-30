@@ -51,6 +51,7 @@ export async function ingestOakGraphs(store: DataStore) {
   try {
     const pinned = process.env.EDU_REFRESH ? undefined : ctx.getCheckpoint("commit");
     const { dir, commit } = ensureRepo(REPO, "oak-mcp-ecosystem", pinned);
+    if (!ctx.isDone(`ingested@${commit}`) || !ctx.getCheckpoint("retrieved_at")) await ctx.touchRetrieved();
     if (ctx.isDone(`ingested@${commit}`) && !process.env.EDU_FORCE) {
       await ctx.finish("ok");
       return { skipped: `already ingested at ${commit}` };

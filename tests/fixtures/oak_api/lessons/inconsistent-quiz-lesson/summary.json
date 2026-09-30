@@ -1,0 +1,32 @@
+{
+ "lessonTitle": "Comparing unit fractions",
+ "canonicalUrl": "https://www.thenational.academy/teachers/lessons/inconsistent-quiz-lesson",
+ "oakUrl": "https://www.thenational.academy/teachers/lessons/inconsistent-quiz-lesson",
+ "units": [
+  {
+   "unitSlug": "fractions",
+   "unitTitle": "Fractions"
+  }
+ ],
+ "subjectSlug": "maths",
+ "subjectTitle": "Maths",
+ "keyStageSlug": "ks2",
+ "keyStageTitle": "Key Stage 2",
+ "lessonKeywords": [
+  {
+   "keyword": "unit fraction",
+   "description": "a fraction with a numerator of 1"
+  }
+ ],
+ "keyLearningPoints": [
+  {
+   "keyLearningPoint": "The larger the denominator, the smaller the unit fraction."
+  }
+ ],
+ "misconceptionsAndCommonMistakes": [],
+ "pupilLessonOutcome": "I can compare unit fractions.",
+ "teacherTips": [],
+ "contentGuidance": null,
+ "supervisionLevel": null,
+ "downloadsAvailable": true
+}

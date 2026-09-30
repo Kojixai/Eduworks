@@ -1,0 +1,48 @@
+{
+ "lessonTitle": "Adding fractions with the same denominator",
+ "canonicalUrl": "https://www.thenational.academy/teachers/lessons/adding-fractions",
+ "oakUrl": "https://www.thenational.academy/teachers/lessons/adding-fractions",
+ "units": [
+  {
+   "unitSlug": "fractions",
+   "unitTitle": "Fractions"
+  }
+ ],
+ "subjectSlug": "maths",
+ "subjectTitle": "Maths",
+ "keyStageSlug": "ks2",
+ "keyStageTitle": "Key Stage 2",
+ "lessonKeywords": [
+  {
+   "keyword": "denominator",
+   "description": "the number below the line in a fraction; it shows how many equal parts the whole is divided into"
+  },
+  {
+   "keyword": "numerator",
+   "description": "the number above the line in a fraction"
+  }
+ ],
+ "keyLearningPoints": [
+  {
+   "keyLearningPoint": "When adding fractions with the same denominator, add the numerators."
+  },
+  {
+   "keyLearningPoint": "The denominator stays the same."
+  }
+ ],
+ "misconceptionsAndCommonMistakes": [
+  {
+   "misconception": "Pupils add the denominators as well as the numerators.",
+   "response": "Use a bar model to show that the size of the parts does not change."
+  }
+ ],
+ "pupilLessonOutcome": "I can add fractions with the same denominator.",
+ "teacherTips": [
+  {
+   "teacherTip": "Use fraction walls so pupils can see the parts."
+  }
+ ],
+ "contentGuidance": null,
+ "supervisionLevel": null,
+ "downloadsAvailable": true
+}

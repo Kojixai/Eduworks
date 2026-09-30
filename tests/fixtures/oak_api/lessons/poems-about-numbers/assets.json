@@ -1,0 +1,13 @@
+{
+ "oakUrl": "https://www.thenational.academy/teachers/lessons/poems-about-numbers",
+ "attribution": [
+  "'Counting Song' copyright Example Poet, used with permission"
+ ],
+ "assets": [
+  {
+   "label": "Slide deck",
+   "type": "slideDeck",
+   "url": "https://open-api.thenational.academy/api/v0/lessons/poems-about-numbers/assets/slideDeck"
+  }
+ ]
+}

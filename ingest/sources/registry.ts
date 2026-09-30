@@ -3,7 +3,7 @@
  * access_status is updated by the network check at the start of each run.
  */
 export const OAK_ATTRIBUTION = (subject: string) =>
-  `A ${subject} lesson by Oak National Academy licensed under Open Government Licence (OGL)`;
+  `${/^[aeiou]/i.test(subject) ? "An" : "A"} ${subject} lesson by Oak National Academy licensed under Open Government Licence (OGL)`;
 export const OGL_ATTRIBUTION = "Contains public sector information licensed under the Open Government Licence v3.0.";
 
 export const LICENCES = [

@@ -1,0 +1,21 @@
+{"id":"mathematics","name":"Maths","phase":"all","sort":1}
+{"id":"english","name":"English","phase":"all","sort":2}
+{"id":"science","name":"Science","phase":"all","sort":3}
+{"id":"biology","name":"Biology","phase":"secondary","sort":4,"parent_id":"science"}
+{"id":"chemistry","name":"Chemistry","phase":"secondary","sort":5,"parent_id":"science"}
+{"id":"physics","name":"Physics","phase":"secondary","sort":6,"parent_id":"science"}
+{"id":"computing","name":"Computing","phase":"all","sort":7}
+{"id":"geography","name":"Geography","phase":"all","sort":8}
+{"id":"history","name":"History","phase":"all","sort":9}
+{"id":"languages","name":"Languages","phase":"all","sort":10}
+{"id":"french","name":"French","phase":"all","sort":11,"parent_id":"languages"}
+{"id":"german","name":"German","phase":"all","sort":12,"parent_id":"languages"}
+{"id":"spanish","name":"Spanish","phase":"all","sort":13,"parent_id":"languages"}
+{"id":"art-and-design","name":"Art and design","phase":"all","sort":14}
+{"id":"design-and-technology","name":"Design and technology","phase":"all","sort":15}
+{"id":"cooking-and-nutrition","name":"Cooking and nutrition","phase":"all","sort":16,"parent_id":"design-and-technology"}
+{"id":"music","name":"Music","phase":"all","sort":17}
+{"id":"physical-education","name":"Physical education","phase":"all","sort":18}
+{"id":"citizenship","name":"Citizenship","phase":"secondary","sort":19}
+{"id":"religious-education","name":"Religious education","phase":"all","sort":20}
+{"id":"rshe-pshe","name":"RSHE and PSHE","phase":"all","sort":21}

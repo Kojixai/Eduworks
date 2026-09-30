@@ -31,7 +31,7 @@ export async function checkNetwork(store: DataStore) {
     await store.update(
       "sources",
       { id: probes[i].id },
-      { access_status: status, access_notes: `${detail} (checked ${now()})`, updated_at: now() },
+      { access_status: status, access_notes: detail, updated_at: now() },
     );
     out.push({ source: probes[i].id, url: r.url, ok: r.ok || (r.status ?? 0) === 401, detail });
   }

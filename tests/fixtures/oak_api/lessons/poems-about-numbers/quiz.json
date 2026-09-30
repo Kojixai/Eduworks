@@ -1,0 +1,21 @@
+{
+ "starterQuiz": [
+  {
+   "question": "What is 2 + 3?",
+   "questionType": "multiple-choice",
+   "answers": [
+    {
+     "type": "text",
+     "content": "5",
+     "distractor": false
+    },
+    {
+     "type": "text",
+     "content": "6",
+     "distractor": true
+    }
+   ]
+  }
+ ],
+ "exitQuiz": []
+}

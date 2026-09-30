@@ -7,7 +7,7 @@ import { httpGet } from "./http";
 export const ROOT = path.resolve(__dirname, "..", "..");
 /** Raw downloads live outside git (see .gitignore). Re-downloadable from the manifest. */
 export const WORK_DIR = process.env.EDU_WORK_DIR ?? path.join(ROOT, ".work", "raw");
-export const CHECKPOINT_DIR = path.join(ROOT, "data", "checkpoints");
+export const CHECKPOINT_DIR = process.env.EDU_CHECKPOINT_DIR ?? path.join(ROOT, "data", "checkpoints");
 export const MANIFEST_DIR = path.join(ROOT, "data", "raw-manifest");
 
 export const now = () => new Date().toISOString();
@@ -33,6 +33,8 @@ export class IngestContext {
   private stats: Record<string, number> = {};
   private checkpoints: Record<string, string>;
   private checkpointFile: string;
+  /** Stable per source version so re-running an ingest yields byte-identical exports. */
+  retrievedAt: string;
 
   constructor(
     readonly store: DataStore,
@@ -45,6 +47,13 @@ export class IngestContext {
     this.checkpoints = fs.existsSync(this.checkpointFile)
       ? JSON.parse(fs.readFileSync(this.checkpointFile, "utf8"))
       : {};
+    this.retrievedAt = this.checkpoints["retrieved_at"] ?? now();
+  }
+
+  /** Call when the upstream content is new (new commit / new download) to stamp a fresh retrieval date. */
+  async touchRetrieved() {
+    this.retrievedAt = now();
+    await this.markDone("retrieved_at", this.retrievedAt);
   }
 
   async start() {
@@ -113,7 +122,7 @@ export class IngestContext {
       source_url: sourceUrl,
       licence_id: this.licenceId,
       attribution_text: attribution ?? this.attribution,
-      retrieved_at: now(),
+      retrieved_at: this.retrievedAt,
       third_party_flag: thirdParty ? 1 : 0,
       checksum,
     };
@@ -172,7 +181,7 @@ export class IngestContext {
       checksum_sha256: sha256(body),
       bytes: body.length,
       content_type: "text/plain",
-      retrieved_at: now(),
+      retrieved_at: this.retrievedAt,
       status: "ok",
       meta_json: meta ? JSON.stringify(meta) : null,
     };

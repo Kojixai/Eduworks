@@ -7,12 +7,19 @@ import type { DataStore } from "../src/lib/db/store";
 import { checkNetwork, seedReference } from "./sources/reference";
 import { ingestOakOntology } from "./sources/oak_ontology";
 import { ingestOakGraphs } from "./sources/oak_graphs";
+import { ingestOriginalContent } from "./sources/original_content";
+import { runLinking } from "./sources/linking";
+import { ingestOakApi } from "./sources/oak_api";
 
 type Step = { id: string; run: (s: DataStore) => Promise<unknown> };
 
 export const STEPS: Step[] = [
   { id: "oak_ontology", run: ingestOakOntology },
   { id: "oak_graphs", run: ingestOakGraphs },
+  { id: "oak_api", run: (s) => ingestOakApi(s) },
+  { id: "original_content", run: ingestOriginalContent },
+  // linking must stay last: it links everything ingested above and rebuilds the coverage matrix
+  { id: "linking", run: runLinking },
 ];
 
 async function main() {

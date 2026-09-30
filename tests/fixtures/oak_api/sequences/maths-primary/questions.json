@@ -1,0 +1,30 @@
+[
+ {
+  "lessonSlug": "subtracting-fractions",
+  "lessonTitle": "Subtracting fractions with the same denominator",
+  "starterQuiz": [
+   {
+    "question": "What is 3/5 - 1/5?",
+    "questionType": "multiple-choice",
+    "answers": [
+     {
+      "type": "text",
+      "content": "2/5",
+      "distractor": false
+     },
+     {
+      "type": "text",
+      "content": "2/0",
+      "distractor": true
+     },
+     {
+      "type": "text",
+      "content": "4/5",
+      "distractor": true
+     }
+    ]
+   }
+  ],
+  "exitQuiz": []
+ }
+]

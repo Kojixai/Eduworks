@@ -21,15 +21,12 @@ export function normaliseText(s: string, caseSensitive = false): string {
  * Returns null if it is not a number.
  */
 export function parseNumber(raw: string): number | null {
-  let s = raw.normalize("NFKC").trim().toLowerCase();
+  // Vulgar fractions first: NFKC would turn "1½" into "11⁄2".
+  const vulgar: Record<string, string> = { "½": "1/2", "¼": "1/4", "¾": "3/4", "⅓": "1/3", "⅔": "2/3", "⅕": "1/5", "⅛": "1/8" };
+  let s = raw.trim().replace(/(\d)?\s*([½¼¾⅓⅔⅕⅛])/g, (_m, d: string | undefined, ch: string) => `${d ? d + " " : ""}${vulgar[ch]}`);
+  s = s.normalize("NFKC").replace(/\u2044/g, "/").trim().toLowerCase();
   s = s.replace(/^[£$€]/, "").replace(/(p|cm|mm|m|km|g|kg|ml|l|°|%|degrees)$/i, "").trim();
   s = s.replace(/−/g, "-");
-  const vulgar: Record<string, number> = { "½": 0.5, "¼": 0.25, "¾": 0.75, "⅓": 1 / 3, "⅔": 2 / 3, "⅕": 0.2, "⅛": 0.125 };
-  for (const [ch, v] of Object.entries(vulgar)) {
-    if (s === ch) return v;
-    const m = s.match(new RegExp(`^(-?\\d+)\\s*${ch}$`));
-    if (m) return Number(m[1]) + Math.sign(Number(m[1]) || 1) * v;
-  }
   const mixed = s.match(/^(-?\d+)\s+(\d+)\s*\/\s*(\d+)$/);
   if (mixed) {
     const whole = Number(mixed[1]);

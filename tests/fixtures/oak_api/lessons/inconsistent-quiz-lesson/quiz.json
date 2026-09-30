@@ -1,0 +1,53 @@
+{
+ "starterQuiz": [
+  {
+   "question": "Which is the largest unit fraction?",
+   "questionType": "multiple-choice",
+   "answers": [
+    {
+     "type": "text",
+     "content": "1/5",
+     "distractor": true
+    },
+    {
+     "type": "text",
+     "content": "1/9",
+     "distractor": true
+    },
+    {
+     "type": "text",
+     "content": "1/7",
+     "distractor": true
+    }
+   ]
+  }
+ ],
+ "exitQuiz": [
+  {
+   "question": "Order from largest to smallest.",
+   "questionType": "order",
+   "answers": [
+    {
+     "order": 1,
+     "type": "text",
+     "content": "1/2"
+    },
+    {
+     "order": 1,
+     "type": "text",
+     "content": "1/3"
+    },
+    {
+     "order": 2,
+     "type": "text",
+     "content": "1/4"
+    }
+   ]
+  },
+  {
+   "question": "Read the explanation.",
+   "questionType": "explanatory-text",
+   "answers": []
+  }
+ ]
+}

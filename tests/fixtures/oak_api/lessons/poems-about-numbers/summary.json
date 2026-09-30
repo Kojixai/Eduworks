@@ -1,0 +1,39 @@
+{
+ "lessonTitle": "Poems about numbers",
+ "canonicalUrl": "https://www.thenational.academy/teachers/lessons/poems-about-numbers",
+ "oakUrl": "https://www.thenational.academy/teachers/lessons/poems-about-numbers",
+ "units": [
+  {
+   "unitSlug": "number-poems",
+   "unitTitle": "Number poems"
+  }
+ ],
+ "subjectSlug": "maths",
+ "subjectTitle": "Maths",
+ "keyStageSlug": "ks2",
+ "keyStageTitle": "Key Stage 2",
+ "lessonKeywords": [
+  {
+   "keyword": "rhyme",
+   "description": "words that end with the same sound"
+  }
+ ],
+ "keyLearningPoints": [
+  {
+   "keyLearningPoint": "Poems can contain patterns of numbers."
+  }
+ ],
+ "misconceptionsAndCommonMistakes": [],
+ "pupilLessonOutcome": "I can find numbers in a poem.",
+ "teacherTips": [],
+ "contentGuidance": [
+  {
+   "contentGuidanceArea": "Language and discrimination",
+   "supervisionlevel_id": 2,
+   "contentGuidanceLabel": "Adult supervision recommended",
+   "contentGuidanceDescription": "Contains a published poem."
+  }
+ ],
+ "supervisionLevel": "2",
+ "downloadsAvailable": true
+}

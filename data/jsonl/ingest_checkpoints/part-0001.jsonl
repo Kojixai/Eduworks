@@ -1,0 +1,7 @@
+{"source_id":"oak_ontology","key":"commit","value":"52489e6048707b52a9135bb5de835cdbe333a3e8"}
+{"source_id":"oak_ontology","key":"ingested@52489e6048707b52a9135bb5de835cdbe333a3e8","value":"2026-09-30T23:03:44.959Z"}
+{"source_id":"oak_graphs","key":"commit","value":"5165866428e0738c781881ba3d6d64f352a53048"}
+{"source_id":"oak_graphs","key":"ingested@5165866428e0738c781881ba3d6d64f352a53048","value":"2026-09-30T23:03:46.549Z"}
+{"source_id":"oak_ontology","key":"retrieved_at","value":"2026-09-30T23:00:03.539Z"}
+{"source_id":"oak_graphs","key":"retrieved_at","value":"2026-09-30T23:00:15.097Z"}
+{"source_id":"eduworks_original","key":"retrieved_at","value":"2026-09-30T23:00:16.475Z"}

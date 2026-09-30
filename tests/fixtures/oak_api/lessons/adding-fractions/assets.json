@@ -1,0 +1,31 @@
+{
+ "oakUrl": "https://www.thenational.academy/teachers/lessons/adding-fractions",
+ "attribution": [],
+ "assets": [
+  {
+   "label": "Slide deck",
+   "type": "slideDeck",
+   "url": "https://open-api.thenational.academy/api/v0/lessons/adding-fractions/assets/slideDeck"
+  },
+  {
+   "label": "Worksheet",
+   "type": "worksheet",
+   "url": "https://open-api.thenational.academy/api/v0/lessons/adding-fractions/assets/worksheet"
+  },
+  {
+   "label": "Worksheet Answers",
+   "type": "worksheetAnswers",
+   "url": "https://open-api.thenational.academy/api/v0/lessons/adding-fractions/assets/worksheetAnswers"
+  },
+  {
+   "label": "Video",
+   "type": "video",
+   "url": "https://open-api.thenational.academy/api/v0/lessons/adding-fractions/assets/video"
+  },
+  {
+   "label": "Starter quiz",
+   "type": "starterQuiz",
+   "url": "https://open-api.thenational.academy/api/v0/lessons/adding-fractions/assets/starterQuiz"
+  }
+ ]
+}

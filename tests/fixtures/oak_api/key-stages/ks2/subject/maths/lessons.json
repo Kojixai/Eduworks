@@ -1,0 +1,26 @@
+[
+ {
+  "unitSlug": "fractions",
+  "unitTitle": "Fractions",
+  "lessons": [
+   {
+    "lessonSlug": "adding-fractions",
+    "lessonTitle": "Adding fractions with the same denominator"
+   },
+   {
+    "lessonSlug": "inconsistent-quiz-lesson",
+    "lessonTitle": "Comparing unit fractions"
+   }
+  ]
+ },
+ {
+  "unitSlug": "number-poems",
+  "unitTitle": "Number poems",
+  "lessons": [
+   {
+    "lessonSlug": "poems-about-numbers",
+    "lessonTitle": "Poems about numbers"
+   }
+  ]
+ }
+]
