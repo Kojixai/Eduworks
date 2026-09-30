@@ -223,6 +223,7 @@ export async function ingestOakGraphs(store: DataStore) {
         else fuzzy++;
         matchCache.set(key, m);
       }
+      if (!m) continue;
       const lk = `${unitId}|${m.id}`;
       if (!links.has(lk))
         links.set(lk, { unit_id: unitId, statement_id: m.id, method: "oak_mapping", confidence: Number(m.score.toFixed(3)), review_status: m.score >= 0.8 ? "auto_ok" : "needs_review" });
