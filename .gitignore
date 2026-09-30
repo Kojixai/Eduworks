@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+data/db/*.sqlite
+data/db/*.sqlite-*
+.work/
+*.pdf
+*.zip
+*.tar
+test-results/
+playwright-report/
+.vercel
+tsconfig.tsbuildinfo
+next-env.d.ts
