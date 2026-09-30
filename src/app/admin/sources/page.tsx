@@ -2,8 +2,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { requireAdmin } from "@/lib/auth";
 import { getStore } from "@/lib/db";
-import { Badge, ButtonLink, Card, Page, PageHeader } from "@/components/ui";
-import { ExtLink, Facts, StatusBadge, TableWrap, n, td, th } from "../_ui";
+import { Badge, Card, Page, PageHeader } from "@/components/ui";
+import { ExtLink, Facts, StatusBadge, TableWrap, n, td, th, ExportButton } from "../_ui";
 
 export const metadata = { title: "Sources" };
 
@@ -59,8 +59,8 @@ export default async function SourcesPage() {
 
   return (
     <Page>
-      <PageHeader title="Sources" subtitle={`${sources.length} registered sources`} actions={<ButtonLink variant="secondary" href="/api/admin/export?table=sources&format=csv">Export CSV</ButtonLink>} />
-      <div className="grid gap-3">
+      <PageHeader title="Sources" subtitle={`${sources.length} registered sources`} actions={<ExportButton table="sources" format="csv">Export CSV</ExportButton>} />
+      <div className="grid grid-cols-1 gap-3">
         {sources.map((s) => {
           const l = s.licence_id ? lic.get(s.licence_id) : undefined;
           return (

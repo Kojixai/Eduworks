@@ -2,8 +2,8 @@ import { requireAdmin } from "@/lib/auth";
 import { getStore } from "@/lib/db";
 import { countBy, countIn, param, safeJson } from "@/lib/admin";
 import { keyStages, subjects as allSubjects, type Statement } from "@/lib/repo";
-import { Alert, Badge, ButtonLink, Card, CurriculumText, EmptyState, Page, PageHeader } from "@/components/ui";
-import { Filters, n, type SP } from "../_ui";
+import { Alert, Badge, Card, CurriculumText, EmptyState, Page, PageHeader } from "@/components/ui";
+import { Filters, n, type SP, ExportButton } from "../_ui";
 
 export const metadata = { title: "Curriculum" };
 
@@ -52,7 +52,7 @@ export default async function CurriculumPage({ searchParams }: { searchParams: P
       <PageHeader
         title="Curriculum"
         subtitle={`${rows.length} statements${subject ? ` · ${subjList.find((s) => s.id === subject)?.name ?? subject}` : ""} · ${ksRow?.name ?? ks}`}
-        actions={<ButtonLink variant="secondary" href="/api/admin/export?table=curriculum_statements&format=csv">Export CSV</ButtonLink>}
+        actions={<ExportButton table="curriculum_statements" format="csv">Export CSV</ExportButton>}
       />
       <Filters
         path="/admin/curriculum"
@@ -72,7 +72,7 @@ export default async function CurriculumPage({ searchParams }: { searchParams: P
       {!rows.length ? (
         <EmptyState title="No statements for this selection.">{ks === "ks5" ? "KS5 holds structure only; statements appear once the DfE A level content is ingested." : "Try another key stage or subject."}</EmptyState>
       ) : (
-        <div className="grid gap-3">
+        <div className="grid grid-cols-1 gap-3">
           {[...tree.entries()].map(([strand, subs]) => {
             const all = [...subs.values()].flat();
             return (

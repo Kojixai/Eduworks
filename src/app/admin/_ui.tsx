@@ -99,11 +99,11 @@ export function Filters({ path, sp, defs, children }: { path: string; sp: SP; de
 /** Definition list for key/value facts (provenance, metadata). */
 export function Facts({ rows }: { rows: Array<[string, ReactNode]> }) {
   return (
-    <dl className="grid gap-x-3 gap-y-1 text-sm sm:grid-cols-[max-content_1fr]">
+    <dl className="grid gap-x-3 gap-y-1 text-sm sm:grid-cols-[max-content_minmax(0,1fr)]">
       {rows.map(([k, v]) => (
         <div key={k} className="contents">
           <dt className="text-xs text-muted sm:text-sm">{k}</dt>
-          <dd className="mb-1 min-w-0 break-words sm:mb-0">{v ?? "–"}</dd>
+          <dd className="mb-1 min-w-0 [overflow-wrap:anywhere] sm:mb-0">{v ?? "–"}</dd>
         </div>
       ))}
     </dl>
@@ -145,3 +145,20 @@ export function ExtLink({ href, children }: { href: string; children?: ReactNode
 }
 
 export const n = (v: number | null | undefined) => (v ?? 0).toLocaleString("en-GB");
+
+/**
+ * Download button for /api/admin/export. A GET form (not next/link) so the export route is never
+ * RSC-prefetched and the browser handles the attachment download.
+ */
+export function ExportButton({ table, format = "csv", params = {}, full, children }: { table: string; format?: "csv" | "json"; params?: Record<string, string | undefined>; full?: boolean; children: ReactNode }) {
+  return (
+    <form method="get" action="/api/admin/export" className={full ? "w-full" : "inline-block"}>
+      <input type="hidden" name="table" value={table} />
+      <input type="hidden" name="format" value={format} />
+      {Object.entries(params).map(([k, v]) => (v ? <input key={k} type="hidden" name={k} value={v} /> : null))}
+      <Button type="submit" variant="secondary" full={full}>
+        {children}
+      </Button>
+    </form>
+  );
+}

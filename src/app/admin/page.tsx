@@ -1,8 +1,8 @@
 import { requireAdmin } from "@/lib/auth";
 import { getStore } from "@/lib/db";
 import { fmtDate, ingestHealth, questionStatusMatrix, statsSummary } from "@/lib/admin";
-import { Badge, ButtonLink, Card, Grid, ListLink, Page, PageHeader, Stat } from "@/components/ui";
-import { StatusBadge, TableWrap, n, td, th } from "./_ui";
+import { Badge, Card, Grid, ListLink, Page, PageHeader, Stat } from "@/components/ui";
+import { StatusBadge, TableWrap, n, td, th, ExportButton } from "./_ui";
 
 export const metadata = { title: "Dashboard" };
 
@@ -28,7 +28,9 @@ export default async function AdminDashboard() {
     questionStatusMatrix(store),
     ingestHealth(store),
     Promise.all(
-      (["curriculum_statements", "units", "lessons", "questions", "papers", "sources", "raw_files", "ingest_runs", "redemptions", "parents", "students"] as const).map(async (t) => [t, await store.count(t)] as const),
+      (["curriculum_statements", "units", "lessons", "questions", "papers", "sources", "raw_files", "ingest_runs", "redemptions", "parents", "students"] as const).map(
+        async (t) => [t, await store.count(t, t === "curriculum_statements" ? { level: "statement" } : undefined)] as const,
+      ),
     ),
     store.select<{ id: string; actor: string; action: string; entity: string; entity_id: string; created_at: string }>("admin_audit", { orderBy: [["created_at", "desc"]], limit: 8 }),
   ]);
@@ -48,7 +50,7 @@ export default async function AdminDashboard() {
         <Stat label="Redemptions" value={n(liveMap.get("redemptions"))} hint={`${n(liveMap.get("parents"))} parents`} />
       </Grid>
 
-      <div className="mt-4 grid gap-3">
+      <div className="mt-4 grid grid-cols-1 gap-3">
         <Card title="Dataset totals">
           <p className="mb-2 text-xs text-muted">From dataset_stats (computed {fmtDate(statsAt)}) and live counts.</p>
           <TableWrap>
@@ -165,24 +167,24 @@ export default async function AdminDashboard() {
 
         <Card title="Exports">
           <div className="grid gap-2 sm:grid-cols-2">
-            <ButtonLink variant="secondary" href="/api/admin/export?table=questions&format=csv">
+            <ExportButton table="questions" format="csv" full>
               Questions (CSV)
-            </ButtonLink>
-            <ButtonLink variant="secondary" href="/api/admin/export?table=questions&format=json">
+            </ExportButton>
+            <ExportButton table="questions" format="json" full>
               Questions (JSON)
-            </ButtonLink>
-            <ButtonLink variant="secondary" href="/api/admin/export?table=curriculum_statements&format=csv">
+            </ExportButton>
+            <ExportButton table="curriculum_statements" format="csv" full>
               Statements (CSV)
-            </ButtonLink>
-            <ButtonLink variant="secondary" href="/api/admin/export?table=coverage_matrix&format=csv">
+            </ExportButton>
+            <ExportButton table="coverage_matrix" format="csv" full>
               Coverage (CSV)
-            </ButtonLink>
-            <ButtonLink variant="secondary" href="/api/admin/export?table=redemptions&format=csv">
+            </ExportButton>
+            <ExportButton table="redemptions" format="csv" full>
               Redemptions (CSV)
-            </ButtonLink>
-            <ButtonLink variant="secondary" href="/api/admin/export?table=mailing_list&format=csv">
+            </ExportButton>
+            <ExportButton table="mailing_list" format="csv" full>
               Mailing list (CSV)
-            </ButtonLink>
+            </ExportButton>
           </div>
           <p className="mt-2 text-xs text-muted">Any content table: /api/admin/export?table=&lt;name&gt;&amp;format=csv|json</p>
         </Card>

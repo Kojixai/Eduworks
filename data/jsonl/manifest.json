@@ -1,5 +1,5 @@
 {
- "exported_at": "2026-09-30T23:04:18.662Z",
+ "exported_at": "2026-09-30T23:36:43.143Z",
  "tables": {
   "licences": {
    "rows": 6,
@@ -211,8 +211,8 @@
     {
      "file": "data/jsonl/questions/part-0001.jsonl",
      "rows": 18245,
-     "bytes": 20970728,
-     "sha256": "1e9330a33d3a910ae391a53ecbe999c38bd07a44cbf20ef1076127527babaaad"
+     "bytes": 20970769,
+     "sha256": "eb1c0ae66f094b6c556f59de2ba57fea2c81970a9f5113aad25f709fab2e94a3"
     },
     {
      "file": "data/jsonl/questions/part-0002.jsonl",
@@ -331,12 +331,26 @@
    ]
   },
   "books": {
-   "rows": 0,
-   "parts": []
+   "rows": 7,
+   "parts": [
+    {
+     "file": "data/jsonl/books/part-0001.jsonl",
+     "rows": 7,
+     "bytes": 1661,
+     "sha256": "0a3c3b132bc643cc5bc664b185ed27d9163360006d051cd45cc51b9eb75df523"
+    }
+   ]
   },
   "book_codes": {
-   "rows": 0,
-   "parts": []
+   "rows": 7,
+   "parts": [
+    {
+     "file": "data/jsonl/book_codes/part-0001.jsonl",
+     "rows": 7,
+     "bytes": 1034,
+     "sha256": "22e2f8f62686540b4a1377954e0d4d393dc6bfdbeb3f210d8c15db16592c0dc0"
+    }
+   ]
   }
  }
 }
