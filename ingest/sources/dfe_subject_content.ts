@@ -121,6 +121,7 @@ export function parseSubjectContent(
   const rows: ContentRow[] = [];
   const multi = opts.subjects.length > 1;
   let current: { id: string; name: string } | null = multi ? null : opts.subjects[0];
+  let subjectLevel: number | null = null;
   const seq = new Map<string, number>();
   const notes = opts.ks === "ks5" ? KS5_NOTE : null;
   let heads: Array<{ level: number; id: string; text: string }> = [];
@@ -171,8 +172,13 @@ export function parseSubjectContent(
         const hit = opts.subjects.find((s) => normText(b.text).startsWith(normText(s.name)));
         if (hit && hit.id !== current?.id) {
           current = hit;
+          subjectLevel = b.level;
           heads = [];
           lastPara = null;
+        } else if (!hit && subjectLevel !== null && b.level <= subjectLevel) {
+          // a sibling section for a subject the platform does not carry (e.g. psychology) or a shared annex
+          current = null;
+          continue;
         }
       }
       if (!current) continue;

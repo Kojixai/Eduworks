@@ -10,14 +10,27 @@ import { ingestOakGraphs } from "./sources/oak_graphs";
 import { ingestOriginalContent } from "./sources/original_content";
 import { runLinking } from "./sources/linking";
 import { ingestOakApi } from "./sources/oak_api";
+import { ingestStaPapers } from "./sources/sta_papers";
+import { ingestNcGovuk } from "./sources/nc_govuk";
+import { ingestDfeSubjectContent } from "./sources/dfe_subject_content";
+import { ingestStaPhonics } from "./sources/sta_phonics";
+import { ingestStaMtcGuidance } from "./sources/sta_mtc_guidance";
 
 type Step = { id: string; run: (s: DataStore) => Promise<unknown> };
 
 export const STEPS: Step[] = [
   { id: "oak_ontology", run: ingestOakOntology },
+  // nc_govuk cross-checks the ontology statements, so it runs straight after them
+  { id: "nc_govuk", run: (s) => ingestNcGovuk(s) },
+  { id: "dfe_subject_content", run: (s) => ingestDfeSubjectContent(s) },
   { id: "oak_graphs", run: ingestOakGraphs },
   { id: "oak_api", run: (s) => ingestOakApi(s) },
+  { id: "sta_ks2", run: (s) => ingestStaPapers(s, { keyStage: "ks2" }) },
+  { id: "sta_ks1", run: (s) => ingestStaPapers(s, { keyStage: "ks1" }) },
   { id: "original_content", run: ingestOriginalContent },
+  // harvested phonics/MTC rules overwrite the unverified defaults seeded by original_content
+  { id: "sta_phonics", run: (s) => ingestStaPhonics(s) },
+  { id: "sta_mtc", run: (s) => ingestStaMtcGuidance(s) },
   // linking must stay last: it links everything ingested above and rebuilds the coverage matrix
   { id: "linking", run: runLinking },
 ];

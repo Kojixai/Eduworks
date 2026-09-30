@@ -140,7 +140,15 @@ export function normText(s: string): string {
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 }
-const tokens = (s: string) => normText(s).split(" ").filter((t) => t.length > 0);
+const NUMBER_WORDS: Record<string, string> = {
+  one: "1", two: "2", three: "3", four: "4", five: "5", six: "6", seven: "7", eight: "8", nine: "9", ten: "10",
+  eleven: "11", twelve: "12", hundred: "100", thousand: "1000", first: "1st", second: "2nd", third: "3rd",
+};
+const tokens = (s: string) =>
+  normText(s)
+    .split(" ")
+    .filter((t) => t.length > 0)
+    .map((t) => NUMBER_WORDS[t] ?? t);
 
 /** Token similarity: Dice plus containment of `a` in `b` (for merged/split statements). */
 export function similarity(a: string, b: string): { dice: number; containA: number; containB: number } {
@@ -325,8 +333,14 @@ export function pdfRawBlocks(file: string): { pages: number; body_size: number; 
   return runPy("blocks", file);
 }
 
+/** Plain text per page, with bare page numbers at the top/bottom of each page removed. */
 export function pdfText(file: string): string[] {
-  return runPy<{ pages: string[] }>("text", file).pages;
+  return runPy<{ pages: string[] }>("text", file).pages.map((p) => {
+    const lines = p.split("\n");
+    while (lines.length && /^\s*(page\s*)?\d{1,3}(\s*of\s*\d{1,3})?\s*$/i.test(lines[0])) lines.shift();
+    while (lines.length && /^\s*((page\s*)?\d{1,3}(\s*of\s*\d{1,3})?)?\s*$/i.test(lines[lines.length - 1])) lines.pop();
+    return lines.join("\n");
+  });
 }
 
 export interface PhonicsPage {
@@ -343,8 +357,12 @@ export function pdfPhonicsPages(file: string): PhonicsPage[] {
  * PDF raw blocks -> the same Block model as HTML: heading levels ranked by font size (larger = higher),
  * bold body-size headings come last; bullets nested by x indentation.
  */
-export function pdfToBlocks(file: string): Block[] {
-  const { blocks } = pdfRawBlocks(file);
+export function pdfToBlocks(file: string, opts: { keepTitle?: boolean } = {}): Block[] {
+  const raw = pdfRawBlocks(file).blocks;
+  // Cover title: headings before the first body text whose font size never recurs later.
+  const firstBody = raw.findIndex((b) => b.type !== "h");
+  const laterSizes = new Set(raw.slice(Math.max(firstBody, 0)).filter((b) => b.type === "h").map((b) => b.size));
+  const blocks = opts.keepTitle || firstBody < 0 ? raw : raw.filter((b, i) => !(i < firstBody && b.type === "h" && !laterSizes.has(b.size)));
   const hSizes = [...new Set(blocks.filter((b) => b.type === "h").map((b) => b.size))].sort((a, b) => b - a);
   const levelOf = (b: PdfRawBlock) => {
     const i = hSizes.indexOf(b.size);

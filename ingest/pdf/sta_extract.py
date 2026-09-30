@@ -200,7 +200,7 @@ def cmd_questions(pdf, out_dir, max_width=1000, prefix="q"):
         text_words = rebuild_fractions(text_words, [r for r in pd["rules"] if top <= r[2] <= limit])
         lines = [l["text"] for l in group_lines(text_words)]
         clip = fitz.Rect(max(w["x0"] - 10, 0), top, W - max(w["x0"] - 10, 0), bottom)
-        zoom = min(max_width / clip.width, 2.0)
+        zoom = min((max_width - 2) / clip.width, 2.0)  # pixel size rounds up
         pix = doc[pno].get_pixmap(matrix=fitz.Matrix(zoom, zoom), clip=clip, alpha=False)
         path = os.path.join(out_dir, f"{prefix}{w['text']}.png")
         save_png(pix, path)

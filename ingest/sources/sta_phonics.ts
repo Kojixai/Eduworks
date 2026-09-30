@@ -93,6 +93,7 @@ export function wordsFromScoringText(text: string): ExtractedWord[] {
   let group: boolean | null = null;
   let practice = false;
   let pendingPos: number | null = null;
+  let awaitingFlag = false;
   const flagOf = (s: string): boolean | null =>
     /pseudo|alien|non-?words?|nonsense/i.test(s) ? true : /\breal\b/i.test(s) ? false : null;
   for (const line of lines) {
@@ -109,6 +110,15 @@ export function wordsFromScoringText(text: string): ExtractedWord[] {
       continue;
     }
     if (practice) continue;
+    // table layout: a type cell ("pseudo-word" / "real word") on the line after its number + word
+    if (awaitingFlag && line.length < 30 && flagOf(line) !== null) {
+      const last = out[out.length - 1];
+      last.pseudo = flagOf(line);
+      last.explicit = true;
+      awaitingFlag = false;
+      continue;
+    }
+    awaitingFlag = false;
     if (line.length < 60 && /^(the )?(pseudo-?words?|real words?|non-?words?)\b/i.test(line)) {
       group = flagOf(line);
       continue;
@@ -126,6 +136,7 @@ export function wordsFromScoringText(text: string): ExtractedWord[] {
     }
     if (section && WORD.test(line)) {
       out.push({ section, position: pendingPos, word: line, pseudo: group, explicit: group !== null });
+      awaitingFlag = pendingPos !== null;
       pendingPos = null;
       continue;
     }

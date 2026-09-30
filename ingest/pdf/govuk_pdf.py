@@ -154,8 +154,10 @@ def cmd_phonics(path):
             for w in l["text"].split():
                 if not re.fullmatch(r"[a-zA-Z]{1,12}", w):
                     continue
-                band = (l["y0"] - (l["y1"] - l["y0"]), l["y1"] + (l["y1"] - l["y0"]))
-                near = any(not (iy1 < band[0] or iy0 > band[1]) for (ix0, iy0, ix1, iy1) in imgs)
+                # the alien sits on the same row as its word: require real vertical overlap
+                h = l["y1"] - l["y0"]
+                band = (l["y0"] + h * 0.15, l["y1"] - h * 0.15)
+                near = any(min(iy1, band[1]) - max(iy0, band[0]) > h * 0.2 for (ix0, iy0, ix1, iy1) in imgs)
                 words.append({"word": w, "size": l["size"], "alien": near, "y0": l["y0"], "x0": l["x0"]})
         pages.append({
             "page": pi + 1,
