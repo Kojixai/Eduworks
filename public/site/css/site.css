@@ -2473,3 +2473,55 @@ html:not(.ip-js) .ip-p-m-wrap { display: none; }
 .ip-who-image .ip-person { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: auto; height: auto; max-height: 94%; max-width: 92%; }
 .ip-who-image::before { content: ""; position: absolute; left: 50%; bottom: -18%; width: 88%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: rgba(255, 255, 255, .4); border: 1.5px solid var(--ink); }
 .ip-pick-person { width: auto; max-height: 560px; display: block; margin: 0 auto; }
+
+/* =====================================================================================================================
+   Menu button on the right, bottom-up gradient hover on every button, flat section bands
+   ===================================================================================================================== */
+
+/* menu button sits at the far right, after the Log in pill */
+.ip-logo-wrapper { order: 1; }
+.ip-nav-right-content { order: 2; margin-left: auto; }
+.ip-nav-toggle-btn { order: 3; margin-left: 12px; min-width: 64px; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; }
+@media screen and (max-width: 767px) { .ip-nav-toggle-btn { margin-left: auto; } }
+
+/* one hover for every button: a gradient fills from the bottom up (the Close button's gradient) */
+.ip-primary-button, .ip-carousel-arrow { position: relative; isolation: isolate; overflow: hidden; }
+.ip-close-btn-wrapper { isolation: isolate; overflow: hidden; } /* stays position: fixed, top right */
+.ip-primary-button::before, .ip-carousel-arrow::before, .ip-close-btn-wrapper::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
+  background-image: linear-gradient(355deg, #ffe9b8, #19c3b1);
+  transform: translateY(101%); transition: transform .45s cubic-bezier(.215, .61, .355, 1);
+}
+.ip-primary-button:hover::before, .ip-primary-button:focus-visible::before,
+.ip-carousel-arrow:not([aria-disabled="true"]):hover::before, .ip-carousel-arrow:not([aria-disabled="true"]):focus-visible::before,
+.ip-close-btn-wrapper:hover::before, .ip-close-btn-wrapper:focus-visible::before { transform: none; }
+/* the old side-wipe and the jump are gone */
+.ip-button-hover-bg { display: none !important; }
+.ip-close-btn-wrapper:hover { transform: none; background-image: none; }
+.ip-close-btn-wrapper { transition: none; }
+.ip-primary-button.ip-book-card-btn:hover, .ip-primary-button.ip-book-card-btn:focus-visible { background-color: inherit; }
+.ip-primary-button.ip-outline:hover { background: transparent; }
+.ip-primary-button.ip-outline:hover .ip-btn-label, .ip-primary-button.ip-outline.ip-on-dark:hover .ip-btn-label { color: var(--ink); }
+.ip-carousel-arrow:hover, .ip-carousel-arrow.ip-is-green:hover { background-color: inherit; }
+.ip-carousel-arrow.ip-is-green { background-color: var(--c-lime); }
+.ip-carousel-arrow[aria-disabled="true"]:hover { background-color: transparent; }
+.ip-carousel-arrow.ip-is-green[aria-disabled="true"]:hover { background-color: var(--c-lime); }
+.ip-faq-question:hover .ip-p-m-wrap { background-image: linear-gradient(355deg, #ffe9b8, #19c3b1); background-color: transparent; }
+
+/* section rhythm: white, then a soft colour, separated by straight lines (the statement band keeps its curve) */
+.ip-how-area, .ip-get-course-area, .ip-topic-area, .ip-who-area, .ip-faq-area, .ip-call-to-action-area {
+  background-image: none; margin-top: 0; position: relative; z-index: 0; padding-top: 110px; padding-bottom: 120px;
+}
+.ip-how-area { background-color: var(--white); padding-top: 90px; }
+.ip-get-course-area { background-color: var(--c-cream); border-top: 1.5px solid var(--ink); padding-bottom: 130px; }
+.ip-topic-area { background-color: var(--c-lime); border-top: 1.5px solid var(--ink); }
+.ip-who-area { background-color: var(--white); border-top: 1.5px solid var(--ink); }
+.ip-faq-area { background-color: var(--c-cream); border-top: 1.5px solid var(--ink); }
+.ip-call-to-action-area { background-color: var(--c-pink); border-top: 1.5px solid var(--ink); }
+.ip-footer-area { background-color: var(--white); border-top: 1.5px solid var(--ink); }
+.ip-section-padding { display: none; }
+.ip-section-head { margin-bottom: 52px; }
+@media screen and (max-width: 767px) {
+  .ip-how-area, .ip-get-course-area, .ip-topic-area, .ip-who-area, .ip-faq-area, .ip-call-to-action-area { padding-top: 70px; padding-bottom: 80px; }
+  .ip-get-course-area { padding-bottom: 90px; }
+}
