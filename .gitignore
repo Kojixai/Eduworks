@@ -20,3 +20,4 @@ test-shots/
 .env.*
 !.env.example
 .claude/worktrees/
+dist/

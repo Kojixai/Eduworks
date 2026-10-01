@@ -40,8 +40,25 @@ export async function signupAction(_prev: FormState, fd: FormData): Promise<Form
 
 export async function loginAction(_prev: FormState, fd: FormData): Promise<FormState> {
   const email = String(fd.get("email") ?? "");
+  const store = await getStore();
+  const h = await headers();
+  const ip = h.get("x-forwarded-for")?.split(",")[0].trim() || h.get("x-real-ip") || "unknown";
+  const { pepper } = await import("@/lib/redemption");
+  const { hashIp } = await import("@/practice/hash");
+  const pp = pepper();
+  const emailHash = hashIp(`login:${email.trim().toLowerCase()}`, pp), ipHash = hashIp(`login:${ip}`, pp);
+  // brute-force brake: 8 wrong passwords per account or 30 per address in 15 minutes
+  const since = new Date(Date.now() - 15 * 60_000).toISOString();
+  const [byEmail, byIp] = await Promise.all([
+    store.count("redeem_attempts", { email_hash: emailHash, ok: 0, created_at: { op: "gt", value: since } }),
+    store.count("redeem_attempts", { ip_hash: ipHash, ok: 0, created_at: { op: "gt", value: since } }),
+  ]);
+  if (byEmail >= 8 || byIp >= 30) return { errors: { form: "Too many tries. Please wait 15 minutes and try again." }, values: { email } };
   const p = await verifyLogin(email, String(fd.get("password") ?? ""));
-  if (!p) return { errors: { form: "That email and password don't match an account." }, values: { email } };
+  if (!p) {
+    await store.insert("redeem_attempts", { id: crypto.randomUUID(), email_hash: emailHash, ip_hash: ipHash, ok: 0, created_at: new Date().toISOString() });
+    return { errors: { form: "That email and password don't match an account." }, values: { email } };
+  }
   await createSession(p.id);
   await unlockParentArea(); // the adult is here with their password
   const next = String(fd.get("next") ?? "");
