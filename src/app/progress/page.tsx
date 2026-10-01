@@ -1,16 +1,15 @@
 import Link from "next/link";
-import { requireParent, childrenOf, activeChild } from "@/lib/auth";
+import { requireParentArea, childrenOf, activeChild } from "@/lib/auth";
 import { getStore } from "@/lib/db";
-import { scoresByRef, scoresByStatement, streakDays, totalStars, weakAreas, pct, type AttemptLite, type ResultLite } from "@/lib/progress";
-import { Badge, Card, CurriculumText, EmptyState, Grid, Page, PageHeader, ProgressBar, Stat, Stars } from "@/components/ui";
-import { starsFor } from "@/lib/progress";
+import { scoresByRef, scoresByStatement, weakAreas, pct, type AttemptLite, type ResultLite } from "@/lib/progress";
+import { Badge, Card, CurriculumText, EmptyState, Grid, Page, PageHeader, ProgressBar, Stat } from "@/components/ui";
 
 export const metadata = { title: "Progress" };
 
 const KIND: Record<string, string> = { quiz: "Quiz", paper: "Paper", phonics: "Phonics", mtc: "Times tables" };
 
 export default async function Progress({ searchParams }: { searchParams: Promise<{ child?: string }> }) {
-  const parent = await requireParent();
+  const parent = await requireParentArea("/progress");
   const kids = await childrenOf(parent.id);
   const sp = await searchParams;
   const child = kids.find((k) => k.id === sp.child) ?? (await activeChild(parent)) ?? kids[0];
@@ -66,9 +65,9 @@ export default async function Progress({ searchParams }: { searchParams: Promise
       )}
 
       <Grid cols={4}>
-        <Stat label="Day streak" value={`${streakDays(attempts)} 🔥`} />
-        <Stat label="Stars" value={<span className="text-star">★ {totalStars(attempts)}</span>} />
+        <Stat label="Days practised (last 7)" value={new Set(finished.filter((a) => Date.now() - Date.parse(a.finished_at!) < 7 * 864e5).map((a) => a.finished_at!.slice(0, 10))).size} />
         <Stat label="Activities" value={finished.length} />
+        <Stat label="Best score" value={finished.length ? `${Math.max(...finished.map((a) => pct(a.score ?? 0, a.max_score ?? 0)))}%` : "–"} />
         <Stat label="Questions answered" value={results.length} />
       </Grid>
 
@@ -169,9 +168,6 @@ export default async function Progress({ searchParams }: { searchParams: Promise
                   </span>
                   <span className="shrink-0 text-right">
                     {a.score}/{a.max_score}
-                    <span className="block">
-                      <Stars n={starsFor(a.score ?? 0, a.max_score ?? 0)} />
-                    </span>
                   </span>
                 </li>
               ))}

@@ -3,8 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { PlayableQuestion } from "@/lib/repo";
 import { QuestionInput, QuestionPrompt, SelfMark, defaultResponse, hasAnswer, type Draft } from "./QuestionInput";
-import { Alert, Button, Card, ProgressBar, Stars } from "./ui";
-import { starsFor } from "@/lib/progress";
+import { Alert, Button, Card, ProgressBar } from "./ui";
 
 type Stage = "intro" | "test" | "review" | "marking" | "done";
 interface Result {
@@ -198,7 +197,6 @@ export function PaperPlayer({ paperId, title, minutes, totalMarks, questions }: 
           {result.score} / {result.max}
         </p>
         <p className="text-2xl">
-          <Stars n={starsFor(result.score, result.max)} />
         </p>
         <p className="text-sm text-muted">Time used: {fmtTime(minutes * 60 - Math.max(0, left))}</p>
       </Card>

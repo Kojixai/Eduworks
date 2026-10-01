@@ -132,6 +132,47 @@ for (const [book, unitId] of VISITS) {
 }
 await page.goto(`${BASE}/books/y3maths`);
 await shot("y3maths-progress");
+// dashboard shows the practice that was just saved
+await page.goto(`${BASE}/dashboard`);
+await page.getByRole("heading", { name: /dashboard/i, level: 1 }).waitFor();
+const tiles = await page.locator("section[aria-label=Summary]").innerText();
+if (!/questions answered\s*80/i.test(tiles)) errors.push(`dashboard tiles unexpected: ${tiles.replace(/\n/g, " | ")}`);
+await shot("dashboard");
+
+// parent PIN: set it, hand over to the child, the parent area is locked until the PIN is entered
+await page.goto(`${BASE}/account`);
+await page.locator("#pin").fill("2580");
+await page.locator("#again").fill("2580");
+await page.getByRole("button", { name: "Save PIN" }).click();
+await page.getByText("PIN saved.").waitFor();
+await page.goto(`${BASE}/home`);
+await page.getByRole("button", { name: /Sam/ }).first().click();
+await page.waitForURL(/\/learn/);
+await page.goto(`${BASE}/dashboard`);
+if (!page.url().includes("/unlock")) errors.push(`dashboard was not locked: ${page.url()}`);
+await page.locator("#pin").fill("0000");
+await page.getByRole("button", { name: "Open parent area" }).click();
+await page.getByText("not the right PIN").waitFor();
+await shot("unlock-wrong-pin");
+await page.locator("#pin").fill("2580");
+await page.getByRole("button", { name: "Open parent area" }).click();
+await page.waitForURL("**/dashboard");
+
+// export, then delete the account
+const exp = await page.request.get(`${BASE}/account/export`);
+const data = await exp.json();
+if (!data.practiceSessions?.length || JSON.stringify(data).includes("password_hash") || JSON.stringify(data).includes("order_hash")) errors.push("export missing sessions or leaks a hash");
+await page.goto(`${BASE}/account`);
+await page.getByLabel("Your password").fill("a long family password");
+await page.getByLabel("Type DELETE to confirm").fill("DELETE");
+await page.getByRole("button", { name: "Delete my account" }).click();
+await page.waitForURL("**/?deleted=1");
+await page.goto(`${BASE}/login`);
+await page.getByLabel("Email").fill(email);
+await page.getByLabel("Password").fill("a long family password");
+await page.getByRole("button", { name: "Log in" }).click();
+await page.getByText(/don't match an account/).waitFor();
+
 await browser.close();
 console.log(JSON.stringify({ email, sessions, errors }, null, 1));
 process.exit(errors.length ? 1 : 0);

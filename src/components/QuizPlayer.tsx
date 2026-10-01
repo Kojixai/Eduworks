@@ -3,8 +3,7 @@ import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { PlayableQuestion } from "@/lib/repo";
 import { QuestionInput, QuestionPrompt, SelfMark, defaultResponse, hasAnswer, type Draft } from "./QuestionInput";
-import { Alert, Badge, Button, Card, ProgressBar, Stars } from "./ui";
-import { starsFor } from "@/lib/progress";
+import { Alert, Badge, Button, Card, ProgressBar } from "./ui";
 
 interface Feedback {
   result: { marksAwarded: number; maxMarks: number; correct: boolean } | null;
@@ -93,7 +92,6 @@ export function QuizPlayer({ questions, refId, title, backHref }: { questions: P
           {final.score} / {final.max}
         </p>
         <p className="my-2 text-2xl">
-          <Stars n={starsFor(final.score, final.max)} />
         </p>
         <div className="mt-3 flex flex-col gap-2 sm:flex-row">
           <Button onClick={retry}>Try again</Button>

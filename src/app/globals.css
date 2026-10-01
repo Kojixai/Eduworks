@@ -21,6 +21,13 @@
   --color-warning: var(--color-warning);
   --color-warning-soft: var(--color-warning-soft);
   --color-star: var(--color-star);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-secure: var(--chart-secure);
+  --color-chart-practising: var(--chart-practising);
+  --color-chart-notstarted: var(--chart-notstarted);
+  --color-chart-grid: var(--chart-grid);
   --font-sans: var(--font-sans);
   --font-head: var(--font-head);
   --radius-sm: var(--radius-sm);

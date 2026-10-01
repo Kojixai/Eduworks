@@ -23,6 +23,20 @@
   --color-warning-soft: #fdf1d8;
   --color-star: #e0a100;
 
+  /* data visualisation: muted, print-like, distinguishable without relying on colour alone (label every series) */
+  --chart-1: #1f4e8c;           /* blue: main series */
+  --chart-2: #2f8f83;           /* teal */
+  --chart-3: #c9783f;           /* clay */
+  --chart-4: #7a5aa6;           /* plum */
+  --chart-5: #b8902f;           /* ochre */
+  --chart-6: #8a8f98;           /* grey */
+  --chart-grid: #e6e3da;
+  --chart-track: #ebe8df;
+  --chart-secure: #1b6b38;      /* mastery: secure */
+  --chart-practising: #d49a2a;  /* mastery: practising */
+  --chart-notstarted: #d9d5ca;  /* mastery: not started */
+  --card-pad: 20px;
+
   /* type */
   --font-sans: "Andika", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-head: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;

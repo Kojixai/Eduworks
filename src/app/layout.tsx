@@ -39,6 +39,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   <Link href="/books" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Books</Link>
                   <Link href="/learn" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Curriculum</Link>
                   <Link href="/dashboard" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Dashboard</Link>
+                  <Link href="/account" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Account</Link>
                   {!!parent.is_admin && <Link href="/admin" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Admin</Link>}
                   <form action="/logout" method="post">
                     <button className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-primary hover:bg-bg">Log out</button>

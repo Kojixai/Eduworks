@@ -7,6 +7,7 @@ import { getStore } from "./db";
 
 const SESSION_COOKIE = "edu_session";
 const CHILD_COOKIE = "edu_child";
+const LOCK_COOKIE = "edu_lock";
 const SESSION_DAYS = 30;
 
 export interface Parent {
@@ -104,4 +105,33 @@ export async function requireChild(): Promise<{ parent: Parent; child: Student }
   const child = await activeChild(parent);
   if (!child) redirect("/home");
   return { parent, child };
+}
+
+// ---------------------------------------------------------------- parent PIN lock
+// A convenience lock for a shared family device (docs/INKWORKS_MERGE_BRIEF.txt): when a child is practising, the parent
+// area (dashboard, account, adding/removing learners) asks for the 4-digit PIN. The account password is the real protection.
+export const PIN_RE = /^\d{4}$/;
+
+export function hashPinServer(parentId: string, pin: string): string {
+  const key = process.env.CODE_PEPPER ?? (process.env.NODE_ENV === "production" ? "" : "dev-only-pepper");
+  if (!key) throw new Error("CODE_PEPPER is not set");
+  return crypto.createHmac("sha256", key).update(`pin:${parentId}:${pin}`).digest("hex");
+}
+
+/** Called when the device is handed to a child. Does nothing until the adult has set a PIN. */
+export async function lockParentArea(parent: Parent) {
+  if (!parent.pin_hash) return;
+  (await cookies()).set(LOCK_COOKIE, parent.id, { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production", path: "/", maxAge: 60 * 60 * 24 * 30 });
+}
+export async function unlockParentArea() {
+  (await cookies()).delete(LOCK_COOKIE);
+}
+export async function isParentLocked(parent: Parent): Promise<boolean> {
+  return !!parent.pin_hash && parent.account_type !== "student" && (await cookies()).get(LOCK_COOKIE)?.value === parent.id;
+}
+/** For parent-area pages: sends a child back to the PIN screen. */
+export async function requireParentArea(next: string): Promise<Parent> {
+  const p = await requireParent();
+  if (await isParentLocked(p)) redirect(`/unlock?next=${encodeURIComponent(next)}`);
+  return p;
 }

@@ -1,4 +1,5 @@
-import { requireParent, childrenOf, activeChild } from "@/lib/auth";
+import Link from "next/link";
+import { requireParent, childrenOf, activeChild, isParentLocked } from "@/lib/auth";
 import { chooseChildAction, removeChildAction } from "../actions";
 import { Alert, Badge, Button, Card, Page, PageHeader } from "@/components/ui";
 import { AddChildForm } from "./AddChildForm";
@@ -11,6 +12,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ w
   const sp = await searchParams;
   const next = sp.next && sp.next.startsWith("/") && !sp.next.startsWith("//") ? sp.next : "/learn";
   const parent = await requireParent();
+  const locked = await isParentLocked(parent);
   const kids = await childrenOf(parent.id);
   const active = await activeChild(parent);
   const years = await yearGroups();
@@ -42,7 +44,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ w
                     {active?.id === k.id && <Badge tone="primary">Practising</Badge>}
                   </button>
                 </form>
-                <details className="relative">
+                {!locked && <details className="relative">
                   <summary className="flex min-h-[44px] cursor-pointer list-none items-center px-2 text-xs text-muted" aria-label={`Options for ${k.first_name}`}>
                     •••
                   </summary>
@@ -53,17 +55,17 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ w
                       Delete {k.first_name}
                     </Button>
                   </form>
-                </details>
+                </details>}
               </li>
             ))}
           </ul>
         </Card>
       )}
 
-      <Card title={kids.length ? "Add another child" : "Add your child"} className="mb-4">
+      {locked ? <Card className="mb-4"><p className="m-0 text-sm text-muted">A grown-up is needed to add or remove learners. <Link href="/unlock?next=/home">Enter the parent PIN</Link>.</p></Card> : <Card title={kids.length ? "Add another child" : "Add your child"} className="mb-4">
         <p className="mb-3 text-sm text-muted">First name only. We never ask for a child's email or surname.</p>
         <AddChildForm years={years.filter((y) => y.key_stage_id !== "ks5")} />
-      </Card>
+      </Card>}
 
       {bookRows.length > 0 && (
         <Card title="Your books">
