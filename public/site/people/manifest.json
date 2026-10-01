@@ -37,26 +37,20 @@
   },
   "who-parent": {
     "file": "who-parent.png",
-    "width": 1096,
-    "height": 918,
-    "alt": "A smiling bearded dad in a red polo shirt looking warmly at the camera"
+    "width": 860,
+    "height": 841,
+    "alt": "A smiling middle-aged couple standing arm in arm, the man in a maroon shirt and the woman in a red striped blouse"
   },
-  "who-teacher": {
-    "file": "who-teacher.png",
-    "width": 727,
+  "who-primary": {
+    "file": "who-primary.png",
+    "width": 833,
     "height": 1100,
-    "alt": "A friendly teacher in glasses and a black blazer, holding a folder and a marker pen"
+    "alt": "Two girls jumping for joy and holding hands, laughing with one arm each thrown up in the air"
   },
-  "who-student": {
-    "file": "who-student.png",
-    "width": 874,
-    "height": 1100,
-    "alt": "A smiling student sitting cross-legged with a laptop on her knees"
-  },
-  "who-years": {
-    "file": "who-years.png",
-    "width": 789,
-    "height": 1100,
-    "alt": "Two smiling schoolchildren of different ages sharing a tablet together"
+  "who-secondary": {
+    "file": "who-secondary.png",
+    "width": 1014,
+    "height": 841,
+    "alt": "A smiling teenage boy in a tie-dye T-shirt at a desk, one hand on his forehead, writing with a pen"
   }
 }

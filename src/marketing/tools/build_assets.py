@@ -163,5 +163,5 @@ card_art('post-curriculum', CORAL, ''.join(f'<path d="M0 {y}H620" stroke="{CREAM
 write('og.svg', f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="{PEACH}"/>'
       f'<circle cx="1090" cy="120" r="150" fill="{VIOLET}"/><circle cx="1030" cy="560" r="90" fill="{GREEN}"/><circle cx="930" cy="330" r="46" fill="{GOLD}"/>'
       + wordmark(80, 150, 84)
-      + T('Free online practice', 84, 80, 330, DARK) + T('with your Inkworks Press book', 60, 80, 420, DARK)
+      + T('Free online practice', 84, 80, 330, DARK) + T('with your Learn Works book', 60, 80, 420, DARK)
       + f'<path d="M84 478C250 462 470 458 640 470" fill="none" stroke="{ORANGE}" stroke-width="9" stroke-linecap="round"/></svg>\n')

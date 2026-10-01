@@ -3,9 +3,9 @@
  * The header and footer wordmark is live text (see Logo.tsx); the social card and icons are rendered by tools/build_assets.py + render-art.mjs.
  */
 export const BRAND = "Learn Works";
-export const PUBLISHER = "Inkworks Press";
+export const PUBLISHER = "Learn Works";
 /** Shown in the copyright line (the registered name at Companies House is "Blandfords International Ltd", see src/lib/company.ts). */
-export const COPYRIGHT_HOLDER = "Blandford's International Limited";
+export const COPYRIGHT_HOLDER = "Blandfords International Limited";
 export const TAGLINE = `Free online practice with your ${PUBLISHER} book`;
 export const DESCRIPTION = `Free online practice that comes with ${PUBLISHER} study books. Type the code from inside your book to unlock 10 new questions for every page, marked instantly.`;
 

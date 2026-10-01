@@ -58,11 +58,8 @@ function CtaPair({ tone = "ip-two", onDark = false }: { tone?: string; onDark?: 
 /* ------------------------------------------------------------------ Hero */
 
 type Shape = "plus" | "minus" | "times" | "divide" | "circle" | "square" | "triangle" | "equals";
-const SHAPES: { shape: Shape; fill: string }[] = [
-  { shape: "plus", fill: "var(--c-pink)" }, { shape: "minus", fill: "var(--c-amber)" }, { shape: "times", fill: "var(--c-sky)" },
-  { shape: "divide", fill: "var(--c-lime)" }, { shape: "circle", fill: "var(--c-teal)" }, { shape: "square", fill: "var(--c-pink)" },
-  { shape: "triangle", fill: "var(--c-amber)" }, { shape: "equals", fill: "var(--c-sky)" },
-];
+const SHAPE_ORDER: Shape[] = ["plus", "circle", "minus", "triangle", "times", "square", "equals", "divide"];
+const SHAPES: { shape: Shape; fill: string }[] = [...SHAPE_ORDER, ...SHAPE_ORDER.slice().reverse()].map((shape) => ({ shape, fill: "var(--c-sky)" }));
 
 const PLUS = "M83 40H147V100H207V164H147V224H83V164H23V100H83Z";
 
@@ -122,6 +119,9 @@ export function Hero() {
           <StripList />
         </div>
       </div>
+      <a className="ip-scroll-hint" href="#method" aria-label="Scroll down">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      </a>
     </section>
   );
 }
@@ -137,7 +137,7 @@ const STATEMENT: Part[] = [
 export function Statement() {
   let key = 0;
   return (
-    <section className="ip-growth-mindset-area" aria-label="How the practice works">
+    <section id="method" className="ip-growth-mindset-area" aria-label="How the practice works">
       <div className="ip-container">
         <div className="ip-content">
           <a className="ip-down-arrow" href="#how" aria-label="Go to how it works">
@@ -268,8 +268,8 @@ export function Books({ data }: { data: BookSection }) {
 /* ------------------------------------------------------------ Who it is for */
 
 const WHO = [
-  { pill: "Ages 5 to 16", t: "Key Stages 1 to 4", p: "Practice that matches the page of the book they are on. Children get their own profile inside a parent\u2019s account.", slot: "who-years", tone: "ip-tone-amber" },
-  { pill: "Aged 13+", t: "Students aged 13 and over", p: "Can have their own account for the KS3 and GCSE books.", slot: "who-student", tone: "ip-tone-teal" },
+  { pill: "Ages 5 to 11", t: "Primary school students", p: "Key Stages 1 and 2. Short practice that matches the page of the book they are on, with their own profile inside a parent\u2019s account.", slot: "who-primary", tone: "ip-tone-amber" },
+  { pill: "Ages 11 to 16", t: "Secondary school students", p: "Key Stages 3 and 4, including GCSE. Students aged 13 and over can have their own account.", slot: "who-secondary", tone: "ip-tone-teal" },
   { pill: "Adults", t: "Parents and guardians", p: "Set up one account, add a profile for each child and follow their progress on the dashboard.", slot: "who-parent", tone: "ip-tone-pink" },
 ];
 

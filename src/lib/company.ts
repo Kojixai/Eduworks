@@ -11,7 +11,7 @@ export const COMPANY = {
   siteName: "Learn Works",
   siteUrl: "https://www.mylearn.works",
   siteHost: "mylearn.works",
-  imprint: "Inkworks Press",
+  imprint: "Learn Works",
 } as const;
 
 /** The registered office on one line. */

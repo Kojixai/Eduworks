@@ -69,7 +69,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <Link href="/credits" className="inline-flex min-h-[44px] items-center text-[var(--color-text)]">Credits and licences</Link>
               <Link href="/signup" className="inline-flex min-h-[44px] items-center text-[var(--color-text)]">Where is my code?</Link>
             </nav>
-            <p className="m-0">&copy; {new Date().getFullYear()} Learn Works, Blandford&apos;s International Limited, UK. All rights reserved.</p>
+            <p className="m-0">&copy; {new Date().getFullYear()} Learn Works, Blandfords International Limited, UK. All rights reserved.</p>
           </div>
         </footer>
       </body>

@@ -1,6 +1,6 @@
 # Learn Works (mylearn.works)
 
-Free online practice that goes with Inkworks Press books, plus open curriculum content (Oak National Academy, GOV.UK / STA) for Key Stages 1 to 4.
+Free online practice that goes with Learn Works books, plus open curriculum content (Oak National Academy, GOV.UK / STA) for Key Stages 1 to 4.
 Live at <https://www.mylearn.works>. Next.js 15, SQLite (`better-sqlite3`), Tailwind 4, no build step on the server.
 
 Two layers share one site, one account system and one parent dashboard:
