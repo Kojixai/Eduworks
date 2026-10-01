@@ -58,8 +58,9 @@ function CtaPair({ tone = "ip-two", onDark = false }: { tone?: string; onDark?: 
 /* ------------------------------------------------------------------ Hero */
 
 type Shape = "plus" | "minus" | "times" | "divide" | "circle" | "square" | "triangle" | "equals";
-const SHAPE_ORDER: Shape[] = ["plus", "circle", "minus", "triangle", "times", "square", "equals", "divide"];
-const SHAPES: { shape: Shape; fill: string }[] = [...SHAPE_ORDER, ...SHAPE_ORDER.slice().reverse()].map((shape) => ({ shape, fill: "var(--c-sky)" }));
+/** A fixed, shuffled order: no shape sits next to the same shape, including where the strip wraps round. */
+const SHAPE_ORDER: Shape[] = ["plus", "circle", "divide", "triangle", "equals", "square", "times", "minus", "divide", "plus", "triangle", "circle", "minus", "times", "square", "equals"];
+const SHAPES: { shape: Shape; fill: string }[] = SHAPE_ORDER.map((shape) => ({ shape, fill: "var(--ink)" }));
 
 const PLUS = "M83 40H147V100H207V164H147V224H83V164H23V100H83Z";
 

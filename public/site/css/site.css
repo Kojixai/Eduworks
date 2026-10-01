@@ -2596,3 +2596,8 @@ body { overflow-x: clip; }
   background-color: transparent; background-image: linear-gradient(180deg, var(--b) 0, var(--b) 36%, var(--e) 100%); background-size: 100% 270%; background-position: 0 100%;
 }
 .ip-primary-button.ip-outline.ip-on-dark:hover .ip-btn-label, .ip-primary-button.ip-outline.ip-on-dark:focus-visible .ip-btn-label { color: var(--ink); }
+
+/* ---- v5: quiet hero shapes, flat carousel arrows, blue Log in hover ---- */
+.ip-ticker-image-wrap { opacity: .13; }
+.ip-carousel-arrow, .ip-carousel-arrow:not([aria-disabled="true"]):hover, .ip-carousel-arrow:not([aria-disabled="true"]):active { box-shadow: none; transform: none; }
+.ip-primary-button.ip-outline, .ip-primary-button.ip-outline.ip-on-dark { --e: var(--c-sky); }
