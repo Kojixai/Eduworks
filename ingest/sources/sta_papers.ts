@@ -43,7 +43,12 @@ import {
   coverFacts,
   extractLines,
   extractQuestions,
+  applyDomainTable,
+  parseDomainTable,
   parseCopyright,
+  parseCopyrightHtml,
+  parseCopyrightTables,
+  extractTables,
   parseMarkScheme,
   rowsForPaper,
   thirdPartyFor,
@@ -161,7 +166,7 @@ interface YearDocs {
   year: number;
   papers: ManifestEntry[];
   markSchemes: ManifestEntry[];
-  copyright: ManifestEntry | undefined;
+  copyrights: ManifestEntry[];
   readingBooklets: ManifestEntry[];
 }
 
@@ -181,15 +186,33 @@ export function pickMarkScheme(schemes: ManifestEntry[], paper: ManifestEntry, k
   return named ?? same.find((s) => s.paper_number === null) ?? same[0];
 }
 
+/** The copyright report published with this subject's test materials (reports are per publication). */
+export function copyrightFor(entries: ManifestEntry[], subject: Subject): ManifestEntry | undefined {
+  return entries.find((e) => e.subject === subject) ?? entries.find((e) => e.subject === null) ?? entries[0];
+}
+
+/** HTML (GOV.UK page) or PDF copyright report -> items. Structured tables first, free text as fallback. */
+async function loadCopyright(file: string): Promise<CopyrightItem[]> {
+  const head = fs.readFileSync(file).subarray(0, 400).toString("utf8").trimStart();
+  if (/^<(!doctype|html|\?xml)/i.test(head)) {
+    const r = parseCopyrightHtml(fs.readFileSync(file, "utf8"));
+    if (r.tables) return r.items;
+  } else {
+    const r = parseCopyrightTables(await extractTables(file));
+    if (r.tables) return r.items;
+  }
+  return parseCopyright(await extractLines(file));
+}
+
 async function ingestFromManifest(ctx: IngestContext, store: DataStore, m: Manifest, opts: StaOptions, result: StaResult) {
   const ks = m.key_stage;
   const years = new Map<number, YearDocs>();
   for (const e of m.entries) {
     if (opts.years && !opts.years.includes(e.year)) continue;
-    const y = years.get(e.year) ?? { year: e.year, papers: [], markSchemes: [], copyright: undefined, readingBooklets: [] };
+    const y = years.get(e.year) ?? { year: e.year, papers: [], markSchemes: [], copyrights: [], readingBooklets: [] };
     if (isPaperKind(e.kind)) y.papers.push(e);
     else if (e.kind === "mark_scheme") y.markSchemes.push(e);
-    else if (e.kind === "copyright_report") y.copyright ??= e;
+    else if (e.kind === "copyright_report") y.copyrights.push(e);
     else if (e.kind === "reading_booklet") y.readingBooklets.push(e);
     years.set(e.year, y);
   }
@@ -230,19 +253,24 @@ async function ingestFromManifest(ctx: IngestContext, store: DataStore, m: Manif
           msPdf = await fetchOnce(ms.url, `${ks}-${y.year}-${ms.subject}-ms-${shortHash(ms.url).slice(0, 6)}.pdf`);
           let rowsP = msCache.get(ms.url);
           if (!rowsP) {
-            rowsP = extractLines(msPdf.path).then(parseMarkScheme);
+            rowsP = extractLines(msPdf.path).then((doc) => {
+              const rows = parseMarkScheme(doc);
+              applyDomainTable(rows, parseDomainTable(doc));
+              return rows;
+            });
             msCache.set(ms.url, rowsP);
           }
           msRows = await rowsP;
         } else await ctx.log("warn", "mark_scheme_missing", `No mark scheme found for ${code}`, { year: y.year, kind });
         let crItems: CopyrightItem[] = [];
         let crPdf: FetchedPdf | null = null;
-        if (y.copyright) {
-          crPdf = await fetchOnce(y.copyright.url, `${ks}-${y.year}-copyright-${shortHash(y.copyright.url).slice(0, 6)}.pdf`);
-          let cp = crCache.get(y.copyright.url);
+        const crEntry = copyrightFor(y.copyrights, subjectForKind(kind));
+        if (crEntry) {
+          crPdf = await fetchOnce(crEntry.url, `${ks}-${y.year}-copyright-${shortHash(crEntry.url).slice(0, 6)}.pdf`);
+          let cp = crCache.get(crEntry.url);
           if (!cp) {
-            cp = extractLines(crPdf.path).then(parseCopyright);
-            crCache.set(y.copyright.url, cp);
+            cp = loadCopyright(crPdf.path);
+            crCache.set(crEntry.url, cp);
           }
           crItems = await cp;
         } else await ctx.log("warn", "copyright_report_missing", `No copyright report listed for ${ks} ${y.year}`, { code });
@@ -257,7 +285,7 @@ async function ingestFromManifest(ctx: IngestContext, store: DataStore, m: Manif
           msEntry: ms ?? null,
           msPdf,
           msRows,
-          crEntry: y.copyright ?? null,
+          crEntry: crEntry ?? null,
           crItems,
           readingBooklets: kind === "reading_answer" ? y.readingBooklets.filter((b) => b.paper_number === null || b.paper_number === paperNumberOf(p, ks)) : [],
           opts,
@@ -403,7 +431,16 @@ async function ingestPaper(ctx: IngestContext, store: DataStore, linker: DomainL
       const rp = parseRequirement(row.requirement, row.guidance);
       if (rp.primary) {
         d.qtype = "numeric";
-        const all = [rp.primary, ...rp.alternatives];
+        let alternatives = rp.alternatives;
+        if (/recurring/i.test(`${row.requirement} ${row.guidance}`)) {
+          // A recurring decimal (e.g. 1.083 with a dot over the 3) loses its dot in the PDF text layer, so the
+          // printed decimal is a truncation and would wrongly accept an inexact answer: keep only exact decimals.
+          const kept = alternatives.filter((a) => a.form !== "decimal" || a.value.eq(rp.primary!.value));
+          if (kept.length !== alternatives.length)
+            d.notes.push(`recurring-decimal equivalent(s) ${alternatives.filter((a) => !kept.includes(a)).map((a) => a.text).join(", ")} not auto-accepted (recurring dot not readable from the PDF); only exact forms are accepted`);
+          alternatives = kept;
+        }
+        const all = [rp.primary, ...alternatives];
         for (const a of all) d.answers.push({ answer: a.text.replace(/\s+/g, " "), kind: answerKind(a, rp.equivalentFractions, rp.exactDecimal) });
         if (rp.leftover) d.notes.push(`mark scheme requirement has extra wording: "${rp.leftover}"`);
         if (d.marks >= 2) d.notes.push("2-mark question: method marks (partial credit) cannot be auto-awarded; see mark_scheme_entries guidance");

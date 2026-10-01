@@ -65,6 +65,9 @@ export function classifyAttachment(title: string, publicationTitle = ""): Classi
   if (/modified|large print|enlarged|braille|\bmlp\b|\bel\b|welsh|cymraeg/.test(t)) return res("ignore");
   if (/copyright/.test(t)) return res("copyright_report", { subject: null });
   if (/mark scheme|marking scheme|answers? and mark/.test(t)) return res("mark_scheme");
+  // "administering Paper 2: spelling" (2024+) is the read-aloud spelling script; every other
+  // "administering ..." document is teacher guidance, never a question paper
+  if (/\badministering\b/.test(t)) return subject === "gps" && /spelling/.test(t) ? res("spelling_script") : res("ignore");
   if (subject === "gps" && /spelling/.test(t) && /script|administration instructions|task (answers|instructions)|answers/.test(t))
     return res("spelling_script");
   if (/sources|administration|guidance|instructions|framework|scaled score|conversion|sample|notes|leaflet|access arrangements|headteacher/.test(t))
@@ -193,6 +196,7 @@ export async function discover(ks: KeyStage, get: ContentGetter = getContent, so
   for (const d of docs) {
     const info = publicationInfo(d.title, d.base_path);
     if (!info || info.ks !== ks || info.year < 2016) continue;
+    if (/modified/i.test(`${d.title} ${d.base_path}`)) continue; // modified large print / braille versions: not used
     if (info.year === 2020 || info.year === 2021) continue; // tests cancelled (COVID-19)
     const pub = await get(d.base_path);
     for (const a of attachments(pub)) {
@@ -201,6 +205,8 @@ export async function discover(ks: KeyStage, get: ContentGetter = getContent, so
       seen.add(a.url);
       const c = classifyAttachment(a.title, pub.title);
       if (c.kind === "ignore") continue;
+      // copyright reports are per publication: record which subject they cover
+      if (c.kind === "copyright_report") c.subject = subjectOf(pub.title.toLowerCase());
       entries.push({
         year: info.year,
         kind: c.kind,
