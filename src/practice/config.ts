@@ -14,21 +14,21 @@ export type CodeMode = "title" | "copy";
 export const CODE_MODE: CodeMode = process.env.CODE_MODE === "copy" ? "copy" : "title";
 
 /**
- * The Amazon order number.
- *  "optional": asked for, but the adult can leave it blank (default with per-title codes).
+ * The order number from the buyer's purchase.
+ *  "optional": asked for, but the adult can leave it blank (not the default).
  *  "required": must be given (stronger brake on a shared per-title code being passed around).
  *  "off":      not asked for at all (default with per-copy codes, which control sharing on their own).
- * Whatever the setting, only the format is checked (3-7-7 digits). We never check it with Amazon, only a salted
+ * Whatever the setting, only the format is checked (3-7-7 digits). It is never checked with the retailer, only a keyed
  * hash is stored, and the hash is deleted when that book's access ends.
  */
 export type OrderMode = "optional" | "required" | "off";
 const om = process.env.ORDER_NUMBER;
-export const ORDER_MODE: OrderMode = om === "required" || om === "optional" || om === "off" ? om : CODE_MODE === "copy" ? "off" : "optional";
+export const ORDER_MODE: OrderMode = om === "required" || om === "optional" || om === "off" ? om : "required";
 
 /** One order number can unlock the same book on at most this many accounts (a family with two adults, a gift). */
 export const MAX_ACCOUNTS_PER_ORDER = 3;
 
-export const SUPPORT_EMAIL = "support@inkworkspress.co.uk"; // TODO(Tom): confirm the real support address
+export const SUPPORT_EMAIL = "support@mylearn.works";
 
 export { MAILING_WORDING_VERSION, MAILING_WORDING, ORDER_WHY } from "./config-public";
 

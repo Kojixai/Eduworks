@@ -12,7 +12,7 @@ import { EmptyState } from "@/components/ui";
 export const metadata = { title: "My practice" };
 
 const KIND_CHIP: Record<string, string> = { review: "Try again", strengthen: "Good next step", next: "Up next" };
-const CYCLE = ["var(--gold)", "var(--violet)", "var(--aqua)", "var(--orange)"];
+const CYCLE = ["var(--c-amber)", "var(--c-pink)", "var(--c-lime)", "var(--c-teal)"];
 
 /** Child home: friendly, one clear next step, no scores of other people, no streaks, no shop. */
 export default async function Me() {
@@ -20,7 +20,7 @@ export default async function Me() {
   const ctx = await loadLearner(parent);
   if (!ctx)
     return (
-      <DashShell view="child" active="home" isAdmin={!!parent.is_admin}>
+      <DashShell view="child" active="home" isAdmin={!!parent.is_admin || !!parent.is_preview} adminHref={parent.is_preview ? "/overview" : "/admin"}>
         <EmptyState title="Who is practising?"><Link href="/home">Choose a learner</Link></EmptyState>
       </DashShell>
     );
@@ -32,8 +32,8 @@ export default async function Me() {
   const name = learner.first_name.split(" ")[0];
 
   return (
-    <DashShell view="child" active="home" isAdmin={!!parent.is_admin}>
-      {ctx.isSample && <p role="note" className="mb-4 rounded-[var(--radius-md)] border-[1.5px] border-dashed border-[var(--ink)] bg-[var(--gold)]/40 px-4 py-2.5 text-sm"><b>Sample data.</b> You are previewing the child view as an admin, so this shows a made-up learner.</p>}
+    <DashShell view="child" active="home" isAdmin={!!parent.is_admin || !!parent.is_preview} adminHref={parent.is_preview ? "/overview" : "/admin"}>
+      {ctx.isSample && <p role="note" className="mb-4 rounded-[var(--radius-md)] border-[1.5px] border-dashed border-[var(--ink)] bg-[var(--c-amber)]/40 px-4 py-2.5 text-sm"><b>Sample data.</b> You are previewing the child view as an admin, so this shows a made-up learner.</p>}
       <header className="mb-6 flex items-center gap-4">
         <span className="grid h-16 w-16 place-items-center rounded-full border-[1.5px] border-[var(--ink)] font-[family-name:var(--font-head)] text-3xl" style={{ background: av.bg, color: av.fg }}>{name[0]}</span>
         <div>
@@ -74,7 +74,7 @@ export default async function Me() {
           <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2 xl:grid-cols-3">
             {d.books.map((b) => (
               <li key={b.bookId}>
-                <Link href={`/books/${b.bookId}`} className="flex items-center gap-4 rounded-[var(--radius-lg)] border-[1.5px] border-[var(--ink)] bg-surface p-4 text-[var(--ink)] no-underline hover:bg-[var(--peach)]/50">
+                <Link href={`/books/${b.bookId}`} className="flex items-center gap-4 rounded-[var(--radius-lg)] border-[1.5px] border-[var(--ink)] bg-surface p-4 text-[var(--ink)] no-underline hover:bg-[var(--c-cream)]/50">
                   <Ring value={b.total ? b.secure / b.total : 0} size={84} label={`${b.secure} of ${b.total} topics secure`} />
                   <span><span className="block font-[family-name:var(--font-head)] text-lg leading-snug">{b.title}</span><span className="text-sm text-muted">{b.secure} of {b.total} topics secure</span></span>
                 </Link>

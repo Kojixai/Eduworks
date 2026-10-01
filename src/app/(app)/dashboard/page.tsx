@@ -14,7 +14,7 @@ export const metadata = { title: "Dashboard" };
 
 const card = "rounded-[var(--radius-lg)] border-[1.5px] border-[var(--ink)] bg-surface p-5";
 const h2 = "m-0 mb-3 font-[family-name:var(--font-head)] text-xl";
-const band = (v: number) => (v < 60 ? "var(--coral)" : v < 80 ? "var(--gold)" : "var(--aqua)");
+const band = (v: number) => (v < 60 ? "var(--c-sky)" : v < 80 ? "var(--c-amber)" : "var(--c-lime)");
 
 export default async function Dashboard({ searchParams }: { searchParams: Promise<{ child?: string; period?: string }> }) {
   const parent = await requireParentArea("/dashboard");
@@ -41,9 +41,9 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
   const notStarted = d.sections.filter((s) => s.avgBest === null).slice(0, Math.max(0, 6 - weakest.length));
 
   return (
-    <DashShell view="parent" active="home" isAdmin={!!parent.is_admin} aside={<Recommended items={rec.items} struggling={rec.struggling} />}>
+    <DashShell view="parent" active="home" isAdmin={!!parent.is_admin || !!parent.is_preview} adminHref={parent.is_preview ? "/overview" : "/admin"} aside={<Recommended items={rec.items} struggling={rec.struggling} />}>
       {ctx.isSample && (
-        <p role="note" className="mb-4 rounded-[var(--radius-md)] border-[1.5px] border-dashed border-[var(--ink)] bg-[var(--gold)]/40 px-4 py-2.5 text-sm">
+        <p role="note" className="mb-4 rounded-[var(--radius-md)] border-[1.5px] border-dashed border-[var(--ink)] bg-[var(--c-amber)]/40 px-4 py-2.5 text-sm">
           <b>Sample data.</b> You are previewing the parent view as an admin and have no learners of your own, so this shows a made-up learner.
         </p>
       )}
@@ -57,7 +57,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
         </div>
         <nav aria-label="Time period" className="inline-flex rounded-full border-[1.5px] border-[var(--ink)] bg-surface p-[3px] text-sm">
           {PERIODS.map((p) => (
-            <Link key={p} href={link({ period: String(p) })} aria-current={p === period ? "page" : undefined} className={`min-h-[40px] rounded-full px-4 py-2 font-medium no-underline ${p === period ? "bg-[var(--violet)] text-[var(--ink)]" : "text-[var(--ink)]"}`}>{p} days</Link>
+            <Link key={p} href={link({ period: String(p) })} aria-current={p === period ? "page" : undefined} className={`min-h-[40px] rounded-full px-4 py-2 font-medium no-underline ${p === period ? "bg-[var(--c-pink)] text-[var(--ink)]" : "text-[var(--ink)]"}`}>{p} days</Link>
           ))}
         </nav>
       </header>
@@ -65,7 +65,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
       {kids.length > 1 && (
         <nav aria-label="Learner" className="mb-5 flex flex-wrap gap-2">
           {kids.map((k) => (
-            <Link key={k.id} href={`/dashboard?child=${k.id}&period=${period}`} aria-current={k.id === learner.id ? "page" : undefined} className={`inline-flex min-h-[44px] items-center rounded-full border-[1.5px] border-[var(--ink)] px-4 text-sm font-medium no-underline ${k.id === learner.id ? "bg-[var(--violet)]" : "bg-surface"} text-[var(--ink)]`}>{k.first_name}</Link>
+            <Link key={k.id} href={`/dashboard?child=${k.id}&period=${period}`} aria-current={k.id === learner.id ? "page" : undefined} className={`inline-flex min-h-[44px] items-center rounded-full border-[1.5px] border-[var(--ink)] px-4 text-sm font-medium no-underline ${k.id === learner.id ? "bg-[var(--c-pink)]" : "bg-surface"} text-[var(--ink)]`}>{k.first_name}</Link>
           ))}
         </nav>
       )}
@@ -75,10 +75,10 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
       ) : (
         <div className="grid gap-5">
           <section aria-label="Summary" className="grid grid-cols-2 gap-3 xl:grid-cols-4">
-            <Tile label="Days practised" value={`${d.totals.activeDays}`} hint={`of the last ${period}`} chip="var(--violet)" />
-            <Tile label="Questions answered" value={d.totals.questions.toLocaleString("en-GB")} hint={d.totals.prevQuestions > 0 ? `${delta >= 0 ? "+" : ""}${delta} on the ${period} days before` : `in the last ${period} days`} chip="var(--gold)" />
-            <Tile label="Score on first go" value={d.totals.accuracy === null ? "–" : `${d.totals.accuracy}%`} hint="across all practices" chip="var(--orange)" />
-            <Tile label="Topics secure" value={`${secureTotal}`} hint="80% or more on 2 days" chip="var(--aqua)" />
+            <Tile label="Days practised" value={`${d.totals.activeDays}`} hint={`of the last ${period}`} chip="var(--c-pink)" />
+            <Tile label="Questions answered" value={d.totals.questions.toLocaleString("en-GB")} hint={d.totals.prevQuestions > 0 ? `${delta >= 0 ? "+" : ""}${delta} on the ${period} days before` : `in the last ${period} days`} chip="var(--c-amber)" />
+            <Tile label="Score on first go" value={d.totals.accuracy === null ? "–" : `${d.totals.accuracy}%`} hint="across all practices" chip="var(--c-teal)" />
+            <Tile label="Topics secure" value={`${secureTotal}`} hint="80% or more on 2 days" chip="var(--c-lime)" />
           </section>
 
           {d.books.length > 0 && (
@@ -99,7 +99,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
                         </div>
                       </div>
                       <div className="mt-auto flex gap-2">
-                        <Link href={`/books/${b.bookId}`} className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-full border-[1.5px] border-[var(--ink)] bg-[var(--aqua)] px-4 font-semibold text-[var(--ink)] no-underline">Continue</Link>
+                        <Link href={`/books/${b.bookId}`} className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-full border-[1.5px] border-[var(--ink)] bg-[var(--c-lime)] px-4 font-semibold text-[var(--ink)] no-underline">Continue</Link>
                         {due && <Link href={`/books/${due.bookId}/${due.unitId}`} className="inline-flex min-h-[44px] items-center justify-center rounded-full border-[1.5px] border-[var(--ink)] bg-surface px-4 font-semibold text-[var(--ink)] no-underline">Review</Link>}
                       </div>
                     </li>

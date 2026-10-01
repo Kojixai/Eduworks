@@ -32,8 +32,29 @@ export function textSafe(hex: string, min = 4.6): string {
   for (let i = 0; i < 30 && (contrast(c, "#ffffff") < min || contrast(c, t) < min); i++) c = mix(c, "#000000", 0.08);
   return c;
 }
+function hue(hex: string): number {
+  const [r, g, b] = hexToRgb(hex).map((v) => v / 255);
+  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+  if (d < 0.02) return -1; // grey
+  const h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  return (h * 60 + 360) % 360;
+}
+/**
+ * Book content carries its own section colours. On screen they are mapped onto the Learn Works accents by hue, so the
+ * books match the rest of the site without touching the verified content files.
+ */
+export function brandColour(hex: string): string {
+  const h = hue(hex);
+  if (h < 0) return "#14213d";
+  if (h < 20 || h >= 330) return "#ff8fab"; // reds and magentas -> pink
+  if (h < 70) return "#ffb627";              // oranges and yellows -> amber
+  if (h < 165) return "#c4e538";             // greens -> lime
+  if (h < 200) return "#19c3b1";             // teals and cyans -> turquoise
+  if (h < 262) return "#4da3ff";             // blues -> sky
+  return "#ff8fab";                          // purples -> pink
+}
 /** CSS custom properties for a section: --c (brand), --ct (text-safe), --cb (tint background). */
 export function sectionVars(hex: string): Record<string, string> {
-  const base = /^#[0-9a-fA-F]{6}$/.test(hex) ? hex : "#2360A8";
+  const base = brandColour(/^#[0-9a-fA-F]{6}$/.test(hex) ? hex : "#2360A8");
   return { "--c": base, "--ct": textSafe(base), "--cb": tint(base), "--cbd": mix(base, "#ffffff", 0.7) };
 }

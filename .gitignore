@@ -21,3 +21,4 @@ test-shots/
 !.env.example
 .claude/worktrees/
 dist/
+.next-*/

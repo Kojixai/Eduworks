@@ -1,5 +1,5 @@
-import { SUPPORT_EMAIL } from "@/practice/config";
-import { PATHS, PUBLISHER, TAGLINE } from "./brand";
+import { COMPANY } from "@/lib/company";
+import { COPYRIGHT_HOLDER, PATHS, TAGLINE } from "./brand";
 import { Logo } from "./Logo";
 
 const link = (href: string, label: string) => (
@@ -16,7 +16,7 @@ export function SiteFooter() {
             <a href="/" className="ip-footer-logo-link ip-footer-logo">
               <Logo />
             </a>
-            <p className="ip-footer-paragraph">{TAGLINE}. No adverts, no chat, no trackers.</p>
+            <p className="ip-footer-paragraph">{TAGLINE}.</p>
           </div>
           <nav className="ip-footer-nav" aria-label="Explore">
             <h2>Explore</h2>
@@ -38,11 +38,11 @@ export function SiteFooter() {
             <h2>Your account</h2>
             <a href={PATHS.login} className="ip-footer-link-alt">Log in</a>
             <a href={PATHS.enterCode} className="ip-footer-link-alt">Enter book code</a>
-            <a href={`mailto:${SUPPORT_EMAIL}`} className="ip-footer-link-alt ip-underline">{SUPPORT_EMAIL}</a>
+            <a href={`mailto:${COMPANY.email}`} className="ip-footer-link-alt ip-underline">{COMPANY.email}</a>
           </div>
         </div>
         <div className="ip-copyrigh-content">
-          <div className="ip-copyright-text">Copyright &copy; {year} {PUBLISHER}. All rights reserved.</div>
+          <div className="ip-copyright-text">Copyright &copy; {year} Learn Works, {COPYRIGHT_HOLDER}, UK. All rights reserved.</div>
           <div className="ip-copyright-menu">
             <a href="#top" className="ip-footer-menu-link">Back to top</a>
           </div>

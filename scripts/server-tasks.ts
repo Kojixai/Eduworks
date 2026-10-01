@@ -9,6 +9,8 @@
  *   remove-demo      delete the demo parent, its learners and all their data
  *   content          reload the content tables (curriculum, lessons, papers, questions, phonics ...) from data/jsonl. Never touches
  *                    accounts or progress. Run after a harvest: `node dist/server-tasks.cjs content`
+ *   maintenance      nightly housekeeping the privacy notice promises: order-number hashes deleted once a book's access has ended, security
+ *                    records (hashed email/IP) after 30 days, expired login sessions, staff activity log after 12 months
  *   backup           consistent copy of the database to $BACKUP_DIR (default /var/backups/learnworks), keeps the newest 14
  *   generate-codes   --books a,b --count N [--kind title|copy]: make access codes. Only hashes are stored; the plain codes
  *                    are printed ONCE to the terminal (and to --out file if given). Needs CODE_PEPPER.
@@ -88,6 +90,16 @@ async function removeDemo() {
   console.log("demo parent and its data removed");
 }
 
+async function maintenance() {
+  const now = new Date();
+  const ago = (days: number) => new Date(now.getTime() - days * 864e5).toISOString();
+  await store.update("redemptions", { expires_at: { op: "lte", value: now.toISOString() } }, { order_hash: null });
+  const a = await store.delete("redeem_attempts", { created_at: { op: "lt", value: ago(30) } });
+  const b = await store.delete("auth_sessions", { expires_at: { op: "lt", value: now.toISOString() } });
+  const c = await store.delete("admin_audit", { created_at: { op: "lt", value: ago(365) } });
+  console.log(`maintenance: ${a} security records, ${b} expired sessions, ${c} old staff log entries removed; expired order hashes cleared`);
+}
+
 async function backup() {
   const dir = process.env.BACKUP_DIR ?? "/var/backups/learnworks";
   fs.mkdirSync(dir, { recursive: true, mode: 0o700 });
@@ -127,8 +139,9 @@ async function generate() {
   else if (task === "demo-activity") await demoActivity();
   else if (task === "remove-demo") await removeDemo();
   else if (task === "content") { await loadContentFromJsonl(store, store.db); console.log(await importInkworks(store, { demoCodesActive: demoCodesAllowed() })); }
+  else if (task === "maintenance") await maintenance();
   else if (task === "backup") await backup();
   else if (task === "generate-codes") await generate();
-  else if (task !== "migrate") { console.error("usage: server-tasks <migrate|import|content|cleanup|demo-activity|remove-demo|backup|generate-codes>"); process.exit(2); }
+  else if (task !== "migrate") { console.error("usage: server-tasks <migrate|import|content|cleanup|maintenance|demo-activity|remove-demo|backup|generate-codes>"); process.exit(2); }
   await store.close();
 })();

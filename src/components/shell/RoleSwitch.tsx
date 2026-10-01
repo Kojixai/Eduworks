@@ -13,7 +13,7 @@ export function RoleSwitch({ current }: { current: View }) {
           name="view"
           value={v}
           aria-pressed={v === current}
-          className={`min-h-[40px] rounded-full px-4 text-sm font-semibold ${v === current ? "bg-[var(--violet)] text-[var(--ink)]" : "text-[var(--ink)] hover:bg-[var(--peach)]"}`}
+          className={`min-h-[40px] rounded-full px-4 text-sm font-semibold ${v === current ? "bg-[var(--c-pink)] text-[var(--ink)]" : "text-[var(--ink)] hover:bg-[var(--c-cream)]"}`}
         >
           {LABEL[v]}
         </button>

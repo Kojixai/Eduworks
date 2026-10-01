@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <>
       <a className="ip-skip-link" href="#main">Skip to the main content</a>
-      <SiteNav loggedIn={!!parent} />
+      <SiteNav loggedIn={!!parent && !parent.is_preview} />
       <main id="main">
         <Hero />
         <Statement />

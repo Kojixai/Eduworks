@@ -1,4 +1,4 @@
-// Access codes and Amazon order numbers. Shared by the browser, the server and scripts.
+// Access codes and order numbers. Shared by the browser, the server and scripts.
 
 /** Letters and digits that cannot be confused when printed: no 0/O, 1/I/L, 5/S, 2/Z, 8/B. */
 export const CODE_ALPHABET = "ACDEFGHJKMNPQRTUVWXY34679";
@@ -26,7 +26,7 @@ export function generateCode(randomBytes: (n: number) => Uint8Array, length = 8)
   return "INK" + out.join("");
 }
 
-/** Amazon order numbers look like 203-1234567-1234567 (3-7-7 digits). */
+/** Order numbers look like 203-1234567-1234567 (3-7-7 digits). */
 export const ORDER_RE = /^\d{3}-\d{7}-\d{7}$/;
 
 export function normaliseOrderNumber(input: string): string {

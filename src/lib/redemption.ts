@@ -3,7 +3,7 @@
  * Rules (docs/INKWORKS_MERGE_BRIEF.txt):
  *  - Accounts are for adults (18+), or students 13+ on KS3/KS4 books only. Children under 13 are profiles, never accounts.
  *  - Access codes are stored as a peppered hash (demo codes excepted); per-title and per-copy codes both work.
- *  - The Amazon order number is optional (unless ORDER_NUMBER=required), format-checked only, stored as a keyed hash,
+ *  - The order number is required by default (ORDER_NUMBER=optional|off to relax), format-checked only, stored as a keyed hash,
  *    cleared when access ends, and one order unlocks a book on at most 3 accounts.
  *  - Mailing list is a separate, unticked, adult-only choice; access never depends on it.
  *  - Redeeming is rate limited: 5 failures an hour per account or 20 per IP, then a 15-minute cool-down.

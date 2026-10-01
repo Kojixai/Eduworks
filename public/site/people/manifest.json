@@ -1,0 +1,74 @@
+{
+  "y3maths": {
+    "file": "y3maths.png",
+    "width": 809,
+    "height": 1100,
+    "alt": "A smiling red-haired girl holding up a paper strip of the numbers 1 to 10 for counting"
+  },
+  "y8maths": {
+    "file": "y8maths.png",
+    "width": 518,
+    "height": 918,
+    "alt": "A confident teenage boy in a red and green hoodie with a school backpack, standing arms crossed"
+  },
+  "ks2reading10": {
+    "file": "ks2reading10.png",
+    "width": 1100,
+    "height": 759,
+    "alt": "A smiling girl in school uniform sitting at a desk with a large open book"
+  },
+  "ks3english": {
+    "file": "ks3english.png",
+    "width": 579,
+    "height": 832,
+    "alt": "A smiling young teenager in a tie-dye T-shirt writing in a notebook"
+  },
+  "gcse_englang": {
+    "file": "gcse_englang.png",
+    "width": 780,
+    "height": 1100,
+    "alt": "A teenage girl with headphones round her neck and a backpack, smiling as she writes in a pink notebook"
+  },
+  "y3reading": {
+    "file": "y3reading.png",
+    "width": 886,
+    "height": 1100,
+    "alt": "A smiling young boy in a white shirt sitting cross-legged with a picture book"
+  },
+  "feature-1": {
+    "file": "feature-1.png",
+    "width": 598,
+    "height": 1100,
+    "alt": "A cheerful schoolgirl with a backpack, holding a book and waving"
+  },
+  "feature-2": {
+    "file": "feature-2.png",
+    "width": 774,
+    "height": 1100,
+    "alt": "A smiling teenage boy in a yellow T-shirt sitting cross-legged and using a tablet"
+  },
+  "who-parent": {
+    "file": "who-parent.png",
+    "width": 891,
+    "height": 950,
+    "alt": "A father leaning over to help his smiling daughter with her homework"
+  },
+  "who-teacher": {
+    "file": "who-teacher.png",
+    "width": 727,
+    "height": 1100,
+    "alt": "A friendly teacher in glasses and a black blazer, holding a folder and a marker pen"
+  },
+  "who-student": {
+    "file": "who-student.png",
+    "width": 874,
+    "height": 1100,
+    "alt": "A smiling student sitting cross-legged with a laptop on her knees"
+  },
+  "who-years": {
+    "file": "who-years.png",
+    "width": 789,
+    "height": 1100,
+    "alt": "Two smiling schoolchildren of different ages sharing a tablet together"
+  }
+}

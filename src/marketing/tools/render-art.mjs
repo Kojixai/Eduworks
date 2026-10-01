@@ -33,6 +33,6 @@ for (const n of [32, 192, 512]) await sharp(fav).resize(n, n).png().toFile(join(
 const apple = await raster(read("favicon.svg").replace('rx="14"', 'rx="0"'), 64, 64);
 await sharp(apple).resize(180, 180).png().toFile(join(site, "apple-touch-icon.png"));
 await sharp(await raster(read("og.svg"), 1200, 630)).png().toFile(join(site, "og.png"));
-await sharp(await raster(read("images/post-privacy.svg"), 620, 400)).webp({ quality: 90 }).toFile(join(site, "images", "post-privacy.webp"));
+for (const n of ["post-privacy", "post-books", "post-curriculum"]) await sharp(await raster(read(`images/${n}.svg`), 620, 400)).webp({ quality: 90 }).toFile(join(site, "images", `${n}.webp`));
 await browser.close();
 console.log("artwork rendered to public/site");

@@ -6,8 +6,8 @@ export type RedeemFailure = "rate_limited" | "bad_order" | "missing_order" | "ba
 
 export const REDEEM_MESSAGES: Record<RedeemFailure, { error: string; field: string; status: number }> = {
   rate_limited: { error: "Too many tries. Please wait 15 minutes and try again.", field: "code", status: 429 },
-  bad_order: { error: "Amazon order numbers look like 203-1234567-1234567 (3, 7 and 7 digits).", field: "orderNumber", status: 400 },
-  missing_order: { error: "Enter your Amazon order number.", field: "orderNumber", status: 400 },
+  bad_order: { error: "Order numbers look like 203-1234567-1234567 (3, 7 and 7 digits).", field: "orderNumber", status: 400 },
+  missing_order: { error: "Enter your order number.", field: "orderNumber", status: 400 },
   bad_code: {
     error:
       CODE_MODE === "copy"

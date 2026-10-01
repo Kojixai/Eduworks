@@ -1,4 +1,4 @@
-# mylearn.works (LearnWorks)
+# Learn Works (mylearn.works)
 
 Free online practice that goes with Inkworks Press books, plus open curriculum content (Oak National Academy, GOV.UK / STA) for Key Stages 1 to 4.
 Live at <https://www.mylearn.works>. Next.js 15, SQLite (`better-sqlite3`), Tailwind 4, no build step on the server.
@@ -41,7 +41,8 @@ node scripts/e2e-mobile.mjs                 # phone-width pass: overflow and tap
 | `CODE_PEPPER` | none (required in production) | Keys the hashes of access codes, order numbers, IPs and PINs. Generated on the first deploy. **Never change or lose it** or every printed code stops working |
 | `ACCESS_MONTHS` | `6` | How long a code unlocks a book |
 | `CODE_MODE` | `title` | `title` (one code shared by every copy) or `copy` (unique per copy) |
-| `ORDER_NUMBER` | `optional` | Amazon order number: `optional`, `required` or `off`. Format-checked only, stored as a keyed hash, deleted when access ends |
+| `ORDER_NUMBER` | `required` | The order number at sign-up: `required`, `optional` or `off`. Format-checked only, stored as a keyed hash, deleted when access ends |
+| `PREVIEW_MODE` | `1` on the live server for now | `1` lets anyone browse every screen without logging in as a shared sample family (the back office stays locked). **Set to `0` before launch** |
 | `ADMIN_EMAIL`, `ADMIN_PASSWORD` | none | Creates or updates the admin login at deploy. Without them, the default demo admin is deleted |
 | `ALLOW_DEMO_CODES` | unset | `1` lets the `DEMO-*` codes work in production. Leave unset |
 

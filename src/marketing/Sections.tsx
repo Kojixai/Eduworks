@@ -3,6 +3,7 @@ import { accessLength } from "@/practice/config";
 import { PATHS, PUBLISHER } from "./brand";
 import type { BookSection } from "./books";
 import { faqEntries } from "./faq";
+import { person } from "./people";
 
 const fmt = (n: number) => n.toLocaleString("en-GB");
 
@@ -31,20 +32,59 @@ function Arrows({ label, green }: { label: string; green?: boolean }) {
   );
 }
 
+
+/** "Enter your book code" and "Log in", always side by side. */
+function CtaPair({ tone = "ip-two", onDark = false }: { tone?: string; onDark?: boolean }) {
+  return (
+    <div className="ip-cta-pair">
+      <div className="ip-btn-wrapper">
+        <a className={`ip-primary-button ${tone}`} href={PATHS.enterCode}>
+          <span className="ip-button-hover-bg" aria-hidden="true" />
+          <span className="ip-button-content"><span className="ip-btn-label ip-black">Enter your book code</span></span>
+        </a>
+      </div>
+      <div className="ip-btn-wrapper">
+        <a className={`ip-primary-button ip-outline${onDark ? " ip-on-dark" : ""}`} href={PATHS.login}>
+          <span className="ip-button-content"><span className="ip-btn-label">Log in</span></span>
+        </a>
+      </div>
+    </div>
+  );
+}
+
 /* ------------------------------------------------------------------ Hero */
 
-const STRIP = [
-  ["strip-1.webp", 230, 282], ["strip-2.webp", 251, 283], ["strip-3.webp", 230, 282], ["strip-4.webp", 230, 282],
-  ["strip-5.webp", 230, 282], ["strip-6.webp", 230, 282], ["strip-7.webp", 230, 282],
-] as const;
+type Icon = "times" | "plus" | "triangle" | "divide" | "circle" | "equals" | "square";
+const TILES: { icon: Icon; bg: string; arch: boolean }[] = [
+  { icon: "times", bg: "var(--c-pink)", arch: true }, { icon: "plus", bg: "var(--c-amber)", arch: false }, { icon: "triangle", bg: "var(--c-sky)", arch: true },
+  { icon: "divide", bg: "var(--c-lime)", arch: false }, { icon: "circle", bg: "var(--c-teal)", arch: true }, { icon: "equals", bg: "var(--c-pink)", arch: false },
+  { icon: "square", bg: "var(--c-amber)", arch: true },
+];
 
-function StripList({ eager }: { eager: boolean }) {
+/** Bold maths symbols and simple shapes in coloured arches and pills (drawn here, no pictures). */
+function Glyph({ icon }: { icon: Icon }) {
+  const k = { stroke: "var(--ink)", strokeWidth: 15, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, fill: "none" };
+  switch (icon) {
+    case "times": return <path d="M82 118 148 184M148 118 82 184" {...k} />;
+    case "plus": return <path d="M115 112V190M76 151H154" {...k} />;
+    case "divide": return <><path d="M72 151H158" {...k} /><circle cx="115" cy="117" r="7" fill="var(--ink)" /><circle cx="115" cy="185" r="7" fill="var(--ink)" /></>;
+    case "equals": return <path d="M76 133H154M76 169H154" {...k} />;
+    case "circle": return <circle cx="115" cy="151" r="42" {...k} />;
+    case "square": return <rect x="77" y="113" width="76" height="76" rx="8" {...k} />;
+    case "triangle": return <path d="M115 112 156 188H74Z" {...k} />;
+  }
+}
+
+function StripList() {
   return (
     <ul className="ip-ticker-list ip-ticker-flex ip-list-unstyled">
-      {STRIP.map(([f, w, h]) => (
-        <li className="ip-ticker-item" key={f}>
+      {TILES.map((t, i) => (
+        <li className="ip-ticker-item" key={i}>
           <div className="ip-ticker-image-wrap">
-            <img src={`/site/images/${f}`} width={w} height={h} alt="" loading={eager ? "eager" : "lazy"} />
+            <svg viewBox="0 0 230 282" width="230" height="282" aria-hidden="true" focusable="false">
+              <path d={t.arch ? "M0 282V115a115 115 0 0 1 230 0V282Z" : "M0 115a115 115 0 0 1 230 0V167a115 115 0 0 1-230 0Z"} fill={t.bg} />
+              <Glyph icon={t.icon} />
+            </svg>
           </div>
         </li>
       ))}
@@ -67,25 +107,14 @@ export function Hero() {
             </p>
           </div>
           <div className="ip-banner-button">
-            <div className="ip-btn-wrapper">
-              <a className="ip-primary-button ip-two" href={PATHS.enterCode}>
-                <span className="ip-button-hover-bg" aria-hidden="true" />
-                <span className="ip-button-content"><span className="ip-btn-label">Enter your book code</span></span>
-              </a>
-            </div>
-            <a className="ip-video-lightbox" href="#how">
-              <span className="ip-video-button">
-                <img src="/site/how-icon.svg" width={36} height={36} alt="" />
-                <span className="ip-btn-label-alt">See how it works</span>
-              </span>
-            </a>
+            <CtaPair />
           </div>
         </div>
       </div>
       <div className="ip-ticker" aria-hidden="true">
         <div className="ip-ticker-track">
-          <StripList eager />
-          <StripList eager={false} />
+          <StripList />
+          <StripList />
         </div>
       </div>
     </section>
@@ -108,7 +137,7 @@ export function Statement() {
         <div className="ip-content">
           <a className="ip-down-arrow" href="#how" aria-label="Go to how it works">
             <svg viewBox="0 0 70 70" fill="none" aria-hidden="true">
-              <path d="M35 8V60M17 42L35 60L53 42" stroke="#0e0f18" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M35 8V60M17 42L35 60L53 42" stroke="#14213d" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <span className="ip-button-hover-bg ip-white" aria-hidden="true" />
           </a>
@@ -158,7 +187,8 @@ export function HowItWorks() {
 
 /* ---------------------------------------------------------------- Books */
 
-const BTN = ["", "ip-orange", "ip-violet", "ip-aquamarine"];
+const BTN = ["", "ip-tone-teal", "ip-tone-pink", "ip-tone-lime"];
+const TONES = ["--c-amber", "--c-sky", "--c-pink", "--c-lime", "--c-teal", "--c-pink"];
 
 export function Books({ data }: { data: BookSection }) {
   const { books } = data;
@@ -183,9 +213,19 @@ export function Books({ data }: { data: BookSection }) {
             <ul className="ip-carousel-list">
               {books.map((b, i) => (
                 <li className="ip-speaker-slide" key={b.id}>
-                  <div className="ip-speaker-image">
-                    <img className="ip-slider-image" src={b.image} width={420} height={540} alt="" loading={i < 3 ? "eager" : "lazy"} />
-                  </div>
+                  {(() => {
+                    const who = b.isPhoto ? null : person(b.id);
+                    return who ? (
+                      <div className="ip-speaker-image ip-has-person" style={{ background: `var(${TONES[i % TONES.length]})` }}>
+                        <span className="ip-person-disc" aria-hidden="true" />
+                        <img className="ip-person" src={who.file} width={who.width} height={who.height} alt={who.alt} loading={i < 3 ? "eager" : "lazy"} />
+                      </div>
+                    ) : (
+                      <div className="ip-speaker-image">
+                        <img className="ip-slider-image" src={b.image} width={420} height={540} alt="" loading={i < 3 ? "eager" : "lazy"} />
+                      </div>
+                    );
+                  })()}
                   <span className="ip-card-place ip-card-pill"><span className="ip-card-pill-text">{b.pill}</span></span>
                   <div className="ip-speaker-info">
                     <h3 className="ip-speaker-name">{b.title}</h3>
@@ -227,7 +267,7 @@ export function Features() {
               <div className="ip-overflow-hidden ip-mb-25">
                 <div className="ip-feature-category"><div className="ip-feature-tag">What you get</div></div>
               </div>
-              <Heading className="ip-inner-section-title" lines={["10 new questions for every", "page of your book"]} />
+              <Heading className="ip-inner-section-title" lines={["10 new questions", "for every page", "of your book"]} />
               <p className="ip-make-the-most-paragraph">
                 Every page of the book is a topic online, with 10 new questions on it. There are 9 question types, with diagrams and reading texts with line numbers.
                 Each answer is marked instantly, with a short worked explanation.
@@ -236,14 +276,14 @@ export function Features() {
           </div>
           <div className="ip-col ip-half ip-column">
             <div className="ip-pick-thumb-wrap">
-              <img src="/site/images/feature-student.webp" width={466} height={601} alt="A smiling student carrying books" className="ip-pick-image" loading="lazy" />
+              <img src="/site/people/feature-1.png" width={598} height={1100} alt={person("feature-1")?.alt ?? "A cheerful schoolgirl holding a book"} className="ip-pick-image ip-pick-person" loading="lazy" />
             </div>
           </div>
         </div>
         <div className="ip-split-b ip-row">
           <div className="ip-col ip-half ip-col-alt">
             <div className="ip-pick-thumb-wrap ip-two">
-              <img src="/site/images/feature-phone.webp" width={471} height={606} alt="A smiling person holding a phone" className="ip-pick-image" loading="lazy" />
+              <img src="/site/people/feature-2.png" width={774} height={1100} alt={person("feature-2")?.alt ?? "A smiling teenager using a tablet"} className="ip-pick-image ip-pick-person" loading="lazy" />
             </div>
           </div>
           <div className="ip-col ip-half">
@@ -257,6 +297,7 @@ export function Features() {
             </div>
           </div>
         </div>
+        <div className="ip-features-cta"><CtaPair /></div>
       </div>
     </section>
   );
@@ -265,10 +306,10 @@ export function Features() {
 /* ------------------------------------------------------------ Who it is for */
 
 const WHO = [
-  { pill: "Adults", t: "Parents and guardians", p: "Create 1 account, add a profile for each child and follow their progress on the dashboard.", img: "who-parent.webp", tone: "", alt: "A smiling woman with long dark hair" },
-  { pill: "Adults", t: "Teachers", p: "A teacher can hold the account too, with a simple profile for each child.", img: "who-teacher.webp", tone: "ip-green", alt: "A smiling man in a suit and glasses" },
-  { pill: "Aged 13+", t: "Students aged 13 and over", p: "Can have their own account for the KS3 and GCSE books.", img: "who-student.webp", tone: "ip-yellow", alt: "A smiling woman with curly hair" },
-  { pill: "KS1 to KS4", t: "Key Stages 1 to 4", p: "Free curriculum practice for every Key Stage, once you are logged in.", img: "who-years.webp", tone: "ip-gold", alt: "A smiling woman giving a thumbs up" },
+  { pill: "Adults", t: "Parents and guardians", p: "Create 1 account, add a profile for each child and follow their progress on the dashboard.", slot: "who-parent", tone: "" },
+  { pill: "Adults", t: "Teachers", p: "A teacher can hold the account too, with a simple profile for each child.", slot: "who-teacher", tone: "ip-tone-lime" },
+  { pill: "Aged 13+", t: "Students aged 13 and over", p: "Can have their own account for the KS3 and GCSE books.", slot: "who-student", tone: "ip-tone-teal" },
+  { pill: "KS1 to KS4", t: "Key Stages 1 to 4", p: "Free curriculum practice for every Key Stage, once you are logged in.", slot: "who-years", tone: "ip-tone-amber" },
 ];
 
 export function WhoFor() {
@@ -288,7 +329,7 @@ export function WhoFor() {
             {WHO.map((w) => (
               <li className="ip-who-item" key={w.t}>
                 <div className={`ip-who-image ${w.tone}`}>
-                  <img className="ip-slider-image" src={`/site/images/${w.img}`} width={420} height={500} alt={w.alt} loading="lazy" />
+                  {(() => { const pp = person(w.slot); return pp ? <img className="ip-person" src={pp.file} width={pp.width} height={pp.height} alt={pp.alt} loading="lazy" /> : null; })()}
                 </div>
                 <div className="ip-who-info">
                   <span className="ip-card-place"><span className="ip-card-pill-text">{w.pill}</span></span>
@@ -307,15 +348,15 @@ export function WhoFor() {
 /* ------------------------------------------------ What every topic gives you */
 
 function TopicIcon({ kind }: { kind: number }) {
-  const fills = ["#f4c857", "#c291fe", "#3ee1a6", "#ff9e4f", "#8ab9ff"];
+  const fills = ["#ffb627", "#ff8fab", "#c4e538", "#19c3b1", "#a8d1ff"];
   const label = ["10", "9", "", "80%", "1 3 7"][kind];
   return (
     <svg viewBox="0 0 80 80" aria-hidden="true">
-      <circle cx="40" cy="40" r="39" fill={fills[kind]} stroke="#0e0f18" strokeWidth="1.5" />
+      <circle cx="40" cy="40" r="39" fill={fills[kind]} stroke="#14213d" strokeWidth="1.5" />
       {kind === 2 ? (
-        <path d="M45 14L24 44H39L35 66L56 36H41Z" fill="#0e0f18" />
+        <path d="M45 14L24 44H39L35 66L56 36H41Z" fill="#14213d" />
       ) : (
-        <text x="40" y="40" textAnchor="middle" dominantBaseline="central" fontFamily="gloock, Georgia, serif" fontSize={label.length > 3 ? 21 : label.length > 2 ? 26 : 34} fill="#0e0f18">{label}</text>
+        <text x="40" y="40" textAnchor="middle" dominantBaseline="central" fontFamily="gloock, Georgia, serif" fontSize={label.length > 3 ? 21 : label.length > 2 ? 26 : 34} fill="#14213d">{label}</text>
       )}
     </svg>
   );
@@ -339,12 +380,7 @@ export function TopicGives() {
             <p className="ip-section-paragraph ip-mb-50" style={{ marginTop: 28 }}>
               Every page of your book has its own topic online. This is what each one has inside.
             </p>
-            <div className="ip-btn-wrapper">
-              <a className="ip-primary-button ip-white" href={PATHS.enterCode}>
-                <span className="ip-button-hover-bg" aria-hidden="true" />
-                <span className="ip-button-content"><span className="ip-btn-label ip-black">Enter your book code</span></span>
-              </a>
-            </div>
+            <CtaPair tone="ip-white" />
           </div>
           <div className="ip-col ip-half">
             <div className="ip-topic-row-wrap">
@@ -379,13 +415,18 @@ export function OurPromise() {
         <div className="ip-promise-wrapper">
           <div className="ip-feature-category ip-quote-pill"><div className="ip-feature-tag">Our promise</div></div>
           <img className="ip-promise-mark" src="/site/images/star-violet.png" width={60} height={60} alt="" loading="lazy" />
-          <h2 className="ip-quote-content" id="promise-title">No adverts. No chat. No trackers. No streaks or points. Nothing sold.</h2>
-          <p className="ip-promise-extra">The mailing list is optional and for adults only. Your access never depends on it.</p>
+          <h2 className="ip-quote-content" id="promise-title">No outside adverts. No chat. No ad trackers. We never sell your information.</h2>
+          <ul className="ip-promise-list">
+            <li>The only things you will ever see us promote are our own books.</li>
+            <li>There is no chat. Nobody can message your child.</li>
+            <li>The only tracking is your child&rsquo;s own progress, shown on your dashboard.</li>
+            <li>The mailing list is optional and for adults only. Your access never depends on it.</li>
+          </ul>
           <div className="ip-promise-actions">
             <div className="ip-btn-wrapper">
               <a className="ip-primary-button" href={PATHS.privacy}>
                 <span className="ip-button-hover-bg" aria-hidden="true" />
-                <span className="ip-button-content"><span className="ip-btn-label">Read the privacy page</span></span>
+                <span className="ip-button-content"><span className="ip-btn-label ip-black">Read the privacy notice</span></span>
               </a>
             </div>
           </div>
@@ -400,19 +441,19 @@ export function OurPromise() {
 export function Explore({ bookCount }: { bookCount: number }) {
   const cards = [
     {
-      img: "/site/images/post-study.webp", w: 620, h: 400, alt: "Two people working through a book together",
+      img: "/site/images/post-books.webp", w: 620, h: 400, alt: "",
       m1: "Books", m2: "Needs a book code", t: "Look through the books and their topics", href: PATHS.books,
       p: `${bookCount > 0 ? `All ${bookCount} books` : "Every book"} are listed, with the topics inside each one. Your code unlocks the practice for the book you own.`,
     },
     {
-      img: "/site/images/post-laptop.webp", w: 620, h: 400, alt: "Two people with a laptop on an exercise mat",
+      img: "/site/images/post-curriculum.webp", w: 620, h: 400, alt: "",
       m1: "Curriculum practice", m2: "Log in to use it", t: "Free practice for Key Stages 1 to 4", href: PATHS.learn,
       p: "Lessons, quizzes, past-paper style practice, phonics screening check practice and times tables check practice, built from open data (Oak National Academy and the Standards and Testing Agency, Open Government Licence).",
     },
     {
       img: "/site/images/post-privacy.webp", w: 620, h: 400, alt: "",
       m1: "Privacy", m2: "Your data", t: "How we look after your data", href: PATHS.privacy,
-      p: "No adverts, no chat, no trackers, nothing sold. You can download or delete your data from the Account page.",
+      p: "No outside adverts, no chat and no ad trackers. You can download or delete your data from your Account page.",
     },
   ];
   return (
@@ -476,14 +517,14 @@ export function Faq() {
       <div className="ip-container">
         <div className="ip-row">
           <div className="ip-col" style={{ textAlign: "center" }}>
-            <Heading id="faq-title" className="ip-section-title ip-center" lines={["Frequently", "asked questions"]} />
+            <Heading id="faq-title" className="ip-section-title ip-center" lines={["Questions", "you might have"]} />
             <div className="ip-section-padding" />
           </div>
         </div>
         <div className="ip-row">
           <div className="ip-col">
             <div className="ip-faq-item-wrap">
-              <ul className="ip-faq-list">
+              <ul className="ip-faq-list ip-faq-two">
                 {items.map((f, i) => (
                   <li className="ip-faq-item" key={f.q}>
                     <h3 className="ip-h3">
@@ -519,13 +560,7 @@ export function Cta() {
               The code is on a page inside the front cover. Type it in to unlock that book&rsquo;s online practice for {accessLength()} from the day you enter it.
             </p>
             <div className="ip-cta-actions">
-              <div className="ip-btn-wrapper">
-                <a className="ip-primary-button" href={PATHS.enterCode}>
-                  <span className="ip-button-hover-bg" aria-hidden="true" />
-                  <span className="ip-button-content"><span className="ip-btn-label">Enter your book code</span></span>
-                </a>
-              </div>
-              <p className="ip-cta-login">Already have an account? <a href={PATHS.login}>Log in</a></p>
+              <CtaPair tone="ip-white" />
             </div>
           </div>
         </div>

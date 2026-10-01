@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/site/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#fee4d2", colorScheme: "light" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#fff0cf", colorScheme: "light" };
 
 // The marketing site has its own root layout so its stylesheet never touches the app pages.
 // The styles, fonts and script are plain files in public/site (see src/marketing/tools for the generated artwork).

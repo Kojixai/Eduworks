@@ -5,18 +5,18 @@
  */
 :root {
   /* colour */
-  --color-bg: #fff6ef;          /* page background: light peach */
+  --color-bg: #fff8e6;          /* page background: butter cream */
   --color-surface: #ffffff;     /* cards */
-  --color-surface-muted: #fff0e6;
-  --color-border: #e7cdb9;
-  --color-text: #0e0f18;
-  --color-text-muted: #55525c;
-  --color-primary: #0e0f18;     /* buttons, links: ink */
-  --color-primary-hover: #2a2b38;
-  --color-primary-soft: #fee4d2;
+  --color-surface-muted: #fff1cc;
+  --color-border: #e6d3a3;
+  --color-text: #14213d;
+  --color-text-muted: #4d5670;
+  --color-primary: #14213d;     /* buttons, links: ink */
+  --color-primary-hover: #2d3a5e;
+  --color-primary-soft: #fff0cf;
   --color-on-primary: #ffffff;
   --color-success: #11683f;
-  --color-success-soft: #d8f7ea;
+  --color-success-soft: #e6f6d6;
   --color-danger: #b3261e;
   --color-danger-soft: #fbe9e6;
   --color-warning: #7a4d00;
@@ -24,29 +24,29 @@
   --color-star: #e0a100;
 
   /* data visualisation: muted, print-like, distinguishable without relying on colour alone (label every series) */
-  --chart-1: #ff5c4c;           /* coral: main series */
-  --chart-2: #3ee1a6;           /* aquamarine */
-  --chart-3: #c291fe;           /* violet */
-  --chart-4: #f4c857;           /* gold */
-  --chart-5: #ff9e4f;           /* orange */
+  --chart-1: #4da3ff;           /* sky: main series */
+  --chart-2: #c4e538;           /* lime */
+  --chart-3: #ff8fab;           /* pink */
+  --chart-4: #ffb627;           /* amber */
+  --chart-5: #19c3b1;           /* turquoise */
   --chart-6: #8a8f98;           /* grey */
-  --chart-grid: #f0d9c8;
-  --chart-track: #f6e3d4;
-  --chart-secure: #1fb585;      /* mastery: secure */
-  --chart-practising: #f4c857;  /* mastery: practising */
-  --chart-notstarted: #ead8c9;  /* mastery: not started */
+  --chart-grid: #efe0b8;
+  --chart-track: #f5e8c6;
+  --chart-secure: #2f9e5b;      /* mastery: secure */
+  --chart-practising: #ffb627;  /* mastery: practising */
+  --chart-notstarted: #e8dcb9;  /* mastery: not started */
   --card-pad: 20px;
 
   /* Connect brand palette (from the cloned template): use for accents, never for body text on white */
-  --ink: #0e0f18;
-  --peach: #fee4d2;
-  --peach-deep: #fbcfb1;
-  --coral: #ff5c4c;
-  --violet: #c291fe;
-  --aqua: #3ee1a6;
-  --gold: #f4c857;
-  --orange: #ff9e4f;
-  --outline: 1.5px solid var(--ink);   /* the template's black card outline */
+  --ink: #14213d;
+  --c-cream: #fff0cf;
+  --c-cream-deep: #ffe2a0;
+  --c-sky: #4da3ff;
+  --c-pink: #ff8fab;
+  --c-lime: #c4e538;
+  --c-amber: #ffb627;
+  --c-teal: #19c3b1;
+  --outline: 1.5px solid var(--ink);   /* navy card outline */
 
   /* type */
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;

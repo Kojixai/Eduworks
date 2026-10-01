@@ -11,7 +11,7 @@ export function hashIp(ip: string, pepper: string): string {
 }
 
 /**
- * Keyed (salted) hash of an Amazon order number, per book. The same order number for the same book always gives the
+ * Keyed (salted) hash of an order number, per book. The same order number for the same book always gives the
  * same hash, so we can limit how many accounts use it, but the number itself cannot be read back from the database.
  */
 export function hashOrder(order: string, bookId: string, pepper: string): string {

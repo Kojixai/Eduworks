@@ -1,4 +1,4 @@
-import { BRAND, PATHS } from "./brand";
+import { PATHS } from "./brand";
 import { Logo } from "./Logo";
 
 const MENU = [
@@ -23,11 +23,11 @@ export function SiteNav({ loggedIn }: { loggedIn: boolean }) {
 
           <div className="ip-nav-right-content">
             <div className="ip-btn-wrapper">
-              <a className="ip-primary-button" href={loggedIn ? PATHS.dashboard : PATHS.enterCode}>
+              <a className="ip-primary-button" href={loggedIn ? PATHS.dashboard : PATHS.login}>
                 <span className="ip-button-hover-bg" aria-hidden="true" />
                 <span className="ip-button-content">
                   <img className="ip-media-main" src="/site/book-icon.svg" width={24} height={24} alt="" />
-                  <span className="ip-btn-label">{loggedIn ? "Open dashboard" : "Enter book code"}</span>
+                  <span className="ip-btn-label">{loggedIn ? "Open dashboard" : "Log in"}</span>
                 </span>
               </a>
             </div>
@@ -39,6 +39,7 @@ export function SiteNav({ loggedIn }: { loggedIn: boolean }) {
                 {MENU.map((m) => (
                   <li key={m.href}><a className="ip-nav-link" href={m.href}>{m.label}</a></li>
                 ))}
+                <li><a className="ip-nav-link" href={PATHS.enterCode}>Enter your book code</a></li>
                 <li>
                   <a className="ip-nav-link ip-btn" href={loggedIn ? PATHS.dashboard : PATHS.login}>{loggedIn ? "Dashboard" : "Log in"}</a>
                 </li>

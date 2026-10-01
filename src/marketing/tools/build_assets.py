@@ -14,10 +14,10 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 OUT = os.path.join(ROOT, 'src', 'marketing', 'art')   # SVG sources; render-art.mjs writes the rasters into public/site
-BRAND_WORD, BRAND_SUB = 'Inkworks', 'Practice'
+BRAND_WORD, BRAND_SUB = 'Learn', 'Works'
 
 DARK, VIOLET, GREEN, GOLD, ORANGE, CORAL, PEACH, CREAM, BLUE, SALMON, WHITE = (
-    '#0e0f18', '#c291fe', '#3ee1a6', '#f4c857', '#ff9e4f', '#ff5c4c', '#fee4d2', '#fff8ef', '#8ab9ff', '#ff9e7d', '#ffffff')
+    '#14213d', '#ff8fab', '#c4e538', '#ffb627', '#19c3b1', '#4da3ff', '#fff0cf', '#fffaf0', '#a8d1ff', '#ffc2d1', '#ffffff')
 class _Text:
     """Stands in for the old outline font: returns a <text> element and a width estimate (good enough to place shapes)."""
     def path(self, s, size, x, y, fill=None):
@@ -45,13 +45,12 @@ def write(rel, text):
 # ---------- logo ----------
 # The wordmark in the header and footer is HTML text (see src/marketing/Logo.tsx). Only the social card needs it as artwork.
 def wordmark(x, y, size, dark=DARK):
-    return (f'<text x="{x}" y="{y}" font-size="{size}" {FONT} fill="{dark}">Ink<tspan fill="{CORAL}">w</tspan>orks '
-            f'<tspan font-size="{round(size*0.56)}">Practice</tspan></text>')
+    return (f'<text x="{x}" y="{y}" font-size="{size}" {FONT} fill="{dark}">{BRAND_WORD} {BRAND_SUB}</text>')
 
 # ---------- favicon ----------
 def favicon():
     return ('<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">'
-            f'<rect width="64" height="64" rx="14" fill="{DARK}"/>' + T('I', 50, 32, 48, PEACH, 'text-anchor="middle"') +
+            f'<rect width="64" height="64" rx="14" fill="{DARK}"/>' + T('L', 48, 32, 47, PEACH, 'text-anchor="middle"') +
             f'<circle cx="48" cy="44" r="6.5" fill="none" stroke="{CORAL}" stroke-width="3.5"/></svg>\n')
 write('favicon.svg', favicon())
 
@@ -147,6 +146,18 @@ lock = (f'<path d="M232 190V140a78 78 0 0 1 156 0V190" fill="none" {S} stroke-wi
         + rect(196, 180, 228, 170, GOLD, 22) + circ(310, 246, 24, DARK, False) + f'<path d="M298 258H322L328 310H292Z" fill="{DARK}"/>')
 write('images/post-privacy.svg', f'<svg xmlns="http://www.w3.org/2000/svg" width="620" height="400" viewBox="0 0 620 400" aria-hidden="true"><rect width="620" height="400" fill="{VIOLET}"/>'
       + circ(90, 90, 44, GREEN) + star(540, 80, 40, CORAL, 8, .4) + circ(520, 330, 26, CREAM) + rect(40, 300, 110, 22, CREAM, 11) + lock + '</svg>\n')
+
+# ---------- "where to go next" cards (620 x 400) ----------
+def card_art(name, bg, body):
+    write(f'images/{name}.svg', f'<svg xmlns="http://www.w3.org/2000/svg" width="620" height="400" viewBox="0 0 620 400" aria-hidden="true"><rect width="620" height="400" fill="{bg}"/>{body}</svg>\n')
+book = lambda x, y, w, h, fill, rot: f'<g transform="rotate({rot} {x + w/2} {y + h/2})">' + rect(x, y, w, h, fill, 10) + rect(x + 16, y + h/2 - 7, w - 32, 14, CREAM, 7, stroke=False) + '</g>'
+card_art('post-books', AMBER if False else GOLD, circ(520, 84, 44, SALMON) + star(86, 330, 38, VIOLET, 8, .4)
+         + book(150, 250, 320, 62, CORAL, -2) + book(176, 186, 270, 60, GREEN, 3) + book(160, 126, 300, 58, VIOLET, -3)
+         + T('10', 120, 470, 330, DARK, 'text-anchor="middle"'))
+card_art('post-curriculum', CORAL, ''.join(f'<path d="M0 {y}H620" stroke="{CREAM}" stroke-opacity=".5" stroke-width="2"/>' for y in (100, 200, 300))
+         + ''.join(f'<path d="M{x} 0V400" stroke="{CREAM}" stroke-opacity=".5" stroke-width="2"/>' for x in (155, 310, 465))
+         + circ(232, 150, 52, VIOLET) + rect(364, 98, 104, 104, GOLD, 12) + f'<polygon points="232,236 292,340 172,340" fill="{GREEN}" {S}/>'
+         + circ(388, 288, 40, CREAM) + T('KS1-4', 56, 520, 372, DARK, 'text-anchor="middle"'))
 
 # ---------- social card (1200 x 630) ----------
 write('og.svg', f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="{PEACH}"/>'

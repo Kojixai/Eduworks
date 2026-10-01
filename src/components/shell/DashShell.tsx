@@ -6,14 +6,14 @@ import { IconAdmin, IconBooks, IconChart, IconCurriculum, IconHome, IconUser } f
 type Item = { href: string; label: string; icon: () => ReactNode; key: string };
 
 /** Layout for the logged-in home screens: a slim icon rail, the main column and an optional right-hand panel. */
-export function DashShell({ view, active, isAdmin, aside, children }: { view: View; active: string; isAdmin?: boolean; aside?: ReactNode; children: ReactNode }) {
+export function DashShell({ view, active, isAdmin, adminHref = "/admin", aside, children }: { view: View; active: string; isAdmin?: boolean; adminHref?: string; aside?: ReactNode; children: ReactNode }) {
   const home = view === "child" ? "/me" : "/dashboard";
   const items: Item[] = [
     { key: "home", href: home, label: view === "child" ? "Home" : "Dashboard", icon: view === "child" ? IconHome : IconChart },
     { key: "books", href: "/books", label: "Books", icon: IconBooks },
     { key: "learn", href: "/learn", label: "Curriculum", icon: IconCurriculum },
     ...(view !== "child" ? [{ key: "account", href: "/account", label: "Account", icon: IconUser }] : []),
-    ...(isAdmin ? [{ key: "admin", href: "/admin", label: "Back office", icon: IconAdmin }] : []),
+    ...(isAdmin ? [{ key: "admin", href: adminHref, label: "Back office", icon: IconAdmin }] : []),
   ];
   return (
     <div className={`mx-auto grid max-w-[1320px] gap-5 px-4 pb-24 pt-5 lg:pb-10 ${aside ? "lg:grid-cols-[84px_minmax(0,1fr)_340px]" : "lg:grid-cols-[84px_minmax(0,1fr)]"}`}>
@@ -23,7 +23,7 @@ export function DashShell({ view, active, isAdmin, aside, children }: { view: Vi
             key={it.key}
             href={it.href}
             aria-current={it.key === active ? "page" : undefined}
-            className={`group relative grid h-12 w-12 place-items-center rounded-2xl text-[var(--ink)] no-underline ${it.key === active ? "bg-[var(--violet)]" : "hover:bg-[var(--peach)]"}`}
+            className={`group relative grid h-12 w-12 place-items-center rounded-2xl text-[var(--ink)] no-underline ${it.key === active ? "bg-[var(--c-pink)]" : "hover:bg-[var(--c-cream)]"}`}
           >
             <it.icon />
             <span className="sr-only">{it.label}</span>

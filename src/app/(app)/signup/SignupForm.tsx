@@ -44,7 +44,7 @@ export function SignupForm({ years, orderMode }: { years: { id: string; name: st
           </Field>
         )}
         {orderMode !== "off" && (
-          <Field label={orderMode === "required" ? "Amazon order number" : "Amazon order number (optional)"} htmlFor="orderNumber" error={e.orderNumber} hint="Looks like 203-1234567-1234567. Find it in Your Orders on Amazon.">
+          <Field label={orderMode === "required" ? "Order number" : "Order number (optional)"} htmlFor="orderNumber" error={e.orderNumber} hint="Find it on your purchase confirmation. It looks like 203-1234567-1234567.">
             <Input id="orderNumber" name="orderNumber" defaultValue={v.orderNumber} inputMode="numeric" placeholder="203-1234567-1234567" />
             <details className="mt-1 text-sm"><summary className="flex min-h-[44px] cursor-pointer items-center text-primary">Why do we ask for this?</summary><p className="mt-1 text-muted">{ORDER_WHY}</p></details>
           </Field>

@@ -44,6 +44,7 @@ ssh "$HOST" "set -e; cd $DIR
   node dist/server-tasks.cjs import
   [ \"${1:-}\" = \"--content\" ] && node dist/server-tasks.cjs content || true
   node dist/server-tasks.cjs cleanup
-  printf '17 3 * * * root cd $DIR && set -a && . ./.env && set +a && NODE_ENV=production node dist/server-tasks.cjs backup >> /var/log/learnworks-backup.log 2>&1\n' > /etc/cron.d/learnworks-backup
+  printf '17 3 * * * root cd $DIR && set -a && . ./.env && set +a && NODE_ENV=production node dist/server-tasks.cjs backup >> /var/log/learnworks-backup.log 2>&1\n37 3 * * * root cd $DIR && set -a && . ./.env && set +a && NODE_ENV=production node dist/server-tasks.cjs maintenance >> /var/log/learnworks-backup.log 2>&1\n' > /etc/cron.d/learnworks-backup
+  grep -q '^PREVIEW_MODE=' .env || echo 'PREVIEW_MODE=1' >> .env
   pm2 startOrReload ecosystem.config.cjs --update-env && pm2 save >/dev/null"
 echo "==> live: https://www.mylearn.works/"

@@ -63,7 +63,7 @@ export function recommend(i: RecommendInput): { items: Recommendation[]; struggl
   const rows: Row[] = i.books.filter((b) => i.owned.has(b.meta.id)).flatMap((book) =>
     book.units.map((unit) => ({ book, unit, st: unitStatus(byUnit.get(unit.id) ?? [], today), kw: keywords(unit.title) })));
 
-  const colourOf = (b: BookSummary, section: string) => b.meta.sections.find((s) => s.id === section)?.colour ?? "#ff5c4c";
+  const colourOf = (b: BookSummary, section: string) => b.meta.sections.find((s) => s.id === section)?.colour ?? "#4da3ff";
   const mk = (r: Row, kind: RecKind, reason: string): Recommendation => ({
     id: `${kind}:${r.unit.id}`, kind, title: r.unit.title, reason, href: `/books/${r.book.meta.id}/${r.unit.id}`,
     bookId: r.book.meta.id, bookTitle: r.book.meta.title, pct: r.st.sessions ? Math.round(r.st.bestPct * 100) : null, colour: colourOf(r.book, r.unit.section),
@@ -105,7 +105,7 @@ export function recommend(i: RecommendInput): { items: Recommendation[]; struggl
   for (const b of locked.slice(0, Math.min(2, room || 1))) {
     out.push({
       id: `unlock:${b.meta.id}`, kind: "unlock", title: b.meta.title, reason: `Comes with the printed book. ${b.units.length} topics, ${b.units.reduce((n, u) => n + u.questionCount, 0).toLocaleString("en-GB")} questions.`,
-      href: `/books/${b.meta.id}`, bookId: b.meta.id, bookTitle: b.meta.title, pct: null, colour: b.meta.sections[0]?.colour ?? "#c291fe",
+      href: `/books/${b.meta.id}`, bookId: b.meta.id, bookTitle: b.meta.title, pct: null, colour: b.meta.sections[0]?.colour ?? "#ff8fab",
     });
   }
 

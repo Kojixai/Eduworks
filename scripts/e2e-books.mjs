@@ -62,11 +62,12 @@ page.on("console", (m) => m.type() === "error" && !/favicon|Failed to load resou
 const shot = async (name) => page.screenshot({ path: path.join(OUT, `${String(++n).padStart(2, "0")}-${name}.png`), fullPage: true });
 const email = `e2e${Date.now()}@example.com`;
 
-// sign up with the first book, order number left blank
+// sign up with the first book (the order number is required)
 await page.goto(`${BASE}/signup`);
 await page.getByLabel("Book code").fill(demoCode("y3maths"));
 await page.getByLabel("Your name").fill("Jo Bell");
 await page.getByLabel("Email", { exact: true }).fill(email);
+await page.getByLabel("Order number").fill("202-1234567-7654321");
 await page.getByLabel("Password").fill("a long family password");
 await page.getByLabel(/I am 18 or over/).check();
 await page.getByLabel(/I agree to the/).check();
@@ -80,7 +81,8 @@ for (const [b] of VISITS.slice(1)) {
   await page.getByLabel("Book code").fill(demoCode(b));
   await page.getByLabel("Your name").fill("Jo Bell");
   await page.getByLabel("Email", { exact: true }).fill(email);
-  await page.getByLabel("Password").fill("a long family password");
+  await page.getByLabel("Order number").fill("202-1234567-7654321");
+await page.getByLabel("Password").fill("a long family password");
   await page.getByLabel(/I am 18 or over/).check();
   await page.getByLabel(/I agree to the/).check();
   await page.getByRole("button", { name: "Unlock my book" }).click();

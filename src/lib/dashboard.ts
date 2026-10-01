@@ -91,7 +91,7 @@ export function buildDashboard(i: DashboardInput): DashboardData {
   const focus: FocusItem[] = [];
   const sections: SectionProgress[] = [];
   for (const b of i.books.filter((x) => i.unlocked.has(x.meta.id))) {
-    const row: BookMastery = { bookId: b.meta.id, title: b.meta.title, colour: b.meta.sections[0]?.colour ?? "#1F4E8C", secure: 0, practising: 0, notStarted: 0, due: 0, total: b.units.length, started: 0 };
+    const row: BookMastery = { bookId: b.meta.id, title: b.meta.title, colour: b.meta.sections[0]?.colour ?? "#14213d", secure: 0, practising: 0, notStarted: 0, due: 0, total: b.units.length, started: 0 };
     for (const u of b.units) {
       const st: UnitStatus = unitStatus(byUnit.get(u.id) ?? [], today);
       if (st.state === "secure") row.secure++;

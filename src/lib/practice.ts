@@ -67,7 +67,7 @@ export interface Access { bookId: string; expiresAt: string; active: boolean }
 export async function accessFor(parentId: string): Promise<Access[]> {
   const store = await getStore();
   const me = await store.first<{ is_admin: number }>("parents", { where: { id: parentId }, columns: ["is_admin"] });
-  if (me?.is_admin) {
+  if (me?.is_admin || parentId === "preview-parent") {
     const ids = (await store.select<{ id: string }>("practice_books", { columns: ["id"] })).map((b) => b.id);
     return ids.map((bookId) => ({ bookId, expiresAt: "2099-12-31T00:00:00.000Z", active: true }));
   }

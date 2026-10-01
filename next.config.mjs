@@ -2,6 +2,8 @@
 const nextConfig = {
   serverExternalPackages: ["better-sqlite3"],
   poweredByHeader: false,
+  // lets two builds (for example a test build and a deploy build) run side by side without trampling each other
+  distDir: process.env.NEXT_DIST_DIR || ".next",
   eslint: { ignoreDuringBuilds: true },
   outputFileTracingExcludes: { "*": [".work/**", "data/jsonl/**", "tests/**"] },
   async headers() {

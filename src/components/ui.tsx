@@ -32,7 +32,7 @@ export function PageHeader({ title, subtitle, back, actions }: { title: ReactNod
 
 export function Card({ children, className, title, id }: { children: ReactNode; className?: string; title?: ReactNode; id?: string }) {
   return (
-    <section id={id} className={cx("rounded-[var(--radius-lg)] border border-border bg-surface p-4 shadow-[var(--shadow-card)]", className)}>
+    <section id={id} className={cx("rounded-[var(--radius-lg)] border-[1.5px] border-[var(--ink)] bg-surface p-4", className)}>
       {title && <h2 className="mb-2 text-[length:var(--font-size-lg)] font-semibold">{title}</h2>}
       {children}
     </section>
@@ -42,10 +42,10 @@ export function Card({ children, className, title, id }: { children: ReactNode; 
 type Variant = "primary" | "secondary" | "ghost" | "danger";
 const btn = (v: Variant, full?: boolean) =>
   cx(
-    "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[var(--radius-md)] px-4 py-2 text-[length:var(--font-size-md)] font-medium no-underline transition-colors disabled:opacity-50",
-    v === "primary" && "bg-primary text-on-primary hover:bg-primary-hover",
-    v === "secondary" && "border border-border bg-surface text-ink hover:bg-surface-muted",
-    v === "ghost" && "text-primary hover:bg-primary-soft",
+    "inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border-[1.5px] border-[var(--ink)] px-6 py-2 text-[length:var(--font-size-md)] font-semibold no-underline transition-colors disabled:opacity-50",
+    v === "primary" && "bg-[var(--c-lime)] text-[var(--ink)] hover:brightness-95",
+    v === "secondary" && "bg-surface text-ink hover:bg-surface-muted",
+    v === "ghost" && "border-transparent text-ink underline hover:bg-primary-soft",
     v === "danger" && "bg-danger text-on-primary",
     full && "w-full",
   );

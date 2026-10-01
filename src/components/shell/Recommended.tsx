@@ -3,10 +3,10 @@ import type { Recommendation, StrugglingArea } from "@/lib/recommend";
 import { IconLock, IconSpark } from "./icons";
 
 const KIND: Record<Recommendation["kind"], { chip: string; bg: string }> = {
-  review: { chip: "Ready again", bg: "var(--gold)" },
-  strengthen: { chip: "Build on it", bg: "var(--violet)" },
-  next: { chip: "Up next", bg: "var(--aqua)" },
-  unlock: { chip: "In the book", bg: "var(--peach-deep)" },
+  review: { chip: "Ready again", bg: "var(--c-amber)" },
+  strengthen: { chip: "Build on it", bg: "var(--c-pink)" },
+  next: { chip: "Up next", bg: "var(--c-lime)" },
+  unlock: { chip: "In the book", bg: "var(--c-cream-deep)" },
 };
 
 /** The right-hand panel: what to do next, and why. Playable items first, locked books last. */
@@ -18,7 +18,7 @@ export function Recommended({ items, struggling, heading = "Recommended for you"
       </h2>
       {struggling.length > 0 && (
         <p className="m-0 text-sm text-muted">
-          Keeping an eye on: {struggling.map((s) => <span key={s.word} className="mr-1 inline-block rounded-full bg-[var(--peach)] px-2.5 py-0.5 text-[var(--ink)]">{s.word}</span>)}
+          Keeping an eye on: {struggling.map((s) => <span key={s.word} className="mr-1 inline-block rounded-full bg-[var(--c-cream)] px-2.5 py-0.5 text-[var(--ink)]">{s.word}</span>)}
         </p>
       )}
       {items.length === 0 && <p className="m-0 rounded-[var(--radius-lg)] border-[1.5px] border-dashed border-[var(--ink)]/40 p-4 text-sm text-muted">Recommendations appear after the first practice.</p>}
