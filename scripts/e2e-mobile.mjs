@@ -36,6 +36,7 @@ await page.waitForTimeout(800);
 await page.goto(BASE + "/unlock?next=/dashboard");
 if (page.url().includes("/unlock")) { /* no PIN set on the demo parent, so it redirects */ }
 await check("dashboard", "/dashboard?child=demo-child-sam&period=30");
+await check("me", "/me");
 await check("book", "/books/y3maths");
 await check("unit", "/books/y3maths/y3maths-u03");
 await check("practice", "/books/y3maths/y3maths-u03/practice");
