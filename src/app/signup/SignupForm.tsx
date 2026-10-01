@@ -46,7 +46,7 @@ export function SignupForm({ years, orderMode }: { years: { id: string; name: st
         {orderMode !== "off" && (
           <Field label={orderMode === "required" ? "Amazon order number" : "Amazon order number (optional)"} htmlFor="orderNumber" error={e.orderNumber} hint="Looks like 203-1234567-1234567. Find it in Your Orders on Amazon.">
             <Input id="orderNumber" name="orderNumber" defaultValue={v.orderNumber} inputMode="numeric" placeholder="203-1234567-1234567" />
-            <details className="mt-1 text-sm"><summary className="cursor-pointer text-primary">Why do we ask for this?</summary><p className="mt-1 text-muted">{ORDER_WHY}</p></details>
+            <details className="mt-1 text-sm"><summary className="flex min-h-[44px] cursor-pointer items-center text-primary">Why do we ask for this?</summary><p className="mt-1 text-muted">{ORDER_WHY}</p></details>
           </Field>
         )}
         <Field label="Password" htmlFor="password" error={e.password} hint="At least 8 characters. Already have an account? Use its password to add this book.">

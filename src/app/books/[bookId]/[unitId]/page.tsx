@@ -8,6 +8,7 @@ import { formatPages } from "@/practice/format";
 import { localDay, pct, unitStatus } from "@/practice/mastery";
 import { StatusText } from "@/practice/components/StatusText";
 import { TextPanel } from "@/practice/components/TextPanel";
+import { GrownUpNote } from "@/practice/components/GrownUpNote";
 
 type P = { params: Promise<{ bookId: string; unitId: string }> };
 export async function generateMetadata({ params }: P): Promise<Metadata> {
@@ -65,6 +66,7 @@ export default async function UnitPage({ params }: P) {
                         : "10 questions, one at a time. Each answer is marked straight away with an explanation."}
                   </p>
                   <Link className="btn btn-section" href={`/books/${bookId}/${unitId}/practice`} data-testid="start-practice">{st.sessions ? "Practise again" : "Start practice"}</Link>
+                  <GrownUpNote name={child.first_name} />
                   {latest.length > 0 && (
                     <details className="disclose" style={{ marginTop: 12 }}>
                       <summary>Past scores</summary>

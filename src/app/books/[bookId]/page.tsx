@@ -7,6 +7,7 @@ import { sectionVars } from "@/practice/colour";
 import { formatPages } from "@/practice/format";
 import { groupByUnit, localDay, unitStatus } from "@/practice/mastery";
 import { ProgressRing } from "@/practice/components/ProgressRing";
+import { GrownUpNote } from "@/practice/components/GrownUpNote";
 
 type P = { params: Promise<{ bookId: string }> };
 export async function generateMetadata({ params }: P): Promise<Metadata> {
@@ -37,6 +38,7 @@ export default async function BookPage({ params }: P) {
         <div style={{ marginTop: 24 }}>
           {!ok && <GateNotice gate={gate} here={`/books/${bookId}`} />}
           {ok && !child && <ChooseLearner next={`/books/${bookId}`} />}
+          {ok && child && <GrownUpNote name={child.first_name} />}
         </div>
         {b.meta.sections.map((sec) => {
           const units = b.units.filter((u) => u.section === sec.id);

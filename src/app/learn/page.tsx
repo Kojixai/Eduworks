@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { requireChild } from "@/lib/auth";
 import { keyStages, subjectsFor, yearGroups } from "@/lib/repo";
+import { GrownUpNote } from "@/practice/components/GrownUpNote";
 import { Alert, ButtonLink, Card, Grid, ListLink, Page, PageHeader } from "@/components/ui";
 
 export const metadata = { title: "Learn" };
@@ -22,6 +23,7 @@ export default async function Learn({ searchParams }: { searchParams: Promise<{ 
   return (
     <Page>
       <PageHeader title={`What will ${child.first_name} practise?`} subtitle="Choose a key stage, year and subject." />
+      <div className="-mt-2 mb-3"><GrownUpNote name={child.first_name} /></div>
       <div className="mb-3 flex flex-wrap gap-2" role="navigation" aria-label="Key stage">
         {kss.map((k) => (
           <Link key={k.id} href={`/learn?ks=${k.id}`} className={chip(k.id === ks)}>

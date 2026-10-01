@@ -4,6 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import { getBook, sessionsFor } from "@/lib/practice";
 import { gateFor } from "../../../access";
 import { sectionVars } from "@/practice/colour";
+import { GrownUpNote } from "@/practice/components/GrownUpNote";
 import { addDays, localDay, pct, unitStatus } from "@/practice/mastery";
 
 export const metadata: Metadata = { title: "Results", robots: { index: false } };
@@ -48,6 +49,7 @@ export default async function ResultsPage({ params, searchParams }: { params: Pr
           <div className="score-big" aria-label={`Score ${p} percent`}>{p}%</div>
           <p style={{ fontFamily: "var(--head)", fontWeight: 500 }}>{session.correctCount} out of {session.questionCount} questions right first time ({session.score} of {session.maxScore} marks)</p>
           <p className="muted" style={{ maxWidth: "34em", margin: "0 auto" }}>{message}</p>
+          <GrownUpNote />
           {rTotal > 0 && <p className="small muted" style={{ marginTop: 12 }}>On the second go {rRight} of {rTotal} were right.</p>}
         </div>
         <div className="row" style={{ justifyContent: "center" }}>
