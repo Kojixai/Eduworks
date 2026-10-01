@@ -10,6 +10,9 @@ import { DEFAULT_SQLITE_PATH } from "../src/lib/db";
 import { CONTENT_TABLES, pkFor } from "../src/lib/db/store";
 import { seedDemo } from "./seed-demo";
 
+const BUILT_AT = new Date().toISOString();
+const VOLATILE: Record<string, string[]> = { sources: ["created_at", "updated_at"], ingest_checkpoints: ["updated_at"], coverage_matrix: ["computed_at"], dataset_stats: ["computed_at"] };
+
 export async function buildDb(dbPath = DEFAULT_SQLITE_PATH, force = false) {
   const manifestPath = path.join(process.cwd(), "data", "jsonl", "manifest.json");
   const store = new SqliteStore(dbPath);
@@ -27,6 +30,8 @@ export async function buildDb(dbPath = DEFAULT_SQLITE_PATH, force = false) {
       for (const p of e.parts) {
         const lines = fs.readFileSync(path.join(process.cwd(), p.file), "utf8").split("\n").filter(Boolean);
         const rows = lines.map((l) => JSON.parse(l));
+        // the export strips volatile timestamps (see export-jsonl.ts); the columns are NOT NULL, so restore them
+        for (const r of rows) for (const c of VOLATILE[table] ?? []) r[c] ??= BUILT_AT;
         for (let i = 0; i < rows.length; i += 2000) await store.upsert(table, rows.slice(i, i + 2000), pkFor(table));
         n += rows.length;
       }
