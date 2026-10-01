@@ -7,6 +7,8 @@
  *                    admins preview the parent and child views with the "view as" switcher and sample data instead.
  *   demo-activity    DEMO ONLY: give the demo parent three books and three weeks of practice so the dashboard has data
  *   remove-demo      delete the demo parent, its learners and all their data
+ *   content          reload the content tables (curriculum, lessons, papers, questions, phonics ...) from data/jsonl. Never touches
+ *                    accounts or progress. Run after a harvest: `node dist/server-tasks.cjs content`
  *   backup           consistent copy of the database to $BACKUP_DIR (default /var/backups/learnworks), keeps the newest 14
  *   generate-codes   --books a,b --count N [--kind title|copy]: make access codes. Only hashes are stored; the plain codes
  *                    are printed ONCE to the terminal (and to --out file if given). Needs CODE_PEPPER.
@@ -17,6 +19,7 @@ import { SqliteStore } from "../src/lib/db/sqlite";
 import { DEFAULT_SQLITE_PATH } from "../src/lib/db";
 import fs from "node:fs";
 import path from "node:path";
+import { loadContentFromJsonl } from "../src/lib/db/jsonl-import";
 import { importInkworks, demoCodesAllowed } from "../src/practice/importer";
 import { generateCode, formatCode } from "../src/practice/codes";
 import { hashCode } from "../src/practice/hash";
@@ -123,8 +126,9 @@ async function generate() {
   else if (task === "cleanup") await cleanup();
   else if (task === "demo-activity") await demoActivity();
   else if (task === "remove-demo") await removeDemo();
+  else if (task === "content") { await loadContentFromJsonl(store, store.db); console.log(await importInkworks(store, { demoCodesActive: demoCodesAllowed() })); }
   else if (task === "backup") await backup();
   else if (task === "generate-codes") await generate();
-  else if (task !== "migrate") { console.error("usage: server-tasks <migrate|import|cleanup|demo-activity|remove-demo|backup|generate-codes>"); process.exit(2); }
+  else if (task !== "migrate") { console.error("usage: server-tasks <migrate|import|content|cleanup|demo-activity|remove-demo|backup|generate-codes>"); process.exit(2); }
   await store.close();
 })();
