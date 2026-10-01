@@ -22,9 +22,10 @@ npm run build
 mkdir -p dist
 npx esbuild scripts/server-tasks.ts --bundle --platform=node --target=node20 --external:better-sqlite3 --outfile=dist/server-tasks.cjs --log-level=warning --alias:@=./src
 
+ssh "$HOST" "mkdir -p $DIR/.next $DIR/content/inkworks $DIR/dist"
 rsync -az --delete .next/ "$HOST:$DIR/.next/"
 rsync -az --delete content/inkworks/ "$HOST:$DIR/content/inkworks/"
-rsync -az dist/server-tasks.cjs "$HOST:$DIR/dist/server-tasks.cjs" 2>/dev/null || { ssh "$HOST" "mkdir -p $DIR/dist"; rsync -az dist/server-tasks.cjs "$HOST:$DIR/dist/server-tasks.cjs"; }
+rsync -az dist/server-tasks.cjs "$HOST:$DIR/dist/server-tasks.cjs"
 
 if [ "${1:-}" = "--seed-db" ]; then
   echo "==> seeding data/db (one time; overwrites the server database)"
