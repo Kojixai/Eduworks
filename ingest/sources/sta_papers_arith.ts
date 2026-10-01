@@ -78,7 +78,7 @@ export function normaliseMath(s: string): string {
   t = t.replace(/[½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅒]/g, (c) => ` ${VULGAR[c]}`);
   t = t.replace(/[²³]/g, (c) => SUPER[c]);
   t = t.replace(/[−–—]/g, "-");
-  t = t.replace(/[□☐▢■]|_{2,}|\?/g, " X ");
+  t = t.replace(/[□☐▢■]|\[\s*\]|_{2,}|\?/g, " X ");
   // thousands separators
   t = t.replace(/\b(\d{1,3})((?:,\d{3})+)(?![\d])/g, (_m, a: string, b: string) => a + b.replace(/,/g, ""));
   return t.replace(/\s+/g, " ").trim();
@@ -305,7 +305,8 @@ export function computeLine(line: string): ExprResult | null {
  * expressions and column layouts ("2 7 4 3" over "× 2 6").
  */
 export function computeQuestion(text: string): ExprResult | null {
-  const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
+  // STA's arithmetic font maps the multiplication and division signs to the glyphs "{" and "}" in the PDF text layer
+  const lines = text.split("\n").map((l) => l.replace(/\{/g, "×").replace(/\}/g, "÷").trim()).filter(Boolean);
   for (let i = 0; i + 1 < lines.length; i++) {
     const top = lines[i].match(/^(\d(?: ?\d)*)$/);
     const bot = lines[i + 1].match(/^([×x+\-−÷])\s*(\d(?: ?\d)*)$/);
@@ -318,7 +319,13 @@ export function computeQuestion(text: string): ExprResult | null {
   for (const l of lines) {
     if (!/[+\-−×x÷%=]|\bof\b/i.test(l)) continue;
     const r = computeLine(l);
-    if (r) return r;
+    if (r) {
+      // other numeric lines mean parts of the question were not read in order (a mixed number or
+      // stacked fraction whose whole part / numerator sits on its own line): do not trust the expression
+      const stray = lines.filter((o) => o !== l && /\d/.test(o) && !/^(show|your|method)\b/i.test(o));
+      if (stray.length) return null;
+      return r;
+    }
   }
   return null;
 }

@@ -164,7 +164,7 @@ export const SOURCES: SourceDef[] = [
     licence_evidence_url: "https://www.gov.uk/government/collections/national-curriculum-assessments-past-test-materials",
     kind: "papers",
     attribution_text: `${OGL_ATTRIBUTION} Key stage 1 test materials, Standards and Testing Agency.`,
-    probe_url: "https://assets.publishing.service.gov.uk/",
+    probe_url: "https://assets.publishing.service.gov.uk/media/682dc2d8e9440506ee9538ef/2025_KS2_mathematics_Paper1_arithmetic.pdf", // a published STA asset: the bare host answers 404
   },
   {
     id: "sta_phonics",

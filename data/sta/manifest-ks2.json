@@ -1,0 +1,458 @@
+{
+ "source_id": "sta_ks2",
+ "key_stage": "ks2",
+ "collection_url": "https://www.gov.uk/government/collections/national-curriculum-assessments-past-test-materials",
+ "generated_at": "2026-10-01T10:28:14.736Z",
+ "entries": [
+  {
+   "year": 2024,
+   "kind": "gps_questions",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2024 key stage 2 English grammar, punctuation and spelling Paper 1: questions",
+   "url": "https://assets.publishing.service.gov.uk/media/664dbfb8bd01f5ed32794010/STA248814e_2024_ks2_English_GPS_Paper1_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "gps_spelling",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2024 key stage 2 English grammar, punctuation and spelling Paper 2: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/664dbfd84f29e1d07fadcc58/STA248815e_2024_ks2_English_GPS_Paper2_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2024 key stage 2 English grammar, punctuation and spelling - administering Paper 1: questions",
+   "url": "https://assets.publishing.service.gov.uk/media/664dbff6b7249a4c6e9d3923/STA248828e_2024_ks2_English_GPS_Administering_Paper1_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2024 key stage 2 English grammar, punctuation and spelling - administering Paper 2: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/664dc010b7249a4c6e9d3924/STA248829e_2024_ks2_English_GPS_Administering_Paper2_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "mark_scheme",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2024 key stage 2 English grammar, punctuation and spelling mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/664dc027993111924d9d397b/STA248816e_2024_ks2_English_GPS_Mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "reading_booklet",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2024 key stage 2 English reading booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/664dc1c9ae748c43d3793ff6/STA248811e_2024_ks2_English_reading_Reading_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 English reading test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "reading_answer",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2024 key stage 2 English reading answer booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/664dc1d8f34f9b5a56adcc23/STA248810e_2024_ks2_English_reading_Reading_answer_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 English reading test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "mark_scheme",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2024 key stage 2 English reading mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/664dc202f34f9b5a56adcc26/STA248812e_2024_ks2_English_reading_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 English reading test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "maths_arithmetic",
+   "subject": "maths",
+   "paper_number": 1,
+   "title": "2024 key stage 2 mathematics Paper 1: arithmetic",
+   "url": "https://assets.publishing.service.gov.uk/media/664dc7a9bd01f5ed32794027/STA248817e_2024_ks2_mathematics_Paper1_arithmetic.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 mathematics test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "maths_reasoning",
+   "subject": "maths",
+   "paper_number": 2,
+   "title": "2024 key stage 2 mathematics Paper 2: reasoning",
+   "url": "https://assets.publishing.service.gov.uk/media/664dc7b6f34f9b5a56adcc33/STA248818e_2024_ks2_mathematics_Paper2_reasoning.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 mathematics test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "maths_reasoning",
+   "subject": "maths",
+   "paper_number": 3,
+   "title": "2024 key stage 2 mathematics Paper 3: reasoning",
+   "url": "https://assets.publishing.service.gov.uk/media/664dc7c14f29e1d07fadcc6f/STA248819e_2024_ks2_mathematics_Paper3_reasoning.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 mathematics test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "mark_scheme",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2024 key stage 2 mathematics mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/664dc7cdbd01f5ed3279402a/STA248820e_2024_ks2_mathematics_Mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 mathematics test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "copyright_report",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2024 copyright ownership: key stage 2 national curriculum tests",
+   "url": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-grammar-punctuation-and-spelling-test-materials/2024-copyright-ownership-key-stage-2-national-curriculum-tests",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "copyright_report",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2024 copyright ownership: key stage 2 national curriculum tests",
+   "url": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-reading-test-materials/2024-copyright-ownership-key-stage-2-national-curriculum-tests",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 English reading test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "copyright_report",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2024 copyright ownership: key stage 2 national curriculum tests",
+   "url": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-mathematics-test-materials/2024-copyright-ownership-key-stage-2-national-curriculum-tests",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2024-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2024 mathematics test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "gps_questions",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2025 key stage 2 English grammar, punctuation and spelling Paper 1: questions",
+   "url": "https://assets.publishing.service.gov.uk/media/682dbbc6baff3dab99775152/2025_KS2_English_GPS_Paper1_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "copyright_report",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2025 copyright ownership: key stage 2 national curriculum tests",
+   "url": "https://assets.publishing.service.gov.uk/media/682dbdada599d03a16bff37e/2025_copyright_ownership_Key_Stage_2_national_curriculum_tests.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "reading_answer",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2025 key stage 2 English reading answer booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/682dbe67a599d03a16bff380/2025_KS2_English_reading_answer_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 English reading test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "reading_booklet",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2025 key stage 2 English reading booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/682dbf58baff3dab99775154/2025_KS2_English_reading_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 English reading test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "mark_scheme",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2025 key stage 2 English reading mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/682dbf86baff3dab99775155/2025_KS2_English_reading_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 English reading test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "copyright_report",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2025 copyright ownership: key stage 2 national curriculum tests",
+   "url": "https://assets.publishing.service.gov.uk/media/682dc0a77fb7a7d9cd775159/2025_copyright_ownership_Key_Stage_2_national_curriculum_tests.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 English reading test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "mark_scheme",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2025 key stage 2 English grammar, punctuation and spelling mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/682dc190baff3dab99775157/2025_KS2_English_GPS_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2025 key stage 2 English grammar, punctuation and spelling – administering Paper 1: questions",
+   "url": "https://assets.publishing.service.gov.uk/media/682dc1a0e9440506ee9538ee/2025_KS2_English_GPS_administering_Paper1_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "gps_spelling",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2025 key stage 2 English grammar, punctuation and spelling Paper 2: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/682dc23aa599d03a16bff382/2025_KS2_English_GPS_Paper2_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2025 key stage 2 English grammar, punctuation and spelling – administering Paper 2: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/682dc258a599d03a16bff383/2025_KS2_English_GPS_administering_Paper2_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "maths_arithmetic",
+   "subject": "maths",
+   "paper_number": 1,
+   "title": "2025 key stage 2 mathematics Paper 1: arithmetic",
+   "url": "https://assets.publishing.service.gov.uk/media/682dc2d8e9440506ee9538ef/2025_KS2_mathematics_Paper1_arithmetic.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 mathematics test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "maths_reasoning",
+   "subject": "maths",
+   "paper_number": 2,
+   "title": "2025 key stage 2 mathematics Paper 2: reasoning",
+   "url": "https://assets.publishing.service.gov.uk/media/682dc30b7fb7a7d9cd77515a/2025_KS2_mathematics_Paper2_reasoning.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 mathematics test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "maths_reasoning",
+   "subject": "maths",
+   "paper_number": 3,
+   "title": "2025 key stage 2 mathematics Paper 3: reasoning",
+   "url": "https://assets.publishing.service.gov.uk/media/682dc339a599d03a16bff385/2025_KS2_mathematics_Paper3_reasoning.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 mathematics test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "mark_scheme",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2025 key stage 2 mathematics mark schemes ",
+   "url": "https://assets.publishing.service.gov.uk/media/682dc3717fb7a7d9cd77515b/2025_KS2_mathematics_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 mathematics test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "copyright_report",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2025 copyright ownership: key stage 2 national curriculum tests",
+   "url": "https://assets.publishing.service.gov.uk/media/682dcd9bbaff3dab9977515d/2025_copyright_ownership_KS2_national_curriculum_tests.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2025-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2025 mathematics test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "gps_questions",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2026 key stage 2 English grammar, punctuation and spelling Paper 1: questions",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0af089229555d0fe82671d/2026_KS2_English_GPS_Paper1_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2026 key stage 2 English grammar, punctuation and spelling – administering Paper 1: questions",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0af106fcae986635db90af/2026_KS2_English_GPS_administering_Paper1_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2026 key stage 2 English grammar, punctuation and spelling – administering Paper 2: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0af135229555d0fe82671e/2026_KS2_English_GPS_administering_Paper2_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "mark_scheme",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2026 key stage 2 English grammar, punctuation and spelling mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0af15cc510c3913d826736/2026_KS2_English_GPS_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "reading_booklet",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2026 key stage 2 English reading booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0af4c9229555d0fe826722/2026_KS2_English_reading_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 English reading test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "reading_answer",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2026 key stage 2 English reading  answer booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0af4ea229555d0fe826723/2026_KS2_English_reading_answer_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 English reading test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "mark_scheme",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2026 key stage 2 English reading mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0af5ae279ebb7d24f8f3ae/2026_KS2_English_reading_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 English reading test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "maths_arithmetic",
+   "subject": "maths",
+   "paper_number": 1,
+   "title": "2026 key stage 2 mathematics  Paper 1: arithmetic",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0af8a5279ebb7d24f8f3b1/2026_KS2_mathematics_Paper1_arithmetic.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 mathematics test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "maths_reasoning",
+   "subject": "maths",
+   "paper_number": 2,
+   "title": "2026 key stage 2 mathematics  Paper 2: reasoning",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0af8b9229555d0fe826727/2026_KS2_mathematics_Paper2_reasoning.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 mathematics test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "maths_reasoning",
+   "subject": "maths",
+   "paper_number": 3,
+   "title": "2026 key stage 2 mathematics  Paper 3: reasoning",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0af8d3c75cc34a8ff8f3e2/2026_KS2_mathematics_Paper3_reasoning.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 mathematics test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "mark_scheme",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2026 key stage 2 mathematics mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0af983279ebb7d24f8f3b2/2026_KS2_mathematics_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 mathematics test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "copyright_report",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2026 copyright ownership:  key stage 2 national curriculum tests ",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0b14b6229555d0fe82676e/2026_copyright_ownership_KS2_national_curriculum_tests.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-mathematics-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 mathematics test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "copyright_report",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2026 copyright ownership: key stage 2 national curriculum tests",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0b1510f7c2e79c33db90f8/2026_copyright_ownership_KS2_national_curriculum_tests.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-english-reading-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 English reading test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "copyright_report",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2026 copyright ownership: key stage 2 national curriculum tests",
+   "url": "https://assets.publishing.service.gov.uk/media/6a0b1579c75cc34a8ff8f43c/2026_copyright_ownership_KS2_national_curriculum_tests.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "gps_spelling",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2026 key stage 2 English grammar, punctuation and spelling Paper 2: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/6a32aaae0bea238415c9a19a/2026_KS2_English_GPS_Paper2_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/key-stage-2-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Key stage 2 tests: 2026 English grammar, punctuation and spelling test materials"
+  }
+ ]
+}

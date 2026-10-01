@@ -1,0 +1,458 @@
+{
+ "source_id": "sta_ks1",
+ "key_stage": "ks1",
+ "collection_url": "https://www.gov.uk/government/collections/national-curriculum-assessments-past-test-materials",
+ "generated_at": "2026-10-01T10:28:37.449Z",
+ "entries": [
+  {
+   "year": 2024,
+   "kind": "reading_answer",
+   "subject": "reading",
+   "paper_number": 1,
+   "title": "2024 key stage 1 English reading Paper 1: reading prompt and answer booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/6655b52516cf36f4d63ebaf3/STA248800e_2024_ks1_English_reading_Paper1_reading_prompt_and_answer_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 English reading test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "reading_booklet",
+   "subject": "reading",
+   "paper_number": 2,
+   "title": "2024 key stage 1 English reading Paper 2: reading booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/6655b539dc15efdddf1a8449/STA248802e_2024_ks1_English_reading_Paper2_reading_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 English reading test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "reading_answer",
+   "subject": "reading",
+   "paper_number": 2,
+   "title": "2024 key stage 1 English reading Paper 2: reading answer booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/6655b544d470e3279dd33297/STA248801e_2024_ks1_English_reading_Paper2_reading_answer_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 English reading test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "mark_scheme",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2024 key stage 1 English reading mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/6655b56b0c8f88e868d33290/STA248803e_2024_ks1_English_reading_test_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 English reading test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "gps_spelling",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2024 key stage 1 English grammar, punctuation and spelling Paper 1: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/6655bd1d0c8f88e868d332a0/STA248804e_2024_ks1_English_GPS_Paper1_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "gps_questions",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2024 key stage 1 English grammar, punctuation and spelling Paper 2: questions",
+   "url": "https://assets.publishing.service.gov.uk/media/6655bd260c8f88e868d332a1/STA248805e_2024_ks1_English_GPS_Paper2_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2024 key stage 1 English grammar, punctuation and spelling - administering Paper 1: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/6655bd308f90ef31c23ebb28/STA248823e_2024_ks1_English_GPS_Administering_Paper1_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2024 key stage 1 English grammar, punctuation and spelling - administering Paper 2: questions",
+   "url": "https://assets.publishing.service.gov.uk/media/6655bd3a16cf36f4d63ebb11/STA248824e_2024_ks1_English_GPS_Administering_Paper2_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "mark_scheme",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2024 key stage 1 English grammar, punctuation and spelling mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/6655bd447b792ffff71a844d/STA248806e_2024_ks1_English_GPS_test_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "maths_arithmetic",
+   "subject": "maths",
+   "paper_number": 1,
+   "title": "2024 key stage 1 mathematics Paper 1: arithmetic",
+   "url": "https://assets.publishing.service.gov.uk/media/6655bdb97b792ffff71a844e/STA248807e_2024_ks1_mathematics_Paper1_arithmetic.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 mathematics test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "maths_reasoning",
+   "subject": "maths",
+   "paper_number": 2,
+   "title": "2024 key stage 1 mathematics Paper 2: reasoning",
+   "url": "https://assets.publishing.service.gov.uk/media/6655bdc316cf36f4d63ebb13/STA248808e_2024_ks1_mathematics_Paper2_reasoning.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 mathematics test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "mark_scheme",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2024 key stage 1 mathematics mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/6655bde1d470e3279dd332ba/STA248809e_2024_ks1_mathematics_test_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 mathematics test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "copyright_report",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2024 copyright ownership: key stage 1 national curriculum tests",
+   "url": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-grammar-punctuation-and-spelling-test-materials/2024-copyright-ownership-key-stage-1-national-curriculum-tests",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "copyright_report",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2024 copyright ownership: key stage 1 national curriculum tests",
+   "url": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-reading-test-materials/2024-copyright-ownership-key-stage-1-national-curriculum-tests",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 English reading test materials"
+  },
+  {
+   "year": 2024,
+   "kind": "copyright_report",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2024 copyright ownership: key stage 1 national curriculum tests",
+   "url": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-mathematics-test-materials/2024-copyright-ownership-key-stage-1-national-curriculum-tests",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2024-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2024 mathematics test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "gps_spelling",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2025 key stage 1 English grammar, punctuation and spelling Paper 1: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/68357b4ba599d03a16bff537/2025_KS1_English_GPS_Paper1_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "gps_questions",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2025 key stage 1 English grammar, punctuation and spelling Paper 2: questions",
+   "url": "https://assets.publishing.service.gov.uk/media/68357bcabaff3dab99775323/2025_KS1_English_GPS_Paper2_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2025 key stage 1 English grammar, punctuation and spelling  – administering Paper 1: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/68357c577fb7a7d9cd7752eb/2025_KS1_English_GPS_administering_Paper1_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2025 key stage 1 English grammar, punctuation and spelling – administering Paper 2: questions",
+   "url": "https://assets.publishing.service.gov.uk/media/68357ccbb33f68eaba953ab5/2025_KS1_English_GPS__administering_Paper_2_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "mark_scheme",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2025 key stage 1 English grammar, punctuation and spelling mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/68357db0b33f68eaba953ab8/2025_KS1_English_GPS_test_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "reading_answer",
+   "subject": "reading",
+   "paper_number": 1,
+   "title": "2025 key stage 1 English reading Paper 1: reading prompt and answer booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/68357ffcc054883884bff549/2025_KS1_English_reading_Paper1_reading_prompt_and_answer_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 English reading test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "reading_booklet",
+   "subject": "reading",
+   "paper_number": 2,
+   "title": "2025 key stage 1 English reading Paper 2: reading booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/683580683dd61280f46c03a1/2025_KS1_English_reading_Paper2_reading_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 English reading test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "reading_answer",
+   "subject": "reading",
+   "paper_number": 2,
+   "title": "2025 key stage 1 English reading Paper 2: reading answer booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/68358238d6d2692c9bdb02ce/2025_KS1_English_reading_Paper_2_reading_answer_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 English reading test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "mark_scheme",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2025 key stage 1 English reading mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/683583e69afff1b427db02d0/2025_KS1_English_reading_test_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 English reading test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "copyright_report",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2025 copyright ownership: key stage 1 national curriculum tests",
+   "url": "https://assets.publishing.service.gov.uk/media/683584965d4f0caf4c3c8597/2025_KS1_copyright_ownership.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 English reading test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "maths_reasoning",
+   "subject": "maths",
+   "paper_number": 2,
+   "title": "2025 key stage 1 mathematics Paper 2: reasoning",
+   "url": "https://assets.publishing.service.gov.uk/media/6835861f3dd61280f46c03aa/2025_KS1_mathematics_Paper2_reasoning.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 mathematics test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "maths_arithmetic",
+   "subject": "maths",
+   "paper_number": 1,
+   "title": "2025 key stage 1 mathematics Paper 1: arithmetic",
+   "url": "https://assets.publishing.service.gov.uk/media/683586c3bbc9e83924b4bd69/2025_KS1_mathematics_Paper1_arithmetic.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 mathematics test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "mark_scheme",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2025 key stage 1 mathematics mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/683587e29afff1b427db02db/2025_KS1_mathematics_test_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 mathematics test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "copyright_report",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2025 copyright ownership: key stage 1 national curriculum tests",
+   "url": "https://assets.publishing.service.gov.uk/media/68358834c239ae3e866c03af/2025_KS1_copyright_ownership.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 mathematics test materials"
+  },
+  {
+   "year": 2025,
+   "kind": "copyright_report",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2025 copyright ownership: key stage 1 national curriculum tests",
+   "url": "https://assets.publishing.service.gov.uk/media/683588969afff1b427db02dc/2025_KS1_copyright_ownership.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2025-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2025 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "gps_spelling",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2026 key stage 1 English grammar, punctuation and spelling Paper 1: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/6a156c7729bb11891b1cf0d6/2026_KS1_English_GPS_Paper1_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "gps_questions",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2026 key stage 1 English grammar, punctuation and spelling Paper 2: questions ",
+   "url": "https://assets.publishing.service.gov.uk/media/6a156c950026f30a6d421cf1/2026_KS1_English_GPS_Paper2_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 1,
+   "title": "2026 key stage 1 English grammar, punctuation and spelling – administering Paper 1: spelling",
+   "url": "https://assets.publishing.service.gov.uk/media/6a156ca20026f30a6d421cf2/2026_KS1_English_GPS_administering_Paper1_spelling.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "spelling_script",
+   "subject": "gps",
+   "paper_number": 2,
+   "title": "2026 key stage 1 English grammar, punctuation and spelling – administering Paper 2: questions",
+   "url": "https://assets.publishing.service.gov.uk/media/6a156cb55e28c5cac81cf0c8/2026_KS1_English_GPS__administering_Paper_2_questions.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "mark_scheme",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2026 key stage 1 English grammar, punctuation and spelling mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/6a156cca0026f30a6d421cf3/2026_KS1_English_GPS_test_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "reading_answer",
+   "subject": "reading",
+   "paper_number": 1,
+   "title": "2026 key stage 1 English reading  Paper 1: reading prompt and answer booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/6a1572c91eb143220d8d2836/2026_KS1_English_reading_Paper1_reading_prompt_and_answer_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 English reading test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "reading_booklet",
+   "subject": "reading",
+   "paper_number": 2,
+   "title": "2026 key stage 1 English reading  Paper 2: reading booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/6a1572e61eb143220d8d2837/2026_KS1_English_reading_Paper2_reading_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 English reading test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "reading_answer",
+   "subject": "reading",
+   "paper_number": 2,
+   "title": "2026 key stage 1 English reading  Paper 2: reading answer booklet",
+   "url": "https://assets.publishing.service.gov.uk/media/6a1572f45e28c5cac81cf0d1/2026_KS1_English_reading_Paper_2_reading_answer_booklet.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 English reading test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "mark_scheme",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2026 key stage 1 English reading mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/6a15733229bb11891b1cf0e3/2026_KS1_English_reading_test_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 English reading test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "maths_arithmetic",
+   "subject": "maths",
+   "paper_number": 1,
+   "title": "2026 key stage 1 mathematics Paper 1: arithmetic",
+   "url": "https://assets.publishing.service.gov.uk/media/6a1575b40026f30a6d421cfd/2026_KS1_mathematics_Paper1_arithmetic.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 mathematics test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "maths_reasoning",
+   "subject": "maths",
+   "paper_number": 2,
+   "title": "2026 key stage 1 mathematics Paper 2: reasoning",
+   "url": "https://assets.publishing.service.gov.uk/media/6a1576120a1a96d9418d284f/2026_KS1_mathematics_Paper2_reasoning.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 mathematics test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "mark_scheme",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2026 key stage 1 mathematics mark schemes",
+   "url": "https://assets.publishing.service.gov.uk/media/6a1576329819be865f421cef/2026_KS1_mathematics_test_mark_schemes.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 mathematics test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "copyright_report",
+   "subject": "gps",
+   "paper_number": null,
+   "title": "2026 copyright ownership: key stage 1 national curriculum tests",
+   "url": "https://assets.publishing.service.gov.uk/media/6a16efcd65bc5f798327f3c7/2026_KS1_copyright_ownership.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-english-grammar-punctuation-and-spelling-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 English grammar, punctuation and spelling test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "copyright_report",
+   "subject": "reading",
+   "paper_number": null,
+   "title": "2026 copyright ownership: key stage 1 national curriculum tests",
+   "url": "https://assets.publishing.service.gov.uk/media/6a16f074c7335e2ca6daabed/2026_KS1_copyright_ownership.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-english-reading-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 English reading test materials"
+  },
+  {
+   "year": 2026,
+   "kind": "copyright_report",
+   "subject": "maths",
+   "paper_number": null,
+   "title": "2026 copyright ownership: key stage 1 national curriculum tests",
+   "url": "https://assets.publishing.service.gov.uk/media/6a16f13b916cd732dcdaabf1/2026_KS1_copyright_ownership.pdf",
+   "publication": "https://www.gov.uk/government/publications/optional-key-stage-1-tests-2026-mathematics-test-materials",
+   "publication_title": "Optional key stage 1 tests: 2026 mathematics test materials"
+  }
+ ]
+}

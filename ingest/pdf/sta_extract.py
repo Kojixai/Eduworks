@@ -48,16 +48,61 @@ def span_index(page):
     return spans
 
 
+def digit_chars(page):
+    """Digit characters with their baseline origin, to split a mixed number such as '2' + raised '3' that the
+    text layer glues into one word '23'."""
+    chars = []
+    for b in page.get_text("rawdict").get("blocks", []):
+        for l in b.get("lines", []):
+            for sp in l.get("spans", []):
+                for c in sp.get("chars", []):
+                    if c["c"].isdigit():
+                        chars.append((c["c"], fitz.Rect(c["bbox"]), c["origin"][1]))
+    return chars
+
+
+def split_stacked_digits(words, chars):
+    """Split all-digit words whose characters sit on different baselines (whole number + fraction numerator)."""
+    out = []
+    for w in words:
+        t = w[4]
+        if len(t) >= 2 and t.isdigit():
+            r = fitz.Rect(w[:4])
+            mine = [(c, bb, oy) for c, bb, oy in chars if r.contains(fitz.Point((bb.x0 + bb.x1) / 2, (bb.y0 + bb.y1) / 2))]
+            mine.sort(key=lambda m: m[1].x0)
+            if len(mine) == len(t) and max(m[2] for m in mine) - min(m[2] for m in mine) > 2.0:
+                groups = [[mine[0]]]
+                for m in mine[1:]:
+                    if abs(m[2] - groups[-1][-1][2]) > 2.0:
+                        groups.append([m])
+                    else:
+                        groups[-1].append(m)
+                for g in groups:
+                    x0 = min(m[1].x0 for m in g); x1 = max(m[1].x1 for m in g)
+                    y0 = min(m[1].y0 for m in g); y1 = max(m[1].y1 for m in g)
+                    out.append((x0, y0, x1, y1, "".join(m[0] for m in g)))
+                continue
+        out.append(w)
+    return out
+
+
 def page_words(page):
     spans = span_index(page)
     out = []
-    for x0, y0, x1, y1, text, *_ in page.get_text("words"):
+    raw = page.get_text("words")
+    if any(len(w[4]) >= 2 and w[4].isdigit() for w in raw):
+        raw = split_stacked_digits(raw, digit_chars(page))
+    for x0, y0, x1, y1, text, *_ in raw:
+        text = text.replace("\u2009", " ").replace("\u00a0", " ").replace("\u202f", " ")  # thin / no-break spaces
         cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
         bold, size = False, 0.0
         for r, b, s in spans:
             if r.x0 - 0.5 <= cx <= r.x1 + 0.5 and r.y0 - 0.5 <= cy <= r.y1 + 0.5:
                 bold, size = b, s
                 break
+        # some PDFs print the same word twice in the same place (overprint): keep one
+        if any(o["text"] == text and abs(o["x0"] - x0) < 0.5 and abs(o["y0"] - y0) < 0.5 for o in out[-6:]):
+            continue
         out.append({"x0": x0, "y0": y0, "x1": x1, "y1": y1, "text": text, "bold": bold, "size": size})
     return out
 
@@ -84,16 +129,22 @@ def rebuild_fractions(words, rules):
     extra = []
     for rx0, rx1, ry in rules:
         num = den = None
+        best_n = best_d = 99.0
         for i, w in enumerate(words):
-            if i in used or not re.fullmatch(r"\d{1,4}", w["text"]):
+            # numerator may carry the whole part of a mixed number ("1 7" over "15" = 1 7/15)
+            if i in used or not re.fullmatch(r"\d{1,4}(?: \d{1,4})?", w["text"]):
                 continue
             cx = (w["x0"] + w["x1"]) / 2
+            if " " in w["text"]:
+                cx = w["x1"] - 3.5  # whole part + numerator: the numerator is the last token
+            cy = (w["y0"] + w["y1"]) / 2
             if not (rx0 - 2 <= cx <= rx1 + 2):
                 continue
-            if 0 <= ry - w["y1"] <= 6 and num is None:
-                num = i
-            elif 0 <= w["y0"] - ry <= 6 and den is None:
-                den = i
+            # judged by the word centre: ascent/descent metrics differ between fonts and PyMuPDF versions
+            if 0 < ry - cy <= 12 and ry - cy < best_n:
+                num, best_n = i, ry - cy
+            elif 0 < cy - ry <= 12 and " " not in w["text"] and cy - ry < best_d:
+                den, best_d = i, cy - ry
         if num is not None and den is not None:
             used.update([num, den])
             n, d = words[num], words[den]
@@ -144,6 +195,28 @@ def cmd_lines(pdf):
     return {"pages": pages, "page_count": len(doc)}
 
 
+def cmd_tables(pdf):
+    """Copyright reports: per page, the running text outside tables (section headings) and every
+    table row, ordered top to bottom so the caller can track which heading a row sits under."""
+    doc = fitz.open(pdf)
+    pages = []
+    for pno, page in enumerate(doc):
+        tabs = list(page.find_tables())
+        boxes = [fitz.Rect(t.bbox) for t in tabs]
+        items = []
+        for l in group_lines(page_words(page)):
+            r = fitz.Rect(l["x0"], l["y0"], l["x1"], l["y1"])
+            if any(r.intersects(b) for b in boxes):
+                continue
+            items.append({"y": round(l["y0"], 1), "kind": "text", "text": l["text"]})
+        for t in tabs:
+            rows = [[(c or "").replace("\n", " ").strip() for c in row] for row in t.extract()]
+            items.append({"y": round(t.bbox[1], 1), "kind": "table", "rows": rows})
+        items.sort(key=lambda i: i["y"])
+        pages.append({"page": pno + 1, "items": items})
+    return {"page_count": len(doc), "pages": pages}
+
+
 def save_png(pix, path, max_colors=64):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     if Image is None:
@@ -176,13 +249,26 @@ def cmd_questions(pdf, out_dir, max_width=1000, prefix="q"):
                 starts.append((pno, w))
                 expected += 1
 
+    if not starts:
+        # numbered sentences ("1. There was a ... in the story."), e.g. the spelling paper: "N." as the
+        # first word of a line near the left edge
+        for pno, pd in enumerate(page_data):
+            lines = group_lines(pd["words"])
+            for l in lines:
+                w = l["words"][0]
+                m = re.fullmatch(r"(\d{1,2})\.", w["text"])
+                if m and w["x0"] < pd["W"] * 0.2 and int(m.group(1)) == expected:
+                    w = dict(w, text=m.group(1))
+                    starts.append((pno, w))
+                    expected += 1
+
     questions = []
     for i, (pno, w) in enumerate(starts):
         pd = page_data[pno]
         W, H = pd["W"], pd["H"]
-        top = max(w["y0"] - 8, H * HEADER_BAND)
+        top = max(w["y0"] - 15, H * HEADER_BAND)  # stacked fractions put the numerator above the question number
         nxt = starts[i + 1] if i + 1 < len(starts) else None
-        limit = nxt[1]["y0"] - 4 if nxt and nxt[0] == pno else H * FOOTER_BAND
+        limit = nxt[1]["y0"] - 16 if nxt and nxt[0] == pno else H * FOOTER_BAND
         in_region = [x for x in pd["words"] if x["y0"] >= top - 1 and x["y1"] <= limit + 1]
         draws = [r for r in pd["drawings"] if r.y0 >= top - 1 and r.y1 <= limit + 1]
         bottom = max([x["y1"] for x in in_region] + [r.y1 for r in draws] + [w["y1"]]) + 8
@@ -196,7 +282,7 @@ def cmd_questions(pdf, out_dir, max_width=1000, prefix="q"):
                 if prev:
                     marks = (marks or 0) + int(prev[0]["text"])
                     mark_words += [x, prev[0]]
-        text_words = [x for x in in_region if x is not w and not any(x is m for m in mark_words)]
+        text_words = [x for x in in_region if not (x["x0"] == w["x0"] and x["y0"] == w["y0"]) and not any(x is m for m in mark_words)]
         text_words = rebuild_fractions(text_words, [r for r in pd["rules"] if top <= r[2] <= limit])
         lines = [l["text"] for l in group_lines(text_words)]
         clip = fitz.Rect(max(w["x0"] - 10, 0), top, W - max(w["x0"] - 10, 0), bottom)
@@ -231,6 +317,8 @@ def main(argv):
         opts[rest[i].lstrip("-")] = rest[i + 1]
     if cmd == "lines":
         res = cmd_lines(pdf)
+    elif cmd == "tables":
+        res = cmd_tables(pdf)
     elif cmd == "questions":
         res = cmd_questions(pdf, opts.get("out", "."), int(opts.get("max-width", 1000)), opts.get("prefix", "q"))
     else:
