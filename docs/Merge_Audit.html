@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>mylearn.works merge audit</title>
+<style>
+  :root {
+    --bg: #f2f2f7;
+    --glass: rgba(255,255,255,.62);
+    --glass-strong: rgba(255,255,255,.82);
+    --glass-edge: rgba(255,255,255,.7);
+    --card: rgba(255,255,255,.86);
+    --label: #111114;
+    --label-2: rgba(60,60,67,.62);
+    --label-3: rgba(60,60,67,.32);
+    --sep: rgba(60,60,67,.14);
+    --fill: rgba(120,120,128,.14);
+    --blue: #0a7aff;
+    --green: #30b855;
+    --red: #ff453a;
+    --orange: #ff9f0a;
+    --yellow: #f2c200;
+    --shadow: 0 1px 1px rgba(0,0,0,.04), 0 10px 30px rgba(20,20,40,.08);
+    --radius: 26px;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000;
+      --glass: rgba(40,40,46,.55);
+      --glass-strong: rgba(44,44,50,.78);
+      --glass-edge: rgba(255,255,255,.14);
+      --card: rgba(34,34,38,.82);
+      --label: #fff;
+      --label-2: rgba(235,235,245,.62);
+      --label-3: rgba(235,235,245,.3);
+      --sep: rgba(84,84,88,.55);
+      --fill: rgba(120,120,128,.28);
+      --blue: #4d9bff;
+      --green: #32d860;
+      --shadow: 0 1px 1px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 130px; }
+  body {
+    margin: 0; font-family: var(--font); color: var(--label); background: var(--bg);
+    -webkit-font-smoothing: antialiased; line-height: 1.38; min-height: 100vh;
+  }
+  /* soft colour behind the glass so the blur has something to refract */
+  .mesh { position: fixed; inset: -20vmax; z-index: -1; filter: blur(70px); opacity: .85; pointer-events: none; }
+  .mesh i { position: absolute; border-radius: 50%; }
+  .mesh i:nth-child(1) { width: 48vmax; height: 48vmax; left: 4vmax; top: 2vmax; background: #9ec5ff55; }
+  .mesh i:nth-child(2) { width: 40vmax; height: 40vmax; right: 6vmax; top: 18vmax; background: #ffc9a455; }
+  .mesh i:nth-child(3) { width: 44vmax; height: 44vmax; left: 22vmax; bottom: 2vmax; background: #b9f0d155; }
+  @media (prefers-color-scheme: dark) {
+    .mesh i:nth-child(1) { background: #1d4ed855; } .mesh i:nth-child(2) { background: #be185d33; } .mesh i:nth-child(3) { background: #0f766e44; }
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px 120px; }
+
+  /* sticky glass navigation bar */
+  .bar {
+    position: sticky; top: 10px; z-index: 20; margin: 10px auto 0; max-width: 728px;
+    background: var(--glass); backdrop-filter: blur(26px) saturate(190%); -webkit-backdrop-filter: blur(26px) saturate(190%);
+    border: .5px solid var(--glass-edge); border-radius: 30px; box-shadow: var(--shadow);
+    padding: 10px 12px 12px; transition: padding .25s ease;
+  }
+  .bar-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 2px 6px 8px; }
+  .bar-title { font-size: 17px; font-weight: 650; letter-spacing: -.01em; }
+  .bar-count { font-size: 13px; color: var(--label-2); font-variant-numeric: tabular-nums; }
+  .seg { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: var(--fill); border-radius: 999px; padding: 3px; position: relative; }
+  .seg button {
+    position: relative; z-index: 1; border: 0; background: none; font: inherit; font-size: 14px; font-weight: 600; color: var(--label);
+    padding: 8px 6px; border-radius: 999px; cursor: pointer; min-height: 36px;
+  }
+  .seg .thumb {
+    position: absolute; z-index: 0; top: 3px; bottom: 3px; border-radius: 999px; background: var(--glass-strong);
+    box-shadow: 0 1px 3px rgba(0,0,0,.18), 0 0 0 .5px var(--glass-edge) inset; transition: transform .28s cubic-bezier(.3,1.2,.4,1), width .28s;
+  }
+  .search { margin-top: 8px; display: flex; align-items: center; gap: 8px; background: var(--fill); border-radius: 12px; padding: 0 12px; }
+  .search input { flex: 1; border: 0; background: none; font: inherit; font-size: 16px; color: var(--label); padding: 10px 0; outline: none; min-width: 0; }
+  .search input::placeholder { color: var(--label-2); }
+  .chips { display: flex; gap: 6px; overflow-x: auto; padding: 8px 2px 2px; scrollbar-width: none; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip {
+    flex: none; border: 0; font: inherit; font-size: 13px; font-weight: 600; padding: 7px 12px; border-radius: 999px; cursor: pointer;
+    background: var(--fill); color: var(--label); min-height: 34px;
+  }
+  .chip[aria-pressed="true"] { background: var(--blue); color: #fff; }
+
+  /* large title + summary */
+  h1 { font-size: 34px; line-height: 1.1; letter-spacing: -.025em; margin: 26px 6px 4px; font-weight: 800; }
+  .sub { margin: 0 6px 18px; color: var(--label-2); font-size: 16px; }
+  .summary {
+    display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; padding: 18px;
+    background: var(--card); border: .5px solid var(--glass-edge); border-radius: var(--radius); box-shadow: var(--shadow);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  }
+  .ring { width: 92px; height: 92px; position: relative; }
+  .ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .ring circle { fill: none; stroke-width: 10; stroke-linecap: round; }
+  .ring .trk { stroke: var(--fill); }
+  .ring .val { stroke: var(--green); transition: stroke-dashoffset .5s cubic-bezier(.3,1,.4,1); }
+  .ring b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 22px; font-variant-numeric: tabular-nums; }
+  .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+  .stat { font-size: 13px; color: var(--label-2); }
+  .stat b { display: block; font-size: 20px; color: var(--label); font-variant-numeric: tabular-nums; }
+  .actions { grid-column: 1 / -1; display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn {
+    border: 0; font: inherit; font-size: 15px; font-weight: 600; padding: 10px 16px; border-radius: 999px; cursor: pointer; min-height: 44px;
+    background: var(--blue); color: #fff;
+  }
+  .btn.quiet { background: var(--fill); color: var(--label); }
+
+  /* inset grouped lists */
+  .group { margin-top: 28px; }
+  .group-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin: 0 14px 7px; }
+  .group-head h2 { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--label-2); }
+  .group-head span { font-size: 13px; color: var(--label-3); font-variant-numeric: tabular-nums; }
+  .group-note { margin: -2px 14px 9px; font-size: 13px; color: var(--label-2); }
+  .list { background: var(--card); border: .5px solid var(--glass-edge); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  .item { position: relative; }
+  .item.sep::before { content: ""; position: absolute; top: 0; left: 58px; right: 0; height: .5px; background: var(--sep); }
+  .item.hidden { display: none; }
+  .row { display: grid; grid-template-columns: 44px 1fr 24px; align-items: start; gap: 0; padding: 12px 14px 12px 8px; }
+  .check {
+    width: 44px; height: 44px; border: 0; background: none; cursor: pointer; display: grid; place-items: center; padding: 0; margin-top: -7px;
+  }
+  .check span {
+    width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--label-3); display: grid; place-items: center; transition: all .2s ease;
+  }
+  .check svg { width: 14px; height: 14px; stroke: #fff; stroke-width: 3.2; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 20; stroke-dashoffset: 20; transition: stroke-dashoffset .25s ease .05s; }
+  .item.done .check span { background: var(--green); border-color: var(--green); transform: scale(1.04); }
+  .item.done .check svg { stroke-dashoffset: 0; }
+  .item.done .title { color: var(--label-2); text-decoration: line-through; text-decoration-color: var(--label-3); }
+  .main { cursor: pointer; min-width: 0; padding-right: 6px; }
+  .title { font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+  .teaser { font-size: 14px; color: var(--label-2); margin-top: 2px; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 7px; }
+  .tag { font-size: 11.5px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: var(--fill); color: var(--label-2); }
+  .tag.critical { background: rgba(255,69,58,.16); color: var(--red); }
+  .tag.high { background: rgba(255,159,10,.18); color: #c76a00; }
+  .tag.medium { background: rgba(242,194,0,.2); color: #8f6f00; }
+  .tag.decision { background: rgba(10,122,255,.14); color: var(--blue); }
+  .tag.done { background: rgba(48,184,85,.16); color: #1f8f3e; }
+  @media (prefers-color-scheme: dark) { .tag.high { color: #ffb340; } .tag.medium { color: #ffd60a; } .tag.done { color: #5ee37f; } }
+  .chev { width: 24px; height: 44px; display: grid; place-items: center; margin-top: -7px; cursor: pointer; color: var(--label-3); transition: transform .25s; border: 0; background: none; padding: 0; }
+  .item.open .chev { transform: rotate(90deg); }
+  .more { display: none; padding: 0 16px 16px 52px; font-size: 15px; }
+  .item.open .more { display: block; }
+  .more dl { margin: 0; display: grid; gap: 11px; }
+  .more dt { font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--label-2); margin-bottom: 2px; }
+  .more dd { margin: 0; }
+  .more code { font: 13px ui-monospace, "SF Mono", Menlo, monospace; background: var(--fill); padding: 2px 6px; border-radius: 6px; word-break: break-word; }
+  .more textarea {
+    width: 100%; min-height: 64px; resize: vertical; font: inherit; font-size: 15px; color: var(--label); background: var(--fill); border: 0; border-radius: 14px; padding: 10px 12px; margin-top: 4px;
+  }
+  .empty { text-align: center; color: var(--label-2); padding: 50px 20px; }
+  footer { margin: 34px 14px 0; color: var(--label-2); font-size: 13px; }
+  @media (max-width: 480px) { h1 { font-size: 30px; } .summary { grid-template-columns: 1fr; justify-items: center; } .stats { width: 100%; } .more { padding-left: 52px; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 10px; }
+</style>
+</head>
+<body>
+<div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="bar" role="banner">
+  <div class="bar-top"><span class="bar-title">Merge audit</span><span class="bar-count" id="barCount">…</span></div>
+  <div class="seg" role="tablist" aria-label="Show" id="seg">
+    <span class="thumb" id="thumb"></span>
+    <button role="tab" data-f="all" aria-selected="true">All</button>
+    <button role="tab" data-f="open" aria-selected="false">To do</button>
+    <button role="tab" data-f="done" aria-selected="false">Done</button>
+  </div>
+  <div class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="color:var(--label-2)"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search" aria-label="Search the audit" autocomplete="off"></div>
+  <div class="chips" id="chips" role="group" aria-label="Filter by type">
+    <button class="chip" data-s="critical" aria-pressed="false">Critical</button>
+    <button class="chip" data-s="high" aria-pressed="false">High</button>
+    <button class="chip" data-s="decision" aria-pressed="false">Needs your decision</button>
+    <button class="chip" data-s="medium" aria-pressed="false">Medium</button>
+    <button class="chip" data-s="low" aria-pressed="false">Low</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Merge audit</h1>
+  <p class="sub">mylearn.works · Eduworks + Inkworks Companion · 1 October 2026. Tick things off as you decide or do them. Everything saves in this browser.</p>
+
+  <section class="summary" aria-label="Progress">
+    <div class="ring"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="42"/><circle class="val" id="ringVal" cx="50" cy="50" r="42" stroke-dasharray="263.9" stroke-dashoffset="263.9"/></svg><b id="ringTxt">0%</b></div>
+    <div class="stats">
+      <div class="stat"><b id="sOpen">0</b>still to do</div>
+      <div class="stat"><b id="sDec">0</b>decisions for you</div>
+      <div class="stat"><b id="sCrit">0</b>critical or high open</div>
+      <div class="stat"><b id="sDone">0</b>done</div>
+    </div>
+    <div class="actions">
+      <button class="btn" id="copyOpen">Copy open items</button>
+      <button class="btn quiet" id="reset">Reset ticks</button>
+    </div>
+  </section>
+
+  <div id="groups"></div>
+  <div class="empty" id="empty" hidden>Nothing matches.</div>
+  <footer>Severity: <b>Critical</b> fix before anyone else sees the site · <b>High</b> fix before real customers · <b>Medium</b> soon · <b>Low</b> when convenient. <b>Needs your decision</b> items are yours to call; I have only set a safe default.</footer>
+</main>
+
+<script>
+/* ---------------------------------------------------------------------------------------------------------------
+   The audit. Each item says what I found, what I did about it, what I recommend, and where to look.
+   Nothing here is padding: every line comes from something checked or hit during the merge.
+--------------------------------------------------------------------------------------------------------------- */
+const GROUPS = [
+ { id: "deploy", name: "Do this first", note: "The merged site exists on your Mac and on GitHub. The live site is still the earlier build.", items: [
+  { id: "deploy-approve", sev: "critical", title: "The merged version is not live yet",
+    found: "I built, tested and rehearsed the whole upgrade against a copy of the live database, but the deploy to the server was blocked at my last attempt, so www.mylearn.works is still the first build.",
+    did: "Everything is committed locally. The deploy script applies the database changes, imports the 8 books, removes the default admin, installs a nightly backup, and reloads the app. I rehearsed every one of those steps on a copy of the live-shaped database first.",
+    rec: "Tell me to deploy, or run it yourself from the project folder. Add <code>--demo-activity</code> if you want the demo parent to have three books and three weeks of practice so the dashboard has something to show.",
+    where: "<code>deploy/deploy.sh</code>" },
+  { id: "admin-live", sev: "critical", title: "A default admin account is on the live site",
+    found: "The live database was seeded with an admin login whose password is written in the repo. Anyone who finds the login page could open the back office, which holds parent names and emails.",
+    did: "The deploy now deletes it automatically. I could not delete it directly on the server because that write was blocked.",
+    rec: "Deploy (above) removes it. Until then, treat the back office as exposed.",
+    where: "<code>scripts/server-tasks.ts</code> task <code>cleanup</code>" },
+  { id: "admin-login", sev: "high", title: "Set your own admin login",
+    found: "No admin account exists for you. I did not create one because generating a password and writing it to the server was blocked.",
+    did: "The deploy creates the admin from <code>ADMIN_EMAIL</code> and <code>ADMIN_PASSWORD</code> if both are set in the server's .env file.",
+    rec: "Choose a long password and put both lines in <code>/var/www/learnworks/.env</code> on the server, then deploy. Do not share it in chat.",
+    where: "Server <code>.env</code>" },
+  { id: "demo-parent", sev: "medium", title: "The public demo parent account",
+    found: "<code>demo@example.com</code> with a password published in the repo exists on the live site, with two demo children. It is fine for showing the site off, not for launch.",
+    did: "Added a one-line removal task that deletes the demo parent and all its data.",
+    rec: "Keep it while you are reviewing. Remove it the day real customers arrive.",
+    where: "<code>node dist/server-tasks.cjs remove-demo</code>" }
+ ]},
+ { id: "decide", name: "Needs your decision", note: "I have set a safe default for each. None of these should be decided silently.", items: [
+  { id: "d-access", sev: "decision", title: "How long does a code unlock a book?",
+    found: "Default is 6 months from the day the code is entered. CGP RevisionHub gives 3 years from first use, so 6 months will look mean beside it.",
+    did: "It is one setting.", rec: "12 months at the very least. 36 matches CGP, and it costs you almost nothing because there is no per-user cost on your server. Print the length inside the book.",
+    where: "Server .env: <code>ACCESS_MONTHS</code>" },
+  { id: "d-codemode", sev: "decision", title: "One code per title, or a unique code in every copy?",
+    found: "A shared per-title code is cheap to print but can be posted online. A unique code per copy (the CGP way) needs variable-data printing.",
+    did: "Both work now, side by side. The code generator makes either kind and stores only a scrambled hash of each code.",
+    rec: "Start with one code per print run. Move to unique codes when you reprint. Until then the rate limits and the three-accounts-per-order cap are the only brakes.",
+    where: "<code>generate-codes --kind title|copy</code>" },
+  { id: "d-order", sev: "decision", title: "Keep, require or drop the Amazon order number",
+    found: "It can never be verified with Amazon, so it proves nothing. Amazon also restricts what sellers do with buyer data. The old site made it compulsory and stored it in plain text.",
+    did: "It is now optional, format-checked only, stored as a keyed hash, deleted when access ends, and one order can unlock a book on at most three accounts.",
+    rec: "Set it to <code>off</code> once you use unique per-copy codes. Until then leave it optional.",
+    where: "Server .env: <code>ORDER_NUMBER=optional|required|off</code>" },
+  { id: "d-sample", sev: "decision", title: "Free sample topic for each book",
+    found: "In production the demo codes are switched off, so a visitor with no code can see the book list and topic titles but cannot try a single question. That hurts conversion and gives Amazon reviewers nothing to look at.",
+    did: "Not built.",
+    rec: "Open one topic per book (10 questions, no account, no saving, a clear 'unlock the rest' panel). Small giveaway, big trust gain.",
+    where: "New feature" },
+  { id: "d-signup", sev: "decision", title: "Is the free curriculum a book perk, or open to everyone?",
+    found: "Sign-up needs a book code, so the Oak and GOV.UK lessons, quizzes, papers, phonics and times tables are effectively only for book owners.",
+    did: "Left as it was.",
+    rec: "Open sign-up for the curriculum side would bring in search traffic and give people a reason to buy the books. You would need clear rules on what the books add.",
+    where: "<code>src/lib/redemption.ts</code>" },
+  { id: "d-mastery", sev: "decision", title: "How strict is 'secure'?",
+    found: "A topic is secure at 80% or more on two different days, with review after 1, 3 and 7 days. The research file suggests something stricter: correct on three days spread over a week or more.",
+    did: "Kept the rule from the Inkworks site. It is a constant in one file.",
+    rec: "Keep 80%/2 days for the launch. Revisit once you have real data on how families use it.",
+    where: "<code>src/practice/mastery.ts</code>" },
+  { id: "d-series", sev: "decision", title: "Series and book names",
+    found: "The brief says the book titles currently copy CGP's series names and will change.",
+    did: "Titles are shown exactly as in the banks.",
+    rec: "Rename before printing. The titles live in each bank file; one import updates the site.",
+    where: "<code>content/inkworks/*.json</code> field <code>book.title</code>" },
+  { id: "d-hosting", sev: "decision", title: "Stay on the Hetzner box, or move to Supabase and Vercel?",
+    found: "The Inkworks session assumed Supabase and Vercel. The live site runs on your Hetzner server with SQLite. The server shares 3.8 GB of memory and a nearly full disk (83%) with six other apps.",
+    did: "Chose Hetzner for now: it already works, it is in the EU, and there is no extra bill. The Supabase code path still exists but is not kept in step (see engineering).",
+    rec: "Fine for launch and the first thousands of users. Plan a move when you need more than one server, or when you want managed backups and email.",
+    where: "Server" }
+ ]},
+ { id: "security", name: "Security and privacy", items: [
+  { id: "s-email", sev: "high", title: "No password reset and no email at all",
+    found: "There is no email provider. A parent who forgets their password is locked out, and the PIN 'forgotten' route also depends on that password. Mailing-list consent is recorded but nothing is sent anywhere.",
+    did: "Not built.", rec: "Pick a UK or EU transactional email service, then add reset-by-email, email confirmation and a weekly progress email. It is the single biggest gap before real customers.",
+    where: "New feature" },
+  { id: "s-backup", sev: "high", title: "Backups stay on the same disk",
+    found: "The live database holds family accounts and children's first names and results. There was no backup.",
+    did: "The deploy now installs a nightly consistent backup (14 copies kept) in <code>/var/backups/learnworks</code>. It sits on the same disk, so it protects against mistakes, not against losing the server.",
+    rec: "Add an off-server copy (a Hetzner Storage Box or any object storage) and test a restore once.",
+    where: "<code>deploy/deploy.sh</code>, task <code>backup</code>" },
+  { id: "s-pepper", sev: "high", title: "Back up CODE_PEPPER",
+    found: "Access codes are stored as keyed hashes. The deploy generates the key on the server the first time. If it is ever lost or changed, every printed code stops working.",
+    did: "The deploy never overwrites it and I never see it.",
+    rec: "Copy the line from the server's .env into your password manager the day it is created.",
+    where: "<code>/var/www/learnworks/.env</code>" },
+  { id: "s-admin2fa", sev: "medium", title: "The back office is protected by one password",
+    found: "No second factor and no IP restriction on /admin.",
+    did: "Nothing yet.", rec: "Restrict /admin to your IP in nginx, or add a second factor.",
+    where: "<code>/etc/nginx/sites-available/mylearn.works</code>" },
+  { id: "s-nginx", sev: "medium", title: "Rate limiting is in the app only",
+    found: "Sign-up codes, parent PINs and logins are now limited (5, 5 and 8 wrong tries). There is no limit at the web server for everything else.",
+    did: "Added app-level limits and tests for them.", rec: "Add <code>limit_req</code> in nginx and consider fail2ban.",
+    where: "nginx" },
+  { id: "s-answers", sev: "medium", title: "Answers are visible in the browser",
+    found: "Marking happens in the child's browser, so a curious child can open developer tools and read the answers. Scores sent to the server are range-checked but the 'correct' flag is trusted.",
+    did: "The server checks the learner, the book, the unit and the question ids and clamps marks.",
+    rec: "Fine for a practice site where the scores are for parents. Do not use it for anything graded.",
+    where: "<code>src/app/books/actions.ts</code>" },
+  { id: "s-sessions", sev: "low", title: "Sessions last 30 days, no 'log out everywhere'",
+    found: "A lost phone stays signed in for up to 30 days.", did: "Nothing.", rec: "Add a button on the account page that clears every session.", where: "<code>auth_sessions</code>" },
+  { id: "s-cookies", sev: "low", title: "Keep it cookie-banner free",
+    found: "The site only sets cookies it needs (login, chosen child, parent lock). No analytics, no adverts.",
+    did: "Nothing needed.", rec: "If you ever add analytics, that changes. Use a cookieless tool or none.", where: "—" }
+ ]},
+ { id: "legal", name: "Legal and compliance", items: [
+  { id: "l-dpia", sev: "high", title: "DPIA before launch",
+    found: "A Data Protection Impact Assessment is mandatory for an online service likely to be used by children.", did: "The privacy page carries the ten points a lawyer needs to settle.",
+    rec: "Get a data-protection lawyer or consultant to do the DPIA and sign off the notices.", where: "<code>/privacy</code>, <code>/terms</code>" },
+  { id: "l-entity", sev: "high", title: "Company details are blank in the notices",
+    found: "Both pages say [legal entity, address, company number, ICO number to be added].", did: "Marked clearly as a draft.",
+    rec: "Fill them in, add the ICO registration number, and a real support address (<code>support@inkworkspress.co.uk</code> is a placeholder).", where: "<code>src/practice/config.ts</code>" },
+  { id: "l-complaints", sev: "medium", title: "Complaints route",
+    found: "From 19 June 2026 data-protection complaints must be acknowledged within 30 days and be possible electronically.", did: "The privacy notice promises it.",
+    rec: "Make sure someone owns that mailbox.", where: "<code>/privacy</code>" },
+  { id: "l-reviews", sev: "medium", title: "Nothing steers anyone towards reviews",
+    found: "I searched the site text. The word only appears inside English lessons (writing a review). The code page in the book must not mention reviews either.",
+    did: "Checked.", rec: "Keep the printed code page free of any review wording, and print it as a page inside the book, not a loose card.", where: "Book interior" },
+  { id: "l-child", sev: "medium", title: "Children are now told their grown-up can see their scores",
+    found: "That was missing everywhere on the child-facing screens (Children's Code, standard 11).",
+    did: "Added a short plain-language note on the curriculum home, each book, each topic and the results page.",
+    rec: "Have the lawyer check the wording suits ages 6 to 9 as well as 13 to 17.", where: "<code>GrownUpNote.tsx</code>" },
+  { id: "l-privacytext", sev: "medium", title: "Old privacy wording was wrong",
+    found: "The earlier notice said the Amazon order number is kept 'to confirm the purchase'. That is no longer true.", did: "Replaced both pages with the Inkworks drafts, adjusted for the Hetzner setup.",
+    rec: "Re-read once the lawyer has them.", where: "<code>src/app/privacy</code>" }
+ ]},
+ { id: "product", name: "Product and design", items: [
+  { id: "p-dash", sev: "medium", title: "Parent dashboard: version 1 is built",
+    found: "Looked at how Doodle, Atom and Seneca do it. Doodle splits effort, understanding and progress into three reports and lets parents set tasks. Atom rates every topic Needs Practice, Good, Strong or Master. Seneca emails a weekly summary and compares with last week.",
+    did: "Built tiles for days practised, questions, first-go score and secure topics; a daily activity chart; a score trend with the 80% line; mastery bars for each book; 'worth another go'; recent practice. No streaks, points or rankings. Works at phone width.",
+    rec: "Next: parents set a topic for the week, a weekly email, a downloadable report, and a per-topic drill-down. All need email or small new screens.",
+    where: "<code>/dashboard</code>" },
+  { id: "p-time", sev: "medium", title: "No time-on-task",
+    found: "Book practice does not record how long a session took, so the dashboard shows days and questions, not minutes.", did: "Used 'days practised' instead, which is honest.",
+    rec: "Capture start and finish times in the player (needs a small column).", where: "<code>practice_sessions</code>" },
+  { id: "p-unify", sev: "medium", title: "Two different practice experiences",
+    found: "Book practice (Inkworks player, 9 question types, diagrams, reading texts) and curriculum practice (Oak and GOV.UK quizzes, papers, phonics) look and behave differently, and keep separate progress tables. The theme is shared; the screens are not redesigned.",
+    did: "Dashboard brings both together.", rec: "A design pass over /learn, quizzes, papers, phonics and times tables next. You said you would do research first, so I stopped at the colour and component framework.",
+    where: "<code>src/styles/tokens.css</code>, <code>ui.tsx</code>" },
+  { id: "p-admin", sev: "medium", title: "Back office does not know about Inkworks content",
+    found: "Admin lists Oak questions, papers and review queues. The 3,790 Inkworks questions and practice progress are invisible there.", did: "Nothing.",
+    rec: "Add a Books section: topics, question counts, last import time, per-book activity.", where: "<code>src/app/admin</code>" },
+  { id: "p-logo", sev: "medium", title: "Placeholder logo",
+    found: "The header uses a plain blue 'I' mark.", did: "—", rec: "Drop in the real Inkworks mark.", where: "<code>src/app/layout.tsx</code>" },
+  { id: "p-a11y", sev: "medium", title: "Accessibility has not been tested with a tool",
+    found: "The Inkworks theme is built for WCAG 2.2 AA and tap targets are 44 to 48 px. No axe run, no screen-reader pass.", did: "Fixed header and footer targets after a measured phone pass.",
+    rec: "Run axe and a VoiceOver pass over the main journeys.", where: "—" },
+  { id: "p-links", sev: "low", title: "A few inline links are under 44 px tall",
+    found: "Links inside sentences and breadcrumbs measure 22 to 29 px. WCAG exempts inline text links.", did: "Left.", rec: "Only worth changing if you want the stricter 48 px rule everywhere.", where: "—" },
+  { id: "p-print", sev: "low", title: "Printable practice sheet per topic",
+    found: "CGP's online edition cannot be printed, a cheap gap to own.", did: "Not built.", rec: "A print stylesheet on each topic's questions.", where: "—" }
+ ]},
+ { id: "content", name: "Content", items: [
+  { id: "c-harvest", sev: "high", title: "SATs papers and GOV.UK documents",
+    found: "You asked for the official STA papers to be harvested now that the 403 errors are gone. A separate agent is running the existing importers in an isolated copy of the project.",
+    did: "Running. Its report will be saved as <code>docs/HARVEST_REPORT.md</code> with exact counts and anything still blocked.",
+    rec: "Read the report, then decide what to publish. Anything flagged third-party or needs-review stays hidden from children by design.", where: "<code>docs/HARVEST_REPORT.md</code>" },
+  { id: "c-checkers", sev: "medium", title: "The book checker scripts cannot run here",
+    found: "The Python checkers read source files from <code>/home/claude/...</code> in your Chat workspace. I validated structure (all 8 banks pass) but could not re-run the maths and quotation checks.",
+    did: "Copied them into <code>content/inkworks/checks</code> for reference.", rec: "Re-run them in the book workspace after every edit, before you copy a bank across.", where: "<code>content/inkworks/checks</code>" },
+  { id: "c-options", sev: "low", title: "Three questions have too many answer options",
+    found: "The schema expects 3 to 5 options. gcse_englang-u13-q03 and -q04 have 8, and y8maths-u10-q01 has 6.", did: "Reported as warnings, content untouched, as instructed.",
+    rec: "Check they are intentional (a matching list?) or trim.", where: "<code>content/inkworks</code>" },
+  { id: "c-flow", sev: "low", title: "How new books from your Chat sessions arrive",
+    found: "Drop a bank into <code>content/inkworks</code>, run <code>npx tsx scripts/validate-inkworks.ts</code>, commit, deploy. The import validates first and refuses a bad bank. Two books may share a reading text safely.", did: "Built and tested.",
+    rec: "Add the new book id to the display order list.", where: "<code>src/practice/bookOrder.ts</code>" }
+ ]},
+ { id: "eng", name: "Engineering", items: [
+  { id: "e-engines", sev: "medium", title: "Inkworks questions live in their own tables",
+    found: "To keep the verified banks exactly as written, each unit's questions are stored as validated JSON, not in the Oak question tables. That means no shared review queue and no shared coverage heatmap.", did: "Documented.",
+    rec: "Later, write an adapter into the main question tables so there is one player and one admin.", where: "<code>practice_units</code>" },
+  { id: "e-supabase", sev: "medium", title: "The Supabase path is out of date",
+    found: "The combined Supabase schema and push script were not regenerated for the new tables, so switching to Supabase would break.", did: "Left alone.",
+    rec: "Either delete that path or regenerate and test it.", where: "<code>db/supabase</code>" },
+  { id: "e-tests", sev: "medium", title: "Two STA paper tests still failing",
+    found: "Before the harvest agent installed the PDF library, 11 tests failed; now 2 do, both in the STA paper ingester.", did: "Part of the harvest job.", rec: "Should be gone when the report lands.", where: "<code>tests/sta_papers.test.ts</code>" },
+  { id: "e-ci", sev: "medium", title: "No continuous checks",
+    found: "Tests, type-check and the browser journey only run when I run them.", did: "Wrote the journey, phone and validation scripts.", rec: "A GitHub Action that runs them on every push.", where: ".github" },
+  { id: "e-server", sev: "medium", title: "Shared server is tight",
+    found: "3.8 GB memory (about 0.9 GB free), 83% disk used, seven apps. This app idles around 100 MB.", did: "Build happens on your Mac.", rec: "Watch disk. Add monitoring before launch.", where: "Server" },
+  { id: "e-fix", sev: "low", title: "An existing bug in the repo, fixed",
+    found: "A fresh clone could not build its database: the export strips timestamps from three tables but the builder never put them back.", did: "Fixed.", rec: "—", where: "<code>scripts/db-build.ts</code>" }
+ ]},
+ { id: "verified", name: "Done and verified", note: "Ticked already. Each was checked, not assumed.", items: [
+  { id: "v-banks", done: true, sev: "done", title: "All 8 books imported: 379 topics, 3,790 questions", found: "Every bank passes the schema before import; one bad bank aborts the import.", did: "Verified on a fresh database and on a copy of the live-shaped one.", rec: "", where: "" },
+  { id: "v-journey", done: true, sev: "done", title: "A full practice in every book", found: "A browser test signs up, adds all 8 books, completes a topic in each (every question type, wrong answers, retries, mistakes), checks the saved scores, the dashboard, the PIN lock, data export and account deletion. Zero browser errors.", did: "", rec: "", where: "<code>scripts/e2e-books.mjs</code>" },
+  { id: "v-unit", done: true, sev: "done", title: "Compliance rules have tests", found: "19 tests on redemption: hashed codes, per-copy codes, three accounts per order, expiry, order-hash deletion, both rate limits, 13+ students, mailing consent. Dashboard maths has 5 more.", did: "", rec: "", where: "<code>tests/redemption.test.ts</code>" },
+  { id: "v-upgrade", done: true, sev: "done", title: "Upgrade of the live database rehearsed", found: "Applied the new migration, import, cleanup and demo data to a copy of the live-shaped database in production mode.", did: "", rec: "", where: "" },
+  { id: "v-nostreak", done: true, sev: "done", title: "No streaks, stars or points anywhere", found: "Removed the day streak and star ratings from the parent progress page, the quiz results and the paper results.", did: "", rec: "", where: "" },
+  { id: "v-mobile", done: true, sev: "done", title: "Phone pass: no sideways scrolling on any key screen", found: "Measured 11 screens at 375 px. Fixed header and footer tap targets.", did: "", rec: "", where: "<code>scripts/e2e-mobile.mjs</code>" },
+  { id: "v-theme", done: true, sev: "done", title: "One design system site-wide", found: "Lexend and Andika, warm paper background, Inkworks blue, 48 px targets. The curriculum and admin pages pick it up through the same tokens.", did: "", rec: "", where: "<code>src/styles/tokens.css</code>" },
+  { id: "v-domain", done: true, sev: "done", title: "HTTPS and domain", found: "mylearn.works redirects to www, certificate issued, http redirects to https.", did: "", rec: "", where: "" }
+ ]}
+];
+
+/* ---------------------------------------------------------------- state */
+const KEY = "mylearn-merge-audit-v1";
+let state = { done: {}, notes: {}, open: {} };
+try { state = Object.assign(state, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
+const all = GROUPS.flatMap(g => g.items.map(i => ({ ...i, group: g.name })));
+const isDone = i => (i.id in state.done ? state.done[i.id] : !!i.done);
+let filter = "all", sev = null, q = "";
+
+const el = (t, c, h) => { const e = document.createElement(t); if (c) e.className = c; if (h != null) e.innerHTML = h; return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const SEVLABEL = { critical: "Critical", high: "High", medium: "Medium", low: "Low", decision: "Your decision", done: "Done" };
+
+function render() {
+  const host = document.getElementById("groups");
+  host.textContent = "";
+  for (const g of GROUPS) {
+    const sec = el("section", "group");
+    const head = el("div", "group-head", `<h2>${esc(g.name)}</h2><span class="gcount"></span>`);
+    sec.append(head);
+    if (g.note) sec.append(el("p", "group-note", esc(g.note)));
+    const list = el("div", "list");
+    for (const it of g.items) {
+      const done = isDone(it);
+      const row = el("div", "item" + (done ? " done" : "") + (state.open[it.id] ? " open" : ""));
+      row.dataset.id = it.id;
+      const teaser = (it.found || "").replace(/<[^>]+>/g, "");
+      row.innerHTML = `
+        <div class="row">
+          <button class="check" role="checkbox" aria-checked="${done}" aria-label="Mark done: ${esc(it.title)}"><span><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.5"/></svg></span></button>
+          <div class="main" tabindex="0" role="button" aria-expanded="${!!state.open[it.id]}">
+            <div class="title">${esc(it.title)}</div>
+            <div class="teaser">${esc(teaser.length > 120 ? teaser.slice(0, 117) + "…" : teaser)}</div>
+            <div class="tags"><span class="tag ${it.sev}">${SEVLABEL[it.sev]}</span></div>
+          </div>
+          <button class="chev" aria-label="Show details"><svg width="9" height="14" viewBox="0 0 9 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5L7 7l-5.5 5.5"/></svg></button>
+        </div>
+        <div class="more"><dl>
+          ${it.found ? `<div><dt>What I found</dt><dd>${it.found}</dd></div>` : ""}
+          ${it.did ? `<div><dt>What I did</dt><dd>${it.did}</dd></div>` : ""}
+          ${it.rec ? `<div><dt>What I recommend</dt><dd>${it.rec}</dd></div>` : ""}
+          ${it.where ? `<div><dt>Where</dt><dd>${it.where}</dd></div>` : ""}
+          <div><dt>Your note</dt><dd><textarea placeholder="Decision, owner, date…" aria-label="Note for ${esc(it.title)}">${esc(state.notes[it.id] || "")}</textarea></dd></div>
+        </dl></div>`;
+      list.append(row);
+    }
+    sec.append(list);
+    host.append(sec);
+  }
+  apply();
+}
+
+function apply() {
+  let shown = 0;
+  document.querySelectorAll(".item").forEach(node => {
+    const it = all.find(x => x.id === node.dataset.id);
+    const done = isDone(it);
+    const text = (it.title + " " + (it.found || "") + " " + (it.did || "") + " " + (it.rec || "") + " " + (state.notes[it.id] || "")).toLowerCase();
+    const ok = (filter === "all" || (filter === "open" ? !done : done)) && (!sev || it.sev === sev) && (!q || text.includes(q));
+    node.classList.toggle("hidden", !ok);
+    node.classList.toggle("done", done);
+    node.querySelector(".check").setAttribute("aria-checked", done);
+    if (ok) shown++;
+  });
+  document.querySelectorAll(".group").forEach(g => {
+    const items = [...g.querySelectorAll(".item")];
+    const vis = items.filter(n => !n.classList.contains("hidden"));
+    g.hidden = vis.length === 0;
+    items.forEach(n => n.classList.remove("sep"));
+    vis.slice(1).forEach(n => n.classList.add("sep"));
+    const d = items.filter(n => n.classList.contains("done")).length;
+    g.querySelector(".gcount").textContent = `${d} of ${items.length}`;
+    // first visible item should not have a top separator offset issue
+  });
+  document.getElementById("empty").hidden = shown > 0;
+  const total = all.length, done = all.filter(isDone).length, open = total - done;
+  const pct = Math.round((done / total) * 100);
+  document.getElementById("barCount").textContent = `${done} of ${total} done`;
+  document.getElementById("ringTxt").textContent = pct + "%";
+  document.getElementById("ringVal").style.strokeDashoffset = 263.9 * (1 - done / total);
+  document.getElementById("sOpen").textContent = open;
+  document.getElementById("sDone").textContent = done;
+  document.getElementById("sDec").textContent = all.filter(i => i.sev === "decision" && !isDone(i)).length;
+  document.getElementById("sCrit").textContent = all.filter(i => (i.sev === "critical" || i.sev === "high") && !isDone(i)).length;
+}
+
+/* ---------------------------------------------------------------- events */
+const groups = document.getElementById("groups");
+groups.addEventListener("click", e => {
+  const node = e.target.closest(".item"); if (!node) return;
+  const id = node.dataset.id;
+  if (e.target.closest(".check")) {
+    const it = all.find(x => x.id === id);
+    state.done[id] = !isDone(it); save(); apply(); return;
+  }
+  if (e.target.closest("textarea")) return;
+  if (e.target.closest(".main, .chev")) {
+    const open = !node.classList.contains("open");
+    node.classList.toggle("open", open); state.open[id] = open; save();
+    node.querySelector(".main").setAttribute("aria-expanded", open);
+  }
+});
+groups.addEventListener("keydown", e => {
+  if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("main")) { e.preventDefault(); e.target.click(); }
+});
+groups.addEventListener("input", e => {
+  if (e.target.tagName !== "TEXTAREA") return;
+  const id = e.target.closest(".item").dataset.id;
+  state.notes[id] = e.target.value; save();
+});
+
+const seg = document.getElementById("seg"), thumb = document.getElementById("thumb");
+function moveThumb() {
+  const b = seg.querySelector('[aria-selected="true"]');
+  thumb.style.width = b.offsetWidth + "px"; thumb.style.transform = `translateX(${b.offsetLeft - 3}px)`;
+}
+seg.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-selected", x === b));
+  filter = b.dataset.f; moveThumb(); apply();
+});
+document.getElementById("chips").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  const on = b.getAttribute("aria-pressed") !== "true";
+  document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", "false"));
+  b.setAttribute("aria-pressed", on); sev = on ? b.dataset.s : null; apply();
+});
+document.getElementById("q").addEventListener("input", e => { q = e.target.value.trim().toLowerCase(); apply(); });
+document.getElementById("copyOpen").addEventListener("click", async e => {
+  const lines = all.filter(i => !isDone(i)).map(i => `- [${SEVLABEL[i.sev]}] ${i.title}${state.notes[i.id] ? " — " + state.notes[i.id] : ""}`);
+  const text = "mylearn.works merge audit: open items\n" + lines.join("\n");
+  try { await navigator.clipboard.writeText(text); e.target.textContent = "Copied"; } catch (err) { e.target.textContent = "Copy failed"; }
+  setTimeout(() => (e.target.textContent = "Copy open items"), 1600);
+});
+document.getElementById("reset").addEventListener("click", () => {
+  if (!confirm("Clear every tick and note?")) return;
+  state = { done: {}, notes: {}, open: {} }; save(); render();
+});
+window.addEventListener("resize", moveThumb);
+render(); requestAnimationFrame(moveThumb);
+</script>
+</body>
+</html>
