@@ -19,6 +19,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const view = parent ? await currentView(parent) : "parent";
   return (
     <html lang="en-GB">
+      <head><link rel="stylesheet" href="https://use.typekit.net/axz4iqd.css" /></head>
       <body className="flex min-h-screen flex-col">
         <a href="#main" className="absolute left-3 top-[-60px] z-50 rounded-lg bg-surface px-4 py-2 focus:top-3">Skip to the main content</a>
         <header className="border-b-[1.5px] border-[var(--ink)] bg-[var(--peach)]">

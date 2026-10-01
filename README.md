@@ -77,6 +77,10 @@ node dist/server-tasks.cjs remove-demo                                # delete t
 - Light theme, Lexend + Andika, WCAG 2.2 AA, 48 px touch targets.
 - Children are told their grown-up can see their scores.
 
+## Marketing site and fonts
+
+The public homepage lives in `src/marketing` (sections, copy, brand constants in `brand.ts`) with its styles and script in `public/site`. All class names carry an `ip-` prefix. The display face is **Gloock from Adobe Fonts** via the kit in `FONT_KIT` (domains allowed on the kit: mylearn.works, www.mylearn.works, localhost; add any new domain in your Adobe Fonts kit settings). The wordmark is live text. Covers, icons and the social card are drawn from `src/marketing/art` by `python3 src/marketing/tools/build_assets.py && node src/marketing/tools/render-art.mjs` (text in those uses Montserrat ExtraBold, an open-licence font).
+
 ## Layout
 
 ```
