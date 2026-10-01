@@ -18,20 +18,23 @@ function Heading({ id, className, lines }: { id?: string; className: string; lin
   );
 }
 
+function Chevron({ dir }: { dir: "left" | "right" }) {
+  return (
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" className="ip-chevron">
+      <path d={dir === "left" ? "M16 4L7 13L16 22" : "M10 4L19 13L10 22"} stroke="var(--ink)" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 function Arrows({ label, green }: { label: string; green?: boolean }) {
   const cls = `ip-carousel-arrow${green ? " ip-is-green" : ""}`;
   return (
     <div className="ip-carousel-controls">
-      <button type="button" className={cls} data-prev aria-label={`Previous ${label}`} aria-disabled="true">
-        <img src="/site/images/arrow-left.svg" width={52} height={28} alt="" className="ip-slide-arrow" />
-      </button>
-      <button type="button" className={cls} data-next aria-label={`Next ${label}`}>
-        <img src="/site/images/arrow-right.svg" width={52} height={28} alt="" className="ip-slide-arrow" />
-      </button>
+      <button type="button" className={cls} data-prev aria-label={`Previous ${label}`} aria-disabled="true"><Chevron dir="left" /></button>
+      <button type="button" className={cls} data-next aria-label={`Next ${label}`}><Chevron dir="right" /></button>
     </div>
   );
 }
-
 
 /** "Enter your book code" and "Log in", always side by side. */
 function CtaPair({ tone = "ip-two", onDark = false }: { tone?: string; onDark?: boolean }) {
@@ -190,7 +193,12 @@ export function HowItWorks() {
 /* ---------------------------------------------------------------- Books */
 
 const BTN = ["", "ip-tone-teal", "ip-tone-pink", "ip-tone-lime"];
-const TONES = ["--c-amber", "--c-sky", "--c-pink", "--c-lime", "--c-teal", "--c-pink"];
+const TONES = ["--c-amber", "--c-sky", "--c-pink", "--c-lime", "--c-teal", "--c-pink", "--c-amber", "--c-sky"];
+/** How much of each cut-out shows: width as a share of the card and how far it is pulled down (so people rise from the bottom edge). */
+const FIT: Record<string, { w: number; b: number }> = {
+  y3maths: { w: 76, b: -34 }, y3reading: { w: 64, b: -6 }, ks2reading10: { w: 98, b: 0 },
+  ks3english: { w: 64, b: -2 }, y8maths: { w: 60, b: -4 }, gcse_englang: { w: 70, b: -4 },
+};
 
 export function Books({ data }: { data: BookSection }) {
   const { books } = data;
@@ -217,14 +225,14 @@ export function Books({ data }: { data: BookSection }) {
                 <li className="ip-speaker-slide" key={b.id}>
                   {(() => {
                     const who = b.isPhoto ? null : person(b.id);
-                    return who ? (
+                    const fit = FIT[b.id] ?? { w: 70, b: 0 };
+                    return (
                       <div className="ip-speaker-image ip-has-person" style={{ background: `var(${TONES[i % TONES.length]})` }}>
-                        <span className="ip-person-disc" aria-hidden="true" />
-                        <img className="ip-person" src={who.file} width={who.width} height={who.height} alt={who.alt} loading={i < 3 ? "eager" : "lazy"} />
-                      </div>
-                    ) : (
-                      <div className="ip-speaker-image">
-                        <img className="ip-slider-image" src={b.image} width={420} height={540} alt="" loading={i < 3 ? "eager" : "lazy"} />
+                        {who ? (
+                          <img className="ip-person" src={who.file} width={who.width} height={who.height} alt={who.alt} loading={i < 3 ? "eager" : "lazy"} style={{ width: `${fit.w}%`, bottom: `${fit.b}%` }} />
+                        ) : (
+                          <img className="ip-cover-art" src={b.image} width={420} height={540} alt="" loading={i < 3 ? "eager" : "lazy"} />
+                        )}
                       </div>
                     );
                   })()}
@@ -260,30 +268,27 @@ export function Books({ data }: { data: BookSection }) {
 /* ------------------------------------------------------------ Who it is for */
 
 const WHO = [
-  { pill: "Adults", t: "Parents and guardians", p: "Create 1 account, add a profile for each child and follow their progress on the dashboard.", slot: "who-parent", tone: "" },
-  { pill: "Adults", t: "Teachers", p: "A teacher can hold the account too, with a simple profile for each child.", slot: "who-teacher", tone: "ip-tone-lime" },
+  { pill: "Ages 5 to 16", t: "Key Stages 1 to 4", p: "Practice that matches the page of the book they are on. Children get their own profile inside a parent\u2019s account.", slot: "who-years", tone: "ip-tone-amber" },
   { pill: "Aged 13+", t: "Students aged 13 and over", p: "Can have their own account for the KS3 and GCSE books.", slot: "who-student", tone: "ip-tone-teal" },
-  { pill: "KS1 to KS4", t: "Key Stages 1 to 4", p: "Free curriculum practice for every Key Stage, once you are logged in.", slot: "who-years", tone: "ip-tone-amber" },
+  { pill: "Adults", t: "Parents and guardians", p: "Set up one account, add a profile for each child and follow their progress on the dashboard.", slot: "who-parent", tone: "ip-tone-pink" },
 ];
 
 export function WhoFor() {
   return (
-    <section className="ip-who-area" aria-labelledby="who-title" data-carousel>
+    <section className="ip-who-area" aria-labelledby="who-title">
       <div className="ip-container">
         <div className="ip-section-head">
           <div className="ip-section-head-text">
             <Heading id="who-title" className="ip-section-title" lines={["Who it is for"]} />
           </div>
-          <Arrows label="cards" />
         </div>
-      </div>
-      <div className="ip-carousel-bleed">
-        <div className="ip-carousel-track" data-track role="region" aria-label="Who it is for, scroll sideways" tabIndex={0}>
-          <ul className="ip-carousel-list">
-            {WHO.map((w) => (
+        <ul className="ip-who-grid">
+          {WHO.map((w) => {
+            const pp = person(w.slot);
+            return (
               <li className="ip-who-item" key={w.t}>
                 <div className={`ip-who-image ${w.tone}`}>
-                  {(() => { const pp = person(w.slot); return pp ? <img className="ip-person" src={pp.file} width={pp.width} height={pp.height} alt={pp.alt} loading="lazy" /> : null; })()}
+                  {pp && <img className="ip-person" src={pp.file} width={pp.width} height={pp.height} alt={pp.alt} loading="lazy" />}
                 </div>
                 <div className="ip-who-info">
                   <span className="ip-card-place"><span className="ip-card-pill-text">{w.pill}</span></span>
@@ -291,9 +296,9 @@ export function WhoFor() {
                   <p className="ip-body-display">{w.p}</p>
                 </div>
               </li>
-            ))}
-          </ul>
-        </div>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );
@@ -302,26 +307,24 @@ export function WhoFor() {
 /* ------------------------------------------------ What every topic gives you */
 
 function TopicIcon({ kind }: { kind: number }) {
-  const fills = ["#ffb627", "#ff8fab", "#c4e538", "#19c3b1", "#a8d1ff"];
-  const label = ["10", "9", "", "80%", "1 3 7"][kind];
+  const fills = ["var(--c-amber)", "var(--c-pink)", "var(--c-lime)", "var(--c-teal)"];
+  const k = { stroke: "var(--ink)", strokeWidth: 3.4, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, fill: "none" };
   return (
     <svg viewBox="0 0 80 80" aria-hidden="true">
-      <circle cx="40" cy="40" r="39" fill={fills[kind]} stroke="#14213d" strokeWidth="1.5" />
-      {kind === 2 ? (
-        <path d="M45 14L24 44H39L35 66L56 36H41Z" fill="#14213d" />
-      ) : (
-        <text x="40" y="40" textAnchor="middle" dominantBaseline="central" fontFamily="gloock, Georgia, serif" fontSize={label.length > 3 ? 21 : label.length > 2 ? 26 : 34} fill="#14213d">{label}</text>
-      )}
+      <circle cx="40" cy="40" r="39" fill={fills[kind]} stroke="var(--ink)" strokeWidth="1.5" />
+      {kind === 0 && <path d="M40 22V58M22 40H58" {...k} />}
+      {kind === 1 && <><circle cx="27" cy="31" r="8" fill="var(--ink)" /><rect x="42" y="23" width="16" height="16" rx="2" fill="var(--ink)" /><path d="M40 62L28 44H52Z" fill="var(--ink)" /></>}
+      {kind === 2 && <path d="M23 42L35 54L58 27" {...k} strokeWidth={4.4} />}
+      {kind === 3 && <><path d="M55 33A17 17 0 1 0 57 45" {...k} /><path d="M56 21V34H43" {...k} /></>}
     </svg>
   );
 }
 
 const GIVES = [
-  { t: "10 new questions on every topic", s: "1 topic for each page of your book", tag: "10 questions" },
-  { t: "9 question types, with diagrams", s: "And reading texts with line numbers", tag: "9 types" },
-  { t: "Instant marking", s: "With a short worked explanation after each answer", tag: "Instant" },
-  { t: "Secure topics", s: "80% or more on 2 different days", tag: "2 days" },
-  { t: "Another go at the right time", s: "Topics come back after 1, 3 and 7 days", tag: "1, 3, 7 days" },
+  { t: "New questions on every topic", s: "Every page of your book has its own practice online." },
+  { t: "All kinds of questions", s: "Pick the answer, fill the gap, put things in order, match pairs. With diagrams and reading texts." },
+  { t: "Marked straight away", s: "A short explanation after each answer, so mistakes turn into learning." },
+  { t: "Practice that comes back", s: "Tricky topics return a few days later, so they stick." },
 ];
 
 export function TopicGives() {
@@ -348,7 +351,6 @@ export function TopicGives() {
                         <p className="ip-topic-cat">{g.s}</p>
                       </div>
                     </div>
-                    <div className="ip-topic-button"><div className="ip-tag-text">{g.tag}</div></div>
                   </li>
                 ))}
               </ul>

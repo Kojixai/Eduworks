@@ -5,6 +5,7 @@
 import "server-only";
 import { getStore } from "./db";
 import type { Book, BookSummary, Section, Text, Unit, UnitContent, UnitMeta } from "@/practice/types";
+import { compareBookIds } from "@/practice/bookOrder";
 import type { SessionLike } from "@/practice/mastery";
 
 interface BookRow { id: string; title: string; key_stage: string; year_label: string; subject_label: string; pages: number; age_range: string; sections_json: string; sort: number; unit_count: number; question_count: number }
@@ -22,7 +23,7 @@ const UNIT_COLS = ["id", "book_id", "section_id", "title", "summary", "book_page
 
 export async function allBooks(withUnits = false): Promise<BookSummary[]> {
   const store = await getStore();
-  const books = await store.select<BookRow>("practice_books", { orderBy: [["sort", "asc"]] });
+  const books = (await store.select<BookRow>("practice_books", { orderBy: [["sort", "asc"]] })).sort((a, b) => compareBookIds(a.id, b.id));
   if (!withUnits) return books.map((b) => ({ meta: meta(b), units: [], fixture: false }));
   const units = await store.select<UnitRow>("practice_units", { columns: UNIT_COLS, orderBy: [["sort", "asc"]] });
   return books.map((b) => ({ meta: meta(b), units: units.filter((u) => u.book_id === b.id).map(unitMeta), fixture: false }));

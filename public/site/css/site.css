@@ -2242,13 +2242,7 @@ html.ip-js .ip-statement .ip-w:not(.ip-on) { opacity: .24; }
 
 /* Book cards */
 .ip-speaker-slide {
-  width: 420px; height: 540px; flex: none; background: var(--ink); border: 2px solid #000; border-radius: 20px; margin: 0; overflow: hidden;
-}
-.ip-speaker-slide .ip-speaker-image { position: absolute; inset: 0; }
-.ip-speaker-slide .ip-speaker-image img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
-.ip-speaker-slide .ip-speaker-image::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(20, 33, 61, .97) 0, rgba(20, 33, 61, .93) 38%, rgba(20, 33, 61, .6) 47%, rgba(20, 33, 61, 0) 56%);
+  width: 420px; height: 540px; flex: none; margin: 0; overflow: hidden;
 }
 .ip-card-pill { position: absolute; top: 18px; left: 18px; z-index: 2; background: var(--white); }
 .ip-speaker-info { right: 0; z-index: 2; padding: 28px; max-width: none; }
@@ -2475,53 +2469,115 @@ html:not(.ip-js) .ip-p-m-wrap { display: none; }
 .ip-pick-person { width: auto; max-height: 560px; display: block; margin: 0 auto; }
 
 /* =====================================================================================================================
-   Menu button on the right, bottom-up gradient hover on every button, flat section bands
+   Header, buttons, section bands, dividers, cards (v3)
    ===================================================================================================================== */
+body { overflow-x: clip; }
 
-/* menu button sits at the far right, after the Log in pill */
+/* menu button at the far right, after the Log in pill */
 .ip-logo-wrapper { order: 1; }
 .ip-nav-right-content { order: 2; margin-left: auto; }
 .ip-nav-toggle-btn { order: 3; margin-left: 12px; min-width: 64px; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; }
 @media screen and (max-width: 767px) { .ip-nav-toggle-btn { margin-left: auto; } }
 
-/* one hover for every button: a gradient fills from the bottom up (the Close button's gradient) */
-.ip-primary-button, .ip-carousel-arrow { position: relative; isolation: isolate; overflow: hidden; }
-.ip-close-btn-wrapper { isolation: isolate; overflow: hidden; } /* stays position: fixed, top right */
-.ip-primary-button::before, .ip-carousel-arrow::before, .ip-close-btn-wrapper::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
-  background-image: linear-gradient(355deg, #ffe9b8, #19c3b1);
-  transform: translateY(101%); transition: transform .45s cubic-bezier(.215, .61, .355, 1);
+/* ---- hover: each button's own colour flows upward into a second colour (no sliding block) ---- */
+.ip-primary-button, .ip-carousel-arrow, .ip-p-m-wrap {
+  --b: var(--c-pink); --e: #ffb27a;
+  background-color: transparent;
+  background-image: linear-gradient(180deg, var(--b) 0, var(--b) 44%, var(--e) 100%);
+  background-size: 100% 230%; background-position: 0 0; background-repeat: no-repeat;
+  transition: background-position .7s cubic-bezier(.215, .61, .355, 1), transform .2s ease, box-shadow .2s ease;
 }
-.ip-primary-button:hover::before, .ip-primary-button:focus-visible::before,
-.ip-carousel-arrow:not([aria-disabled="true"]):hover::before, .ip-carousel-arrow:not([aria-disabled="true"]):focus-visible::before,
-.ip-close-btn-wrapper:hover::before, .ip-close-btn-wrapper:focus-visible::before { transform: none; }
-/* the old side-wipe and the jump are gone */
-.ip-button-hover-bg { display: none !important; }
-.ip-close-btn-wrapper:hover { transform: none; background-image: none; }
+.ip-primary-button:hover, .ip-primary-button:focus-visible,
+.ip-carousel-arrow:not([aria-disabled="true"]):hover, .ip-carousel-arrow:not([aria-disabled="true"]):focus-visible,
+.faq-hover, .ip-faq-question:hover .ip-p-m-wrap, .ip-faq-question:focus-visible .ip-p-m-wrap { background-position: 0 100%; }
+.ip-primary-button::before, .ip-carousel-arrow::before, .ip-close-btn-wrapper::before, .ip-button-hover-bg { display: none !important; }
+.ip-primary-button { position: relative; overflow: hidden; }
+.ip-primary-button.ip-two { --b: var(--c-lime); --e: #ffd23f; }
+.ip-primary-button.ip-white { --b: #ffffff; --e: #ffe08a; }
+.ip-primary-button.ip-tone-teal { --b: var(--c-teal); --e: #c4e538; }
+.ip-primary-button.ip-tone-pink { --b: var(--c-pink); --e: #ffd166; }
+.ip-primary-button.ip-tone-lime { --b: var(--c-lime); --e: #6ee7b7; }
+.ip-primary-button.ip-book-card-btn { --b: var(--c-amber); --e: #ff8f5a; }
+.ip-primary-button.ip-outline { --b: rgba(255, 255, 255, 0); --e: rgba(255, 255, 255, .95); }
+.ip-primary-button.ip-outline:hover, .ip-primary-button.ip-outline:focus-visible { background-color: transparent; }
+.ip-primary-button.ip-outline .ip-btn-label, .ip-primary-button.ip-outline:hover .ip-btn-label { color: var(--ink); }
+.ip-primary-button.ip-book-card-btn:hover, .ip-primary-button.ip-book-card-btn:focus-visible { background-color: transparent; }
+.ip-p-m-wrap { --b: #ffffff; --e: var(--c-lime); }
+/* the Close button keeps its own gradient, and no longer jumps */
 .ip-close-btn-wrapper { transition: none; }
-.ip-primary-button.ip-book-card-btn:hover, .ip-primary-button.ip-book-card-btn:focus-visible { background-color: inherit; }
-.ip-primary-button.ip-outline:hover { background: transparent; }
-.ip-primary-button.ip-outline:hover .ip-btn-label, .ip-primary-button.ip-outline.ip-on-dark:hover .ip-btn-label { color: var(--ink); }
-.ip-carousel-arrow:hover, .ip-carousel-arrow.ip-is-green:hover { background-color: inherit; }
-.ip-carousel-arrow.ip-is-green { background-color: var(--c-lime); }
-.ip-carousel-arrow[aria-disabled="true"]:hover { background-color: transparent; }
-.ip-carousel-arrow.ip-is-green[aria-disabled="true"]:hover { background-color: var(--c-lime); }
-.ip-faq-question:hover .ip-p-m-wrap { background-image: linear-gradient(355deg, #ffe9b8, #19c3b1); background-color: transparent; }
+.ip-close-btn-wrapper:hover, .ip-close-btn-wrapper:focus-visible { background-image: linear-gradient(355deg, #ffe9b8, #19c3b1); transform: none; }
 
-/* section rhythm: white, then a soft colour, separated by straight lines (the statement band keeps its curve) */
-.ip-how-area, .ip-get-course-area, .ip-topic-area, .ip-who-area, .ip-faq-area, .ip-call-to-action-area {
-  background-image: none; margin-top: 0; position: relative; z-index: 0; padding-top: 110px; padding-bottom: 120px;
+/* ---- arrows: chunky chevrons in rounded squares ---- */
+.ip-carousel-controls { display: flex; gap: 14px; }
+.ip-carousel-arrow { --b: #ffffff; --e: #ffd166; width: 64px; height: 64px; border: 1.5px solid var(--ink); border-radius: 18px; box-shadow: 3px 3px 0 var(--ink); position: relative; overflow: hidden; }
+.ip-carousel-arrow.ip-is-green { --b: var(--c-lime); --e: #ffd23f; background-color: transparent; }
+.ip-carousel-arrow:not([aria-disabled="true"]):active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.ip-carousel-arrow[aria-disabled="true"] { opacity: .35; box-shadow: none; }
+.ip-chevron { display: block; position: relative; z-index: 1; }
+
+/* ---- the blue statement band: wavy top, flat bottom ---- */
+.ip-growth-mindset-area { background-image: none !important; background-color: var(--c-sky); margin-top: 0 !important; padding-top: 120px; padding-bottom: 120px; position: relative; z-index: 0; }
+.ip-growth-mindset-area::before { content: ""; position: absolute; left: 0; right: 0; bottom: calc(100% - 1px); height: 76px; background: url("../images/wave-sky.svg") repeat-x left bottom / 900px 76px; pointer-events: none; }
+
+/* ---- section bands: white, then a soft colour, split by straight lines with maths shapes rising out of them ---- */
+.ip-how-area, .ip-get-course-area, .ip-topic-area, .ip-who-area, .ip-faq-area, .ip-call-to-action-area, .ip-footer-area {
+  background-image: none; margin-top: 0; position: relative; z-index: 0; overflow: visible; border-top: 1.5px solid var(--ink);
 }
-.ip-how-area { background-color: var(--white); padding-top: 90px; }
-.ip-get-course-area { background-color: var(--c-cream); border-top: 1.5px solid var(--ink); padding-bottom: 130px; }
-.ip-topic-area { background-color: var(--c-lime); border-top: 1.5px solid var(--ink); }
-.ip-who-area { background-color: var(--white); border-top: 1.5px solid var(--ink); }
-.ip-faq-area { background-color: var(--c-cream); border-top: 1.5px solid var(--ink); }
-.ip-call-to-action-area { background-color: var(--c-pink); border-top: 1.5px solid var(--ink); }
-.ip-footer-area { background-color: var(--white); border-top: 1.5px solid var(--ink); }
+.ip-how-area, .ip-get-course-area, .ip-topic-area, .ip-who-area, .ip-faq-area, .ip-call-to-action-area { padding-top: 120px; padding-bottom: 130px; }
+.ip-how-area { background-color: var(--white); }
+.ip-get-course-area { background-color: var(--c-cream); padding-bottom: 140px; }
+.ip-topic-area { background-color: var(--c-lime); }
+.ip-who-area { background-color: var(--white); }
+.ip-faq-area { background-color: var(--c-cream); padding-bottom: 180px; }
+.ip-call-to-action-area { background-color: var(--c-pink); }
+.ip-footer-area { background-color: var(--white); }
+.ip-how-area::before, .ip-get-course-area::before, .ip-topic-area::before, .ip-who-area::before, .ip-faq-area::before, .ip-call-to-action-area::before, .ip-footer-area::before {
+  content: ""; position: absolute; left: 0; right: 0; bottom: calc(100% + 1.5px); height: 92px; z-index: 2; pointer-events: none;
+  background-repeat: repeat-x; background-size: 1500px 92px; background-position: left bottom;
+}
+.ip-how-area::before { background-image: url("../images/strip-white.svg"); background-position: 60px bottom; }
+.ip-get-course-area::before { background-image: url("../images/strip-cream.svg"); background-position: 0 bottom; }
+.ip-topic-area::before { background-image: url("../images/strip-lime.svg"); background-position: 240px bottom; }
+.ip-who-area::before { background-image: url("../images/strip-white.svg"); background-position: -380px bottom; }
+.ip-faq-area::before { background-image: url("../images/strip-cream.svg"); background-position: 520px bottom; }
+.ip-call-to-action-area::before { background-image: url("../images/strip-pink.svg"); background-position: 120px bottom; }
+.ip-footer-area::before { background-image: url("../images/strip-white.svg"); background-position: -700px bottom; }
 .ip-section-padding { display: none; }
 .ip-section-head { margin-bottom: 52px; }
 @media screen and (max-width: 767px) {
-  .ip-how-area, .ip-get-course-area, .ip-topic-area, .ip-who-area, .ip-faq-area, .ip-call-to-action-area { padding-top: 70px; padding-bottom: 80px; }
-  .ip-get-course-area { padding-bottom: 90px; }
+  .ip-how-area, .ip-get-course-area, .ip-topic-area, .ip-who-area, .ip-faq-area, .ip-call-to-action-area { padding-top: 76px; padding-bottom: 84px; }
+  .ip-get-course-area { padding-bottom: 96px; } .ip-faq-area { padding-bottom: 110px; }
+  .ip-how-area::before, .ip-get-course-area::before, .ip-topic-area::before, .ip-who-area::before, .ip-faq-area::before, .ip-call-to-action-area::before, .ip-footer-area::before { height: 62px; background-size: 1000px 62px; }
+  .ip-growth-mindset-area { padding-top: 90px; padding-bottom: 90px; }
 }
+
+/* ---- book cards: colour block with the person rising from the bottom, white panel below ---- */
+.ip-speaker-slide { display: flex; flex-direction: column; height: 540px; background: var(--white); border: 1.5px solid var(--ink); border-radius: 24px; overflow: hidden; }
+.ip-speaker-image { position: relative; flex: none; top: auto; bottom: auto; left: auto; right: auto; height: 330px; margin: 0; overflow: hidden; border-bottom: 1.5px solid var(--ink); }
+.ip-has-person::after { content: ""; position: absolute; inset: 0; z-index: 1; background: url("../images/noise.png"); opacity: .3; mix-blend-mode: multiply; pointer-events: none; }
+.ip-has-person .ip-person-disc { display: none; }
+.ip-has-person .ip-person { position: absolute; left: 50%; transform: translateX(-50%); height: auto; max-height: none; max-width: none; filter: none; z-index: 0; }
+.ip-cover-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.ip-speaker-info { position: static; flex: 1; background: var(--white); color: var(--ink); padding: 20px 22px 24px; }
+.ip-speaker-name, .ip-speaker-info .ip-body-display { color: var(--ink); }
+.ip-speaker-info .ip-body-display { opacity: .75; }
+@media screen and (max-width: 479px) { .ip-speaker-slide { height: 520px; } .ip-speaker-image { height: 300px; } }
+
+/* ---- who it is for: three cards, people rising from the bottom edge ---- */
+.ip-who-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.ip-who-item { width: auto; margin: 0; overflow: visible; }
+.ip-who-image { position: relative; height: 440px; overflow: hidden; border: 1.5px solid var(--ink); border-radius: 24px; }
+.ip-who-image::before { display: none; }
+.ip-who-image::after { content: ""; position: absolute; inset: 0; background: url("../images/noise.png"); opacity: .3; mix-blend-mode: multiply; pointer-events: none; }
+.ip-who-image .ip-person { position: absolute; left: 50%; bottom: -7%; transform: translateX(-50%); width: auto; height: 100%; max-width: 96%; max-height: none; object-fit: contain; object-position: bottom; z-index: 0; }
+@media screen and (max-width: 991px) { .ip-who-grid { grid-template-columns: 1fr; max-width: 460px; } .ip-who-image { height: 400px; } }
+
+/* ---- what every topic gives you: no tag column ---- */
+.ip-topic-button { display: none; }
+
+.ip-speaker-slide .ip-speaker-image img.ip-person { display: block; height: auto; object-fit: contain; border-radius: 0; }
+.ip-speaker-slide .ip-speaker-image img.ip-cover-art { display: block; border-radius: 0; }
+
+.ip-primary-button.ip-book-card-btn.ip-tone-teal { --b: var(--c-teal); --e: #c4e538; }
+.ip-primary-button.ip-book-card-btn.ip-tone-pink { --b: var(--c-pink); --e: #ffd166; }
+.ip-primary-button.ip-book-card-btn.ip-tone-lime { --b: var(--c-lime); --e: #6ee7b7; }
