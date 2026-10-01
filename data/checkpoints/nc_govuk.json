@@ -1,0 +1,14 @@
+{
+ "subject:art-and-design": "c175a93d438c52f4fb4dc245c8febe19c4542a6de22f48816920900c38976b18",
+ "subject:citizenship": "464a56192d927b3ba5e10f4801f97d9f76c83a2436f8a3e1637dae0a34ec5e2e",
+ "subject:computing": "cb23ccd102d6db789d5469a6f09de9c39eda867c43351d6718991b1c3bdcbbfa",
+ "subject:design-and-technology": "0584c13863e4ad6feaa472f7970f3b0ef14541d519514fb74f2694d2fdf324b4",
+ "subject:english": "b31fa52e0d34a84fde157d256c8530c2ab81d39107092a4b4dded11f0c026ef9",
+ "subject:geography": "169915be2ff2d3c905e2b3a98e824a0511fa7d83b75ac2f2c9b3d17c609df728",
+ "subject:history": "b6520963f65257d6bfd1561dd93ef06a601f8a0e576d7a80694b157c34749c45",
+ "subject:languages": "8842c2c2df6673e18f02eb9a42d583b193d9dd7ba089cf6e7c8a81895d12912d",
+ "subject:mathematics": "853313d8d7bc54514b65d7e40a57c55273079fab00734429efacf881fd8c111d,b56359dbf35a458e96f65edf45cdb1eb22fa7d4093241b4e40de84ded3f02558",
+ "subject:music": "10a57ec34c5270cd6f86759eadfe142a3df0a989275199e7191bb0cb425428ee",
+ "subject:physical-education": "efcdc85cb35e3fa5db1eaa83b59b14a95a403971f99e3d5639e9ed83aaf91ca7",
+ "subject:science": "8dcf10262f8c85763d634e26df2c9f3267cdb4a3cdbc272914d582033943a8d9"
+}
