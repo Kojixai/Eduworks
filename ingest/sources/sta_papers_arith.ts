@@ -78,7 +78,7 @@ export function normaliseMath(s: string): string {
   t = t.replace(/[½⅓⅔¼¾⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞⅒]/g, (c) => ` ${VULGAR[c]}`);
   t = t.replace(/[²³]/g, (c) => SUPER[c]);
   t = t.replace(/[−–—]/g, "-");
-  t = t.replace(/[□☐▢■]|_{2,}|\?/g, " X ");
+  t = t.replace(/[□☐▢■]|\[\s*\]|_{2,}|\?/g, " X ");
   // thousands separators
   t = t.replace(/\b(\d{1,3})((?:,\d{3})+)(?![\d])/g, (_m, a: string, b: string) => a + b.replace(/,/g, ""));
   return t.replace(/\s+/g, " ").trim();

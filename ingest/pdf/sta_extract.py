@@ -90,9 +90,10 @@ def rebuild_fractions(words, rules):
             cx = (w["x0"] + w["x1"]) / 2
             if not (rx0 - 2 <= cx <= rx1 + 2):
                 continue
-            if 0 <= ry - w["y1"] <= 6 and num is None:
+            # small negative tolerance: font ascent/descent metrics differ between PyMuPDF versions
+            if -2.5 <= ry - w["y1"] <= 6 and num is None:
                 num = i
-            elif 0 <= w["y0"] - ry <= 6 and den is None:
+            elif -2.5 <= w["y0"] - ry <= 6 and den is None:
                 den = i
         if num is not None and den is not None:
             used.update([num, den])
