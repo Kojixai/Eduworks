@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { answerText, isResponseComplete, markQuestion, type MarkResult, type Response } from "@/practice/marking";
 import { localDay } from "@/practice/mastery";
 import type { Question, UnitContent } from "@/practice/types";
-import { savePracticeAction, type SavedAttempt } from "@/app/books/actions";
+import { savePracticeAction, type SavedAttempt } from "@/app/(app)/books/actions";
 import { Diagram } from "./Diagram";
 import { initResponse, QuestionInput } from "./QuestionView";
 import { TextPanel } from "./TextPanel";
