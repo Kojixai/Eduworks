@@ -2,6 +2,14 @@
 @import "../../styles/tokens.css";
 @import "../../styles/practice.css";
 
+@font-face { font-family: "Inter"; src: url("/fonts/Inter-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("/fonts/Inter-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("/fonts/Inter-600.woff2") format("woff2"); font-weight: 600 700; font-display: swap; }
+@font-face { font-family: "RomanaBT"; src: url("/fonts/RomanaBT-Regular.ttf") format("truetype"); font-weight: 400 500; font-display: swap; }
+@font-face { font-family: "RomanaBT"; src: url("/fonts/RomanaBT-Bold.ttf") format("truetype"); font-weight: 600 800; font-display: swap; }
+
+
+
 /* Tailwind theme maps onto the design tokens, so utility classes restyle with tokens.css */
 @theme inline {
   --color-bg: var(--color-bg);
@@ -45,7 +53,7 @@
     color: var(--color-text);
     font-family: var(--font-sans);
     line-height: var(--line-height);
-    font-size: 18px;
+    font-size: 17px;
     -webkit-text-size-adjust: 100%;
   }
   h1, h2, h3, h4 {

@@ -8,6 +8,7 @@ import { getStore } from "./db";
 const SESSION_COOKIE = "edu_session";
 const CHILD_COOKIE = "edu_child";
 const LOCK_COOKIE = "edu_lock";
+const VIEW_COOKIE = "edu_view";
 const SESSION_DAYS = 30;
 
 export interface Parent {
@@ -134,4 +135,20 @@ export async function requireParentArea(next: string): Promise<Parent> {
   const p = await requireParent();
   if (await isParentLocked(p)) redirect(`/unlock?next=${encodeURIComponent(next)}`);
   return p;
+}
+
+// ---------------------------------------------------------------- admin "view as"
+export type View = "admin" | "parent" | "child";
+export const VIEWS: View[] = ["admin", "parent", "child"];
+export const VIEW_HOME: Record<View, string> = { admin: "/admin", parent: "/dashboard", child: "/me" };
+
+/** Which role an admin is currently previewing. Everyone else is simply a parent (or student). */
+export async function currentView(parent: Parent): Promise<View> {
+  if (!parent.is_admin) return "parent";
+  const v = (await cookies()).get(VIEW_COOKIE)?.value as View | undefined;
+  return v && VIEWS.includes(v) ? v : "admin";
+}
+export async function setView(parent: Parent, v: View) {
+  if (!parent.is_admin || !VIEWS.includes(v)) return;
+  (await cookies()).set(VIEW_COOKIE, v, { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production", path: "/", maxAge: 60 * 60 * 24 * 30 });
 }

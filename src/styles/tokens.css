@@ -5,41 +5,52 @@
  */
 :root {
   /* colour */
-  --color-bg: #f7f6f2;          /* page background: warm paper */
+  --color-bg: #fff6ef;          /* page background: light peach */
   --color-surface: #ffffff;     /* cards */
-  --color-surface-muted: #fbfaf7;
-  --color-border: #dedbd2;
-  --color-text: #1e1e1e;
-  --color-text-muted: #555b66;
-  --color-primary: #1f4e8c;     /* buttons, links (Inkworks blue) */
-  --color-primary-hover: #173f73;
-  --color-primary-soft: #e6eef8;
+  --color-surface-muted: #fff0e6;
+  --color-border: #e7cdb9;
+  --color-text: #0e0f18;
+  --color-text-muted: #55525c;
+  --color-primary: #0e0f18;     /* buttons, links: ink */
+  --color-primary-hover: #2a2b38;
+  --color-primary-soft: #fee4d2;
   --color-on-primary: #ffffff;
-  --color-success: #1b6b38;
-  --color-success-soft: #e4f3e8;
-  --color-danger: #a0281b;
+  --color-success: #11683f;
+  --color-success-soft: #d8f7ea;
+  --color-danger: #b3261e;
   --color-danger-soft: #fbe9e6;
   --color-warning: #7a4d00;
-  --color-warning-soft: #fdf1d8;
+  --color-warning-soft: #fdeec2;
   --color-star: #e0a100;
 
   /* data visualisation: muted, print-like, distinguishable without relying on colour alone (label every series) */
-  --chart-1: #1f4e8c;           /* blue: main series */
-  --chart-2: #2f8f83;           /* teal */
-  --chart-3: #c9783f;           /* clay */
-  --chart-4: #7a5aa6;           /* plum */
-  --chart-5: #b8902f;           /* ochre */
+  --chart-1: #ff5c4c;           /* coral: main series */
+  --chart-2: #3ee1a6;           /* aquamarine */
+  --chart-3: #c291fe;           /* violet */
+  --chart-4: #f4c857;           /* gold */
+  --chart-5: #ff9e4f;           /* orange */
   --chart-6: #8a8f98;           /* grey */
-  --chart-grid: #e6e3da;
-  --chart-track: #ebe8df;
-  --chart-secure: #1b6b38;      /* mastery: secure */
-  --chart-practising: #d49a2a;  /* mastery: practising */
-  --chart-notstarted: #d9d5ca;  /* mastery: not started */
+  --chart-grid: #f0d9c8;
+  --chart-track: #f6e3d4;
+  --chart-secure: #1fb585;      /* mastery: secure */
+  --chart-practising: #f4c857;  /* mastery: practising */
+  --chart-notstarted: #ead8c9;  /* mastery: not started */
   --card-pad: 20px;
 
+  /* Connect brand palette (from the cloned template): use for accents, never for body text on white */
+  --ink: #0e0f18;
+  --peach: #fee4d2;
+  --peach-deep: #fbcfb1;
+  --coral: #ff5c4c;
+  --violet: #c291fe;
+  --aqua: #3ee1a6;
+  --gold: #f4c857;
+  --orange: #ff9e4f;
+  --outline: 1.5px solid var(--ink);   /* the template's black card outline */
+
   /* type */
-  --font-sans: "Andika", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-head: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-head: "RomanaBT", Georgia, "Times New Roman", serif;
   --font-size-xs: 0.78rem;
   --font-size-sm: 0.9rem;
   --font-size-md: 1rem;
@@ -51,7 +62,7 @@
   /* shape and space */
   --radius-sm: 8px;
   --radius-md: 12px;
-  --radius-lg: 18px;
+  --radius-lg: 24px;
   --radius-pill: 999px;
   --space-page: 16px;           /* mobile side gutter */
   --max-width: 960px;

@@ -20,7 +20,7 @@ npm run db:build          # builds data/db/eduworks.sqlite from data/jsonl + con
 npm run dev               # http://localhost:3000
 ```
 
-Demo logins on a local build (never created in production): parent `demo@example.com` / `Practice123`.
+Local dev logins (never created in production): admin `admin@example.com` / `admin-demo-2026`, parent `demo@example.com` / `Practice123`. In production there are no demo accounts: log in as the admin and use the **Admin / Parent / Child** switcher in the header to preview each view (an admin with no learners sees a clearly-labelled sample learner, and can open every book).
 Demo book codes (`DEMO-Y3MATHS`, `DEMO-Y8MATHS`, `DEMO-KS2READING10`, `DEMO-KS3ENGLISH`, `DEMO-GCSEENGLANG`, `DEMO-Y3READING`, `DEMO-MACBETH`, `DEMO-AIC`) work only when `NODE_ENV` is not `production` or `ALLOW_DEMO_CODES=1`.
 
 ## Checks
@@ -55,8 +55,7 @@ node scripts/e2e-mobile.mjs                 # phone-width pass: overflow and tap
 ## Deploying
 
 ```bash
-deploy/deploy.sh                    # build here, sync, migrate, import, tidy, reload pm2
-deploy/deploy.sh --demo-activity    # same, plus demo data on the demo parent so the dashboard has something to show
+deploy/deploy.sh                    # build here, sync, migrate, import, tidy (removes the default admin and demo parent), reload pm2
 ```
 
 The build happens on the Mac (the server has about 1 GB spare). `data/db/*.sqlite` holds live accounts and is **never** copied from here. `--seed-db` was a one-off on 1 October 2026: do not run it again, it overwrites the live database.
@@ -82,8 +81,10 @@ node dist/server-tasks.cjs remove-demo                                # delete t
 
 ```
 src/practice/      Inkworks engine: schema, marking, mastery, player, diagrams, importer (ported from the Companion site)
-src/app/books/     book, topic, practice, results, mistakes pages
-src/app/dashboard/ parent dashboard (src/lib/dashboard.ts holds the numbers, src/components/charts.tsx the charts)
+src/app/(marketing)/  public homepage (own root layout and CSS, rebranded from the Connect template; assets in public/site)
+src/app/(app)/        everything behind the header: books, dashboard, me (child home), account, admin, curriculum
+src/app/(app)/dashboard/  parent dashboard: src/lib/dashboard.ts (numbers), src/lib/recommend.ts (recommended panel), src/components/shell + charts
+src/lib/sample.ts     sample learner used when an admin previews parent/child views
 src/lib/           database, auth (sessions, PIN lock), redemption rules, repo queries
 ingest/            Oak, GOV.UK and STA harvesters
 db/migrations/     SQLite migrations, applied automatically

@@ -1,0 +1,12 @@
+import type { ReactNode } from "react";
+const base = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.9, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true } as const;
+const I = (d: ReactNode) => function Icon() { return <svg {...base}>{d}</svg>; };
+export const IconHome = I(<><path d="M3 11l9-8 9 8" /><path d="M5 10v10h5v-6h4v6h5V10" /></>);
+export const IconBooks = I(<><path d="M4 19V5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z" /><path d="M8 7h6M8 11h6" /></>);
+export const IconCurriculum = I(<><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>);
+export const IconChart = I(<><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></>);
+export const IconUser = I(<><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></>);
+export const IconAdmin = I(<><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" /><path d="M9 12l2 2 4-4" /></>);
+export const IconSpark = I(<><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18" /></>);
+export const IconLock = I(<><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></>);
+export const IconSearch = I(<><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.5-3.5" /></>);

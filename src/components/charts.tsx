@@ -89,3 +89,15 @@ export function MasteryBar({ secure, practising, notStarted, total }: { secure: 
     </div>
   );
 }
+
+/** Progress ring: share of topics secure, with the figure in the middle. */
+export function Ring({ value, label, size = 112, colour = "var(--chart-2)" }: { value: number; label: string; size?: number; colour?: string }) {
+  const r = (size - 14) / 2, c = 2 * Math.PI * r, v = Math.max(0, Math.min(1, value));
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} role="img" aria-label={label} className="shrink-0">
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--chart-track)" strokeWidth="12" />
+      {v > 0 && <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke={colour} strokeWidth="12" strokeLinecap="round" strokeDasharray={`${c * v} ${c}`} transform={`rotate(-90 ${size / 2} ${size / 2})`} />}
+      <text x="50%" y="50%" dominantBaseline="central" textAnchor="middle" fontSize={size * 0.22} fontWeight="700" fill="var(--ink)" fontFamily="var(--font-head)">{Math.round(v * 100)}%</text>
+    </svg>
+  );
+}

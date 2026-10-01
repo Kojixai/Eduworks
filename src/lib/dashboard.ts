@@ -16,6 +16,7 @@ export const PERIODS: Period[] = [7, 30, 90];
 export interface DayPoint { day: string; label: string; questions: number }
 export interface TrendPoint { day: string; pct: number; title: string }
 export interface BookMastery { bookId: string; title: string; colour: string; secure: number; practising: number; notStarted: number; due: number; total: number; started: number }
+export interface SectionProgress { bookId: string; bookTitle: string; sectionId: string; name: string; colour: string; started: number; total: number; secure: number; /** mean best score over started topics, 0 to 100, or null if none started */ avgBest: number | null }
 export interface FocusItem { bookId: string; unitId: string; title: string; bookTitle: string; reason: "due" | "weak"; bestPct: number; sessions: number; nextDueDay: string | null }
 export interface ActivityItem { at: string; kind: "practice" | "quiz" | "paper" | "phonics" | "mtc"; title: string; pct: number; detail: string }
 
@@ -25,6 +26,7 @@ export interface DashboardData {
   daily: DayPoint[];
   trend: TrendPoint[];
   books: BookMastery[];
+  sections: SectionProgress[];
   focus: FocusItem[];
   recent: ActivityItem[];
   hasAnything: boolean;
@@ -87,6 +89,7 @@ export function buildDashboard(i: DashboardInput): DashboardData {
   const byUnit = groupByUnit(i.sessions);
   const books: BookMastery[] = [];
   const focus: FocusItem[] = [];
+  const sections: SectionProgress[] = [];
   for (const b of i.books.filter((x) => i.unlocked.has(x.meta.id))) {
     const row: BookMastery = { bookId: b.meta.id, title: b.meta.title, colour: b.meta.sections[0]?.colour ?? "#1F4E8C", secure: 0, practising: 0, notStarted: 0, due: 0, total: b.units.length, started: 0 };
     for (const u of b.units) {
@@ -99,6 +102,17 @@ export function buildDashboard(i: DashboardInput): DashboardData {
       else if (st.state === "practising" && st.lastPct < 0.6) focus.push({ bookId: b.meta.id, unitId: u.id, title: u.title, bookTitle: b.meta.title, reason: "weak", bestPct: Math.round(st.bestPct * 100), sessions: st.sessions, nextDueDay: st.nextDueDay });
     }
     books.push(row);
+    for (const sec of b.meta.sections) {
+      const us = b.units.filter((u) => u.section === sec.id);
+      if (!us.length) continue;
+      const sts = us.map((u) => unitStatus(byUnit.get(u.id) ?? [], today));
+      const started = sts.filter((x) => x.state !== "not-started");
+      sections.push({
+        bookId: b.meta.id, bookTitle: b.meta.title, sectionId: sec.id, name: sec.name, colour: sec.colour, total: us.length, started: started.length,
+        secure: sts.filter((x) => x.state === "secure").length,
+        avgBest: started.length ? Math.round((started.reduce((n, x) => n + x.bestPct, 0) / started.length) * 100) : null,
+      });
+    }
   }
   focus.sort((a, b) => (a.reason === b.reason ? a.bestPct - b.bestPct : a.reason === "due" ? -1 : 1));
 
@@ -111,7 +125,7 @@ export function buildDashboard(i: DashboardInput): DashboardData {
   return {
     period: i.period,
     totals: { sessions: sessionsIn.length + curIn.length, questions, accuracy, activeDays, prevQuestions },
-    daily, trend, books, focus: focus.slice(0, 6), recent,
+    daily, trend, books, sections, focus: focus.slice(0, 6), recent,
     hasAnything: i.sessions.length > 0 || curFin.length > 0,
   };
 }

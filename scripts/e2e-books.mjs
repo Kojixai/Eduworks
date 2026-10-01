@@ -147,7 +147,7 @@ await page.getByRole("button", { name: "Save PIN" }).click();
 await page.getByText("PIN saved.").waitFor();
 await page.goto(`${BASE}/home`);
 await page.getByRole("button", { name: /Sam/ }).first().click();
-await page.waitForURL(/\/learn/);
+await page.waitForURL(/\/me/);
 await page.goto(`${BASE}/dashboard`);
 if (!page.url().includes("/unlock")) errors.push(`dashboard was not locked: ${page.url()}`);
 await page.locator("#pin").fill("0000");

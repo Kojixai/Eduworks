@@ -60,7 +60,17 @@ export async function unitMetaOf(bookId: string, unitId: string): Promise<UnitMe
 
 export interface Access { bookId: string; expiresAt: string; active: boolean }
 
+/**
+ * Books an account can use. Admins can use every book (to preview the product); everyone else only the books they
+ * have redeemed a code for, until it expires.
+ */
 export async function accessFor(parentId: string): Promise<Access[]> {
+  const store = await getStore();
+  const me = await store.first<{ is_admin: number }>("parents", { where: { id: parentId }, columns: ["is_admin"] });
+  if (me?.is_admin) {
+    const ids = (await store.select<{ id: string }>("practice_books", { columns: ["id"] })).map((b) => b.id);
+    return ids.map((bookId) => ({ bookId, expiresAt: "2099-12-31T00:00:00.000Z", active: true }));
+  }
   const rows = await (await getStore()).select<{ book_id: string; expires_at: string }>("redemptions", { where: { parent_id: parentId }, columns: ["book_id", "expires_at"] });
   const now = new Date().toISOString();
   return rows.map((r) => ({ bookId: r.book_id, expiresAt: r.expires_at, active: r.expires_at > now }));

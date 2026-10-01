@@ -10,7 +10,7 @@ export const metadata = { title: "Choose a child" };
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ welcome?: string; added?: string; next?: string }> }) {
   const sp = await searchParams;
-  const next = sp.next && sp.next.startsWith("/") && !sp.next.startsWith("//") ? sp.next : "/learn";
+  const next = sp.next && sp.next.startsWith("/") && !sp.next.startsWith("//") ? sp.next : "/me";
   const parent = await requireParent();
   const locked = await isParentLocked(parent);
   const kids = await childrenOf(parent.id);

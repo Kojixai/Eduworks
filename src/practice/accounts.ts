@@ -1,6 +1,7 @@
 // Account rules shared by redemption, the learner screens and the avatar picker.
 export const AVATARS: { id: string; label: string; bg: string; fg: string }[] = [
   { id: "sky", label: "Sky blue", bg: "#D6E6F7", fg: "#173F73" },
+  { id: "violet", label: "Violet", bg: "#E9D8FF", fg: "#3B1A73" },
   { id: "leaf", label: "Leaf green", bg: "#D7EDD9", fg: "#1D5B2A" },
   { id: "sun", label: "Sunshine", bg: "#FBEBC2", fg: "#6B4A00" },
   { id: "berry", label: "Berry", bg: "#F2D9E8", fg: "#7A1F55" },

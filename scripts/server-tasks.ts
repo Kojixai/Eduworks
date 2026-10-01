@@ -3,7 +3,8 @@
  *   migrate          apply db/migrations
  *   import           load content/inkworks into the database (idempotent)
  *   cleanup          production hygiene: create the admin from ADMIN_EMAIL/ADMIN_PASSWORD if both are set,
- *                    otherwise delete the default demo admin (admin@example.com)
+ *                    otherwise delete the default demo admin (admin@example.com). Also removes the public demo parent:
+ *                    admins preview the parent and child views with the "view as" switcher and sample data instead.
  *   demo-activity    DEMO ONLY: give the demo parent three books and three weeks of practice so the dashboard has data
  *   remove-demo      delete the demo parent, its learners and all their data
  *   backup           consistent copy of the database to $BACKUP_DIR (default /var/backups/learnworks), keeps the newest 14
@@ -40,6 +41,7 @@ async function cleanup() {
     await store.delete("auth_sessions", { parent_id: "admin" });
     console.log(n ? "removed the default demo admin" : "no default demo admin present");
   }
+  if (process.env.NODE_ENV === "production") await removeDemo();
 }
 
 async function demoActivity() {

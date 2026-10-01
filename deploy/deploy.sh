@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Ship the current main to www.mylearn.works.  Run from the Mac:  deploy/deploy.sh [--demo-activity]
+# Ship the current main to www.mylearn.works.  Run from the Mac:  deploy/deploy.sh
 #
 # Builds LOCALLY (the box has ~1GB spare RAM and other sites on it, so no `next build` there), rsyncs .next, the Inkworks
 # content and a bundled task runner, then on the server: pulls code, installs prod deps, applies migrations, imports the
@@ -41,7 +41,6 @@ ssh "$HOST" "set -e; cd $DIR
   node dist/server-tasks.cjs migrate
   node dist/server-tasks.cjs import
   node dist/server-tasks.cjs cleanup
-  [ \"${1:-}\" = \"--demo-activity\" ] && node dist/server-tasks.cjs demo-activity || true
   printf '17 3 * * * root cd $DIR && set -a && . ./.env && set +a && NODE_ENV=production node dist/server-tasks.cjs backup >> /var/log/learnworks-backup.log 2>&1\n' > /etc/cron.d/learnworks-backup
   pm2 startOrReload ecosystem.config.cjs --update-env && pm2 save >/dev/null"
 echo "==> live: https://www.mylearn.works/"

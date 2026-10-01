@@ -10,17 +10,17 @@
 
 :root {
   color-scheme: light;
-  --ink: #1e1e1e;
+  --ink: #0e0f18;
   --ink-2: #3d4149;
   --muted: #555b66;
-  --bg: #f7f6f2;
+  --bg: #fff6ef;
   --surface: #ffffff;
-  --surface-2: #fbfaf7;
-  --line: #dedbd2;
+  --surface-2: #fff0e6;
+  --line: #e7cdb9;
   --line-strong: #b9b5aa;
-  --brand: #1f4e8c;
-  --brand-ink: #173f73;
-  --brand-tint: #e6eef8;
+  --brand: #0e0f18;
+  --brand-ink: #0e0f18;
+  --brand-tint: #fee4d2;
   --ok: #1b6b38;
   --ok-bg: #e4f3e8;
   --ok-line: #9fd0ae;

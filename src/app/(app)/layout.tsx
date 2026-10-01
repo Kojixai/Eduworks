@@ -1,55 +1,50 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import "./globals.css";
-import { currentParent, activeChild } from "@/lib/auth";
+import { currentParent, activeChild, currentView } from "@/lib/auth";
+import { BRAND } from "@/lib/brand";
+import { RoleSwitch } from "@/components/shell/RoleSwitch";
 import { avatarFor } from "@/practice/accounts";
 
 export const metadata: Metadata = {
-  title: { default: "Inkworks Practice", template: "%s · Inkworks Practice" },
+  title: { default: BRAND, template: `%s · ${BRAND}` },
   description: "Free online practice that goes with your curriculum practice book. No ads, no chat, no trackers.",
 };
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#f7f6f2", colorScheme: "light" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#fee4d2", colorScheme: "light" };
 export const dynamic = "force-dynamic";
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const parent = await currentParent();
   const child = parent ? await activeChild(parent) : null;
+  const view = parent ? await currentView(parent) : "parent";
   return (
     <html lang="en-GB">
       <body className="flex min-h-screen flex-col">
         <a href="#main" className="absolute left-3 top-[-60px] z-50 rounded-lg bg-surface px-4 py-2 focus:top-3">Skip to the main content</a>
-        <header className="border-b border-border bg-surface">
-          <nav className="mx-auto flex min-h-[68px] max-w-[1080px] flex-wrap items-center justify-between gap-2 px-5 py-2" aria-label="Main">
-            <Link href={parent ? "/home" : "/"} className="inline-flex min-h-[48px] items-center gap-2.5 text-ink no-underline">
-              <span className="grid h-[30px] w-[30px] place-items-center rounded-lg bg-primary font-[family-name:var(--font-head)] text-base font-bold text-on-primary">I</span>
-              <span className="font-[family-name:var(--font-head)] text-[1.15rem] font-semibold leading-tight">
-                Inkworks Practice
-                <small className="block text-xs font-normal text-muted">Free online practice with your book</small>
-              </span>
+        <header className="border-b-[1.5px] border-[var(--ink)] bg-[var(--peach)]">
+          <nav className="mx-auto flex min-h-[72px] max-w-[1320px] flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-2" aria-label="Main">
+            <Link href={parent ? (view === "child" ? "/me" : view === "admin" ? "/admin" : "/dashboard") : "/"} className="inline-flex min-h-[48px] items-center gap-2 text-[var(--ink)] no-underline">
+              <span className="grid h-9 w-9 place-items-center rounded-full border-[1.5px] border-[var(--ink)] bg-[var(--coral)] font-[family-name:var(--font-head)] text-lg font-bold">i</span>
+              <span className="font-[family-name:var(--font-head)] text-[1.35rem] font-semibold leading-none">{BRAND}</span>
             </Link>
-            <div className="flex flex-wrap items-center gap-1 font-[family-name:var(--font-head)] text-[0.95rem] font-medium">
+            <div className="flex flex-wrap items-center gap-1.5 text-[0.95rem] font-medium">
               {parent ? (
                 <>
-                  {child && (
-                    <Link href="/home" className="mr-1 inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border bg-surface-muted py-1 pl-1 pr-3 text-ink no-underline">
-                      <span className="grid h-7 w-7 place-items-center rounded-full text-sm font-semibold" style={{ background: avatarFor(child.avatar).bg, color: avatarFor(child.avatar).fg }}>{child.first_name[0]}</span>
+                  {!!parent.is_admin && <RoleSwitch current={view} />}
+                  {child && view !== "admin" && (
+                    <Link href="/home" className="inline-flex min-h-[44px] items-center gap-2 rounded-full border-[1.5px] border-[var(--ink)] bg-surface py-1 pl-1 pr-3 text-[var(--ink)] no-underline">
+                      <span className="grid h-8 w-8 place-items-center rounded-full text-sm font-semibold" style={{ background: avatarFor(child.avatar).bg, color: avatarFor(child.avatar).fg }}>{child.first_name[0]}</span>
                       {child.first_name}
                     </Link>
                   )}
-                  <Link href="/books" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Books</Link>
-                  <Link href="/learn" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Curriculum</Link>
-                  <Link href="/dashboard" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Dashboard</Link>
-                  <Link href="/account" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Account</Link>
-                  {!!parent.is_admin && <Link href="/admin" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Admin</Link>}
-                  <form action="/logout" method="post">
-                    <button className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-primary hover:bg-bg">Log out</button>
-                  </form>
+                  <Link href="/home" className="min-h-[44px] rounded-full px-3.5 py-2.5 text-[var(--ink)] no-underline hover:bg-surface">Who&apos;s practising</Link>
+                  <form action="/logout" method="post"><button className="min-h-[44px] rounded-full px-3.5 py-2.5 text-[var(--ink)] underline hover:bg-surface">Log out</button></form>
                 </>
               ) : (
                 <>
-                  <Link href="/books" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Books</Link>
-                  <Link href="/login" className="min-h-[44px] rounded-[10px] px-3 py-2.5 text-[var(--color-text)] no-underline hover:bg-bg">Log in</Link>
-                  <Link href="/signup" className="rounded-[12px] bg-primary px-4 py-2.5 text-on-primary no-underline hover:bg-primary-hover">Enter book code</Link>
+                  <Link href="/books" className="min-h-[44px] rounded-full px-3.5 py-2.5 text-[var(--ink)] no-underline hover:bg-surface">Books</Link>
+                  <Link href="/login" className="min-h-[44px] rounded-full px-3.5 py-2.5 text-[var(--ink)] no-underline hover:bg-surface">Log in</Link>
+                  <Link href="/signup" className="rounded-full border-[1.5px] border-[var(--ink)] bg-[var(--violet)] px-5 py-2.5 text-[var(--ink)] no-underline hover:brightness-95">Enter book code</Link>
                 </>
               )}
             </div>

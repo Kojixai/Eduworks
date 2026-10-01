@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { headers } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { getStore } from "@/lib/db";
-import { createSession, destroySession, requireParent, setActiveChild, verifyLogin, childrenOf, lockParentArea, unlockParentArea, isParentLocked, hashPinServer, PIN_RE } from "@/lib/auth";
+import { createSession, destroySession, requireParent, setActiveChild, verifyLogin, childrenOf, lockParentArea, unlockParentArea, setView, VIEW_HOME, VIEWS, type View, isParentLocked, hashPinServer, PIN_RE } from "@/lib/auth";
 import { redeemCode, type FieldErrors } from "@/lib/redemption";
 
 export interface FormState {
@@ -91,8 +91,8 @@ export async function chooseChildAction(fd: FormData) {
     await setActiveChild(id);
     await lockParentArea(parent); // handing over to the child: the parent area now needs the PIN
   }
-  const next = String(fd.get("next") ?? "/learn");
-  redirect(next.startsWith("/") && !next.startsWith("//") ? next : "/learn");
+  const next = String(fd.get("next") ?? "/me");
+  redirect(next.startsWith("/") && !next.startsWith("//") ? next : "/me");
 }
 
 export async function removeChildAction(fd: FormData) {
@@ -170,4 +170,13 @@ export async function deleteAccountAction(_prev: FormState, fd: FormData): Promi
   await store.delete("parents", { id: parent.id });
   await destroySession();
   redirect("/?deleted=1");
+}
+
+// ---------------------------------------------------------------- admin: switch between admin, parent and child views
+export async function setViewAction(fd: FormData) {
+  const parent = await requireParent();
+  const v = String(fd.get("view") ?? "") as View;
+  if (!parent.is_admin || !VIEWS.includes(v)) return;
+  await setView(parent, v);
+  redirect(VIEW_HOME[v]);
 }
