@@ -2,7 +2,7 @@ import { currentParent } from "@/lib/auth";
 import { loadBooks } from "@/marketing/books";
 import { SiteFooter } from "@/marketing/Footer";
 import { SiteNav } from "@/marketing/Nav";
-import { BigWords, Books, Cta, Explore, Faq, Features, Hero, HowItWorks, OurPromise, Statement, TopicGives, WhoFor } from "@/marketing/Sections";
+import { Books, Cta, Faq, Hero, HowItWorks, Statement, TopicGives, WhoFor } from "@/marketing/Sections";
 
 // Depends on who is looking (logged in or not) and on the live book list.
 export const dynamic = "force-dynamic";
@@ -18,12 +18,8 @@ export default async function Home() {
         <Statement />
         <HowItWorks />
         <Books data={data} />
-        <Features />
-        <WhoFor />
         <TopicGives />
-        <OurPromise />
-        <Explore bookCount={data.books.length} />
-        <BigWords />
+        <WhoFor />
         <Faq />
         <Cta />
       </main>

@@ -54,38 +54,40 @@ function CtaPair({ tone = "ip-two", onDark = false }: { tone?: string; onDark?: 
 
 /* ------------------------------------------------------------------ Hero */
 
-type Icon = "times" | "plus" | "triangle" | "divide" | "circle" | "equals" | "square";
-const TILES: { icon: Icon; bg: string; arch: boolean }[] = [
-  { icon: "times", bg: "var(--c-pink)", arch: true }, { icon: "plus", bg: "var(--c-amber)", arch: false }, { icon: "triangle", bg: "var(--c-sky)", arch: true },
-  { icon: "divide", bg: "var(--c-lime)", arch: false }, { icon: "circle", bg: "var(--c-teal)", arch: true }, { icon: "equals", bg: "var(--c-pink)", arch: false },
-  { icon: "square", bg: "var(--c-amber)", arch: true },
+type Shape = "plus" | "minus" | "times" | "divide" | "circle" | "square" | "triangle" | "equals";
+const SHAPES: { shape: Shape; fill: string }[] = [
+  { shape: "plus", fill: "var(--c-pink)" }, { shape: "minus", fill: "var(--c-amber)" }, { shape: "times", fill: "var(--c-sky)" },
+  { shape: "divide", fill: "var(--c-lime)" }, { shape: "circle", fill: "var(--c-teal)" }, { shape: "square", fill: "var(--c-pink)" },
+  { shape: "triangle", fill: "var(--c-amber)" }, { shape: "equals", fill: "var(--c-sky)" },
 ];
 
-/** Bold maths symbols and simple shapes in coloured arches and pills (drawn here, no pictures). */
-function Glyph({ icon }: { icon: Icon }) {
-  const k = { stroke: "var(--ink)", strokeWidth: 15, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, fill: "none" };
-  switch (icon) {
-    case "times": return <path d="M82 118 148 184M148 118 82 184" {...k} />;
-    case "plus": return <path d="M115 112V190M76 151H154" {...k} />;
-    case "divide": return <><path d="M72 151H158" {...k} /><circle cx="115" cy="117" r="7" fill="var(--ink)" /><circle cx="115" cy="185" r="7" fill="var(--ink)" /></>;
-    case "equals": return <path d="M76 133H154M76 169H154" {...k} />;
-    case "circle": return <circle cx="115" cy="151" r="42" {...k} />;
-    case "square": return <rect x="77" y="113" width="76" height="76" rx="8" {...k} />;
-    case "triangle": return <path d="M115 112 156 188H74Z" {...k} />;
-  }
+const PLUS = "M83 40H147V100H207V164H147V224H83V164H23V100H83Z";
+
+/** The shapes themselves are the maths symbols: a plus that is a plus, a triangle that is a triangle. Drawn here, no pictures. */
+function SymbolShape({ shape, fill }: { shape: Shape; fill: string }) {
+  const k = { fill, stroke: "var(--ink)", strokeWidth: 5, strokeLinejoin: "round" as const };
+  return (
+    <svg viewBox="0 0 230 282" width="230" height="282" aria-hidden="true" focusable="false">
+      <g transform="translate(0 9)">
+        {shape === "plus" && <path d={PLUS} {...k} />}
+        {shape === "times" && <path d={PLUS} transform="rotate(45 115 132)" {...k} />}
+        {shape === "minus" && <rect x="15" y="100" width="200" height="64" rx="32" {...k} />}
+        {shape === "equals" && <><rect x="15" y="66" width="200" height="60" rx="30" {...k} /><rect x="15" y="156" width="200" height="60" rx="30" {...k} /></>}
+        {shape === "divide" && <><rect x="15" y="106" width="200" height="56" rx="28" {...k} /><circle cx="115" cy="50" r="32" {...k} /><circle cx="115" cy="218" r="32" {...k} /></>}
+        {shape === "circle" && <circle cx="115" cy="132" r="100" {...k} />}
+        {shape === "square" && <rect x="22" y="39" width="186" height="186" rx="26" {...k} />}
+        {shape === "triangle" && <path d="M115 32L214 224H16Z" {...k} />}
+      </g>
+    </svg>
+  );
 }
 
 function StripList() {
   return (
     <ul className="ip-ticker-list ip-ticker-flex ip-list-unstyled">
-      {TILES.map((t, i) => (
+      {SHAPES.map((t, i) => (
         <li className="ip-ticker-item" key={i}>
-          <div className="ip-ticker-image-wrap">
-            <svg viewBox="0 0 230 282" width="230" height="282" aria-hidden="true" focusable="false">
-              <path d={t.arch ? "M0 282V115a115 115 0 0 1 230 0V282Z" : "M0 115a115 115 0 0 1 230 0V167a115 115 0 0 1-230 0Z"} fill={t.bg} />
-              <Glyph icon={t.icon} />
-            </svg>
-          </div>
+          <div className="ip-ticker-image-wrap"><SymbolShape {...t} /></div>
         </li>
       ))}
     </ul>
@@ -255,54 +257,6 @@ export function Books({ data }: { data: BookSection }) {
   );
 }
 
-/* ------------------------------------------------------------- Features */
-
-export function Features() {
-  return (
-    <section className="ip-pick-area" aria-label="What you get">
-      <div className="ip-container">
-        <div className="ip-split-a ip-row">
-          <div className="ip-col ip-half">
-            <div className="ip-pick-content">
-              <div className="ip-overflow-hidden ip-mb-25">
-                <div className="ip-feature-category"><div className="ip-feature-tag">What you get</div></div>
-              </div>
-              <Heading className="ip-inner-section-title" lines={["10 new questions", "for every page", "of your book"]} />
-              <p className="ip-make-the-most-paragraph">
-                Every page of the book is a topic online, with 10 new questions on it. There are 9 question types, with diagrams and reading texts with line numbers.
-                Each answer is marked instantly, with a short worked explanation.
-              </p>
-            </div>
-          </div>
-          <div className="ip-col ip-half ip-column">
-            <div className="ip-pick-thumb-wrap">
-              <img src="/site/people/feature-1.png" width={598} height={1100} alt={person("feature-1")?.alt ?? "A cheerful schoolgirl holding a book"} className="ip-pick-image ip-pick-person" loading="lazy" />
-            </div>
-          </div>
-        </div>
-        <div className="ip-split-b ip-row">
-          <div className="ip-col ip-half ip-col-alt">
-            <div className="ip-pick-thumb-wrap ip-two">
-              <img src="/site/people/feature-2.png" width={774} height={1100} alt={person("feature-2")?.alt ?? "A smiling teenager using a tablet"} className="ip-pick-image ip-pick-person" loading="lazy" />
-            </div>
-          </div>
-          <div className="ip-col ip-half">
-            <div className="ip-pick-content ip-ml-90">
-              <div className="ip-feature-category ip-two ip-mb-25"><div className="ip-feature-tag">Your progress</div></div>
-              <Heading className="ip-inner-section-title" lines={["Progress you can see,", "on any device"]} />
-              <p className="ip-make-the-most-paragraph">
-                The parent dashboard shows each child&rsquo;s days practised and scores. A topic counts as secure at 80% or more on 2 different days, and topics come back for another go after 1, 3 and 7 days.
-                It works in any web browser, on a phone, tablet or computer.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="ip-features-cta"><CtaPair /></div>
-      </div>
-    </section>
-  );
-}
-
 /* ------------------------------------------------------------ Who it is for */
 
 const WHO = [
@@ -400,108 +354,6 @@ export function TopicGives() {
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* --------------------------------------------------------------- Promise */
-
-export function OurPromise() {
-  return (
-    <section className="ip-promise-area" aria-labelledby="promise-title">
-      <div className="ip-container">
-        <div className="ip-promise-wrapper">
-          <div className="ip-feature-category ip-quote-pill"><div className="ip-feature-tag">Our promise</div></div>
-          <img className="ip-promise-mark" src="/site/images/star-violet.png" width={60} height={60} alt="" loading="lazy" />
-          <h2 className="ip-quote-content" id="promise-title">No outside adverts. No chat. No ad trackers. We never sell your information.</h2>
-          <ul className="ip-promise-list">
-            <li>The only things you will ever see us promote are our own books.</li>
-            <li>There is no chat. Nobody can message your child.</li>
-            <li>The only tracking is your child&rsquo;s own progress, shown on your dashboard.</li>
-            <li>The mailing list is optional and for adults only. Your access never depends on it.</li>
-          </ul>
-          <div className="ip-promise-actions">
-            <div className="ip-btn-wrapper">
-              <a className="ip-primary-button" href={PATHS.privacy}>
-                <span className="ip-button-hover-bg" aria-hidden="true" />
-                <span className="ip-button-content"><span className="ip-btn-label ip-black">Read the privacy notice</span></span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* --------------------------------------------------------------- Explore */
-
-export function Explore({ bookCount }: { bookCount: number }) {
-  const cards = [
-    {
-      img: "/site/images/post-books.webp", w: 620, h: 400, alt: "",
-      m1: "Books", m2: "Needs a book code", t: "Look through the books and their topics", href: PATHS.books,
-      p: `${bookCount > 0 ? `All ${bookCount} books` : "Every book"} are listed, with the topics inside each one. Your code unlocks the practice for the book you own.`,
-    },
-    {
-      img: "/site/images/post-curriculum.webp", w: 620, h: 400, alt: "",
-      m1: "Curriculum practice", m2: "Log in to use it", t: "Free practice for Key Stages 1 to 4", href: PATHS.learn,
-      p: "Lessons, quizzes, past-paper style practice, phonics screening check practice and times tables check practice, built from open data (Oak National Academy and the Standards and Testing Agency, Open Government Licence).",
-    },
-    {
-      img: "/site/images/post-privacy.webp", w: 620, h: 400, alt: "",
-      m1: "Privacy", m2: "Your data", t: "How we look after your data", href: PATHS.privacy,
-      p: "No outside adverts, no chat and no ad trackers. You can download or delete your data from your Account page.",
-    },
-  ];
-  return (
-    <section className="ip-next-area" aria-labelledby="explore-title" data-carousel>
-      <div className="ip-container">
-        <div className="ip-section-head">
-          <div className="ip-section-head-text">
-            <Heading id="explore-title" className="ip-section-title" lines={["Where to go next"]} />
-          </div>
-          <Arrows label="cards" green />
-        </div>
-      </div>
-      <div className="ip-carousel-bleed">
-        <div className="ip-carousel-track" data-track role="region" aria-label="Where to go next, scroll sideways" tabIndex={0}>
-          <ul className="ip-carousel-list">
-            {cards.map((c) => (
-              <li className="ip-next-item" key={c.href}>
-                <div className="ip-next-image">
-                  <img className="ip-slider-image" src={c.img} width={c.w} height={c.h} alt={c.alt} loading="lazy" />
-                </div>
-                <div className="ip-next-content">
-                  <div className="ip-next-meta-info">
-                    <div className="ip-next-meta"><div className="ip-card-pill-text">{c.m1}</div></div>
-                    <div className="ip-next-meta ip-views"><div className="ip-card-pill-text">{c.m2}</div></div>
-                  </div>
-                  <h3 className="ip-next-title"><a href={c.href}>{c.t}</a></h3>
-                  <p className="ip-next-text">{c.p}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------- Big words */
-
-export function BigWords() {
-  return (
-    <section className="ip-ticker-area" aria-label="In short">
-      <div className="ip-ticker-container">
-        <div className="ip-ticker-content">
-          <p className="ip-ticker-title">Practise a little <span className="ip-ticker-image-one" aria-hidden="true" /> and often</p>
-        </div>
-        <div className="ip-ticker-content ip-border-bottom">
-          <p className="ip-ticker-title">Free online practice <span className="ip-ticker-image-two" aria-hidden="true" /> with your book</p>
         </div>
       </div>
     </section>
