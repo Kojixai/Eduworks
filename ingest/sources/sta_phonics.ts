@@ -43,7 +43,7 @@ import {
 const SRC = SOURCES.find((s) => s.id === "sta_phonics")!;
 export const PHONICS_COLLECTIONS = [
   "/government/collections/phonics",
-  "/government/collections/phonics-screening-check-materials",
+  "/government/collections/phonics-screening-check-administration",
   "/government/collections/national-curriculum-assessments-past-test-materials",
 ];
 export const FIRST_YEAR = 2012;
@@ -177,8 +177,17 @@ export interface MergedWord {
   note: string | null;
 }
 
-/** Combine scoring-guidance words (preferred) with pupils'-materials words. */
-export function mergeWordLists(scoring: ExtractedWord[], pupils: ExtractedWord[]): { words: MergedWord[]; issues: string[] } {
+/**
+ * Combine scoring-guidance words (preferred) with pupils'-materials words.
+ * `pseudoSet`: the words the scoring guidance lists in its "Pseudo-word" tables (2024+: the guidance gives
+ * pronunciation guidance for the 20 pseudo-words only, the real words are not tabulated). When it holds exactly
+ * the 20 pseudo-words of the check and all of them are in the 40-word list, every other word is a real word.
+ */
+export function mergeWordLists(
+  scoring: ExtractedWord[],
+  pupils: ExtractedWord[],
+  pseudoSet?: Set<string>,
+): { words: MergedWord[]; issues: string[] } {
   const issues: string[] = [];
   const order = (ws: ExtractedWord[]) => {
     const numbered = ws.every((w) => w.position !== null);
@@ -190,21 +199,25 @@ export function mergeWordLists(scoring: ExtractedWord[], pupils: ExtractedWord[]
   const base = s.length === 40 ? s : p.length === 40 ? p : s.length >= p.length ? s : p;
   const fromScoring = base === s && s.length > 0;
   if (base.length !== 40) issues.push(`expected 40 words, found ${base.length} (scoring ${s.length}, pupils ${p.length})`);
+  const setOk = !!pseudoSet && pseudoSet.size === 20 && base.length === 40 && [...pseudoSet].every((x) => base.some((b) => b.word === x));
+  if (pseudoSet?.size && !setOk) issues.push(`scoring guidance lists ${pseudoSet.size} pseudo-word(s) (expected 20, all present in the 40-word list)`);
   const words: MergedWord[] = base.map((w, i) => {
     const other = fromScoring ? (p.length === base.length ? p[i] : undefined) : s.length === base.length ? s[i] : undefined;
     const notes: string[] = [];
-    let ok = fromScoring && w.explicit && w.pseudo !== null && base.length === 40;
+    let ok = (fromScoring && w.explicit && w.pseudo !== null && base.length === 40) || setOk;
     if (other && other.word !== w.word) {
       notes.push(`word differs between documents: "${w.word}" vs "${other.word}"`);
       ok = false;
     }
     let pseudo = w.pseudo;
     if (!fromScoring && other?.explicit && other.pseudo !== null) pseudo = other.pseudo;
-    if (other && other.pseudo !== null && pseudo !== null && other.pseudo !== pseudo) {
+    if (setOk) pseudo = pseudoSet!.has(w.word);
+    if (!setOk && other && other.pseudo !== null && pseudo !== null && other.pseudo !== pseudo) {
       notes.push(`pseudo flag differs (scoring guidance vs alien image)`);
       ok = false;
     }
     if (pseudo === null) notes.push("pseudo flag unknown");
+    else if (setOk) notes.push(pseudoSet!.has(w.word) ? "pseudo-word: listed in the scoring guidance pseudo-word table" : "real word: not in the scoring guidance pseudo-word table");
     else if (!fromScoring && !(other?.explicit)) notes.push("pseudo flag from alien image in pupils' materials");
     const position = w.position ?? i + 1;
     return {
@@ -216,7 +229,7 @@ export function mergeWordLists(scoring: ExtractedWord[], pupils: ExtractedWord[]
       note: notes.join("; ") || null,
     };
   });
-  for (const w of words) if (w.note) issues.push(`#${w.position} ${w.word}: ${w.note}`);
+  for (const w of words) if (w.note && w.review_status !== "auto_ok") issues.push(`#${w.position} ${w.word}: ${w.note}`);
   return { words, issues };
 }
 
@@ -336,6 +349,14 @@ export async function ingestStaPhonics(store: DataStore, opts: GovukIngestOption
       addRules(parseGeneralRules(text), c.url, c.checksum);
     }
 
+    // ---- general rules from the current administration guidance (an HTML attachment of this publication)
+    const adminPub = await tryContent(ctx, fetcher, "/government/publications/key-stage-1-phonics-screening-check-administration-guidance");
+    if (adminPub)
+      for (const a of absAttachments(adminPub.content).filter((x) => /administration guidance/i.test(x.title))) {
+        const c = await tryContent(ctx, fetcher, a.url);
+        if (c) addRules(parseGeneralRules(htmlToLinesText(c.content.details.body ?? "")), c.url, c.checksum);
+      }
+
     // ---- per-year materials
     for (const y of expectedYears(opts.now)) {
       const yd = byYear.get(y);
@@ -368,12 +389,14 @@ export async function ingestStaPhonics(store: DataStore, opts: GovukIngestOption
       };
       let scoring: ExtractedWord[] = [];
       let scoringSrc: { url: string; checksum: string } | null = null;
+      const pseudoSet = new Set<string>();
       for (const a of pick("scoring")) {
         const f = await load(a);
         if (!f) continue;
         const text = pdfText(f.path).join("\n");
         addRules(parseGeneralRules(text), f.url, f.checksum);
         const ws = wordsFromScoringText(text);
+        for (const w of ws) if (w.explicit && w.pseudo === true) pseudoSet.add(w.word);
         if (ws.length > scoring.length) {
           scoring = ws;
           scoringSrc = f;
@@ -395,7 +418,7 @@ export async function ingestStaPhonics(store: DataStore, opts: GovukIngestOption
         const f = await load(a);
         if (f) addRules(parseGeneralRules(pdfText(f.path).join("\n")), f.url, f.checksum);
       }
-      const merged = mergeWordLists(scoring, pupils);
+      const merged = mergeWordLists(scoring, pupils, pseudoSet);
       const src = scoring.length && merged.words.length === scoring.length ? scoringSrc : pupilsSrc ?? scoringSrc;
       const rows: Row[] = merged.words.map((w) => ({
         id: `phonics:${y}:official:${w.position}`,
