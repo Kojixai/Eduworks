@@ -1,0 +1,4582 @@
+{
+ "book": {
+  "id": "y3reading",
+  "title": "Year 3 Reading Comprehension: Targeted Question Book",
+  "keyStage": "KS2",
+  "year": "Year 3",
+  "subject": "English",
+  "pages": 40,
+  "ageRange": "7-8",
+  "sections": [
+   {
+    "id": "FIC",
+    "name": "Stories and plays",
+    "colour": "#00877F"
+   },
+   {
+    "id": "POE",
+    "name": "Poems",
+    "colour": "#6A4C9C"
+   },
+   {
+    "id": "NF",
+    "name": "Non-fiction",
+    "colour": "#2360A8"
+   }
+  ]
+ },
+ "texts": [
+  {
+   "id": "t-rossetti-poems",
+   "title": "Two Poems by Christina Rossetti",
+   "author": "Christina Rossetti",
+   "source": "Both poems are from Sing-Song: A Nursery Rhyme Book by Christina Rossetti, first published in 1872. The poems have no titles in the book, so each is known by its first line. Text from the 1893 Macmillan edition (Project Gutenberg eBook #76703), checked against the 1907 Macmillan edition. Public domain in the UK.",
+   "kind": "poem",
+   "lines": [
+    "Who has seen the wind?",
+    "Who has seen the wind?",
+    "Neither I nor you:",
+    "But when the leaves hang trembling",
+    "The wind is passing thro’.",
+    "Who has seen the wind?",
+    "Neither you nor I:",
+    "But when the trees bow down their heads",
+    "The wind is passing by.",
+    "What is pink?",
+    "What is pink? a rose is pink",
+    "By the fountain’s brink.",
+    "What is red? a poppy’s red",
+    "In its barley bed.",
+    "What is blue? the sky is blue",
+    "Where the clouds float thro’.",
+    "What is white? a swan is white",
+    "Sailing in the light.",
+    "What is yellow? pears are yellow,",
+    "Rich and ripe and mellow.",
+    "What is green? the grass is green,",
+    "With small flowers between.",
+    "What is violet? clouds are violet",
+    "In the summer twilight.",
+    "What is orange? why, an orange,",
+    "Just an orange!"
+   ],
+   "glossary": [
+    [
+     "trembling",
+     "shaking a little"
+    ],
+    [
+     "thro’",
+     "an old short way of writing through"
+    ],
+    [
+     "brink",
+     "the edge of water"
+    ],
+    [
+     "barley",
+     "a crop, like wheat, grown in fields"
+    ],
+    [
+     "mellow",
+     "ripe and soft"
+    ],
+    [
+     "twilight",
+     "the dim light just after the sun sets"
+    ]
+   ]
+  },
+  {
+   "id": "t-three-little-pigs",
+   "title": "The Story of the Three Little Pigs",
+   "author": "Joseph Jacobs (collector)",
+   "source": "From English Fairy Tales (1890), collected by Joseph Jacobs: the start of the tale, without its opening rhyme. Project Gutenberg eBook #7439. Public domain in the UK.",
+   "kind": "prose",
+   "lines": [
+    "There was an old sow with three little pigs, and as she had not enough to keep them,",
+    "she sent them out to seek their fortune. The first that went off met a man with a",
+    "bundle of straw, and said to him:",
+    "“Please, man, give me that straw to build me a house.”",
+    "Which the man did, and the little pig built a house with it. Presently came along a",
+    "wolf, and knocked at the door, and said:",
+    "“Little pig, little pig, let me come in.”",
+    "To which the pig answered:",
+    "“No, no, by the hair of my chiny chin chin.”",
+    "The wolf then answered to that:",
+    "“Then I’ll huff, and I’ll puff, and I’ll blow your house in.”",
+    "So he huffed, and he puffed, and he blew his house in, and ate up the little pig.",
+    "The second little pig met a man with a bundle of furze, and said:",
+    "“Please, man, give me that furze to build a house.”",
+    "Which the man did, and the pig built his house. Then along came the wolf, and said:",
+    "“Little pig, little pig, let me come in.”",
+    "“No, no, by the hair of my chiny chin chin.”",
+    "“Then I’ll puff, and I’ll huff, and I’ll blow your house in.”",
+    "So he huffed, and he puffed, and he puffed, and he huffed, and at last he blew the",
+    "house down, and he ate up the little pig.",
+    "The third little pig met a man with a load of bricks, and said:",
+    "“Please, man, give me those bricks to build a house with.”",
+    "So the man gave him the bricks, and he built his house with them. So the wolf came,",
+    "as he did to the other little pigs, and said:",
+    "“Little pig, little pig, let me come in.”",
+    "“No, no, by the hair of my chiny chin chin.”",
+    "“Then I’ll huff, and I’ll puff, and I’ll blow your house in.”",
+    "Well, he huffed, and he puffed, and he huffed and he puffed, and he puffed and huffed;",
+    "but he could not get the house down. When he found that he could not, with all his",
+    "huffing and puffing, blow the house down, he said:",
+    "“Little pig, I know where there is a nice field of turnips.”"
+   ],
+   "glossary": [
+    [
+     "sow",
+     "a mother pig"
+    ],
+    [
+     "seek their fortune",
+     "go off to make a new life"
+    ],
+    [
+     "furze",
+     "a prickly wild bush, also called gorse"
+    ],
+    [
+     "chiny",
+     "a playful way of saying chin"
+    ]
+   ]
+  },
+  {
+   "id": "t-bean-jar",
+   "title": "Grow a Bean in a Jar",
+   "author": "Inkworks Press",
+   "source": "Original text. Method checked against Science and Plants for Schools (saps.org.uk) and Science Sparks (science-sparks.com).",
+   "kind": "nonfiction",
+   "lines": [
+    "A bean is a seed. Plant it in soil and everything happens out of sight. Plant it in a jar and you can watch it start to grow.",
+    "You will need",
+    "1 broad bean seed",
+    "a clean glass jar",
+    "kitchen paper",
+    "a cup of water",
+    "What will happen?",
+    "After about 4 days, the seed coat cracks and a root pokes out. The root grows downwards. It holds the plant steady and finds water and nutrients.",
+    "Next, a shoot appears. The shoot grows upwards, towards the light.",
+    "What to do",
+    "1. Soak the bean in the cup of water for 1 hour.",
+    "2. Fold 2 sheets of kitchen paper. Wet them, then squeeze them so they are damp but not dripping.",
+    "3. Wrap the damp paper round the inside of the jar.",
+    "4. Push the bean down between the paper and the glass, about halfway up, where you can see it.",
+    "5. Stand the jar somewhere light, such as a windowsill.",
+    "6. Check the paper every day. If it feels dry, add a little water.",
+    "Top tip",
+    "Keep a bean diary. Each day, draw your bean and write the date underneath."
+   ],
+   "glossary": [
+    [
+     "seed coat",
+     "the tough outer skin of a seed"
+    ],
+    [
+     "nutrients",
+     "the things a plant needs from soil to grow healthy"
+    ]
+   ]
+  },
+  {
+   "id": "t-peter-rabbit",
+   "title": "The Tale of Peter Rabbit",
+   "author": "Beatrix Potter",
+   "source": "From The Tale of Peter Rabbit by Beatrix Potter, first published in 1902. The extract leaves out the opening line that names the rabbits, and stops part-way through. Project Gutenberg eBook #14838. Public domain in the UK.",
+   "kind": "prose",
+   "lines": [
+    "They lived with their Mother in a sand-bank, underneath the root of a very big",
+    "fir-tree.",
+    "‘Now my dears,’ said old Mrs. Rabbit one morning, ‘you may go into the fields",
+    "or down the lane, but don’t go into Mr. McGregor’s garden: your Father had an",
+    "accident there; he was put in a pie by Mrs. McGregor.’",
+    "‘Now run along, and don’t get into mischief. I am going out.’",
+    "Then old Mrs. Rabbit took a basket and her umbrella, and went through the",
+    "wood to the baker’s. She bought a loaf of brown bread and five currant buns.",
+    "Flopsy, Mopsy, and Cottontail, who were good little bunnies, went down the",
+    "lane to gather blackberries:",
+    "But Peter, who was very naughty, ran straight away to Mr. McGregor’s garden,",
+    "and squeezed under the gate!",
+    "First he ate some lettuces and some French beans; and then he ate some",
+    "radishes;",
+    "And then, feeling rather sick, he went to look for some parsley.",
+    "But round the end of a cucumber frame, whom should he meet but Mr.",
+    "McGregor!",
+    "Mr. McGregor was on his hands and knees planting out young cabbages, but",
+    "he jumped up and ran after Peter, waving a rake and calling out, ‘Stop thief!’",
+    "Peter was most dreadfully frightened; he rushed all over the garden, for he",
+    "had forgotten the way back to the gate."
+   ],
+   "glossary": [
+    [
+     "mischief",
+     "naughty behaviour that causes trouble"
+    ],
+    [
+     "currant buns",
+     "sweet bread rolls with small dried grapes in"
+    ],
+    [
+     "cucumber frame",
+     "a low glass box that keeps young plants warm"
+    ],
+    [
+     "rake",
+     "a garden tool with a long handle and metal teeth"
+    ]
+   ]
+  },
+  {
+   "id": "t-shadows",
+   "title": "Where Do Shadows Come From?",
+   "author": "Inkworks Press",
+   "source": "Original text. Facts from Royal Museums Greenwich, Human Sundial (KS2 resource), the national curriculum for Year 3 science and the NHS, Sunscreen and sun safety.",
+   "kind": "nonfiction",
+   "lines": [
+    "On a sunny day, a dark shape follows you everywhere and copies every move you make. It is your shadow. But where does it come from?",
+    "What is a shadow?",
+    "Light comes from a light source, such as the Sun or a torch. Some materials, like wood and metal, block light. So does your body. Materials that block light are called opaque materials.",
+    "When an opaque object blocks the light, the light cannot reach the space behind it. That dark space is a shadow.",
+    "Which way do shadows point?",
+    "A shadow always points away from the light that makes it. If the Sun is in front of you, your shadow falls behind you.",
+    "Shadows on the move",
+    "The Sun seems to move across the sky during the day, so shadows move too. They move from west to east. In the morning, shadows are long. They get shorter towards the middle of the day, then grow longer again in the afternoon.",
+    "Stay safe in the Sun",
+    "Never look straight at the Sun, even if you are wearing sunglasses. It can damage your eyes for ever.",
+    "In the UK, the Sun is strongest between 11am and 3pm from March to October. Spend time in the shade then.",
+    "Try it",
+    "On a sunny day, stand on a chalk cross in the playground. Ask a partner to draw round your shadow in chalk and write the time next to it. Do it again at different times of the day. What happens to your shadow?"
+   ],
+   "glossary": [
+    [
+     "material",
+     "what something is made of"
+    ],
+    [
+     "shade",
+     "a place sheltered from the Sun’s light"
+    ]
+   ]
+  },
+  {
+   "id": "t-railway-carriage",
+   "title": "From a Railway Carriage",
+   "author": "Robert Louis Stevenson",
+   "source": "From A Child’s Garden of Verses by Robert Louis Stevenson, first published in 1885. Project Gutenberg eBook #136. Public domain in the UK.",
+   "kind": "poem",
+   "lines": [
+    "Faster than fairies, faster than witches,",
+    "Bridges and houses, hedges and ditches;",
+    "And charging along like troops in a battle",
+    "All through the meadows the horses and cattle:",
+    "All of the sights of the hill and the plain",
+    "Fly as thick as driving rain;",
+    "And ever again, in the wink of an eye,",
+    "Painted stations whistle by.",
+    "Here is a child who clambers and scrambles,",
+    "All by himself and gathering brambles;",
+    "Here is a tramp who stands and gazes;",
+    "And here is the green for stringing the daisies!",
+    "Here is a cart run away in the road",
+    "Lumping along with man and load;",
+    "And here is a mill, and there is a river:",
+    "Each a glimpse and gone forever!"
+   ],
+   "glossary": [
+    [
+     "ditches",
+     "long, narrow channels dug beside fields to carry water"
+    ],
+    [
+     "troops",
+     "groups of soldiers"
+    ],
+    [
+     "clambers",
+     "climbs using hands and feet"
+    ],
+    [
+     "brambles",
+     "here, blackberries"
+    ],
+    [
+     "tramp",
+     "a person with no home who walks from place to place"
+    ],
+    [
+     "green",
+     "a grassy area in the middle of a village"
+    ],
+    [
+     "stringing the daisies",
+     "making daisy chains"
+    ],
+    [
+     "lumping",
+     "moving along in a heavy, bumpy way"
+    ]
+   ]
+  },
+  {
+   "id": "t-camel-hump",
+   "title": "How the Camel Got His Hump",
+   "author": "Rudyard Kipling",
+   "source": "From Just So Stories by Rudyard Kipling, first published in 1902: the opening of “How the Camel Got His Hump”. Project Gutenberg eBook #2781. Public domain in the UK.",
+   "kind": "prose",
+   "lines": [
+    "In the beginning of years, when the world was so new and all, and the",
+    "Animals were just beginning to work for Man, there was a Camel, and he",
+    "lived in the middle of a Howling Desert because he did not want to work; and",
+    "besides, he was a Howler himself. So he ate sticks and thorns and tamarisks",
+    "and milkweed and prickles, most ‘scruciating idle; and when anybody spoke to",
+    "him he said ‘Humph!’ Just ‘Humph!’ and no more.",
+    "Presently the Horse came to him on Monday morning, with a saddle on his",
+    "back and a bit in his mouth, and said, ‘Camel, O Camel, come out and trot like",
+    "the rest of us.’",
+    "‘Humph!’ said the Camel; and the Horse went away and told the Man.",
+    "Presently the Dog came to him, with a stick in his mouth, and said, ‘Camel,",
+    "O Camel, come and fetch and carry like the rest of us.’",
+    "‘Humph!’ said the Camel; and the Dog went away and told the Man.",
+    "Presently the Ox came to him, with the yoke on his neck and said, ‘Camel,",
+    "O Camel, come and plough like the rest of us.’",
+    "‘Humph!’ said the Camel; and the Ox went away and told the Man.",
+    "At the end of the day the Man called the Horse and the Dog and the Ox",
+    "together, and said, ‘Three, O Three, I’m very sorry for you (with the world so",
+    "new-and-all); but that Humph-thing in the Desert can’t work, or he would",
+    "have been here by now, so I am going to leave him alone, and you must work",
+    "double-time to make up for it.’"
+   ],
+   "glossary": [
+    [
+     "Howling Desert",
+     "a wild, empty desert where the wind howls"
+    ],
+    [
+     "tamarisks",
+     "bushy plants that grow in deserts"
+    ],
+    [
+     "‘scruciating",
+     "Kipling’s short way of saying excruciating, which here means terribly"
+    ],
+    [
+     "yoke",
+     "a wooden bar fixed over an ox’s neck so it can pull a plough"
+    ],
+    [
+     "trot",
+     "to run at a steady pace, like a horse"
+    ],
+    [
+     "double-time",
+     "twice as hard"
+    ]
+   ]
+  },
+  {
+   "id": "t-mary-anning",
+   "title": "Mary Anning’s Great Find",
+   "author": "Inkworks Press",
+   "source": "Original text. Facts from the Natural History Museum: Mary Anning: the unsung hero of fossil discovery and How are fossils formed? (nhm.ac.uk).",
+   "kind": "nonfiction",
+   "lines": [
+    "Mary Anning was born in 1799 in Lyme Regis, a seaside town that is rich in fossils. Her father, Richard, made furniture and collected fossils too. He sold them from his shop.",
+    "In the autumn of 1811, when Mary was 12, her older brother Joseph found a strange-looking fossil skull. About a year later, in November 1812, Mary searched for the rest of the animal. She painstakingly dug out the outline of its skeleton. It was 5 metres long.",
+    "The creature was named Ichthyosaurus, which means “fish lizard”. We now know that it was neither a fish nor a lizard. It was a reptile that lived in the sea.",
+    "Mary kept searching. In December 1823, she became the first person to find a complete skeleton of a Plesiosaurus. In December 1828, she dug up a jumble of bones with a long tail and wings. It was a pterosaur, the first ever found outside Germany.",
+    "Mary’s finds were important, but the Geological Society of London would not let her join, because it did not allow women to become members. That did not change until long after her death. Mary died in 1847, when she was 47.",
+    "Timeline",
+    "1799: Mary is born",
+    "1811: Joseph finds the skull",
+    "1812: Mary digs out the skeleton",
+    "1823: Plesiosaurus",
+    "1828: pterosaur",
+    "1847: Mary dies",
+    "How does a fossil form?",
+    "1. An animal dies.",
+    "2. Its soft parts rot away.",
+    "3. It is buried under mud or sand.",
+    "4. Over a very long time, the layers build up and turn into rock.",
+    "5. Water seeps into the bones and teeth. It leaves minerals behind, which turn them to stone."
+   ],
+   "glossary": [
+    [
+     "fossil",
+     "the remains of a plant or animal from long ago, preserved in rock"
+    ],
+    [
+     "reptile",
+     "an animal with scaly skin, such as a lizard"
+    ],
+    [
+     "Geological Society",
+     "a club for scientists who study rocks"
+    ],
+    [
+     "minerals",
+     "natural materials found in rock"
+    ]
+   ]
+  },
+  {
+   "id": "t-selfish-giant",
+   "title": "The Selfish Giant",
+   "author": "Oscar Wilde",
+   "source": "From “The Selfish Giant” in The Happy Prince and Other Tales by Oscar Wilde, first published in 1888: the opening of the story. Project Gutenberg eBook #902. Public domain in the UK.",
+   "kind": "prose",
+   "lines": [
+    "Every afternoon, as they were coming from school, the children used to go and",
+    "play in the Giant’s garden.",
+    "It was a large lovely garden, with soft green grass. Here and there over the",
+    "grass stood beautiful flowers like stars, and there were twelve peach-trees that",
+    "in the spring-time broke out into delicate blossoms of pink and pearl, and in the",
+    "autumn bore rich fruit. The birds sat on the trees and sang so sweetly that the",
+    "children used to stop their games in order to listen to them. “How happy we are",
+    "here!” they cried to each other.",
+    "One day the Giant came back. He had been to visit his friend the Cornish ogre,",
+    "and had stayed with him for seven years. After the seven years were over he",
+    "had said all that he had to say, for his conversation was limited, and he",
+    "determined to return to his own castle. When he arrived he saw the children",
+    "playing in the garden.",
+    "“What are you doing here?” he cried in a very gruff voice, and the children ran",
+    "away.",
+    "“My own garden is my own garden,” said the Giant; “any one can understand",
+    "that, and I will allow nobody to play in it but myself.” So he built a high wall all",
+    "round it, and put up a notice-board.",
+    "TRESPASSERS",
+    "WILL BE",
+    "PROSECUTED",
+    "He was a very selfish Giant.",
+    "The poor children had now nowhere to play. They tried to play on the road,",
+    "but the road was very dusty and full of hard stones, and they did not like it.",
+    "They used to wander round the high wall when their lessons were over, and talk",
+    "about the beautiful garden inside. “How happy we were there,” they said to each",
+    "other."
+   ],
+   "glossary": [
+    [
+     "pearl",
+     "a pale, shiny, creamy white"
+    ],
+    [
+     "ogre",
+     "a cruel giant in fairy tales"
+    ],
+    [
+     "gruff",
+     "deep and rough"
+    ],
+    [
+     "trespassers",
+     "people who go onto someone’s land without permission"
+    ],
+    [
+     "prosecuted",
+     "taken to court to be punished"
+    ]
+   ]
+  },
+  {
+   "id": "t-stonehenge-letter",
+   "title": "A Letter from Stonehenge",
+   "author": "Inkworks Press",
+   "source": "Original text. The facts about Stonehenge come from English Heritage, History of Stonehenge and Building Stonehenge (english-heritage.org.uk).",
+   "kind": "nonfiction",
+   "lines": [
+    "14th April",
+    "Dear Grandad,",
+    "Thank you for the fossil book you sent for my birthday. I have read half of it already!",
+    "Last Saturday, Mum and I visited Stonehenge. I had seen photos, but the stones were much bigger than I expected. We walked all the way round them on the path.",
+    "Our guide told us that people began building here about 5,000 years ago. The stone circle came later, in about 2500 BC. That is more than 4,000 years ago!",
+    "There are 2 kinds of stone. The big ones are called sarsens. They weigh about 25 tons each, and the biggest, the Heel Stone, weighs about 30 tons. They came from the Marlborough Downs, 20 miles away. The smaller stones are called bluestones. Each one weighs between 2 and 5 tons, and they came all the way from the Preseli Hills in Wales.",
+    "How did people move them without lorries or cranes? The builders had hammerstones, ropes made from plants, timber and picks made from antlers. The guide said they probably used a wooden frame to pull each stone upright.",
+    "My favourite fact is that 4 of the sarsens have carvings of axe-heads and daggers on them. They were carved hundreds of years after the circle was built.",
+    "I have bought you a postcard of the Heel Stone. I will bring it when we visit at half term.",
+    "Lots of love,",
+    "Amara",
+    "P.S. Please can we go together next time? You can be my guide!"
+   ],
+   "glossary": [
+    [
+     "BC",
+     "used for dates long ago, counting back from the year 1"
+    ],
+    [
+     "tons",
+     "a unit for measuring very heavy things"
+    ],
+    [
+     "hammerstones",
+     "hard stones used as hammers"
+    ],
+    [
+     "antlers",
+     "the branching horns of a deer"
+    ]
+   ]
+  },
+  {
+   "id": "t-owl-pussycat",
+   "title": "The Owl and the Pussy-Cat",
+   "author": "Edward Lear",
+   "source": "From Nonsense Songs by Edward Lear, first published in 1871 (text from Nonsense Books, Project Gutenberg eBook #13650). Public domain in the UK.",
+   "kind": "poem",
+   "lines": [
+    "The Owl and the Pussy-Cat went to sea",
+    "In a beautiful pea-green boat:",
+    "They took some honey, and plenty of money",
+    "Wrapped up in a five-pound note.",
+    "The Owl looked up to the stars above,",
+    "And sang to a small guitar,",
+    "“O lovely Pussy, O Pussy, my love,",
+    "What a beautiful Pussy you are,",
+    "You are,",
+    "You are!",
+    "What a beautiful Pussy you are!”",
+    "Pussy said to the Owl, “You elegant fowl,",
+    "How charmingly sweet you sing!",
+    "Oh! let us be married; too long we have tarried:",
+    "But what shall we do for a ring?”",
+    "They sailed away, for a year and a day,",
+    "To the land where the bong-tree grows;",
+    "And there in a wood a Piggy-wig stood,",
+    "With a ring at the end of his nose,",
+    "His nose,",
+    "His nose,",
+    "With a ring at the end of his nose.",
+    "“Dear Pig, are you willing to sell for one shilling",
+    "Your ring?” Said the Piggy, “I will.”",
+    "So they took it away, and were married next day",
+    "By the Turkey who lives on the hill.",
+    "They dined on mince and slices of quince,",
+    "Which they ate with a runcible spoon;",
+    "And hand in hand, on the edge of the sand,",
+    "They danced by the light of the moon,",
+    "The moon,",
+    "The moon,",
+    "They danced by the light of the moon."
+   ],
+   "glossary": [
+    [
+     "pea-green",
+     "bright light green"
+    ],
+    [
+     "five-pound note",
+     "paper money worth 5 pounds"
+    ],
+    [
+     "fowl",
+     "a bird"
+    ],
+    [
+     "tarried",
+     "waited"
+    ],
+    [
+     "shilling",
+     "an old coin: 20 shillings made 1 pound"
+    ],
+    [
+     "quince",
+     "a hard fruit rather like a pear"
+    ]
+   ]
+  },
+  {
+   "id": "t-railway-children",
+   "title": "The Railway Children",
+   "author": "E. Nesbit",
+   "source": "From The Railway Children by E. Nesbit, first published in 1906: part of Chapter 6. Project Gutenberg eBook #1874. Public domain in the UK.",
+   "kind": "prose",
+   "lines": [
+    "“Yes,” said Peter, slowly. He was still leaning on the fence. “Yes,” he said again,",
+    "still more slowly.",
+    "Then he stood upright.",
+    "“The 11.29 down hasn’t gone by yet. We must let them know at the station, or",
+    "there’ll be a most frightful accident.”",
+    "“Let’s run,” said Bobbie, and began.",
+    "But Peter cried, “Come back!” and looked at Mother’s watch. He was very",
+    "prompt and businesslike, and his face looked whiter than they had ever seen it.",
+    "“No time,” he said; “it’s two miles away, and it’s past eleven.”",
+    "“Couldn’t we,” suggested Phyllis, breathlessly, “couldn’t we climb up a",
+    "telegraph post and do something to the wires?”",
+    "“We don’t know how,” said Peter.",
+    "“They do it in war,” said Phyllis; “I know I’ve heard of it.”",
+    "“They only CUT them, silly,” said Peter, “and that doesn’t do any good. And we",
+    "couldn’t cut them even if we got up, and we couldn’t get up. If we had anything",
+    "red, we could get down on the line and wave it.”",
+    "“But the train wouldn’t see us till it got round the corner, and then it could",
+    "see the mound just as well as us,” said Phyllis; “better, because it’s much bigger",
+    "than us.”",
+    "“If we only had something red,” Peter repeated, “we could go round the corner",
+    "and wave to the train.”",
+    "“We might wave, anyway.”",
+    "“They’d only think it was just US, as usual. We’ve waved so often before.",
+    "Anyway, let’s get down.”"
+   ],
+   "glossary": [
+    [
+     "the 11.29 down",
+     "the train that is due at 11.29"
+    ],
+    [
+     "businesslike",
+     "serious and practical"
+    ],
+    [
+     "telegraph post",
+     "a tall pole carrying wires that sent messages"
+    ],
+    [
+     "mound",
+     "a big heap"
+    ]
+   ]
+  },
+  {
+   "id": "t-mummy",
+   "title": "How the Egyptians Made a Mummy",
+   "author": "Inkworks Press",
+   "source": "Original text. Facts from the Smithsonian Institution, Egyptian Mummies (si.edu), and the British Museum, Ancient Egypt (schools resources, britishmuseum.org).",
+   "kind": "nonfiction",
+   "lines": [
+    "The ancient Egyptians believed that a person’s spirit needed a home after death, and that home was the body. If the body was destroyed, the spirit might be lost. So they preserved the body very carefully. A body preserved like this is called a mummy.",
+    "Making a mummy took 70 days. The people who did the work were called embalmers.",
+    "Step by step",
+    "1. The embalmers pushed long hooked tools up the nose and pulled out the brain, bit by bit.",
+    "2. They made a cut, usually on the left side of the body, and took out the organs inside. They left the heart in place, because they believed it was the most important part of a person, where their thinking came from.",
+    "3. Next, they covered the body with natron, a kind of salt that dries things out. They put packets of natron inside the body too.",
+    "4. When the body was completely dry, they took out the packets and gently washed off the natron. They filled any sunken parts with linen to make the body look more lifelike, and they added false eyes.",
+    "5. Priests wound long strips of linen around the body. At several stages, they coated the wrappings with warm resin. They tucked lucky charms called amulets in among the linen to protect the dead person.",
+    "Canopic jars",
+    "The stomach, liver, lungs and intestines were kept in special containers called canopic jars. The jars were decorated with the heads of the 4 sons of the god Horus: a human, a hawk, a baboon and a jackal."
+   ],
+   "glossary": [
+    [
+     "preserved",
+     "kept from rotting away"
+    ],
+    [
+     "organs",
+     "parts inside the body that do a job, such as the stomach"
+    ],
+    [
+     "linen",
+     "a cloth made from the flax plant"
+    ],
+    [
+     "resin",
+     "a thick, sticky liquid that comes from some trees"
+    ]
+   ]
+  },
+  {
+   "id": "t-north-wind-sun",
+   "title": "The North Wind and the Sun",
+   "author": "Inkworks Press, based on a fable by Aesop",
+   "source": "Original playscript by Inkworks Press, based on the plot of “The North Wind and the Sun” in Three Hundred Æsop’s Fables, translated by George Fyler Townsend (1867), Project Gutenberg eBook #21.",
+   "kind": "playscript",
+   "lines": [
+    "Characters: NARRATOR, NORTH WIND, SUN, TRAVELLER",
+    "Setting: a country road on a cool day.",
+    "NARRATOR: High above a winding country road, the North Wind and the Sun were having an argument.",
+    "NORTH WIND: (puffing out his cheeks) I am the strongest thing in the sky. When I blow, trees bend and ships race across the sea.",
+    "SUN: (calmly) Being strong is not only about blowing hard, my friend.",
+    "NORTH WIND: Then let’s have a contest. Do you see that traveller on the road, in the long brown cloak?",
+    "SUN: I do.",
+    "NORTH WIND: Whoever can make him take off his cloak is the strongest. I’ll go first!",
+    "The North Wind blows. The Traveller stumbles and grips his cloak.",
+    "TRAVELLER: Brrr! Where did this wind come from? (He wraps the cloak tightly around himself.)",
+    "NORTH WIND: (blowing harder) Off! Off with it!",
+    "TRAVELLER: (bending into the wind) I’m not letting go of this cloak for anything!",
+    "NARRATOR: The harder the North Wind blew, the tighter the Traveller held on. At last, the North Wind gave up.",
+    "NORTH WIND: (out of breath) Go on, then. Let’s see what you can do.",
+    "The Sun smiles and shines warmly.",
+    "TRAVELLER: (looking up) Ah, that’s better. (He loosens his cloak.) It’s getting warm.",
+    "The Sun shines brighter still. The Traveller fans his face with his hat.",
+    "TRAVELLER: Phew! I’m far too hot for this heavy thing. (He takes off his cloak and folds it over his arm.) I’ll cool my feet in that stream.",
+    "The Traveller hurries off towards the stream.",
+    "SUN: (gently) You see? Gentle warmth can do what force cannot.",
+    "NARRATOR: And the North Wind had to agree."
+   ],
+   "glossary": []
+  },
+  {
+   "id": "t-river-bank",
+   "title": "The River Bank",
+   "author": "Kenneth Grahame",
+   "source": "From The Wind in the Willows by Kenneth Grahame, first published in 1908: the opening of Chapter 1, “The River Bank”. Project Gutenberg eBook #289. Public domain in the UK.",
+   "kind": "prose",
+   "lines": [
+    "The Mole had been working very hard all the morning, spring-cleaning his little",
+    "home. First with brooms, then with dusters; then on ladders and steps and",
+    "chairs, with a brush and a pail of whitewash; till he had dust in his throat and",
+    "eyes, and splashes of whitewash all over his black fur, and an aching back and",
+    "weary arms. Spring was moving in the air above and in the earth below and",
+    "around him, penetrating even his dark and lowly little house with its spirit of",
+    "divine discontent and longing. It was small wonder, then, that he suddenly flung",
+    "down his brush on the floor, said “Bother!” and “O blow!” and also “Hang spring-",
+    "cleaning!” and bolted out of the house without even waiting to put on his coat.",
+    "Something up above was calling him imperiously, and he made for the steep",
+    "little tunnel which answered in his case to the gravelled carriage-drive owned by",
+    "animals whose residences are nearer to the sun and air. So he scraped and",
+    "scratched and scrabbled and scrooged and then he scrooged again and",
+    "scrabbled and scratched and scraped, working busily with his little paws and",
+    "muttering to himself, “Up we go! Up we go!” till at last, pop! his snout came out",
+    "into the sunlight, and he found himself rolling in the warm grass of a great",
+    "meadow.",
+    "“This is fine!” he said to himself. “This is better than whitewashing!” The",
+    "sunshine struck hot on his fur, soft breezes caressed his heated brow, and after",
+    "the seclusion of the cellarage he had lived in so long the carol of happy birds fell",
+    "on his dulled hearing almost like a shout. Jumping off all his four legs at once, in",
+    "the joy of living and the delight of spring without its cleaning, he pursued his",
+    "way across the meadow till he reached the hedge on the further side."
+   ],
+   "glossary": [
+    [
+     "whitewash",
+     "a white paint made from lime and water"
+    ],
+    [
+     "divine discontent",
+     "a restless feeling of wanting something more"
+    ],
+    [
+     "imperiously",
+     "like an order that must be obeyed"
+    ],
+    [
+     "carriage-drive",
+     "a driveway for horse-drawn carriages"
+    ],
+    [
+     "scrooged",
+     "squeezed and pushed"
+    ],
+    [
+     "seclusion",
+     "being shut away on your own"
+    ],
+    [
+     "cellarage",
+     "cellars: rooms under the ground"
+    ],
+    [
+     "carol",
+     "a joyful song"
+    ]
+   ]
+  },
+  {
+   "id": "t-hadrians-wall",
+   "title": "Hadrian’s Wall",
+   "author": "Inkworks Press",
+   "source": "Original text. Facts from English Heritage, History of Hadrian’s Wall and Hadrian’s Wall: history and stories (english-heritage.org.uk).",
+   "kind": "nonfiction",
+   "lines": [
+    "Hadrian’s Wall",
+    "A guide for young explorers",
+    "What is it?",
+    "Hadrian’s Wall is a wall that the Romans built across the north of England. It runs for 73 miles, from Wallsend on the River Tyne in the east to Bowness-on-Solway in the west. The Romans measured it as 80 Roman miles.",
+    "Who built it?",
+    "Hadrian was the Emperor of Rome from AD 117 to AD 138. He came to Britain in AD 122, and building probably began that year. The Wall was built by the 3 legions in Britain. Each legion had about 5,000 soldiers. The work took at least 6 years.",
+    "Did you know?",
+    "The newest Roman coins found on the Wall were made between AD 403 and AD 406.",
+    "Stone and turf",
+    "Most of the Wall was built of stone. The western 30 miles were built of turf: blocks of earth with grass on top.",
+    "Guarding the Wall",
+    "At every Roman mile there was a gate, protected by a small guard post called a milecastle. Between each pair of milecastles stood 2 towers called turrets. Before the work was finished, 14 forts were added too.",
+    "Life on the Wall",
+    "Soldiers from across Europe and North Africa served on the Wall. People from all these places met there and traded with each other."
+   ],
+   "glossary": [
+    [
+     "Emperor",
+     "the ruler of an empire: many lands ruled by a single person"
+    ],
+    [
+     "AD",
+     "used for dates counting forward from the year 1"
+    ],
+    [
+     "legions",
+     "large groups of Roman soldiers"
+    ],
+    [
+     "traded",
+     "bought and sold things"
+    ]
+   ]
+  }
+ ],
+ "units": [
+  {
+   "id": "y3reading-u01",
+   "section": "POE",
+   "title": "Two Poems by Christina Rossetti",
+   "bookPages": [
+    4,
+    5
+   ],
+   "curriculum": [
+    "EN34-RC-1f",
+    "EN34-RC-1g",
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2f",
+    "2a",
+    "2b",
+    "2d",
+    "2f",
+    "2g",
+    "2h"
+   ],
+   "summary": "In a poem, read each line as a small sentence. When a poem asks a question, look for where the answer comes.",
+   "textId": "t-rossetti-poems",
+   "questions": [
+    {
+     "id": "y3reading-u01-q01",
+     "type": "mcq",
+     "prompt": "Look at lines 11 to 26. What does the poet say is red?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 13 says “What is red? a poppy’s red”. A rose is the answer for pink.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "a poppy",
+      "a swan",
+      "a rose",
+      "the sky"
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u01-q02",
+     "type": "text",
+     "prompt": "Look at lines 23 to 24. Find and copy the word that names what is violet.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 23 says “clouds are violet”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "answer": "clouds",
+     "accept": []
+    },
+    {
+     "id": "y3reading-u01-q03",
+     "type": "mcq",
+     "prompt": "“Sailing in the light” (line 18). What is the swan doing?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Swans swim on water. Sailing here means gliding smoothly along, like a boat with a sail.",
+     "misconception": "Thinking the swan is in a real boat because of the word sailing.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "hiding from the sun",
+      "sitting in a boat",
+      "moving smoothly along the water",
+      "flying high in the sky"
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u01-q04",
+     "type": "truefalse",
+     "prompt": "Look at lines 1 to 9. Is each sentence true or false?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Lines 3 and 7 say “Neither I nor you” and “Neither you nor I”. Nobody in the poem has seen the wind, but the leaves and trees show it is there.",
+     "misconception": "Reading the question “Who has seen the wind?” as if the poet is saying she saw it.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "The poet says she has seen the wind.",
+       "a": false
+      },
+      {
+       "s": "The leaves tremble when the wind passes.",
+       "a": true
+      },
+      {
+       "s": "The trees bow down their heads.",
+       "a": true
+      },
+      {
+       "s": "The poem says that you have seen the wind.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u01-q05",
+     "type": "match",
+     "prompt": "Which thing goes with each colour in What is pink? Join them up.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Each colour question is answered straight after it: lines 13, 21, 23 and 25.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "red",
+       "a poppy"
+      ],
+      [
+       "green",
+       "the grass"
+      ],
+      [
+       "violet",
+       "clouds"
+      ],
+      [
+       "orange",
+       "an orange"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u01-q06",
+     "type": "order",
+     "prompt": "Put these colours in the order they come in What is pink?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The poem goes pink, red, blue, white, yellow, then green, violet and orange. Each colour has 2 lines.",
+     "curriculum": [
+      "EN34-RC-2f",
+      "2f"
+     ],
+     "items": [
+      "pink",
+      "red",
+      "blue",
+      "white",
+      "yellow"
+     ]
+    },
+    {
+     "id": "y3reading-u01-q07",
+     "type": "mcq",
+     "prompt": "In Who has seen the wind?, how does the poet know the wind is there?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The leaves hang trembling and the trees bow down their heads. We cannot see the wind, but we can see what it does.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "She can see the wind’s colour.",
+      "She can hear it whistling.",
+      "She can see what it does to the leaves and the trees.",
+      "Someone told her about it."
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u01-q08",
+     "type": "multi",
+     "prompt": "Which pairs of words rhyme in What is pink? Choose all the right answers.",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Pink and brink end lines 11 and 12. White and light come in lines 17 and 18. Yellow and mellow come in lines 19 and 20. The other pairs do not sound alike at the end.",
+     "curriculum": [
+      "EN34-RC-1g",
+      "EN34-RC-1f",
+      "2g"
+     ],
+     "options": [
+      "rose and sky",
+      "green and swan",
+      "pink and brink",
+      "white and light",
+      "yellow and mellow"
+     ],
+     "answer": [
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "id": "y3reading-u01-q09",
+     "type": "mcq",
+     "prompt": "How are the 2 poems alike?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Line 2 asks “Who has seen the wind?” and line 11 asks “What is pink?”. Only the second poem is about colours.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2h"
+     ],
+     "options": [
+      "Both begin with a question.",
+      "Both have 16 lines.",
+      "Both end with a joke.",
+      "Both are about colours."
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u01-q10",
+     "type": "extended",
+     "prompt": "Ayesha thinks this poem shows that you can know something is there even when you cannot see it. Do you agree? Explain using Who has seen the wind?",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "The poem is built on this idea: the wind is invisible, but its effects are not.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "Yes, I agree. The poet says nobody has seen the wind. But when “the leaves hang trembling” (line 4) and “the trees bow down their heads” (line 8), we know the wind is passing. We can see what it does, so we know it is there.",
+     "checklist": [
+      "1 mark: says that nobody can see the wind (Neither I nor you).",
+      "1 mark: uses the leaves or the trees as the clue that shows the wind is there.",
+      "Do not give the second mark for just copying a line with no explanation."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u02",
+   "section": "FIC",
+   "title": "The Story of the Three Little Pigs",
+   "bookPages": [
+    6,
+    7
+   ],
+   "curriculum": [
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2d",
+    "EN34-RC-2e",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2e",
+    "2h"
+   ],
+   "summary": "Traditional tales often repeat words and events. Notice what stays the same and what changes, because the change is usually important.",
+   "textId": "t-three-little-pigs",
+   "questions": [
+    {
+     "id": "y3reading-u02-q01",
+     "type": "mcq",
+     "prompt": "Look at line 12. What did the wolf do after he blew the straw house in?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 12 says he “blew his house in, and ate up the little pig”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "built his own house",
+      "ran away",
+      "went to sleep",
+      "ate up the little pig"
+     ],
+     "answer": 3
+    },
+    {
+     "id": "y3reading-u02-q02",
+     "type": "cloze",
+     "prompt": "The third little pig met a man with a ___ of bricks.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 21 says “a load of bricks”. The first 2 pigs met men with a bundle.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "answer": [
+      "load"
+     ],
+     "accept": [
+      [
+       "a load"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u02-q03",
+     "type": "text",
+     "prompt": "Look at lines 5 to 6. Find and copy the word that tells you the wolf came along soon after the house was built.",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Presently is an old word for soon or a little later. Line 5 says “Presently came along a wolf”.",
+     "misconception": "Choosing knocked, which tells you what the wolf did, not when.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "answer": "Presently",
+     "accept": []
+    },
+    {
+     "id": "y3reading-u02-q04",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "The wolf says “Little pig, little pig, let me come in” 3 times, and each pig says no. Line 29 says he “could not get the house down”.",
+     "misconception": "Thinking the wolf blew down every house because he blew down the first 2.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "The wolf asks to come in at every house.",
+       "a": true
+      },
+      {
+       "s": "The pigs let the wolf in.",
+       "a": false
+      },
+      {
+       "s": "The man gave the third pig the bricks.",
+       "a": true
+      },
+      {
+       "s": "The wolf blew down the brick house.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u02-q05",
+     "type": "order",
+     "prompt": "Put these events in the order they happen.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The story follows each pig in turn, first, second, then third, and ends with the wolf failing at the brick house.",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "The old sow sends her pigs away.",
+      "The first pig asks a man for some straw.",
+      "The wolf eats the second pig.",
+      "The third pig builds a house of bricks.",
+      "The wolf cannot get the house down."
+     ]
+    },
+    {
+     "id": "y3reading-u02-q06",
+     "type": "match",
+     "prompt": "Match each speaker to what they say.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The wolf asks to come in, and the pig inside answers no. The first pig asks the man for straw in line 4.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "the wolf",
+       "“Little pig, little pig, let me come in.”"
+      ],
+      [
+       "a pig inside its house",
+       "“No, no, by the hair of my chiny chin chin.”"
+      ],
+      [
+       "the first pig, to the man",
+       "“Please, man, give me that straw to build me a house.”"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u02-q07",
+     "type": "mcq",
+     "prompt": "Why do you think the wolf could not blow the third house down?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The wolf blew down houses of straw and furze, but not the house of bricks. The story does not say why, so you work it out: bricks are heavy and strong.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "The third pig blew back at him.",
+      "Bricks are much stronger than straw or furze.",
+      "The wolf was too tired to blow.",
+      "The wind was blowing the other way."
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u02-q08",
+     "type": "mcq",
+     "prompt": "“No, no, by the hair of my chiny chin chin” (line 9). What does the pig mean?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "The pig is making a promise on his chin. Starting with “No, no” shows he is refusing to open the door.",
+     "misconception": "Taking the words literally and thinking the pig is talking about his hairy chin.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "My chin is very hairy.",
+      "I will come out soon.",
+      "I will never let you in.",
+      "Please come in."
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u02-q09",
+     "type": "extended",
+     "prompt": "How is what happens at the third house different from what happens at the first 2 houses? Use the story.",
+     "difficulty": 4,
+     "marks": 2,
+     "explanation": "Comparing means saying what is the same and what changes. Here the change is that the wolf fails.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2h"
+     ],
+     "model": "At the first 2 houses the wolf huffed and puffed and blew the house in, then ate the pig. At the brick house he “could not get the house down” (line 29), so the third pig stayed safe and the wolf had to try something else.",
+     "checklist": [
+      "1 mark: at the first 2 houses the wolf blew the house down and ate the pig.",
+      "1 mark: at the third house he could not blow it down, so the pig was safe.",
+      "Do not accept: the houses were made of different things, with nothing about what happened."
+     ]
+    },
+    {
+     "id": "y3reading-u02-q10",
+     "type": "extended",
+     "prompt": "Look at line 31. Do you think the third pig will be tricked by the wolf? Use what you know about the third pig from the story.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "A good prediction uses clues about a character from earlier in the story.",
+     "curriculum": [
+      "EN34-RC-2d",
+      "2e"
+     ],
+     "model": "No, I think the third pig will not be tricked. He was sensible enough to build his house of bricks, and the wolf “could not get the house down” (line 29). A pig that careful will probably guess the turnips are a trap.",
+     "checklist": [
+      "1 mark: a clear prediction (tricked or not tricked).",
+      "1 mark: a reason from the story about the third pig, for example he chose bricks, he did not let the wolf in, or the other pigs were eaten so he knows the wolf is dangerous.",
+      "Accept a prediction that he is tricked if it is backed by a reason from the text, for example he likes turnips or he has not been tricked before."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u03",
+   "section": "NF",
+   "title": "Grow a Bean in a Jar",
+   "bookPages": [
+    8,
+    9
+   ],
+   "curriculum": [
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2d",
+    "EN34-RC-2e",
+    "EN34-RC-2f",
+    "EN34-RC-3",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2e",
+    "2f"
+   ],
+   "summary": "Instructions list what you need, then give the steps in order. Headings tell you which part to look at.",
+   "textId": "t-bean-jar",
+   "questions": [
+    {
+     "id": "y3reading-u03-q01",
+     "type": "mcq",
+     "prompt": "What kind of seed do you need?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 3, under You will need, says “1 broad bean seed”.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "options": [
+      "a pea",
+      "a sunflower seed",
+      "a broad bean seed",
+      "an apple pip"
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u03-q02",
+     "type": "text",
+     "prompt": "Look at line 15. Find and copy the example the text gives of somewhere light.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Step 5 says “such as a windowsill”. Such as is a signal that an example is coming.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "answer": "a windowsill",
+     "accept": [
+      "windowsill"
+     ]
+    },
+    {
+     "id": "y3reading-u03-q03",
+     "type": "mcq",
+     "prompt": "The paper should be “damp but not dripping” (line 12). What does damp mean?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Damp means slightly wet. The text says not dripping, so it must not be soaking wet.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "a little wet",
+      "completely dry",
+      "soaking wet",
+      "torn into pieces"
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u03-q04",
+     "type": "order",
+     "prompt": "Put these steps in the right order.",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "These are steps 1 to 5 under What to do. The numbers tell you the order.",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "Soak the bean in water.",
+      "Wet the folded kitchen paper.",
+      "Wrap the paper round the inside of the jar.",
+      "Push the bean between the paper and the glass.",
+      "Stand the jar somewhere light."
+     ]
+    },
+    {
+     "id": "y3reading-u03-q05",
+     "type": "multi",
+     "prompt": "Which things do you need? Choose all the right answers.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Lines 3 to 6 list a bean, a jar, kitchen paper and a cup of water. Soil is mentioned in line 1, but only to say this method does not use it.",
+     "misconception": "Choosing soil because the word appears in the first line.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "options": [
+      "a spoon",
+      "soil",
+      "kitchen paper",
+      "a cup of water",
+      "a clean glass jar"
+     ],
+     "answer": [
+      2,
+      3,
+      4
+     ]
+    },
+    {
+     "id": "y3reading-u03-q06",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Step 4 says push the bean in “about halfway up”. Line 9 says the shoot grows upwards. It is the root that grows downwards.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "You should check the paper every day.",
+       "a": true
+      },
+      {
+       "s": "If the paper feels dry, add a little water.",
+       "a": true
+      },
+      {
+       "s": "Push the bean right to the bottom of the jar.",
+       "a": false
+      },
+      {
+       "s": "The shoot grows downwards.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u03-q07",
+     "type": "mcq",
+     "prompt": "Step 4 says to put the bean “where you can see it” (line 14). Why does this matter?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The whole point of growing a bean in a jar is to watch it. Line 1 says that in soil everything happens out of sight.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "so you can watch the root and shoot grow",
+      "so the bean gets less water",
+      "so the bean stays cold",
+      "so the jar does not fall over"
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u03-q08",
+     "type": "match",
+     "prompt": "Match each heading to what that part of the text tells you.",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Headings split instructions into parts, so you can find what you need quickly.",
+     "curriculum": [
+      "EN34-RC-2f",
+      "2f"
+     ],
+     "pairs": [
+      [
+       "You will need",
+       "the things to collect before you start"
+      ],
+      [
+       "What to do",
+       "the steps to follow in order"
+      ],
+      [
+       "What will happen?",
+       "how the bean changes as it grows"
+      ],
+      [
+       "Top tip",
+       "an extra idea to try"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u03-q09",
+     "type": "extended",
+     "prompt": "Leo’s paper dried out and his bean did not grow. Which step did Leo forget? Explain using the text.",
+     "difficulty": 4,
+     "marks": 2,
+     "explanation": "This is a spot-the-mistake question. Find the step that would have stopped the problem.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "Leo forgot step 6: “Check the paper every day. If it feels dry, add a little water.” The bean needs water to grow, because the root “finds water and nutrients” (line 8). Dry paper gave it no water.",
+     "checklist": [
+      "1 mark: names step 6, or says he forgot to check the paper and add water.",
+      "1 mark: explains that the bean needs water to grow, using the text.",
+      "Do not accept: he forgot to soak the bean, with no link to the paper drying out."
+     ]
+    },
+    {
+     "id": "y3reading-u03-q10",
+     "type": "extended",
+     "prompt": "Imagine you keep your jar for another week. What do you think will happen to the shoot? Use the text.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "A prediction should come from what the text tells you, not a wild guess.",
+     "curriculum": [
+      "EN34-RC-2d",
+      "2e"
+     ],
+     "model": "I think the shoot will keep growing upwards and get taller, because the text says “The shoot grows upwards, towards the light” (line 9). It might grow more leaves too.",
+     "checklist": [
+      "1 mark: predicts the shoot will grow taller or keep growing.",
+      "1 mark: uses the text, for example that the shoot grows upwards towards the light.",
+      "Do not accept: a prediction about the root only."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u04",
+   "section": "FIC",
+   "title": "The Tale of Peter Rabbit",
+   "bookPages": [
+    10,
+    11
+   ],
+   "curriculum": [
+    "EN34-RC-1g",
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2e",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2g",
+    "2h"
+   ],
+   "summary": "Writers tell you what characters are like through what they do. Look at the actions, then ask what they show.",
+   "textId": "t-peter-rabbit",
+   "questions": [
+    {
+     "id": "y3reading-u04-q01",
+     "type": "mcq",
+     "prompt": "Where did Mrs. Rabbit go after she left her children?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Lines 7 to 8 say she “went through the wood to the baker’s”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "to the fields",
+      "to the baker’s",
+      "down the lane",
+      "to Mr. McGregor’s garden"
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u04-q02",
+     "type": "text",
+     "prompt": "Look at line 8. Find and copy the kind of bread Mrs. Rabbit bought.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 8 says “She bought a loaf of brown bread”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "answer": "brown bread",
+     "accept": [
+      "brown",
+      "a loaf of brown bread",
+      "loaf of brown bread"
+     ]
+    },
+    {
+     "id": "y3reading-u04-q03",
+     "type": "multi",
+     "prompt": "What did Peter eat in the garden? Choose all the right answers.",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Lines 13 to 14 say he ate lettuces, French beans and radishes. Flopsy, Mopsy and Cottontail gathered the blackberries, in the lane.",
+     "misconception": "Choosing blackberries, which the other rabbits picked, or carrots, which the text never mentions.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "French beans",
+      "carrots",
+      "radishes",
+      "blackberries",
+      "lettuces"
+     ],
+     "answer": [
+      0,
+      2,
+      4
+     ]
+    },
+    {
+     "id": "y3reading-u04-q04",
+     "type": "mcq",
+     "prompt": "Peter “squeezed under the gate” (line 12). Which words are closest in meaning to squeezed?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "To squeeze is to push into a space that is a tight fit. The gap under the gate was small.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "pushed through a small space",
+      "jumped high over",
+      "walked slowly past",
+      "knocked down"
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u04-q05",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The other rabbits went down the lane. Line 21 says Peter “had forgotten the way back to the gate”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "Mrs. Rabbit took her umbrella with her.",
+       "a": true
+      },
+      {
+       "s": "Flopsy, Mopsy and Cottontail went into the garden.",
+       "a": false
+      },
+      {
+       "s": "Mr. McGregor was planting young cabbages.",
+       "a": true
+      },
+      {
+       "s": "Peter remembered the way back to the gate.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u04-q06",
+     "type": "match",
+     "prompt": "Match each character to what they did.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Each character does something different. Only Peter goes into the garden.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "Mrs. Rabbit",
+       "went to the baker’s"
+      ],
+      [
+       "Flopsy, Mopsy and Cottontail",
+       "gathered blackberries"
+      ],
+      [
+       "Peter",
+       "squeezed under the gate"
+      ],
+      [
+       "Mr. McGregor",
+       "waved a rake"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u04-q07",
+     "type": "order",
+     "prompt": "Start with the earliest. Put these in story order.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The story moves forward in time. Peter only looks for parsley after eating so much that he feels sick (line 15).",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "Mrs. Rabbit warns her children about the garden.",
+      "Mrs. Rabbit sets off for the baker’s.",
+      "Peter eats some radishes.",
+      "Peter goes to look for some parsley.",
+      "Mr. McGregor chases Peter."
+     ]
+    },
+    {
+     "id": "y3reading-u04-q08",
+     "type": "mcq",
+     "prompt": "Mr. McGregor ran after Peter “waving a rake” (line 19). What does this detail show?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "He is shouting “Stop thief!” and holding a garden tool with metal teeth. The detail makes the chase feel scary.",
+     "misconception": "Reading waving as a friendly wave.",
+     "curriculum": [
+      "EN34-RC-1g",
+      "2g"
+     ],
+     "options": [
+      "Mr. McGregor is angry and Peter is in danger.",
+      "Mr. McGregor wants to play with Peter.",
+      "Mr. McGregor is waving goodbye.",
+      "Mr. McGregor is tidying the garden."
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u04-q09",
+     "type": "extended",
+     "prompt": "Maya thinks Mrs. Rabbit did not care where her children went. Is Maya right? Explain using lines 3 to 6.",
+     "difficulty": 4,
+     "marks": 2,
+     "explanation": "Mrs. Rabbit’s warning shows she is trying to protect them.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "No, Maya is wrong. Mrs. Rabbit tells her children where they may go, “into the fields or down the lane”, and warns them not to go into Mr. McGregor’s garden because their father was put in a pie there. She cares about keeping them safe.",
+     "checklist": [
+      "1 mark: says Maya is wrong.",
+      "1 mark: uses the warning about the garden or the danger to their father as evidence.",
+      "Do not give the second mark for just saying she is their mother."
+     ]
+    },
+    {
+     "id": "y3reading-u04-q10",
+     "type": "extended",
+     "prompt": "How is Peter different from Flopsy, Mopsy and Cottontail? Use the text.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "The writer puts the good bunnies and Peter next to each other so you notice the difference.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2h"
+     ],
+     "model": "Flopsy, Mopsy and Cottontail “were good little bunnies” (line 9). They did as they were told and gathered blackberries in the lane. Peter “was very naughty” (line 11) and ran straight to Mr. McGregor’s garden, the one place he was told not to go.",
+     "checklist": [
+      "1 mark: the other 3 were good, did as they were told, or went down the lane.",
+      "1 mark: Peter was naughty, disobeyed, or went into the garden.",
+      "Both sides must be described for 2 marks."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u05",
+   "section": "NF",
+   "title": "Where Do Shadows Come From?",
+   "bookPages": [
+    12,
+    13
+   ],
+   "curriculum": [
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2d",
+    "EN34-RC-2e",
+    "EN34-RC-2f",
+    "EN34-RC-3",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2e",
+    "2f"
+   ],
+   "summary": "An information text gives facts. Use the headings to find the right section, then read that part carefully.",
+   "textId": "t-shadows",
+   "questions": [
+    {
+     "id": "y3reading-u05-q01",
+     "type": "mcq",
+     "prompt": "Which of these does the text say blocks light?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 3 says “Some materials, like wood and metal, block light.”",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "options": [
+      "wood",
+      "water",
+      "glass",
+      "air"
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u05-q02",
+     "type": "text",
+     "prompt": "Look at line 8. Find and copy the word that tells you what shadows are like in the morning.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 8 says “In the morning, shadows are long.”",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "answer": "long",
+     "accept": []
+    },
+    {
+     "id": "y3reading-u05-q03",
+     "type": "mcq",
+     "prompt": "“Light comes from a light source” (line 3). What is a light source?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "The text gives the Sun and a torch as examples. Both give out light.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "a dark space",
+      "something that blocks light",
+      "something that gives out light",
+      "a kind of shadow"
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u05-q04",
+     "type": "cloze",
+     "prompt": "A shadow always points ___ from the light that makes it.",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Line 6 says “A shadow always points away from the light that makes it.”",
+     "misconception": "Writing towards, which is the opposite.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "answer": [
+      "away"
+     ],
+     "accept": [
+      []
+     ]
+    },
+    {
+     "id": "y3reading-u05-q05",
+     "type": "order",
+     "prompt": "Put these in order to show how your shadow changes during a sunny day.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Line 8 describes the whole day in order: long, shorter, then longer again.",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "Your shadow is long in the morning.",
+      "It gets shorter towards the middle of the day.",
+      "It grows longer again in the afternoon."
+     ]
+    },
+    {
+     "id": "y3reading-u05-q06",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "A shadow is a dark space (line 4). Line 11 says the Sun is strongest from March to October.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "Wood and metal block light.",
+       "a": true
+      },
+      {
+       "s": "A shadow is a bright space.",
+       "a": false
+      },
+      {
+       "s": "If the Sun is in front of you, your shadow falls behind you.",
+       "a": true
+      },
+      {
+       "s": "In the UK, the Sun is strongest from November to February.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u05-q07",
+     "type": "mcq",
+     "prompt": "Your shadow “copies every move you make” (line 1). What does this mean?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "To copy is to do the same thing. When you wave, your shadow waves too.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "It stays still all day.",
+      "It draws pictures of you.",
+      "It moves when you move.",
+      "It makes a noise when you move."
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u05-q08",
+     "type": "match",
+     "prompt": "Match each heading to what that section tells you.",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Each heading is a clue to what its section is about.",
+     "curriculum": [
+      "EN34-RC-2f",
+      "2f"
+     ],
+     "pairs": [
+      [
+       "What is a shadow?",
+       "how a shadow is made"
+      ],
+      [
+       "Which way do shadows point?",
+       "the direction a shadow falls"
+      ],
+      [
+       "Shadows on the move",
+       "how shadows change during the day"
+      ],
+      [
+       "Stay safe in the Sun",
+       "how to keep safe in strong sunshine"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u05-q09",
+     "type": "extended",
+     "prompt": "Priya thinks she will still have a shadow if she stands in a dark room with no light at all. Is Priya right? Explain using the text.",
+     "difficulty": 4,
+     "marks": 2,
+     "explanation": "Use what the text says a shadow is, then apply it to a new situation.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "No, Priya is wrong. A shadow is made when an opaque object blocks the light, so the light “cannot reach the space behind it” (line 4). If there is no light at all, there is nothing to block, so there is no shadow.",
+     "checklist": [
+      "1 mark: says Priya is wrong.",
+      "1 mark: explains that a shadow needs light to be blocked, using the text.",
+      "Do not give the second mark for it is too dark to see with no reason about light being blocked."
+     ]
+    },
+    {
+     "id": "y3reading-u05-q10",
+     "type": "extended",
+     "prompt": "In the Try it activity, you draw round your shadow in the morning and again in the middle of the day. What do you think you will notice? Use the text.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "Predicting from facts means using what the text has told you.",
+     "curriculum": [
+      "EN34-RC-2d",
+      "2e"
+     ],
+     "model": "I think the middle-of-the-day shadow will be shorter than the morning one, because shadows “get shorter towards the middle of the day” (line 8). It will also be in a different place, because shadows move as the Sun seems to move across the sky.",
+     "checklist": [
+      "1 mark: predicts the shadow will be shorter (or will have moved).",
+      "1 mark: backs this up with a fact from the text.",
+      "Accept: the shadow will point a different way."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u06",
+   "section": "POE",
+   "title": "From a Railway Carriage",
+   "bookPages": [
+    14,
+    15
+   ],
+   "curriculum": [
+    "EN34-RC-1g",
+    "EN34-RC-1h",
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2e",
+    "EN34-RC-2f",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2f",
+    "2g"
+   ],
+   "summary": "A poem can make you feel speed or calm through its words and rhythm. Picture each thing the poet describes.",
+   "textId": "t-railway-carriage",
+   "questions": [
+    {
+     "id": "y3reading-u06-q01",
+     "type": "mcq",
+     "prompt": "Look at lines 9 to 10. What is the child gathering?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 10 says “gathering brambles”. The word box says brambles here means blackberries.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "sticks",
+      "flowers",
+      "daisies",
+      "brambles"
+     ],
+     "answer": 3
+    },
+    {
+     "id": "y3reading-u06-q02",
+     "type": "text",
+     "prompt": "Look at line 15. Find and copy the word that names a building.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 15 says “here is a mill, and there is a river”. A river is not a building.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "answer": "mill",
+     "accept": [
+      "a mill"
+     ]
+    },
+    {
+     "id": "y3reading-u06-q03",
+     "type": "mcq",
+     "prompt": "“Fly as thick as driving rain” (line 6). What is driving rain?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Driving rain is heavy rain pushed along by the wind. The sights rush past like it.",
+     "misconception": "Thinking driving means driving a car.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "rain that falls on cars",
+      "rain blown hard and fast",
+      "rain that has stopped",
+      "gentle rain"
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u06-q04",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Line 11 says the tramp “stands and gazes”. The cart has “run away” and is “Lumping along” (lines 13 to 14), so it is not careful.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "The horses and cattle are in the meadows.",
+       "a": true
+      },
+      {
+       "s": "The tramp is running.",
+       "a": false
+      },
+      {
+       "s": "The cart is moving slowly and carefully.",
+       "a": false
+      },
+      {
+       "s": "There is a river.",
+       "a": true
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u06-q05",
+     "type": "order",
+     "prompt": "Put these sights in the order they come in the poem.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The poem lists the sights one after another as the train passes them.",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "bridges and houses",
+      "horses and cattle",
+      "painted stations",
+      "a child gathering brambles",
+      "a mill and a river"
+     ]
+    },
+    {
+     "id": "y3reading-u06-q06",
+     "type": "text",
+     "prompt": "Look at line 7. Find and copy the words that tell you how quickly the stations go by.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "A wink takes less than a second, so in the wink of an eye means almost instantly.",
+     "curriculum": [
+      "EN34-RC-1g",
+      "2g"
+     ],
+     "answer": "in the wink of an eye",
+     "accept": [
+      "the wink of an eye",
+      "wink of an eye"
+     ]
+    },
+    {
+     "id": "y3reading-u06-q07",
+     "type": "match",
+     "prompt": "The poem is written in rhyming pairs of lines. Match each word to the word it rhymes with.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Each pair ends 2 lines next to each other: lines 5 and 6, 9 and 10, 11 and 12, 13 and 14.",
+     "curriculum": [
+      "EN34-RC-1g",
+      "EN34-RC-1h",
+      "2g"
+     ],
+     "pairs": [
+      [
+       "plain",
+       "rain"
+      ],
+      [
+       "scrambles",
+       "brambles"
+      ],
+      [
+       "gazes",
+       "daisies"
+      ],
+      [
+       "road",
+       "load"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u06-q08",
+     "type": "multi",
+     "prompt": "Which of these words from the poem make you think of speed? Choose all the right answers.",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Charging means rushing forward, whistle by means zooming past, and a glimpse is a very quick look. Stands and gazes describe the tramp keeping still.",
+     "misconception": "Choosing any verb, even ones that describe keeping still.",
+     "curriculum": [
+      "EN34-RC-1g",
+      "2g"
+     ],
+     "options": [
+      "stands",
+      "whistle by",
+      "charging",
+      "gazes",
+      "glimpse"
+     ],
+     "answer": [
+      1,
+      2,
+      4
+     ]
+    },
+    {
+     "id": "y3reading-u06-q09",
+     "type": "mcq",
+     "prompt": "Why do so many lines start with “Here is” (lines 9 to 15)?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Each “Here is” is like pointing out of the window as something new appears, then it is gone.",
+     "curriculum": [
+      "EN34-RC-2f",
+      "2f"
+     ],
+     "options": [
+      "to show the train has stopped",
+      "to make the poem longer",
+      "to tell you where the train is going",
+      "to show each new thing suddenly coming into view"
+     ],
+     "answer": 3
+    },
+    {
+     "id": "y3reading-u06-q10",
+     "type": "extended",
+     "prompt": "Who is telling this poem, and where are they? Explain how you know.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "Inference means working something out from clues. The poem never says I am on a train.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "The person telling the poem is riding on a train and looking out of the window. Everything goes past very fast: “Painted stations whistle by” (line 8) and each sight is “a glimpse and gone forever” (line 16). Only someone moving quickly would see things flash past like that.",
+     "checklist": [
+      "1 mark: says the speaker is on a train (or in a railway carriage) looking out.",
+      "1 mark: gives a clue from the poem, such as things whistling by, or seeing each thing only for a glimpse.",
+      "Accept the title as one clue if a line from the poem is also used."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u07",
+   "section": "FIC",
+   "title": "How the Camel Got His Hump",
+   "bookPages": [
+    16,
+    17
+   ],
+   "curriculum": [
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2e",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2h"
+   ],
+   "summary": "Some stories repeat a pattern. Spot what happens each time, then think about why the writer repeats it.",
+   "textId": "t-camel-hump",
+   "questions": [
+    {
+     "id": "y3reading-u07-q01",
+     "type": "mcq",
+     "prompt": "On which day did the Horse come to see the Camel?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 7 says “the Horse came to him on Monday morning”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "Saturday",
+      "Tuesday",
+      "Monday",
+      "Sunday"
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u07-q02",
+     "type": "text",
+     "prompt": "Look at line 6. Find and copy the word the Camel said when anybody spoke to him.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 6 says “he said ‘Humph!’ Just ‘Humph!’ and no more.”",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "answer": "Humph",
+     "accept": [
+      "Humph!",
+      "‘Humph!’"
+     ]
+    },
+    {
+     "id": "y3reading-u07-q03",
+     "type": "multi",
+     "prompt": "What did the Camel eat? Choose all the right answers.",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Lines 4 to 5 say he ate “sticks and thorns and tamarisks and milkweed and prickles”. Grass and carrots are not in the list.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "carrots",
+      "sticks",
+      "thorns",
+      "milkweed",
+      "grass"
+     ],
+     "answer": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "id": "y3reading-u07-q04",
+     "type": "mcq",
+     "prompt": "“Presently the Dog came to him” (line 11). What does presently mean here?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Presently is an old word for soon or after a while. It has nothing to do with presents.",
+     "misconception": "Linking presently to the word present (a gift).",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "all at once",
+      "a little later",
+      "very slowly",
+      "with a present"
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u07-q05",
+     "type": "match",
+     "prompt": "Match each animal to what it had with it.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Lines 7, 11 and 14 tell you what each animal had. Each one shows the work that animal does.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "the Horse",
+       "a saddle on his back"
+      ],
+      [
+       "the Dog",
+       "a stick in his mouth"
+      ],
+      [
+       "the Ox",
+       "a yoke on his neck"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u07-q06",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Line 3 says the Camel “did not want to work”. Line 19 shows the Man thinks the Camel “can’t work”.",
+     "misconception": "Missing the word can’t and reading the Man’s words the wrong way round.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "The Camel lived in a desert.",
+       "a": true
+      },
+      {
+       "s": "The Camel wanted to work.",
+       "a": false
+      },
+      {
+       "s": "The Man called the animals together at the end of the day.",
+       "a": true
+      },
+      {
+       "s": "The Man said the Camel was able to work.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u07-q07",
+     "type": "order",
+     "prompt": "Put these events in the order they happen.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The animals come one by one: the Horse, then the Dog, then the Ox. The Man speaks at the end of the day.",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "The Horse asks the Camel to trot.",
+      "The Dog asks the Camel to fetch and carry.",
+      "The Ox asks the Camel to plough.",
+      "The Man calls the animals together.",
+      "The Man decides to leave the Camel alone."
+     ]
+    },
+    {
+     "id": "y3reading-u07-q08",
+     "type": "mcq",
+     "prompt": "The Man says the Camel “can’t work” (line 19). Why does the Man think this?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "The Man says the Camel “would have been here by now” if he could work. He does not know the Camel simply will not.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "The Camel told the Man he was ill.",
+      "The Camel never came, so the Man thought he was not able to.",
+      "The Horse said the Camel was too small.",
+      "The Camel was already working."
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u07-q09",
+     "type": "mcq",
+     "prompt": "The Camel answers everybody with just 1 word. What does this show about him?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Each animal asks politely, and the Camel just says Humph and carries on doing nothing. That is rude and lazy.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "He cannot speak any other words.",
+      "He is very busy.",
+      "He is rude and cannot be bothered.",
+      "He is shy and frightened."
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u07-q10",
+     "type": "extended",
+     "prompt": "How is the Camel different from the Horse, the Dog and the Ox? Use the text.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "Comparing means describing both sides, not just one.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2h"
+     ],
+     "model": "The Horse, the Dog and the Ox all work for Man. They trot, fetch and carry, and plough, and they come to ask the Camel to join them. The Camel “did not want to work” (line 3). He stays in the desert and just says Humph.",
+     "checklist": [
+      "1 mark: the other animals work (or do jobs for Man, or are willing to help).",
+      "1 mark: the Camel refuses to work, is idle, or only says Humph.",
+      "Both sides must be described for 2 marks."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u08",
+   "section": "NF",
+   "title": "Mary Anning’s Great Find",
+   "bookPages": [
+    18,
+    19
+   ],
+   "curriculum": [
+    "EN34-RC-1b",
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2e",
+    "EN34-RC-2f",
+    "EN34-RC-3",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2f"
+   ],
+   "summary": "A recount tells real events in time order. Dates and time words such as later help you follow what happened when.",
+   "textId": "t-mary-anning",
+   "questions": [
+    {
+     "id": "y3reading-u08-q01",
+     "type": "mcq",
+     "prompt": "Mary grew up by the sea. Which town was she born in?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 1 says she was born “in Lyme Regis, a seaside town that is rich in fossils”.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "options": [
+      "London",
+      "Lyme Regis",
+      "the Geological Society",
+      "Germany"
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u08-q02",
+     "type": "text",
+     "prompt": "Look at line 1. Find and copy the word that tells you what Mary’s father made.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 1 says her father “made furniture and collected fossils too”.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "answer": "furniture",
+     "accept": [
+      "made furniture"
+     ]
+    },
+    {
+     "id": "y3reading-u08-q03",
+     "type": "multi",
+     "prompt": "Which of these did Mary find? Choose all the right answers.",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Mary dug out the Ichthyosaurus skeleton in 1812, found the Plesiosaurus in 1823 and the pterosaur in 1828. Her brother Joseph found the skull.",
+     "misconception": "Thinking Mary found the skull, when the text says Joseph did.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "options": [
+      "a dinosaur egg",
+      "the skeleton of the Ichthyosaurus",
+      "a complete Plesiosaurus skeleton",
+      "a pterosaur",
+      "the first fossil skull"
+     ],
+     "answer": [
+      1,
+      2,
+      3
+     ]
+    },
+    {
+     "id": "y3reading-u08-q04",
+     "type": "mcq",
+     "prompt": "“a jumble of bones” (line 4). What does jumble mean?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "A jumble is a mess of things mixed together. The bones were not laid out neatly.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "a muddled-up pile",
+      "a neat line",
+      "a tiny piece",
+      "a box"
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u08-q05",
+     "type": "match",
+     "prompt": "Match each year to what happened.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "All these years are in the text and on the timeline (lines 7 to 12).",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "1811",
+       "Joseph finds a fossil skull"
+      ],
+      [
+       "1823",
+       "Mary finds a complete Plesiosaurus"
+      ],
+      [
+       "1828",
+       "Mary finds a pterosaur"
+      ],
+      [
+       "1847",
+       "Mary dies"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u08-q06",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Line 3 says it was “neither a fish nor a lizard”. It was a reptile that lived in the sea. Line 5 says the Society would not let her join.",
+     "misconception": "Believing the name, fish lizard, tells you what the animal really was.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "Ichthyosaurus means “fish lizard”.",
+       "a": true
+      },
+      {
+       "s": "An Ichthyosaurus was a kind of fish.",
+       "a": false
+      },
+      {
+       "s": "The pterosaur had wings.",
+       "a": true
+      },
+      {
+       "s": "The Geological Society let Mary join.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u08-q07",
+     "type": "order",
+     "prompt": "Look at How does a fossil form? Put these steps in order.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Lines 14 to 18 number the steps 1 to 5.",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "An animal dies.",
+      "Its soft parts rot away.",
+      "It is buried under mud or sand.",
+      "The layers turn into rock.",
+      "Minerals turn the bones and teeth to stone."
+     ]
+    },
+    {
+     "id": "y3reading-u08-q08",
+     "type": "numeric",
+     "prompt": "How many years were there between Mary finding the Plesiosaurus and finding the pterosaur?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "The Plesiosaurus was in 1823 and the pterosaur in 1828. 1828 take away 1823 is 5.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "answer": 5,
+     "unit": "years"
+    },
+    {
+     "id": "y3reading-u08-q09",
+     "type": "mcq",
+     "prompt": "Why does the text have a timeline as well as the main writing?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "The timeline repeats the key dates from the writing in a short list, so they are quick to find.",
+     "curriculum": [
+      "EN34-RC-2f",
+      "EN34-RC-1b",
+      "2f"
+     ],
+     "options": [
+      "to tell you new facts that are not in the writing",
+      "so you can see the main dates in order at a glance",
+      "to show what Mary looked like",
+      "to explain how fossils form"
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u08-q10",
+     "type": "extended",
+     "prompt": "The text says Mary’s finds were important. Find 2 pieces of evidence in the text that show this.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "Evidence means facts from the text that back up a statement.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "She was “the first person to find a complete skeleton of a Plesiosaurus” (line 4). Her pterosaur was “the first ever found outside Germany” (line 4). Being the first to find something shows it was important.",
+     "checklist": [
+      "1 mark for each piece of evidence, up to 2: first complete Plesiosaurus; first pterosaur found outside Germany; the Ichthyosaurus skeleton was 5 metres long and was given a name.",
+      "Do not accept: she was born in Lyme Regis, or a fact that does not show importance."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u09",
+   "section": "FIC",
+   "title": "The Selfish Giant",
+   "bookPages": [
+    20,
+    21
+   ],
+   "curriculum": [
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2e",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2h"
+   ],
+   "summary": "Writers show how characters feel through what they say and do. Compare the start of a story with what comes later.",
+   "textId": "t-selfish-giant",
+   "questions": [
+    {
+     "id": "y3reading-u09-q01",
+     "type": "mcq",
+     "prompt": "How many peach-trees were in the garden?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 4 says “there were twelve peach-trees”. The Giant was away for 7 years, which is a different number.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "12",
+      "7",
+      "20",
+      "5"
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u09-q02",
+     "type": "text",
+     "prompt": "Look at line 9. Find and copy the word that tells you what kind of creature the Giant’s friend was.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 9 says he had been “to visit his friend the Cornish ogre”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "answer": "ogre",
+     "accept": [
+      "Cornish ogre",
+      "the Cornish ogre"
+     ]
+    },
+    {
+     "id": "y3reading-u09-q03",
+     "type": "mcq",
+     "prompt": "“delicate blossoms of pink and pearl” (line 5). What does delicate mean?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Delicate things are fine and fragile. Blossom petals are soft and fall easily.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "large and heavy",
+      "dark and gloomy",
+      "soft and easily damaged",
+      "hard and spiky"
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u09-q04",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "The Giant cried “What are you doing here?” and the children ran away. Line 24 says “they did not like it” on the road.",
+     "misconception": "Thinking the children were happy anywhere, without checking line 24.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "The Giant had been to visit the Cornish ogre.",
+       "a": true
+      },
+      {
+       "s": "The Giant asked the children to stay.",
+       "a": false
+      },
+      {
+       "s": "The road was dusty and full of hard stones.",
+       "a": true
+      },
+      {
+       "s": "The children liked playing on the road.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u09-q05",
+     "type": "order",
+     "prompt": "Put these events in the order they happen.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The extract moves through time: happy play, the Giant returns, the wall goes up, and the children are left outside.",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "The children play in the Giant’s garden.",
+      "The Giant comes back from the Cornish ogre.",
+      "The children run away.",
+      "The Giant builds a high wall.",
+      "The children wander round the wall."
+     ]
+    },
+    {
+     "id": "y3reading-u09-q06",
+     "type": "match",
+     "prompt": "Match each speaker to their words.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Speech marks show the exact words. Check who is speaking just before or after each one.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "the children, at the start",
+       "“How happy we are here!”"
+      ],
+      [
+       "the Giant, to the children",
+       "“What are you doing here?”"
+      ],
+      [
+       "the Giant, about his garden",
+       "“My own garden is my own garden,”"
+      ],
+      [
+       "the children, outside the wall",
+       "“How happy we were there,”"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u09-q07",
+     "type": "mcq",
+     "prompt": "“the children used to stop their games in order to listen to them” (lines 6 to 7). What does this tell you about the birds’ singing?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Line 6 says the birds “sang so sweetly”. Stopping a game to listen shows how beautiful it was.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "It was a warning that the Giant was coming.",
+      "It made the children want to go home.",
+      "It was so lovely that the children wanted to hear it.",
+      "It was so loud that the children could not play."
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u09-q08",
+     "type": "mcq",
+     "prompt": "“his conversation was limited” (line 11). What does this tell you about the Giant?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Limited means there was not much of it. After 7 years he had run out of things to say, so he went home.",
+     "misconception": "Thinking limited means the Giant was not allowed to speak.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "He could only speak in a whisper.",
+      "He did not like his friend.",
+      "He talked all the time.",
+      "He did not have much to talk about."
+     ],
+     "answer": 3
+    },
+    {
+     "id": "y3reading-u09-q09",
+     "type": "extended",
+     "prompt": "How do the children feel at the end of the extract? Explain how you know.",
+     "difficulty": 4,
+     "marks": 2,
+     "explanation": "Feelings are often shown, not told. Look at what the children do and say.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "The children feel sad and miss the garden. The writer calls them “The poor children” (line 23) because they have nowhere to play. They wander round the wall and say “How happy we were there,” (line 26), which shows they are not happy now.",
+     "checklist": [
+      "1 mark: a feeling such as sad, upset, unhappy or missing the garden.",
+      "1 mark: evidence such as the poor children, nowhere to play, wandering round the wall, or How happy we were there.",
+      "Do not accept: happy, unless it refers only to the past."
+     ]
+    },
+    {
+     "id": "y3reading-u09-q10",
+     "type": "extended",
+     "prompt": "Compare the garden with the road where the children try to play. Use the text.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "The writer makes the road sound unpleasant so you understand what the children have lost.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2h"
+     ],
+     "model": "The garden had “soft green grass” (line 3), flowers like stars, peach-trees and birds that sang sweetly. The road was “very dusty and full of hard stones” (line 24). The garden was soft and beautiful, but the road was hard and dirty.",
+     "checklist": [
+      "1 mark: a detail about the garden (soft green grass, flowers, peach-trees, birds).",
+      "1 mark: a detail about the road (dusty, hard stones), making the difference clear.",
+      "Both places must be described for 2 marks."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u10",
+   "section": "NF",
+   "title": "A Letter from Stonehenge",
+   "bookPages": [
+    22,
+    23
+   ],
+   "curriculum": [
+    "EN34-RC-1e",
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2f",
+    "EN34-RC-3",
+    "2a",
+    "2b",
+    "2d",
+    "2f"
+   ],
+   "summary": "A letter starts with a date and a greeting and ends with a sign-off. Read it to find out facts and how the writer feels.",
+   "textId": "t-stonehenge-letter",
+   "questions": [
+    {
+     "id": "y3reading-u10-q01",
+     "type": "mcq",
+     "prompt": "Who did Amara visit Stonehenge with?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 4 says “Mum and I visited Stonehenge.” Grandad was not there, which is why Amara writes to him.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "options": [
+      "her class",
+      "her brother",
+      "Grandad",
+      "Mum"
+     ],
+     "answer": 3
+    },
+    {
+     "id": "y3reading-u10-q02",
+     "type": "text",
+     "prompt": "Look at line 6. Find and copy the name of the biggest stone.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 6 says “the biggest, the Heel Stone, weighs about 30 tons”.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "answer": "the Heel Stone",
+     "accept": [
+      "Heel Stone"
+     ]
+    },
+    {
+     "id": "y3reading-u10-q03",
+     "type": "mcq",
+     "prompt": "“They were carved hundreds of years after the circle was built” (line 8). What does carved mean?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Carving means cutting shapes into something hard. The axe-heads and daggers were cut into the stone.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "broken into pieces",
+      "cut into shapes",
+      "painted in colours",
+      "pulled upright"
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u10-q04",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Line 4 says the stones “were much bigger than I expected”. Line 9 says she will bring the postcard when they visit.",
+     "misconception": "Mixing up bigger and smaller when reading quickly.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "Amara walked round the stones on the path.",
+       "a": true
+      },
+      {
+       "s": "The stones were smaller than Amara expected.",
+       "a": false
+      },
+      {
+       "s": "The stone circle was built in about 2500 BC.",
+       "a": true
+      },
+      {
+       "s": "Amara has already given Grandad the postcard.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u10-q05",
+     "type": "multi",
+     "prompt": "Which of these did the builders have? Choose all the right answers.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Line 7 lists hammerstones, ropes made from plants, timber and picks made from antlers. It asks how they managed without lorries or cranes.",
+     "misconception": "Choosing cranes or lorries because they are named in the same line.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "options": [
+      "lorries",
+      "ropes made from plants",
+      "picks made from antlers",
+      "cranes",
+      "hammerstones"
+     ],
+     "answer": [
+      1,
+      2,
+      4
+     ]
+    },
+    {
+     "id": "y3reading-u10-q06",
+     "type": "order",
+     "prompt": "Put these parts of the letter in the order they come.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "A letter has a set shape: date, greeting, the main part, a sign-off, and sometimes a P.S. added at the very end.",
+     "curriculum": [
+      "EN34-RC-2f",
+      "EN34-RC-1e",
+      "2f"
+     ],
+     "items": [
+      "the date",
+      "Dear Grandad,",
+      "thank you for the fossil book",
+      "facts about the stones",
+      "Lots of love,",
+      "the P.S."
+     ]
+    },
+    {
+     "id": "y3reading-u10-q07",
+     "type": "numeric",
+     "prompt": "How many miles did the sarsens travel to reach Stonehenge?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Line 6 says the sarsens “came from the Marlborough Downs, 20 miles away”.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "answer": 20,
+     "unit": "miles"
+    },
+    {
+     "id": "y3reading-u10-q08",
+     "type": "match",
+     "prompt": "Match each number to what it tells you.",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Each number comes from a different part of the letter (lines 5, 6 and 8). Read the words around a number to see what it describes.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "about 25 tons",
+       "the weight of each big sarsen"
+      ],
+      [
+       "about 30 tons",
+       "the weight of the Heel Stone"
+      ],
+      [
+       "4",
+       "how many sarsens have carvings"
+      ],
+      [
+       "about 5,000 years",
+       "how long ago people began building here"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u10-q09",
+     "type": "mcq",
+     "prompt": "Why does Amara write “That is more than 4,000 years ago!” (line 5)?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "The exclamation mark shows surprise. Amara is impressed that the circle is so very old.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "She thinks Grandad was there.",
+      "She is checking her sums.",
+      "She is bored of the facts.",
+      "She is amazed at how old the stone circle is."
+     ],
+     "answer": 3
+    },
+    {
+     "id": "y3reading-u10-q10",
+     "type": "extended",
+     "prompt": "Find 2 things in the letter that show Amara listened carefully to the guide.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "The letter says Our guide told us and The guide said. Those phrases point to the evidence.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "Amara remembers that people “began building here about 5,000 years ago” (line 5), which the guide told them. She also remembers that the guide said they “probably used a wooden frame to pull each stone upright” (line 7).",
+     "checklist": [
+      "1 mark for each fact that the letter says came from the guide, up to 2: building began about 5,000 years ago; the circle came later in about 2500 BC; they probably used a wooden frame.",
+      "Also accept: she can name the 2 kinds of stone and where they came from, if the child links it to what she learned on the visit."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u11",
+   "section": "POE",
+   "title": "The Owl and the Pussy-Cat",
+   "bookPages": [
+    24,
+    25
+   ],
+   "curriculum": [
+    "EN34-RC-1f",
+    "EN34-RC-1g",
+    "EN34-RC-1h",
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2e",
+    "EN34-RC-2f",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2f",
+    "2g"
+   ],
+   "summary": "A narrative poem tells a story. Nonsense poems are meant to be fun and can use made-up words.",
+   "textId": "t-owl-pussycat",
+   "questions": [
+    {
+     "id": "y3reading-u11-q01",
+     "type": "mcq",
+     "prompt": "What did the Owl sing to?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 6 says he “sang to a small guitar”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "the Piggy-wig",
+      "the Turkey",
+      "a small guitar",
+      "the moon"
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u11-q02",
+     "type": "text",
+     "prompt": "Look at line 26. Find and copy the name of the animal who married them.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 26 says they were married “By the Turkey who lives on the hill”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "answer": "Turkey",
+     "accept": [
+      "the Turkey"
+     ]
+    },
+    {
+     "id": "y3reading-u11-q03",
+     "type": "mcq",
+     "prompt": "Pussy calls the Owl an “elegant fowl” (line 12). Which of these is closest to what she means?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Elegant means graceful and stylish. The word box says fowl means a bird. The Pussy-Cat is paying the Owl a compliment.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "You are a graceful, smart-looking bird.",
+      "You are a very old bird.",
+      "You are a clumsy bird.",
+      "You are a noisy chicken."
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u11-q04",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The ring was “at the end of his nose” (line 19). They were married by the Turkey “who lives on the hill” (line 26), not at sea.",
+     "misconception": "Guessing that the wedding happened on the boat because they went to sea.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "They sailed away for a year and a day.",
+       "a": true
+      },
+      {
+       "s": "The Piggy-wig had a ring on his tail.",
+       "a": false
+      },
+      {
+       "s": "They ate with a runcible spoon.",
+       "a": true
+      },
+      {
+       "s": "They were married on the boat.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u11-q05",
+     "type": "order",
+     "prompt": "Put these parts of the story in the order the poem tells them.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The poem tells the story in time order, from setting off to the wedding feast.",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "They pack some honey and money.",
+      "The Owl sings to the Pussy-Cat.",
+      "The Pussy-Cat asks what they will do for a ring.",
+      "They buy the ring from the Piggy-wig.",
+      "They dine on mince and slices of quince."
+     ]
+    },
+    {
+     "id": "y3reading-u11-q06",
+     "type": "match",
+     "prompt": "Match each question to its answer from the poem.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The answers are in lines 18, 25, 27 and 29.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "Where did the Piggy-wig stand?",
+       "in a wood"
+      ],
+      [
+       "What did they dine on?",
+       "mince and slices of quince"
+      ],
+      [
+       "Where did they dance?",
+       "on the edge of the sand"
+      ],
+      [
+       "When were they married?",
+       "the next day"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u11-q07",
+     "type": "multi",
+     "prompt": "Some lines have 2 rhyming words inside them. Which of these pairs rhyme inside a line? Choose all the right answers.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Honey and money are in line 3, married and tarried in line 14, and mince and quince in line 27. These rhymes make the poem bouncy and fun to read aloud.",
+     "curriculum": [
+      "EN34-RC-1g",
+      "EN34-RC-1h",
+      "2g"
+     ],
+     "options": [
+      "honey and money",
+      "boat and sea",
+      "married and tarried",
+      "mince and quince",
+      "ring and nose"
+     ],
+     "answer": [
+      0,
+      2,
+      3
+     ]
+    },
+    {
+     "id": "y3reading-u11-q08",
+     "type": "mcq",
+     "prompt": "Lines 9 and 10 repeat “You are” (lines 9 to 10). Why do you think the poet does this?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "The Owl is singing, and songs often repeat words. Saying it again and again shows how strongly he feels.",
+     "curriculum": [
+      "EN34-RC-2f",
+      "EN34-RC-1f",
+      "2f"
+     ],
+     "options": [
+      "to make the poem shorter",
+      "to make it sound like a song and show how much the Owl means it",
+      "because the Owl has forgotten the words",
+      "to tell you the Pussy-Cat is sad"
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u11-q09",
+     "type": "mcq",
+     "prompt": "Why did the Owl and the Pussy-Cat buy the Pig’s ring?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "In line 15 the Pussy-Cat asks “But what shall we do for a ring?” Then they find the Pig with a ring and are married the next day.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "They wanted to give it to the Turkey.",
+      "The Pig was selling it cheaply.",
+      "They needed a ring to get married.",
+      "They wanted to pay for their dinner."
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u11-q10",
+     "type": "extended",
+     "prompt": "Find 2 clues that show this is a nonsense poem and not a true story.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "Nonsense poems are meant to be silly. Look for things that could not happen and words that are not real.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "EN34-RC-1h",
+      "2d"
+     ],
+     "model": "An owl and a cat could not really sail to sea and get married, and a turkey could not marry them. The poem also uses made-up words, such as “runcible spoon” (line 28) and “bong-tree” (line 17).",
+     "checklist": [
+      "1 mark for each clue, up to 2: animals talking, singing or marrying; an owl and a cat in a boat; a pig selling a ring; a turkey holding a wedding; made-up words such as runcible or bong-tree.",
+      "Do not accept: it rhymes (true poems rhyme too)."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u12",
+   "section": "FIC",
+   "title": "The Railway Children",
+   "bookPages": [
+    26,
+    27
+   ],
+   "curriculum": [
+    "EN34-RC-1g",
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2e",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2g"
+   ],
+   "summary": "Dialogue shows what characters think and feel. Look at what they say and how they say it.",
+   "textId": "t-railway-children",
+   "questions": [
+    {
+     "id": "y3reading-u12-q01",
+     "type": "mcq",
+     "prompt": "What was Peter leaning on at the start?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 1 says “He was still leaning on the fence.”",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "Mother’s watch",
+      "the fence",
+      "a telegraph post",
+      "the mound"
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u12-q02",
+     "type": "text",
+     "prompt": "Look at line 7. Find and copy whose watch Peter looked at.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 7 says he “looked at Mother’s watch”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "answer": "Mother’s",
+     "accept": [
+      "Mother’s watch",
+      "Mother"
+     ]
+    },
+    {
+     "id": "y3reading-u12-q03",
+     "type": "mcq",
+     "prompt": "“a most frightful accident” (line 5). What does frightful mean?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Frightful comes from fright. A frightful accident would be very bad and scary.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "small",
+      "lucky",
+      "funny",
+      "terrible"
+     ],
+     "answer": 3
+    },
+    {
+     "id": "y3reading-u12-q04",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "The children keep wishing they had “something red”, so nobody has a flag. Phyllis says the train “wouldn’t see us till it got round the corner” (line 17).",
+     "misconception": "Assuming the children have a flag because waving something red is their plan.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "Bobbie wants to run to the station.",
+       "a": true
+      },
+      {
+       "s": "Phyllis has a red flag.",
+       "a": false
+      },
+      {
+       "s": "Peter says they couldn’t cut the wires even if they got up.",
+       "a": true
+      },
+      {
+       "s": "The train will be able to see the children from far away.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u12-q05",
+     "type": "match",
+     "prompt": "Match each child to what they say.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Look for the name after each piece of speech: “said Bobbie” (line 6), “said Phyllis” (line 13) and “said Peter” (line 12).",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "Bobbie",
+       "“Let’s run,”"
+      ],
+      [
+       "Phyllis",
+       "“They do it in war,”"
+      ],
+      [
+       "Peter",
+       "“We don’t know how,”"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u12-q06",
+     "type": "mcq",
+     "prompt": "Why does Phyllis think waving on the line might not help?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Lines 17 to 19 explain that by then the train could see the mound itself, and the mound is much bigger than the children.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "They would get into trouble.",
+      "It was too dark to see.",
+      "The train would not see them until it got round the corner.",
+      "The driver would be asleep."
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u12-q07",
+     "type": "order",
+     "prompt": "Put these events in the order they happen.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The children’s ideas come one after another, as they argue about what to do.",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "Peter says the 11.29 has not gone by yet.",
+      "Bobbie starts to run.",
+      "Peter calls her back.",
+      "Phyllis suggests climbing a telegraph post.",
+      "Peter says they need something red."
+     ]
+    },
+    {
+     "id": "y3reading-u12-q08",
+     "type": "mcq",
+     "prompt": "“They only CUT them, silly,” (line 14). Why is CUT written in capital letters?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Capital letters in the middle of speech show which word is said with extra force. Peter is correcting Phyllis firmly.",
+     "curriculum": [
+      "EN34-RC-1g",
+      "2g"
+     ],
+     "options": [
+      "to show Peter says it strongly",
+      "because it is a name",
+      "to show Peter is whispering",
+      "because it starts a sentence"
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u12-q09",
+     "type": "mcq",
+     "prompt": "“Let’s run,” (line 6) said Bobbie, and began. What does this show about Bobbie?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Bobbie does not wait. As soon as she hears of the danger, she starts running to warn the station.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "She is scared and wants to go home.",
+      "She acts quickly to try to help.",
+      "She does not care about the train.",
+      "She wants to race Peter for fun."
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u12-q10",
+     "type": "extended",
+     "prompt": "What does this extract tell you about the children? Use the text to explain.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "Describe what the children are like, then prove it with something they say or do.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "The children are brave and caring, because they want to stop “a most frightful accident” (line 5) even though nobody asked them to. They think quickly too: Bobbie starts to run, Phyllis suggests the telegraph post and Peter thinks of waving something red.",
+     "checklist": [
+      "1 mark: a sensible point about the children, such as brave, caring, quick-thinking, sensible or worried.",
+      "1 mark: evidence from the text that supports the point.",
+      "Do not accept: a retelling of what happens with no point about what the children are like."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u13",
+   "section": "NF",
+   "title": "How the Egyptians Made a Mummy",
+   "bookPages": [
+    28,
+    29
+   ],
+   "curriculum": [
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2e",
+    "EN34-RC-2f",
+    "EN34-RC-3",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2f"
+   ],
+   "summary": "A process is a set of steps done in a fixed order. Numbered steps and time words such as next help you follow it.",
+   "textId": "t-mummy",
+   "questions": [
+    {
+     "id": "y3reading-u13-q01",
+     "type": "mcq",
+     "prompt": "What were the people who made mummies called?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 2 says “The people who did the work were called embalmers.” Priests did the wrapping in step 5.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "options": [
+      "embalmers",
+      "priests",
+      "builders",
+      "pharaohs"
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u13-q02",
+     "type": "text",
+     "prompt": "Look at line 6. Find and copy the name of the salt that dries things out.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 6 says “natron, a kind of salt that dries things out”.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "answer": "natron",
+     "accept": []
+    },
+    {
+     "id": "y3reading-u13-q03",
+     "type": "mcq",
+     "prompt": "“They filled any sunken parts with linen” (line 7). What does sunken mean?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "When a body dries out, some parts sink inwards. Filling them with linen made the body look more lifelike.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "wet and soggy",
+      "broken off",
+      "fallen in and hollow",
+      "very shiny"
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u13-q04",
+     "type": "multi",
+     "prompt": "Which organs were kept in canopic jars? Choose all the right answers.",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Line 10 lists the stomach, liver, lungs and intestines. The heart was left in place, and the brain was pulled out in step 1.",
+     "misconception": "Choosing the heart, which was left inside the body.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "options": [
+      "the heart",
+      "the liver",
+      "the lungs",
+      "the brain",
+      "the stomach"
+     ],
+     "answer": [
+      1,
+      2,
+      4
+     ]
+    },
+    {
+     "id": "y3reading-u13-q05",
+     "type": "match",
+     "prompt": "Match each thing to what it was used for.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Steps 3 to 5 (lines 6 to 8) explain what each thing was for.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "natron",
+       "drying out the body"
+      ],
+      [
+       "linen",
+       "wrapping round the body"
+      ],
+      [
+       "resin",
+       "coating the wrappings"
+      ],
+      [
+       "amulets",
+       "protecting the dead person"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u13-q06",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Line 5 says the cut was “usually on the left side”. It also says they believed the heart was “where their thinking came from”.",
+     "misconception": "Using what we know today (thinking happens in the brain) instead of what the Egyptians believed.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "The cut was usually made on the right side of the body.",
+       "a": false
+      },
+      {
+       "s": "The embalmers added false eyes.",
+       "a": true
+      },
+      {
+       "s": "Priests wound strips of linen around the body.",
+       "a": true
+      },
+      {
+       "s": "The Egyptians believed thinking came from the brain.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u13-q07",
+     "type": "order",
+     "prompt": "Put these jobs in the order the embalmers did them.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Follow the numbered steps 1 to 5 (lines 4 to 8).",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "pulled out the brain",
+      "took out the organs",
+      "covered the body with natron",
+      "added false eyes",
+      "coated the wrappings with resin"
+     ]
+    },
+    {
+     "id": "y3reading-u13-q08",
+     "type": "mcq",
+     "prompt": "Why do you think the embalmers added false eyes?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Step 4 is all about making the body look “more lifelike”, so false eyes fit that job.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "to help the brain dry out",
+      "to scare away robbers",
+      "to keep the natron in",
+      "to make the body look more like a living person"
+     ],
+     "answer": 3
+    },
+    {
+     "id": "y3reading-u13-q09",
+     "type": "mcq",
+     "prompt": "“At several stages, they coated the wrappings with warm resin” (line 8). What does at several stages tell you?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Several means more than 2, and a stage is one part of a process. So the resin was added a number of times during the wrapping.",
+     "misconception": "Thinking stage means a stage in a theatre.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "They did it more than once, at different times.",
+      "They did it very quickly.",
+      "They did it on a stage in front of people.",
+      "They did it only at the very end."
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u13-q10",
+     "type": "extended",
+     "prompt": "Explain why the steps had to be done in this order. Use 2 steps in your answer.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "In a process, each step often depends on the one before it.",
+     "curriculum": [
+      "EN34-RC-2f",
+      "2f"
+     ],
+     "model": "The body had to be dried with natron before it was wrapped, because the embalmers waited until “the body was completely dry” (line 7) before washing off the natron. Only then could the priests wind the linen around it in step 5. Wrapping a wet body would not have worked.",
+     "checklist": [
+      "1 mark: names 2 steps in the right order.",
+      "1 mark: explains why one has to come before the other, using the text (for example the body must be dry before it is wrapped).",
+      "Do not accept: the steps are numbered, with no reason."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u14",
+   "section": "FIC",
+   "title": "The North Wind and the Sun",
+   "bookPages": [
+    30,
+    31
+   ],
+   "curriculum": [
+    "EN34-RC-1f",
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2e",
+    "2a",
+    "2b",
+    "2c",
+    "2d",
+    "2h"
+   ],
+   "summary": "A playscript shows who speaks with their name. Words in brackets are stage directions that tell actors what to do.",
+   "textId": "t-north-wind-sun",
+   "questions": [
+    {
+     "id": "y3reading-u14-q01",
+     "type": "mcq",
+     "prompt": "What colour is the Traveller’s cloak?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 6 says “the long brown cloak”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "black",
+      "red",
+      "green",
+      "brown"
+     ],
+     "answer": 3
+    },
+    {
+     "id": "y3reading-u14-q02",
+     "type": "text",
+     "prompt": "Look at line 18. Find and copy where the Traveller wants to cool his feet.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 18 says “I’ll cool my feet in that stream.”",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "answer": "in that stream",
+     "accept": [
+      "that stream",
+      "stream"
+     ]
+    },
+    {
+     "id": "y3reading-u14-q03",
+     "type": "mcq",
+     "prompt": "“The Traveller stumbles and grips his cloak” (line 9). What does stumbles mean?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "The strong wind pushes the Traveller so he loses his balance for a moment.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "runs very fast",
+      "trips and nearly falls",
+      "sits down",
+      "laughs loudly"
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u14-q04",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "The North Wind says “I’ll go first!” (line 8). In the end the Traveller takes off his cloak for the Sun, so the Sun wins.",
+     "misconception": "Thinking the North Wind wins because he is so loud and strong.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "The play is set on a cool day.",
+       "a": true
+      },
+      {
+       "s": "The Sun has the first turn in the contest.",
+       "a": false
+      },
+      {
+       "s": "The Traveller fans his face with his hat.",
+       "a": true
+      },
+      {
+       "s": "The North Wind wins the contest.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u14-q05",
+     "type": "order",
+     "prompt": "Put these events in the order they happen.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The play follows the contest from the argument to the ending.",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "The North Wind boasts that he is the strongest.",
+      "They agree to have a contest.",
+      "The North Wind gives up.",
+      "The Sun shines warmly.",
+      "The Traveller takes off his cloak."
+     ]
+    },
+    {
+     "id": "y3reading-u14-q06",
+     "type": "match",
+     "prompt": "Match each stage direction to the character it is for.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "A stage direction comes straight after the name of the character who does it (lines 11, 12 and 20).",
+     "curriculum": [
+      "EN34-RC-2a",
+      "EN34-RC-1f",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "“(blowing harder)”",
+       "the North Wind"
+      ],
+      [
+       "“(gently)”",
+       "the Sun"
+      ],
+      [
+       "“(bending into the wind)”",
+       "the Traveller"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u14-q07",
+     "type": "mcq",
+     "prompt": "Why does the Traveller loosen his cloak in line 16?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "The Sun has just started shining warmly, and the Traveller says “It’s getting warm.”",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "It is too small for him.",
+      "He is starting to feel warm.",
+      "He wants to give it away.",
+      "The wind has blown it open."
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u14-q08",
+     "type": "mcq",
+     "prompt": "How is the Sun different from the North Wind?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "The Sun speaks “(calmly)” and “(gently)”. The North Wind boasts and blows harder and harder.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2h"
+     ],
+     "options": [
+      "The Sun is louder than the North Wind.",
+      "The Sun wants to win, but the North Wind does not.",
+      "The Sun is calm and gentle, but the North Wind boasts and uses force.",
+      "The Sun gives up, but the North Wind keeps going."
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u14-q09",
+     "type": "mcq",
+     "prompt": "“Gentle warmth can do what force cannot” (line 20). What does force mean here?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Force here means strength used roughly, like the North Wind blowing as hard as he can.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "a kind of weather",
+      "the army",
+      "being kind and warm",
+      "pushing hard using strength"
+     ],
+     "answer": 3
+    },
+    {
+     "id": "y3reading-u14-q10",
+     "type": "extended",
+     "prompt": "The North Wind says, “I am the strongest thing in the sky.” (line 4) Has he been proved right by the end of the play? Explain using the text.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "Check a character’s claim against what actually happens in the story.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "No. He set the test himself: whoever makes the Traveller take off his cloak “is the strongest”. The harder he blew, the tighter the Traveller held on, and he “gave up” (line 13). The Sun’s warmth made the Traveller take off his cloak, and the North Wind “had to agree” (line 21).",
+     "checklist": [
+      "1 mark: says he has not been proved right (the Sun wins).",
+      "1 mark: evidence from the play, such as the Traveller holding on tighter, the North Wind giving up, or the Traveller taking off his cloak for the Sun.",
+      "Do not accept: yes, because he blows very hard."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u15",
+   "section": "FIC",
+   "title": "The River Bank",
+   "bookPages": [
+    32,
+    33
+   ],
+   "curriculum": [
+    "EN34-RC-1g",
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "2a",
+    "2b",
+    "2d",
+    "2g"
+   ],
+   "summary": "Writers choose words carefully to help you picture a scene and share a character’s feelings. Think about why a word was chosen.",
+   "textId": "t-river-bank",
+   "questions": [
+    {
+     "id": "y3reading-u15-q01",
+     "type": "mcq",
+     "prompt": "What was Mole doing all morning?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 1 says he “had been working very hard all the morning, spring-cleaning his little home”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "digging a new tunnel",
+      "sleeping",
+      "spring-cleaning his home",
+      "walking in the meadow"
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u15-q02",
+     "type": "text",
+     "prompt": "Look at line 9. Find and copy what Mole did not wait to put on.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 9 says he left “without even waiting to put on his coat”.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "answer": "his coat",
+     "accept": [
+      "coat"
+     ]
+    },
+    {
+     "id": "y3reading-u15-q03",
+     "type": "mcq",
+     "prompt": "“soft breezes caressed his heated brow” (line 19). What does caressed mean?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "To caress is to stroke softly. The breeze feels kind and cool on Mole’s hot head.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "touched gently",
+      "made wet",
+      "blew away",
+      "hit hard"
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u15-q04",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Line 4 mentions “his black fur”. Line 23 says he walked on “till he reached the hedge”.",
+     "misconception": "Guessing a mole’s colour instead of checking the text.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "Mole had whitewash on his fur.",
+       "a": true
+      },
+      {
+       "s": "Mole had brown fur.",
+       "a": false
+      },
+      {
+       "s": "Mole used a tunnel to get outside.",
+       "a": true
+      },
+      {
+       "s": "Mole stopped when he reached a river.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u15-q05",
+     "type": "order",
+     "prompt": "Look at lines 1 to 3. Put these in the order the text mentions them.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Line 2 says “First with brooms, then with dusters”. The words first and then show the order.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "items": [
+      "brooms",
+      "dusters",
+      "ladders and steps and chairs",
+      "a brush and a pail of whitewash"
+     ]
+    },
+    {
+     "id": "y3reading-u15-q06",
+     "type": "multi",
+     "prompt": "What did Mole say when he flung down his brush? Choose all the right answers.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Line 8 says he said “Bother!” and “O blow!” (and also Hang spring-cleaning!). He said Up we go! later in the tunnel, and This is fine! in the meadow.",
+     "misconception": "Choosing words Mole says later, without checking when he says them.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2b"
+     ],
+     "options": [
+      "This is fine!",
+      "Up we go!",
+      "Hooray!",
+      "O blow!",
+      "Bother!"
+     ],
+     "answer": [
+      3,
+      4
+     ]
+    },
+    {
+     "id": "y3reading-u15-q07",
+     "type": "match",
+     "prompt": "Match each word from the text to its meaning.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Use the sentence around each word: weary arms (line 5), flung down his brush (lines 7 to 8), muttering to himself (line 15), pursued his way across the meadow (lines 22 to 23).",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "pairs": [
+      [
+       "weary",
+       "very tired"
+      ],
+      [
+       "flung",
+       "threw down hard"
+      ],
+      [
+       "muttering",
+       "talking quietly to himself"
+      ],
+      [
+       "pursued his way",
+       "carried on going"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u15-q08",
+     "type": "mcq",
+     "prompt": "“pop! his snout came out into the sunlight” (lines 15 to 16). Why does the writer use the word pop?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Pop is a short, sudden sound. After all the digging, Mole’s nose suddenly breaks through into the light.",
+     "curriculum": [
+      "EN34-RC-1g",
+      "2g"
+     ],
+     "options": [
+      "It tells you Mole hurt his nose.",
+      "It sounds sudden, as if Mole bursts out all at once.",
+      "It shows Mole is eating.",
+      "It is the noise of a bird singing."
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u15-q09",
+     "type": "mcq",
+     "prompt": "“the carol of happy birds fell on his dulled hearing almost like a shout” (lines 20 to 21). What does this tell you?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Mole had lived in the quiet cellarage “so long”. Even happy birdsong sounded loud to him.",
+     "misconception": "Taking almost like a shout literally, as if the birds really shouted.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "Mole could not hear the birds.",
+      "The birds were angry with Mole.",
+      "After being underground so long, the birdsong seemed very loud to Mole.",
+      "The birds were shouting at Mole."
+     ],
+     "answer": 2
+    },
+    {
+     "id": "y3reading-u15-q10",
+     "type": "extended",
+     "prompt": "How does Mole feel when he reaches the meadow? Give 2 pieces of evidence from the text.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "Use Mole’s words and actions as evidence for his feelings.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "Mole feels happy and free. He says “This is fine!” and “This is better than whitewashing!” (line 18). He jumps “off all his four legs at once” in “the joy of living” (lines 21 to 22).",
+     "checklist": [
+      "1 mark: a feeling such as happy, excited, joyful or free.",
+      "1 mark: 2 pieces of evidence, for example This is fine!, better than whitewashing, jumping off all 4 legs, the joy of living, the delight of spring.",
+      "Give 1 mark only if the feeling is right but just 1 piece of evidence is given."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "y3reading-u16",
+   "section": "NF",
+   "title": "Hadrian’s Wall",
+   "bookPages": [
+    34,
+    35
+   ],
+   "curriculum": [
+    "EN34-RC-2a",
+    "EN34-RC-2c",
+    "EN34-RC-2e",
+    "EN34-RC-3",
+    "2a",
+    "2b",
+    "2c",
+    "2d"
+   ],
+   "summary": "A leaflet gives information in short sections with headings, so readers can find facts quickly.",
+   "textId": "t-hadrians-wall",
+   "questions": [
+    {
+     "id": "y3reading-u16-q01",
+     "type": "mcq",
+     "prompt": "Which river is Wallsend on?",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 4 says “from Wallsend on the River Tyne in the east”.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "options": [
+      "the River Thames",
+      "the River Tyne",
+      "the River Solway",
+      "the River Rome"
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u16-q02",
+     "type": "text",
+     "prompt": "Look at line 12. Find and copy the name for the towers between the milecastles.",
+     "difficulty": 1,
+     "marks": 1,
+     "explanation": "Line 12 says “stood 2 towers called turrets”.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "answer": "turrets",
+     "accept": [
+      "towers called turrets"
+     ]
+    },
+    {
+     "id": "y3reading-u16-q03",
+     "type": "numeric",
+     "prompt": "How many Roman miles long did the Romans measure the Wall to be?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Line 4 says “The Romans measured it as 80 Roman miles.” The 73 miles is the length in our miles.",
+     "misconception": "Giving 73, which is the length in our miles.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "answer": 80,
+     "unit": "Roman miles"
+    },
+    {
+     "id": "y3reading-u16-q04",
+     "type": "mcq",
+     "prompt": "“building probably began that year” (line 6). What does probably tell you?",
+     "difficulty": 2,
+     "marks": 1,
+     "explanation": "Probably means very likely. Historians do not have a record that says exactly when building began.",
+     "curriculum": [
+      "EN34-RC-2a",
+      "2a"
+     ],
+     "options": [
+      "The writer thinks this is likely but is not completely sure.",
+      "The writer is certain.",
+      "Building began many years later.",
+      "Nobody knows anything about it."
+     ],
+     "answer": 0
+    },
+    {
+     "id": "y3reading-u16-q05",
+     "type": "truefalse",
+     "prompt": "Is each sentence true or false?",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "Line 6 says Hadrian came to Britain in AD 122 and building probably began that year. Line 14 says soldiers came “from across Europe and North Africa”.",
+     "misconception": "Mixing up the different AD dates in the same section.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "statements": [
+      {
+       "s": "Hadrian was Emperor from AD 117 to AD 138.",
+       "a": true
+      },
+      {
+       "s": "Building probably began in AD 138.",
+       "a": false
+      },
+      {
+       "s": "The Wall runs across the north of England.",
+       "a": true
+      },
+      {
+       "s": "All the soldiers on the Wall came from Britain.",
+       "a": false
+      }
+     ]
+    },
+    {
+     "id": "y3reading-u16-q06",
+     "type": "order",
+     "prompt": "Use the dates to put these events in order.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "AD 117, AD 122, AD 138, then AD 403 to AD 406. With AD dates, a bigger number is later.",
+     "curriculum": [
+      "EN34-RC-2e",
+      "2c"
+     ],
+     "items": [
+      "Hadrian becomes Emperor.",
+      "Hadrian comes to Britain and building probably begins.",
+      "Hadrian’s time as Emperor ends.",
+      "The newest coins found on the Wall are made."
+     ]
+    },
+    {
+     "id": "y3reading-u16-q07",
+     "type": "match",
+     "prompt": "Match each number to what it tells you about the Wall.",
+     "difficulty": 3,
+     "marks": 1,
+     "explanation": "These numbers are in lines 4, 6 and 12. Read the words next to a number to see what it counts.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "pairs": [
+      [
+       "73",
+       "its length in our miles"
+      ],
+      [
+       "about 5,000",
+       "the soldiers in each legion"
+      ],
+      [
+       "3",
+       "the legions that built it"
+      ],
+      [
+       "14",
+       "the forts added before the work was finished"
+      ]
+     ]
+    },
+    {
+     "id": "y3reading-u16-q08",
+     "type": "numeric",
+     "prompt": "The Wall is 73 miles long. The western 30 miles were built of turf. How many miles were not built of turf?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "73 take away 30 is 43. These 43 miles are the stone part, which line 10 says was most of the Wall.",
+     "curriculum": [
+      "EN34-RC-3",
+      "2b"
+     ],
+     "answer": 43,
+     "unit": "miles"
+    },
+    {
+     "id": "y3reading-u16-q09",
+     "type": "mcq",
+     "prompt": "“People from all these places met there and traded with each other” (line 14). What does this tell you about life on the Wall?",
+     "difficulty": 4,
+     "marks": 1,
+     "explanation": "Soldiers came from many places, and trading means buying and selling. So people from different lands met and did business.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "options": [
+      "It was empty and lonely.",
+      "It was a busy place where people from different lands mixed.",
+      "Nobody was allowed to buy or sell things.",
+      "Only Romans from Rome lived there."
+     ],
+     "answer": 1
+    },
+    {
+     "id": "y3reading-u16-q10",
+     "type": "extended",
+     "prompt": "Ellie thinks the Wall was built in a few months by a small group of builders. Use the leaflet to explain why Ellie is wrong.",
+     "difficulty": 5,
+     "marks": 2,
+     "explanation": "This is a spot-the-mistake question. Check each part of what Ellie says against the leaflet.",
+     "curriculum": [
+      "EN34-RC-2c",
+      "2d"
+     ],
+     "model": "Ellie is wrong because “The work took at least 6 years” (line 6), not a few months. It was not a small group either: the Wall “was built by the 3 legions in Britain” and each legion had about 5,000 soldiers.",
+     "checklist": [
+      "1 mark: the work took at least 6 years.",
+      "1 mark: it was built by 3 legions, with about 5,000 soldiers in each.",
+      "Both parts of Ellie’s mistake must be corrected for 2 marks."
+     ]
+    }
+   ]
+  }
+ ]
+}

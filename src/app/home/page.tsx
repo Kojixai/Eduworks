@@ -7,8 +7,9 @@ import { getStore } from "@/lib/db";
 
 export const metadata = { title: "Choose a child" };
 
-export default async function Home({ searchParams }: { searchParams: Promise<{ welcome?: string; added?: string }> }) {
+export default async function Home({ searchParams }: { searchParams: Promise<{ welcome?: string; added?: string; next?: string }> }) {
   const sp = await searchParams;
+  const next = sp.next && sp.next.startsWith("/") && !sp.next.startsWith("//") ? sp.next : "/learn";
   const parent = await requireParent();
   const kids = await childrenOf(parent.id);
   const active = await activeChild(parent);
@@ -31,7 +32,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ w
               <li key={k.id} className="flex items-center justify-between gap-2 py-2">
                 <form action={chooseChildAction} className="flex-1">
                   <input type="hidden" name="childId" value={k.id} />
-                  <input type="hidden" name="next" value="/learn" />
+                  <input type="hidden" name="next" value={next} />
                   <button className="flex min-h-[48px] w-full items-center gap-3 text-left">
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-soft font-semibold text-primary">{k.first_name[0]}</span>
                     <span>

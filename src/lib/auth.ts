@@ -14,12 +14,15 @@ export interface Parent {
   name: string;
   email: string;
   is_admin: number;
+  account_type?: string;
+  pin_hash?: string | null;
 }
 export interface Student {
   id: string;
   parent_id: string;
   first_name: string;
   year_group_id: string | null;
+  avatar: string | null;
 }
 
 const hashToken = (t: string) => crypto.createHash("sha256").update(t).digest("hex");
@@ -47,7 +50,7 @@ export async function currentParent(): Promise<Parent | null> {
   const store = await getStore();
   const s = await store.first<{ parent_id: string; expires_at: string }>("auth_sessions", { where: { id: hashToken(token) } });
   if (!s || s.expires_at < new Date().toISOString()) return null;
-  return (await store.first<Parent>("parents", { where: { id: s.parent_id }, columns: ["id", "name", "email", "is_admin"] })) ?? null;
+  return (await store.first<Parent>("parents", { where: { id: s.parent_id }, columns: ["id", "name", "email", "is_admin", "account_type", "pin_hash"] })) ?? null;
 }
 
 export async function requireParent(): Promise<Parent> {
@@ -83,6 +86,16 @@ export async function activeChild(parent: Parent): Promise<Student | null> {
 
 export async function setActiveChild(childId: string) {
   (await cookies()).set(CHILD_COOKIE, childId, { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production", path: "/", maxAge: 60 * 60 * 24 * 90 });
+}
+
+/**
+ * The learner for practice pages: the chosen child, or the sole profile on a student (13+) account.
+ * Returns null when nobody is chosen yet.
+ */
+export async function practiceChild(parent: Parent): Promise<Student | null> {
+  const kids = await childrenOf(parent.id);
+  const id = (await cookies()).get(CHILD_COOKIE)?.value;
+  return kids.find((k) => k.id === id) ?? (parent.account_type === "student" && kids.length === 1 ? kids[0] : null);
 }
 
 /** Parent + active child, redirecting to the child picker when no child is chosen. */

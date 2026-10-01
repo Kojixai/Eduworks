@@ -1,0 +1,47 @@
+COMPANION WEBSITE PRACTICE BANK: CONTENT SCHEMA (all content agents must follow exactly)
+Purpose: each Inkworks book comes with free online practice. For every "unit" (one topic page / one text / one skill page of
+the printed book) the website offers 10 NEW practice questions on exactly the same skill and curriculum point, auto-marked
+where possible, each with a worked explanation. Questions must not duplicate the printed book's questions (same skill,
+different numbers/contexts/wording). Same quality rules as the books: /home/claude/books/_shared/QUALITY_RULES.txt.
+
+FILE: /home/claude/site_work/content/<bookId>.json  (UTF-8, valid JSON, pretty-printed)
+{
+  "book": {"id": "<bookId>", "title": "...", "keyStage": "KS1|KS2|KS3|KS4", "year": "Year 3|Year 8|Years 7-9|GCSE",
+           "subject": "Maths|English|English Literature|English Language", "pages": 76, "ageRange": "7-8",
+           "sections": [{"id":"NPV","name":"Number and place value","colour":"#2360A8"}]},
+  "texts": [ {"id":"t-...","title":"...","author":"...","source":"From ... Project Gutenberg #... Public domain in the UK." or "Written for Inkworks Press.",
+              "kind":"prose|poem|playscript|nonfiction","lines":["line 1","line 2",...], "glossary":[["word","meaning"]]} ],
+  "units": [
+    {"id": "<bookId>-u01", "section": "NPV", "title": "Counting in 4s, 8s, 50s and 100s", "bookPages": [4],
+     "curriculum": ["Y3-NPV-001"], "summary": "1-2 sentence 'Remember' for the website unit page (original wording)",
+     "textId": null,                       // for reading units: the text the questions are about
+     "questions": [ 10 question objects ] }
+  ]
+}
+QUESTION OBJECT
+{ "id": "<unitId>-q01", "type": one of:
+    "mcq"        single choice. options:["..",".."] (3-5), answer: index (0-based)
+    "multi"      choose all that apply. options, answer: [indices]
+    "numeric"    answer: number; optional "tolerance": number (default 0), optional "unit": "cm" (shown after box),
+                 optional "accept": ["1/2","0.5"] extra accepted strings
+    "text"       short typed answer. answer: "string"; "accept": [other accepted strings]; marking is case-insensitive,
+                 trims spaces and final full stop. Use only when answers are genuinely short and closed (a word, a phrase).
+    "order"      items:["..",".."] given in CORRECT order (the site shuffles them)
+    "match"      pairs:[["left","right"],...] (3-5 pairs; site shuffles right side)
+    "truefalse"  statements:[{"s":"...","a":true},...] (3-5)
+    "cloze"      prompt contains ___ gaps (1-3); answer: ["gap1","gap2"]; accept: [["alt1"],["alt2"]]
+    "extended"   open answer, self-marked: "model": "a model answer", "checklist": ["point the answer should make", ...],
+                 "marks": n  (use for explain/analyse/write tasks; learner ticks checklist after seeing model)
+  "prompt": "question text (plain text; use \n for line breaks; may reference 'line 12' of the unit text)",
+  "difficulty": 1-5, "marks": 1-3 (extended up to 8 for GCSE),
+  "explanation": "worked solution / why the answer is right, 1-3 sentences, original",
+  "misconception": "optional: the error this item targets",
+  "curriculum": ["ids"] (defaults to unit), "diagram": optional simple spec {"kind":"numberline","min":0,"max":100,"step":10,"marks":[40]}
+    (supported kinds: numberline, bar_model {parts:[..]}, fraction_bar {n,shaded}, clock {h,m}, array {rows,cols},
+     coordinates {points:[[x,y,"A"]],max}, angle {deg}, polygon {sides}, bar_chart {labels,values,step}; omit if not needed)
+}
+DISTRIBUTION per unit: difficulties rising roughly 1,1,2,2,3,3,3,4,4,5; at least 2 reasoning/"spot the error" items; at
+least 1 misconception-targeted item; varied types (not all mcq). Maths answers must be verifiable by script (write
+check_<bookId>.py that recomputes every numeric answer independently and validates schema; 100% pass required).
+English: every question answerable from the unit's text; quotations in questions must exist verbatim in the text; line
+references correct (lines array is 1-indexed for display).

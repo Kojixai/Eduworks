@@ -1,0 +1,232 @@
+{
+  "book": {
+    "id": "fixture",
+    "title": "Sample Practice Book (test fixture)",
+    "keyStage": "KS2",
+    "year": "Year 4",
+    "subject": "Maths",
+    "pages": 12,
+    "ageRange": "8-9",
+    "sections": [
+      {"id": "NUM", "name": "Number, measures and shape", "colour": "#2360A8"},
+      {"id": "RD", "name": "Reading for information", "colour": "#8A3B8F"}
+    ]
+  },
+  "texts": [
+    {
+      "id": "t-canal-lock",
+      "title": "How a Canal Lock Works",
+      "author": "Inkworks Press",
+      "source": "Written for Inkworks Press.",
+      "kind": "nonfiction",
+      "lines": [
+        "A canal boat cannot sail up a hill, so how does it climb?",
+        "The answer is a lock: a chamber with a gate at each end.",
+        "Imagine a narrowboat that needs to go up to a higher stretch of water.",
+        "First, the crew checks that the chamber is low and opens the bottom gates.",
+        "The boat moves slowly into the chamber and the gates are closed behind it.",
+        "Next, someone winds open the paddles in the top gates with a windlass.",
+        "Water rushes in from the higher canal and the chamber begins to fill.",
+        "The boat rises gently, like a toy duck in a filling bath.",
+        "When the water inside is level with the canal above, the top gates can open.",
+        "The crew pushes the heavy balance beams and the boat moves on.",
+        "Going down works the other way round: water is let out, not in.",
+        "Working a lock takes time, so crews learn to be patient.",
+        "Some canals have flights of locks, one after another, like steps on a staircase."
+      ],
+      "glossary": [
+        ["windlass", "a metal handle used to wind the paddles open"],
+        ["paddles", "small sliding panels that let water in or out"],
+        ["balance beam", "the long arm used to push a lock gate open"]
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "fixture-u01",
+      "section": "NUM",
+      "title": "Reading diagrams: scales, bars and shapes",
+      "bookPages": [4, 5],
+      "curriculum": ["FIX-NUM-001"],
+      "summary": "A diagram is a picture of the maths. Read the scale or count the parts carefully before you start to calculate.",
+      "textId": null,
+      "questions": [
+        {
+          "id": "fixture-u01-q01", "type": "mcq",
+          "prompt": "What number is the arrow pointing to?",
+          "options": ["60", "70", "75", "80"], "answer": 1,
+          "difficulty": 1, "marks": 1,
+          "explanation": "The line goes up in 10s. The arrow is on the 7th mark after 0, so it points to 70.",
+          "diagram": {"kind": "numberline", "min": 0, "max": 100, "step": 10, "marks": [70]}
+        },
+        {
+          "id": "fixture-u01-q02", "type": "multi",
+          "prompt": "Which calculations match this array? Choose all that are right.",
+          "options": ["3 × 4", "4 × 3", "3 + 4", "4 + 4 + 4"], "answer": [0, 1, 3],
+          "difficulty": 1, "marks": 1,
+          "explanation": "There are 3 rows of 4 dots. That is 3 × 4, 4 × 3 or 4 + 4 + 4, which all make 12. 3 + 4 only makes 7.",
+          "misconception": "Adds the number of rows and columns instead of multiplying.",
+          "diagram": {"kind": "array", "rows": 3, "cols": 4}
+        },
+        {
+          "id": "fixture-u01-q03", "type": "numeric",
+          "prompt": "The whole bar is 50. One part is 36. What is the missing part?",
+          "answer": 14,
+          "difficulty": 2, "marks": 1,
+          "explanation": "The parts add up to the whole, so the missing part is 50 − 36 = 14.",
+          "diagram": {"kind": "bar_model", "parts": [36, "?"], "total": 50}
+        },
+        {
+          "id": "fixture-u01-q04", "type": "text",
+          "prompt": "What is the name of this shape? Write one word.",
+          "answer": "pentagon", "accept": ["a pentagon", "regular pentagon"],
+          "difficulty": 2, "marks": 1,
+          "explanation": "The shape has 5 straight sides, so it is a pentagon.",
+          "diagram": {"kind": "polygon", "sides": 5}
+        },
+        {
+          "id": "fixture-u01-q05", "type": "match",
+          "prompt": "Match each time in words to the same time in digits.",
+          "pairs": [["quarter past 3", "3:15"], ["half past 7", "7:30"], ["quarter to 9", "8:45"], ["10 to 6", "5:50"]],
+          "difficulty": 3, "marks": 2,
+          "explanation": "Quarter to 9 is 15 minutes before 9, which is 8:45. 10 to 6 is 10 minutes before 6, which is 5:50.",
+          "misconception": "Writes quarter to 9 as 9:45."
+        },
+        {
+          "id": "fixture-u01-q06", "type": "truefalse",
+          "prompt": "Look at the fraction bar. Is each statement true or false?",
+          "statements": [
+            {"s": "6/8 of the bar is shaded.", "a": true},
+            {"s": "The shaded part is equivalent to 3/4.", "a": true},
+            {"s": "More than 7/8 of the bar is shaded.", "a": false}
+          ],
+          "difficulty": 3, "marks": 2,
+          "explanation": "6 of the 8 equal parts are shaded, so 6/8 is shaded. 6/8 simplifies to 3/4. 6/8 is less than 7/8.",
+          "diagram": {"kind": "fraction_bar", "n": 8, "shaded": 6}
+        },
+        {
+          "id": "fixture-u01-q07", "type": "cloze",
+          "prompt": "The clock shows ___ minutes past 4. That is the same as quarter to ___.",
+          "answer": ["45", "5"], "accept": [["forty-five", "forty five"], ["five"]],
+          "difficulty": 3, "marks": 2,
+          "explanation": "The minute hand points to 9, which is 45 minutes past the hour. 45 minutes past 4 is 15 minutes before 5, so it is quarter to 5.",
+          "diagram": {"kind": "clock", "h": 4, "m": 45}
+        },
+        {
+          "id": "fixture-u01-q08", "type": "numeric",
+          "prompt": "Point A and point B are on the same horizontal line. How many units apart are they?",
+          "answer": 3, "unit": "units",
+          "difficulty": 4, "marks": 1,
+          "explanation": "A is at (2, 3) and B is at (5, 3). The y-coordinates match, so count along the x-axis: 5 − 2 = 3.",
+          "diagram": {"kind": "coordinates", "points": [[2, 3, "A"], [5, 3, "B"]], "max": 6}
+        },
+        {
+          "id": "fixture-u01-q09", "type": "mcq",
+          "prompt": "Maya says this angle is acute because it looks small on the page. What type of angle is it really?",
+          "options": ["acute", "right angle", "obtuse", "reflex"], "answer": 2,
+          "difficulty": 4, "marks": 1,
+          "explanation": "The angle is bigger than a right angle but smaller than a straight line, so it is obtuse. The length of the lines does not change the size of the angle.",
+          "misconception": "Judges the size of an angle by the length of its arms.",
+          "diagram": {"kind": "angle", "deg": 120}
+        },
+        {
+          "id": "fixture-u01-q10", "type": "extended",
+          "prompt": "The chart shows how many library books a class borrowed each day. Ravi says they borrowed twice as many books on Tuesday as on Wednesday. Is he right? Explain how you know.",
+          "model": "Yes, Ravi is right. The class borrowed 18 books on Tuesday and 9 books on Wednesday. 9 × 2 = 18, so Tuesday was double Wednesday.",
+          "checklist": ["Reads Tuesday as 18", "Reads Wednesday as 9", "Shows that 9 × 2 = 18 or 18 ÷ 2 = 9", "Says that Ravi is right"],
+          "difficulty": 5, "marks": 2,
+          "explanation": "Read each bar against the scale, which goes up in 3s. Tuesday is 18 and Wednesday is 9, and 18 is double 9.",
+          "diagram": {"kind": "bar_chart", "labels": ["Mon", "Tue", "Wed", "Thu"], "values": [12, 18, 9, 15], "step": 3}
+        }
+      ]
+    },
+    {
+      "id": "fixture-u02",
+      "section": "RD",
+      "title": "Finding information in a text",
+      "bookPages": [8],
+      "curriculum": ["FIX-RD-001"],
+      "summary": "Find the part of the text that answers the question, then read the line again before you answer. Copy only the words you need.",
+      "textId": "t-canal-lock",
+      "questions": [
+        {
+          "id": "fixture-u02-q01", "type": "mcq",
+          "prompt": "Look at line 2. What is a lock?",
+          "options": ["a boat", "a chamber with a gate at each end", "a hill beside the canal", "a handle for the paddles"], "answer": 1,
+          "difficulty": 1, "marks": 1,
+          "explanation": "Line 2 says a lock is \"a chamber with a gate at each end\"."
+        },
+        {
+          "id": "fixture-u02-q02", "type": "numeric",
+          "prompt": "How many gates does one lock have? Use line 2.",
+          "answer": 2, "accept": ["two"],
+          "difficulty": 1, "marks": 1,
+          "explanation": "Line 2 says there is a gate at each end, and a chamber has 2 ends, so a lock has 2 gates."
+        },
+        {
+          "id": "fixture-u02-q03", "type": "text",
+          "prompt": "Which tool does the crew use to wind open the paddles? Write one word.",
+          "answer": "windlass", "accept": ["a windlass"],
+          "difficulty": 2, "marks": 1,
+          "explanation": "Line 6 says someone winds open the paddles \"with a windlass\"."
+        },
+        {
+          "id": "fixture-u02-q04", "type": "order",
+          "prompt": "Put these steps in the order they happen when a boat goes up through a lock.",
+          "items": ["The bottom gates are opened.", "The boat moves into the chamber.", "The paddles in the top gates are opened.", "The top gates are opened."],
+          "difficulty": 2, "marks": 2,
+          "explanation": "Lines 4 to 9 give the order: open the bottom gates, move in, open the top paddles to fill the chamber, then open the top gates."
+        },
+        {
+          "id": "fixture-u02-q05", "type": "match",
+          "prompt": "Match each word from the text to its meaning.",
+          "pairs": [["windlass", "a handle used to wind the paddles open"], ["chamber", "the space between the two gates"], ["crew", "the people working the boat"]],
+          "difficulty": 3, "marks": 2,
+          "explanation": "The glossary explains windlass. Line 2 shows the chamber is the space with a gate at each end, and the crew are the people who work the boat in lines 4 and 10."
+        },
+        {
+          "id": "fixture-u02-q06", "type": "truefalse",
+          "prompt": "Read lines 7 to 11. Is each statement true or false?",
+          "statements": [
+            {"s": "Water comes in from the higher canal when a boat goes up.", "a": true},
+            {"s": "The boat rises quickly and bumps into the gates.", "a": false},
+            {"s": "To go down, water is let out of the chamber.", "a": true}
+          ],
+          "difficulty": 3, "marks": 2,
+          "explanation": "Line 7 says water rushes in from the higher canal. Line 8 says the boat rises gently, not quickly. Line 11 says water is let out to go down.",
+          "misconception": "Thinks water rushing in means the boat moves quickly."
+        },
+        {
+          "id": "fixture-u02-q07", "type": "cloze",
+          "prompt": "Complete the words from line 8: The boat rises gently, like a toy ___ in a filling ___.",
+          "answer": ["duck", "bath"],
+          "difficulty": 3, "marks": 1,
+          "explanation": "Line 8 reads: \"The boat rises gently, like a toy duck in a filling bath.\""
+        },
+        {
+          "id": "fixture-u02-q08", "type": "multi",
+          "prompt": "Which of these happen before the top gates open? Choose all that are right.",
+          "options": ["The chamber fills with water.", "The boat moves on to the higher canal.", "The bottom gates close behind the boat.", "The boat rises."], "answer": [0, 2, 3],
+          "difficulty": 4, "marks": 2,
+          "explanation": "The gates close behind the boat (line 5), the chamber fills (line 7) and the boat rises (line 8). The boat only moves on after the top gates open (line 10)."
+        },
+        {
+          "id": "fixture-u02-q09", "type": "mcq",
+          "prompt": "Line 8 says the boat rises \"like a toy duck in a filling bath\". Why does the writer say this?",
+          "options": ["to tell us the boat is a toy", "to compare the boat to something readers have seen", "to give the crew an instruction", "to list the steps in order"], "answer": 1,
+          "difficulty": 4, "marks": 1,
+          "explanation": "This is a simile. It compares the boat rising in the lock to something familiar, so readers can picture it. The boat is not really a toy.",
+          "misconception": "Reads a simile literally."
+        },
+        {
+          "id": "fixture-u02-q10", "type": "extended",
+          "prompt": "Line 13 says a flight of locks is \"like steps on a staircase\". Explain why this is a good comparison.",
+          "model": "A flight of locks is a row of locks, one after another. Each lock lifts the boat a little higher, just as each step lifts you a little higher on a staircase. So the boat climbs the hill in stages, one step at a time.",
+          "checklist": ["Says the locks come one after another, like steps", "Explains that each lock lifts the boat a little higher", "Links this to climbing a hill in stages"],
+          "difficulty": 5, "marks": 3,
+          "explanation": "A good answer links the shape of a staircase to the way each lock raises the boat a bit more, so the boat can climb a hill."
+        }
+      ]
+    }
+  ]
+}

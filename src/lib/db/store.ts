@@ -70,6 +70,9 @@ export const TABLES_IN_DEPENDENCY_ORDER = [
   "dataset_stats",
   "books",
   "book_codes",
+  "practice_books",
+  "practice_texts",
+  "practice_units",
   "parents",
   "auth_sessions",
   "redemptions",
@@ -77,6 +80,10 @@ export const TABLES_IN_DEPENDENCY_ORDER = [
   "attempts",
   "results",
   "topic_progress",
+  "redeem_attempts",
+  "mailing_consent",
+  "practice_sessions",
+  "practice_attempts",
   "admin_audit",
 ] as const;
 
@@ -84,10 +91,19 @@ export const TABLES_IN_DEPENDENCY_ORDER = [
 export const CONTENT_TABLES = TABLES_IN_DEPENDENCY_ORDER.filter(
   (t) =>
     ![
+      "books", // rebuilt from content/inkworks by the importer
+      "book_codes", // access codes are secrets: never exported
+      "practice_books",
+      "practice_texts",
+      "practice_units",
       "parents",
       "auth_sessions",
       "redemptions",
       "students",
+      "redeem_attempts",
+      "mailing_consent",
+      "practice_sessions",
+      "practice_attempts",
       "attempts",
       "results",
       "topic_progress",

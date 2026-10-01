@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
+@import "../styles/practice.css";
 
 /* Tailwind theme maps onto the design tokens, so utility classes restyle with tokens.css */
 @theme inline {
@@ -21,6 +22,7 @@
   --color-warning-soft: var(--color-warning-soft);
   --color-star: var(--color-star);
   --font-sans: var(--font-sans);
+  --font-head: var(--font-head);
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
   --radius-lg: var(--radius-lg);
@@ -36,7 +38,12 @@
     color: var(--color-text);
     font-family: var(--font-sans);
     line-height: var(--line-height);
+    font-size: 18px;
     -webkit-text-size-adjust: 100%;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-head);
+    letter-spacing: -0.01em;
   }
   a {
     color: var(--color-primary);

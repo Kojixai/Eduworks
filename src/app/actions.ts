@@ -1,6 +1,7 @@
 "use server";
 import crypto from "node:crypto";
 import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { getStore } from "@/lib/db";
 import { createSession, destroySession, requireParent, setActiveChild, verifyLogin, childrenOf } from "@/lib/auth";
@@ -12,18 +13,26 @@ export interface FormState {
 }
 
 export async function signupAction(_prev: FormState, fd: FormData): Promise<FormState> {
+  const accountType = fd.get("accountType") === "student" ? "student" : "parent";
   const values = {
     code: String(fd.get("code") ?? ""),
     parentName: String(fd.get("parentName") ?? ""),
     email: String(fd.get("email") ?? ""),
-    amazonOrderNumber: String(fd.get("amazonOrderNumber") ?? ""),
+    orderNumber: String(fd.get("orderNumber") ?? ""),
+    accountType,
+    yearGroupId: String(fd.get("yearGroupId") ?? ""),
   };
+  const h = await headers();
+  const ip = h.get("x-forwarded-for")?.split(",")[0].trim() || h.get("x-real-ip") || "unknown";
   const r = await redeemCode(await getStore(), {
     ...values,
+    accountType,
     password: String(fd.get("password") ?? ""),
     acceptTerms: fd.get("acceptTerms") === "on",
-    marketingOptIn: fd.get("marketingOptIn") === "on",
-  });
+    ageConfirmed: fd.get("ageConfirmed") === "on",
+    // the mailing-list box is only ever offered to adults
+    marketingOptIn: accountType === "parent" && fd.get("marketingOptIn") === "on",
+  }, { ip });
   if (!r.ok) return { errors: r.errors, values };
   await createSession(r.parentId!);
   redirect(r.existingAccount ? "/home?added=1" : "/home?welcome=1");

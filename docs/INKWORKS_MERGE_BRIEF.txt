@@ -1,0 +1,69 @@
+INKWORKS COMPANION PRACTICE WEBSITE: MERGE BRIEF FOR CLAUDE CODE
+Built 1 October 2026 in a separate session. Tom has a second site built with Claude Code and wants the two merged,
+checked against each other, and made to look good. Treat this package as the source of truth for CONTENT and for the
+compliance/access rules; keep whichever UI is better.
+
+WHAT IS IN THIS PACKAGE
+site/                     Working Next.js 16 app (App Router, TypeScript) + Supabase. Read site/README.md first.
+  app/                    Pages: / , /redeem, /login, /reset, /dashboard (parent area), /learners, /learn (child home),
+                          /books/[bookId], /books/[bookId]/[unitId], .../practice, .../results, .../mistakes,
+                          /account, /privacy, /terms (placeholders with lawyer checklists), not-found
+  components/             Player, QuestionView (9 question types), Diagram (9 SVG diagram kinds), ParentPin, etc.
+  lib/                    validate.ts (schema), marking.ts, mastery.ts (secure + 1/3/7-day review), codes.ts and
+                          codes.server.ts (access codes, order numbers), store/demo.ts + store/supabase.ts (same interface)
+  supabase/migrations/    Full schema with Row Level Security and the redeem_access_code() function
+  scripts/                build-content.ts (validates + splits content per unit), generate-codes.ts, import-books.ts
+  content/                The 8 practice banks the site loads (copies of site_work/content/*.json) + _fixture.json
+  tests/, e2e/            87 unit tests (vitest) + Playwright journeys (all passing on 1 Oct 2026)
+  test-shots/             Screenshots of every screen and question type
+site_work/content/        MASTER practice banks + one checker script per book (python3 check_<book>.py must pass)
+site_work/research/       platform_research.json: UK children's data law, Amazon seller rules, competitors,
+                          learning science, accessibility, code design. 63 sources, 12 prioritised recommendations
+site_work/CONTENT_SCHEMA.txt   The content format (also enforced by site/lib/validate.ts)
+Companion_Website_Screens.html  Visual tour of the site
+Companion_Website_Audit.html    Open decisions (numbered 30-42)
+
+THE CONTENT (most valuable part; do not lose or rewrite it)
+8 books, 379 units, 3,790 questions. One unit = one page of the printed book; 10 new questions per unit on the same skill,
+each with a worked explanation, difficulty 1-5, curriculum codes, and the printed book page number.
+  y3maths 55 units / 550   y8maths 64 / 640   ks2reading10 24 / 240   ks3english 79 / 790
+  gcse_englang 33 / 330    y3reading 16 / 160 macbeth 59 / 590        aic 49 / 490
+Book display order everywhere: y3maths, y8maths, ks2reading10, ks3english, gcse_englang, y3reading, macbeth, aic.
+Rules baked into the content: maths answers recalculated by script; every quotation matches its source text verbatim;
+An Inspector Calls is in copyright until 2054, so only the verified short quotes (319 words total) are used and there is
+no play text; reading units carry the same public-domain or original text as the book page with line numbers; British
+English, numerals not words, no em dashes. If the other site has its own questions, keep both but never mix unchecked
+questions into these banks; re-run the checkers after any edit.
+
+RULES THE MERGED SITE MUST KEEP (from the research; legal/compliance)
+1. Accounts are for adults (parent, guardian, teacher) or students aged 13+ (KS3/GCSE books only). Children under 13 never
+   register or log in: they are profiles (first name + year group only) inside the adult account. ICO Children's Code
+   and UK GDPR Art 8.
+2. Mailing list: separate, unticked, optional box for adults only; access never depends on it; no marketing to children.
+3. Amazon order number: optional, format check only (3-7-7 digits), stored as a salted hash, deleted when access ends.
+   It cannot be verified with Amazon. Nothing anywhere may mention reviews (Amazon policy).
+4. No streaks, points, leaderboards or "don't lose your progress" nudges for children. Gentle progress only.
+5. Light theme, Lexend headings + Andika body, WCAG 2.2 AA, 48px touch targets, keyboard operable.
+6. Access codes stored hashed with a server-side pepper; rate limiting on redemption; supports one code per title AND
+   unique per-copy codes (setting NEXT_PUBLIC_CODE_MODE). Access length is a setting (default 6 months; CGP gives 3 years).
+
+HOW TO MERGE (suggested order)
+1. Read both codebases. Write a side-by-side comparison: pages, data model, auth, question types, marking, progress,
+   design. List what each does that the other does not.
+2. Pick one codebase as the base (whichever has the better UI and structure). Port the other's missing features into it.
+3. Import the 8 banks through the content schema. If the other site uses a different question format, write an adapter
+   rather than editing the banks by hand. Run the 8 checker scripts and the schema validator; all must pass.
+4. Keep the Supabase schema's RLS, the redeem function and the rules above, or reproduce them exactly in the other data model.
+5. Re-run unit tests and a browser journey through every question type and one unit of each book; screenshot and look at
+   every screen. Fix anything clipped or confusing.
+6. Report differences you could not reconcile as a numbered list for Tom.
+
+OPEN DECISIONS FOR TOM (do not decide them silently)
+Access length; one code per title vs per copy; keep or drop the order number; legal review (DPIA, adult and child privacy
+notices, terms, complaints route); hosting on Vercel Pro + Supabase Pro London + an email provider; series name (the book
+titles currently copy CGP's series names and will change).
+
+RUNNING THIS SITE LOCALLY
+cd site && npm install && npm run dev  -> http://localhost:3000 in demo mode (no database needed).
+Demo codes: DEMO-Y3MATHS, DEMO-Y8MATHS, DEMO-KS2READING10, DEMO-KS3ENGLISH, DEMO-GCSEENGLANG, DEMO-Y3READING,
+DEMO-MACBETH, DEMO-AIC. Order number can be left blank.

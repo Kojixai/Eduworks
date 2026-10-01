@@ -1,0 +1,813 @@
+{
+  "meta": {
+    "prepared": "2026-10-01",
+    "for": "Tom Hill, Blandfords International Ltd / Inkworks Press - free book-linked practice website",
+    "note": "Every claim carries the URL it was verified against. Items that could not be verified are in 'unverified'. This is research, not legal advice."
+  },
+  "legal": {
+    "summary": "Site is an information society service (ISS) likely to be accessed by children, so the ICO Children's Code applies in full. Under-13s cannot give their own consent for consent-based processing; build a parent/guardian account with child profiles. KS2 titles: parent must register. GCSE/KS3 titles: 13+ students may register themselves, but parent-led is still the cleaner default. Mailing list needs its own unticked consent box, addressed to the adult only; soft opt-in does not apply because the sale happened on Amazon.",
+    "childrens_code": [
+      {
+        "claim": "The Code has 15 standards: best interests; DPIA; age appropriate application; transparency; detrimental use of data; policies and community standards; default settings; data minimisation; data sharing; geolocation; parental controls; profiling; nudge techniques; connected toys and devices; online tools.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/code-standards/"
+        ]
+      },
+      {
+        "claim": "Standards that bite for this site: DPIA (mandatory), age appropriate application (risk-based recognition of child users), transparency (privacy info 'concise, prominent and in clear language suited to the age of the child'), high-privacy defaults, data minimisation ('collect and retain only the minimum... in which a child is actively and knowingly engaged'), no data sharing, profiling off by default, parental controls with child told they are monitored, no nudges to give more data, online tools to exercise rights. Geolocation and connected toys are not relevant if no location is collected.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/code-standards/"
+        ]
+      },
+      {
+        "claim": "A DPIA is required when processing children's data for an ISS; ICO treats it as high-risk processing.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/children-and-the-uk-gdpr/what-are-the-rules-about-an-iss-and-consent/"
+        ]
+      },
+      {
+        "claim": "Engagement ('sticky') features named by the ICO include reward loops, continuous scrolling, notifications and auto-play. Options to continue must be presented neutrally 'without suggesting that children will lose out if they don't'. ICO recommends pause mechanisms that let children stop without losing progress.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/5-detrimental-use-of-data/"
+        ]
+      },
+      {
+        "claim": "Nudges toward high privacy, wellbeing behaviours (breaks, pause buttons) and parental controls are allowed; nudges toward giving more data or weakening privacy are not.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/13-nudge-techniques/"
+        ]
+      },
+      {
+        "claim": "If parents can see a child's activity, the child must be given age-appropriate information that this is happening and a clear, obvious sign when monitoring is active. ICO gives age-banded examples (6-9: explain their parent is told what they do online; 10-12: resources they can use alone; 13-17: written explanation of the balance of parent and child privacy).",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/11-parental-controls/"
+        ]
+      },
+      {
+        "claim": "Data (Use and Access) Act 2025 s.81 amends UK GDPR Art 25 to require online services to build 'children's higher protection matters' into data protection by design and default; following the Children's Code helps meet this.",
+        "sources": [
+          "https://privacymatters.dlapiper.com/2026/06/uk-protecting-children-online-a-changing-regulatory-landscape/"
+        ]
+      }
+    ],
+    "age_and_consent": [
+      {
+        "claim": "UK GDPR Art 8: where the child is under 13, consent-based processing for an ISS is lawful only if consent is given or authorised by the holder of parental responsibility; controller must make 'reasonable efforts, taking into consideration available technology' to verify.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/children-and-the-uk-gdpr/what-are-the-rules-about-an-iss-and-consent/"
+        ]
+      },
+      {
+        "claim": "For low-risk services a tick-box declaration may be enough as 'reasonable efforts'; higher-risk services (e.g. unmonitored chat) may need third-party verification.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/children-and-the-uk-gdpr/what-are-the-rules-about-an-iss-and-consent/"
+        ]
+      },
+      {
+        "claim": "Art 8 does not force consent as the lawful basis; other bases can apply. Art 8(3) leaves general contract law on children's contracts untouched.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/children-and-the-uk-gdpr/what-are-the-rules-about-an-iss-and-consent/"
+        ]
+      },
+      {
+        "claim": "An ISS counts as offered directly to children if it says it is for children, targets children, or has no age restriction / allows under-18s. This site meets that test.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/children-and-the-uk-gdpr/what-are-the-rules-about-an-iss-and-consent/"
+        ]
+      },
+      "Conclusion (analysis, not a quoted rule): children aged 7-12 (Year 3, Year 6, Year 8 at 12) should not create accounts themselves. Model: adult creates the account (email + password, confirms they are 18+ and the parent/guardian or teacher), then adds child profiles (first name or nickname + year group only, no child email). GCSE students (14-16) are over 13 and could sign up themselves; allow a 'I am 13 or over and a student' route for GCSE titles only, still with no marketing to them."
+    ],
+    "lawful_basis_suggestion": "Core service (account, progress tracking): contract with the adult account holder (Art 6(1)(b)). Mailing list: consent. Analytics: only strictly necessary or the new DUAA statistical-cookie exemption with opt-out. (Analysis; confirm in DPIA.)",
+    "pecr_mailing_list": [
+      {
+        "claim": "Email marketing to individuals needs specific consent, e.g. ticking an opt-in box, unless the soft opt-in applies.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/"
+        ]
+      },
+      {
+        "claim": "Soft opt-in needs: existing customer who bought a similar product from you, details collected in the course of that sale, a simple opt-out at collection and in every message.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/",
+          "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-direct-marketing-using-electronic-mail/what-are-the-rules-on-direct-marketing-using-electronic-mail/"
+        ]
+      },
+      {
+        "claim": "Soft opt-in does not apply if 'You didn't collect the contact details directly from the person'. Amazon buyers' details were not collected by you in the course of the sale, and ICO guidance does not say a free registration counts as a sale.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-direct-marketing-using-electronic-mail/what-are-the-rules-on-direct-marketing-using-electronic-mail/"
+        ]
+      },
+      {
+        "claim": "PECR maximum fines rose to GDPR level (£17.5m or 4% of global turnover) from 5 February 2026 under DUAA; statistical/appearance cookies no longer need consent but need a simple opt-out.",
+        "sources": [
+          "https://www.cliffordchance.com/insights/resources/blogs/talking-tech/en/articles/2026/02/key-aspects-of-the-data--use-and-access--act-take-effect.html"
+        ]
+      },
+      {
+        "claim": "ICO: direct marketing to children 'has significant potential for harm'; children may not understand it is marketing.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/direct-marketing-guidance/plan-direct-marketing/"
+        ]
+      },
+      "Decision: separate, unticked, optional box on the adult sign-up ('Email me about new Inkworks Press books and offers'); access must not depend on ticking it; record timestamp, wording and source; unsubscribe link in every email; never collect or market to child emails."
+    ],
+    "amazon_order_number": [
+      {
+        "claim": "Amazon order IDs follow a 3-7-7 digit format, e.g. 123-1234567-1234567, so format can be validated without any Amazon data.",
+        "sources": [
+          "https://support.shiptheory.com/support/solutions/articles/24000060106-a-valid-amazon-order-id-can-not-be-found-for-this-order"
+        ]
+      },
+      {
+        "claim": "Amazon policy: 'If you receive customer information such as addresses or phone numbers to fulfill orders, you may use that information only to fulfill orders and must delete it after the order has been processed.'",
+        "sources": [
+          "https://m.media-amazon.com/images/G/65/rainier/help/Selling_Policies_and_Seller_Code_of_Conduct_SG_new_version_clean_PDF.pdf"
+        ]
+      },
+      "Data minimisation analysis: the order number only proves purchase if you can check it against your Seller Central orders. A number the buyer types in is their own data given to you, but matching it to Amazon order reports and then marketing to them risks the Amazon customer-data rule above. Recommendation: validate format only, do not cross-reference Amazon buyer data, store it hashed, use it only to limit redemptions per order, delete it after 6 months (when access ends), and state this in the privacy notice. Or drop it entirely if unique per-copy codes are used (CGP does not ask for order numbers)."
+    ],
+    "amazon_inserts_and_diversion": [
+      {
+        "claim": "Amazon selling policy: 'You may not attempt to circumvent the Amazon sales process or divert Amazon customers to another website.'",
+        "sources": [
+          "https://m.media-amazon.com/images/G/65/rainier/help/Selling_Policies_and_Seller_Code_of_Conduct_SG_new_version_clean_PDF.pdf"
+        ]
+      },
+      {
+        "claim": "Amazon selling policy: 'All communications to customers must be sent through Buyer-Seller Messaging and be necessary for fulfilling the order or providing customer services.'",
+        "sources": [
+          "https://m.media-amazon.com/images/G/65/rainier/help/Selling_Policies_and_Seller_Code_of_Conduct_SG_new_version_clean_PDF.pdf"
+        ]
+      },
+      {
+        "claim": "Amazon selling policy: 'You may not attempt to influence or inflate customers' ratings, feedback, and reviews.'",
+        "sources": [
+          "https://m.media-amazon.com/images/G/65/rainier/help/Selling_Policies_and_Seller_Code_of_Conduct_SG_new_version_clean_PDF.pdf"
+        ]
+      },
+      {
+        "claim": "Fuller version of the diversion rule quoted by an Amazon moderator on the UK forum: 'This means that you may not provide links or messages that prompt users to visit any external website or complete a transaction elsewhere.' The same moderator said a QR code in an insert linking to an external website 'is not allowed', enforced by removing the product or selling privileges.",
+        "sources": [
+          "https://sellercentral.amazon.co.uk/seller-forums/discussions/t/a0e2ad9f-4ac2-4977-b20e-4435414d7848"
+        ]
+      },
+      {
+        "claim": "Amazon's November 2019 announcement (as reported): inserts or packaging that direct customers to write a positive review are prohibited even with no incentive; directing customers to contact you instead of leaving a negative review is also prohibited.",
+        "sources": [
+          "https://www.webretailer.com/amazon/amazon-package-inserts/"
+        ]
+      },
+      {
+        "claim": "Sellers disagree on whether support/warranty URLs on packaging are acceptable; no official ruling in that thread.",
+        "sources": [
+          "https://sellercentral.amazon.com/seller-forums/discussions/t/aeb394323a9a28c7e737c5295c48d987"
+        ]
+      },
+      {
+        "claim": "Precedent: CGP prints a unique code on the first page / inside cover of its books and requires an account on its own site; CGP books with codes are widely sold through retailers.",
+        "sources": [
+          "https://www.cgpbooks.co.uk/revision-hub/frequently-asked-questions",
+          "https://www.cgpbooks.co.uk/revision-hub/unlock"
+        ]
+      },
+      "Risk assessment (analysis): a loose insert card pointing to a website is the highest-risk option. Printing the access page as part of the book's content (a 'Your free online practice' page, like CGP) is the lower-risk route because it is product content, not seller marketing. Keep the site from becoming a sales channel that bypasses Amazon: no checkout, no discount codes redeemable off-Amazon, 'buy' links only to Amazon listings, never mention reviews anywhere in the book page, sign-up flow or emails linked to the access code."
+    ],
+    "privacy_notice": [
+      {
+        "claim": "Must include: who you are and contact details; DPO if any; purposes; lawful basis; legitimate interests if used; recipients; international transfers; retention periods; individual rights; right to withdraw consent; right to complain to the ICO; whether data is required by contract; automated decision-making.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/the-right-to-be-informed/what-privacy-information-should-we-provide/"
+        ]
+      },
+      {
+        "claim": "Children's Code transparency: privacy info must be concise, prominent and in language suited to the child's age; provide a child-facing version alongside the parent version.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/code-standards/"
+        ]
+      },
+      {
+        "claim": "From 19 June 2026 organisations must acknowledge data-protection complaints within 30 days and let people complain electronically.",
+        "sources": [
+          "https://www.cliffordchance.com/insights/resources/blogs/talking-tech/en/articles/2026/02/key-aspects-of-the-data--use-and-access--act-take-effect.html"
+        ]
+      }
+    ],
+    "hosting": [
+      {
+        "claim": "Supabase offers AWS London (eu-west-2) plus Ireland, Paris, Frankfurt, Zurich, Stockholm; the region determines where primary project data is stored.",
+        "sources": [
+          "https://supabase.com/docs/guides/platform/regions"
+        ]
+      },
+      {
+        "claim": "Supabase Free pauses projects after 1 week of inactivity and has no automatic backups; Pro from $25/month includes daily backups kept 7 days and 100,000 MAUs.",
+        "sources": [
+          "https://supabase.com/pricing"
+        ]
+      },
+      {
+        "claim": "Supabase built-in email provider is limited to 2 emails per hour; custom SMTP is needed for production. Sign-up/sign-in limit defaults to 30 requests per 5 minutes per IP.",
+        "sources": [
+          "https://supabase.com/docs/guides/auth/rate-limits"
+        ]
+      },
+      {
+        "claim": "Vercel Functions default to Washington DC (iad1) for new projects; change the default to London (lhr1) in project settings or vercel.json 'regions'. Hobby = single region.",
+        "sources": [
+          "https://vercel.com/docs/functions/configuring-functions/region"
+        ]
+      },
+      {
+        "claim": "Vercel Hobby is 'restricted to non-commercial personal use only'; commercial use includes 'Advertising the sale of a product or service'. A site that promotes Inkworks books needs Vercel Pro.",
+        "sources": [
+          "https://vercel.com/docs/limits/fair-use-guidelines"
+        ]
+      }
+    ],
+    "accessibility_law": [
+      {
+        "claim": "Equality Act 2010 s.29: service providers (paid or free) must not discriminate and owe a duty to make reasonable adjustments.",
+        "sources": [
+          "https://www.legislation.gov.uk/ukpga/2010/15/section/29"
+        ]
+      }
+    ]
+  },
+  "oak": {
+    "summary": "Oak has a free public Curriculum API (request a key) covering all subjects KS1-4, including quiz questions in 4 types. New Oak content is OGL v3.0 and commercial reuse is allowed with attribution; older content and third-party texts are not.",
+    "points": [
+      {
+        "claim": "API offers lesson resources, videos, quizzes, curriculum data, transcripts and misconceptions for 'all subjects for key stages 1-4'; an API key is requested via a form; bulk downloads also offered. It explicitly invites EdTech and quiz platforms to use the content.",
+        "sources": [
+          "https://open-api.thenational.academy/"
+        ]
+      },
+      {
+        "claim": "Endpoints include /lessons/{lesson}/quiz, /key-stages/{keyStage}/subject/{subject}/questions, /programmes/{programme}/questions, /sequences/{sequence}/units, /lessons/{lesson}/summary (misconceptions), /keywords, and /key-stages/{keyStage}/subject/{subject}/check-restricted for third-party-content restrictions. Rate-limit status is returned in X-RateLimit-* headers. v0 is frozen; new fields go into /api/v1.",
+        "sources": [
+          "https://open-api.thenational.academy/api/v0/swagger.json"
+        ]
+      },
+      {
+        "claim": "Quiz question types in the API schema: multiple-choice, short-answer (with an array of acceptable answers), match, order. Starter and exit quizzes per lesson.",
+        "sources": [
+          "https://open-api.thenational.academy/api/v0/swagger.json"
+        ]
+      },
+      {
+        "claim": "API terms: OGL v3.0; you may copy, adapt and exploit commercially; must attribute ('A [subject] lesson by Oak National Academy licensed under Open Government Licence (OGL)' plus link to OGL v3); must not say you are associated with or endorsed by Oak; you are responsible for third-party asset licences; no sub-licensing without consent.",
+        "sources": [
+          "https://www.thenational.academy/legal/terms-and-conditions-api-version"
+        ]
+      },
+      {
+        "claim": "Collection 2 (post-September 2022) is OGL v3.0 and usable commercially where no third-party copyright applies. Collection 1 (pre-September 2022) is non-commercial only. Third-party texts/images are marked and need separate permission for commercial use.",
+        "sources": [
+          "https://support.thenational.academy/a-guide-to-our-website-licensing"
+        ]
+      },
+      {
+        "claim": "STA test materials are mostly Crown copyright under OGL v3.0, but third-party passages (e.g. the 2024 KS2 reading texts) must be replaced or cleared; only educational establishments get blanket reuse.",
+        "sources": [
+          "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-reading-test-materials/2024-copyright-ownership-key-stage-2-national-curriculum-tests"
+        ]
+      }
+    ],
+    "use_for_this_site": "Good fit for maths (Year 3, Year 8) question banks and misconceptions to write explanations. Weak fit for English texts: reading passages, Macbeth commentary and An Inspector Calls extracts may carry third-party rights (Macbeth itself is public domain; An Inspector Calls by J.B. Priestley is in copyright - see unverified). Run check-restricted on every lesson used and store attribution per question."
+  },
+  "competitors": {
+    "table": [
+      {
+        "name": "CGP RevisionHub",
+        "access": "Unique numeric code printed on first page/inside cover (e.g. 2252 0462 9675 4098); make an account with email + password; 3 years' access from first use; included in book price.",
+        "features": "Quizzes, tests, videos, audio, progress stats across devices; QR codes in the book link to resources. Currently AQA GCSE Science, AQA/Edexcel GCSE Languages, AQA GCSE English Language.",
+        "sources": [
+          "https://www.cgpbooks.co.uk/revision-hub/frequently-asked-questions",
+          "https://www.cgpbooks.co.uk/revision-hub/unlock"
+        ]
+      },
+      {
+        "name": "CGP Online Edition",
+        "access": "Code by email or post; licence for one person, expires once redeemed; permanent access; 7 days temporary access before redemption.",
+        "features": "On-screen copy of the book; one device at a time; must be online; not printable.",
+        "sources": [
+          "https://www.cgpbooks.co.uk/info/online-editions-digital-products",
+          "https://www.cgpbooks.co.uk/info/online-editions-help"
+        ]
+      },
+      {
+        "name": "Seneca",
+        "access": "600+ free exam-board courses; Premium adds 800+ courses, smart learning / wrong-answer modes, unlimited cram (20 on free), AI-marked exam questions, mini mocks. Three packages (monthly/seasonal/annual); optional Seneca Guarantee +£5.99/month.",
+        "features": "Exam questions auto (AI) marked; teachers can re-mark.",
+        "sources": [
+          "https://help.senecalearning.com/en/articles/2663301-what-is-premium",
+          "https://help.senecalearning.com/en/articles/3746290-how-much-is-premium",
+          "https://help.senecalearning.com/en/articles/6536455-ai-marked-exam-questions-for-teachers"
+        ]
+      },
+      {
+        "name": "Atom Learning",
+        "access": "Ages 7-16. English/Maths/Science £39.99/month (£31.99 yearly); Exam Prep £59.99; Exam Prep Plus £69.99.",
+        "features": "Personalised daily practice, 11+, CAT4, 13+, GCSE; mock tests with instant marking on top tier.",
+        "sources": [
+          "https://www.atomlearning.com/pricing"
+        ]
+      },
+      {
+        "name": "DoodleMaths / DoodleEnglish",
+        "access": "Family: £159.99/year all 4 apps, from £12.99/month one app; 7-day trial. Schools £6/pupil/app, £9 suite.",
+        "features": "Baseline test then adaptive path, 10 minutes a day, stars unlock avatar/game items, parent dashboard, offline. Criticism: no handwriting in English.",
+        "sources": [
+          "https://travelynnfamily.com/doodlelearning-review/",
+          "https://www.doodlelearning.com/pricing"
+        ]
+      },
+      {
+        "name": "Sparx Maths",
+        "access": "Schools only, from £600/year; ages 11-16.",
+        "features": "Weekly personalised homework (about 1 hour), 10,000+ videos, spaced and interleaved practice, bookwork checks. Parents criticise long completion times, 100% completion pressure, weak videos, bookwork checks, tedium for able pupils.",
+        "sources": [
+          "https://edtechimpact.com/products/sparx-maths-homework/",
+          "https://www.mumsnet.com/talk/secondary/4645695-sparx-maths-how-is-it-for-you",
+          "https://www.thinkingineducating.com/why-sparx-maths-sparks-frustration-among-students-and-parents/"
+        ]
+      },
+      {
+        "name": "White Rose 1-Minute Maths",
+        "access": "Free app, no login, no internet needed, developer states no data collected.",
+        "features": "1-minute timed number tasks, 87 topics, hints, instant feedback.",
+        "sources": [
+          "https://apps.apple.com/us/app/1-minute-maths/id1584136366"
+        ]
+      },
+      {
+        "name": "MathsBot",
+        "access": "Mostly free; membership £3/month for ad-free and extras.",
+        "features": "Teacher-facing manipulatives, question generators, GCSE and primary resources.",
+        "sources": [
+          "https://mathsbot.com/"
+        ]
+      },
+      {
+        "name": "Corbettmaths 5-a-day",
+        "access": "See unverified for price.",
+        "features": "Daily 5-question sets: GCSE 9-1, Primary, Further Maths, Core.",
+        "sources": [
+          "https://corbettmaths.com/5-a-day/"
+        ]
+      },
+      {
+        "name": "BBC Bitesize",
+        "access": "Free.",
+        "features": "Study support for KS1, KS2, KS3, GCSE (plus Scotland/Wales).",
+        "sources": [
+          "https://en.wikipedia.org/wiki/BBC_Bitesize"
+        ]
+      },
+      {
+        "name": "Oak National Academy",
+        "access": "Free; content under OGL.",
+        "features": "Lessons with starter/exit quizzes across KS1-4.",
+        "sources": [
+          "https://open-api.thenational.academy/"
+        ]
+      }
+    ],
+    "gaps_to_own": [
+      "Tied exactly to the book's units and page numbers: 'You finished Unit 4 on page 22; here are 10 fresh questions'. No competitor above maps practice to a specific budget workbook's structure except CGP, and CGP RevisionHub only covers a few GCSE subjects (source: cgp_revhub_faq).",
+      "Primary coverage from a book publisher: CGP's book-linked hub does not cover Year 3 maths or KS2 reading (cgp_revhub_faq); subscription apps that do (Doodle, Atom) cost £12.99-£69.99/month (doodle_review, atom_pricing).",
+      "Short sessions with an end point, answering the Sparx complaint of hour-long homework and 100% completion pressure (sparx_mumsnet).",
+      "Explanations on every question in plain language, answering 'the videos are rubbish' style complaints (sparx_mumsnet).",
+      "Privacy-light: no child email, no ads, no tracking, in the spirit of 1-Minute Maths (wr_1mm_appstore) but with progress saved.",
+      "Printable follow-up: CGP Online Editions cannot be printed (cgp_online_editions); a printable 'more practice' sheet per unit is a cheap differentiator."
+    ]
+  },
+  "learning_science": {
+    "evidence": [
+      {
+        "claim": "Dunlosky et al. 2013 rate practice testing and distributed practice as high utility; elaborative interrogation, self-explanation and interleaved practice moderate; summarising, highlighting, keyword mnemonic, imagery for text and rereading low.",
+        "sources": [
+          "https://journals.sagepub.com/doi/10.1177/1529100612453266"
+        ]
+      },
+      {
+        "claim": "EEF (2021): short, low-stakes quizzes are a cheap way to strengthen long-term memory; evidence vs no recap is moderate and generally positive; pupils should be able to retrieve at least some of the content tested; quizzing reveals misconceptions that need follow-up. Evidence is uncertain on which formats work best and on higher-order learning.",
+        "sources": [
+          "https://d2tic4wvo1iusb.cloudfront.net/documents/guidance/Cognitive_science_approaches_in_the_classroom_-_A_review_of_the_evidence.pdf"
+        ]
+      },
+      {
+        "claim": "EEF: moderate positive evidence that interleaving helps KS2 and KS3 pupils select solution strategies in maths; 11 of 12 studies were maths, so transfer to English is unproven; lower attainers may be confused by interleaving.",
+        "sources": [
+          "https://d2tic4wvo1iusb.cloudfront.net/documents/guidance/Cognitive_science_approaches_in_the_classroom_-_A_review_of_the_evidence.pdf"
+        ]
+      },
+      {
+        "claim": "EEF: evidence for retrieval and spacing is mostly from researcher-run studies, with few everyday classroom studies.",
+        "sources": [
+          "https://d2tic4wvo1iusb.cloudfront.net/documents/guidance/Cognitive_science_approaches_in_the_classroom_-_A_review_of_the_evidence.pdf"
+        ]
+      },
+      {
+        "claim": "EEF feedback guidance: immediate, delayed (up to a week) and during-task feedback all show similar positive effects; feedback should focus on the task, process or self-regulation, not personal attributes; plan how pupils will use feedback.",
+        "sources": [
+          "https://researchschool.org.uk/durrington/news/summary-of-the-eefs-new-guidance-report-teacher-feedback-to-improve-pupil-learning",
+          "https://d2tic4wvo1iusb.cloudfront.net/production/eef-guidance-reports/feedback/Teacher_Feedback_to_Improve_Pupil_Learning.pdf"
+        ]
+      },
+      {
+        "claim": "Cepeda et al. 2008: optimal gap between study sessions is about 20% of the retention interval for delays of a few weeks, falling to about 5% for a year (e.g. 1 day gap for a 7-day test).",
+        "sources": [
+          "https://files.eric.ed.gov/fulltext/ED505660.pdf"
+        ]
+      },
+      {
+        "claim": "Successive relearning (practise to correct, then relearn to correct in later spaced sessions): 3 correct recalls initially beat 1 (68% vs 26% at one week) but the gap shrinks after relearning; 3 relearning sessions give the best return, with 4-5 adding little.",
+        "sources": [
+          "https://journals.sagepub.com/doi/full/10.1177/09637214221100484"
+        ]
+      },
+      {
+        "claim": "Gamification: badges, leaderboards, competitions and points are most often reported as causing negative effects (no effect, worse performance, motivation problems, cheating/gaming).",
+        "sources": [
+          "https://www.sciencedirect.com/science/article/abs/pii/S0950584922002518"
+        ]
+      },
+      {
+        "claim": "A systematic review found 56% of studies reported positive effects on motivation and 33% on performance, with short-term, context-dependent effects and warnings about point competition undermining deep learning.",
+        "sources": [
+          "https://www.mdpi.com/2227-7102/14/6/639"
+        ]
+      },
+      {
+        "claim": "Children's Code lists reward loops and notifications as sticky features and requires neutral continue options and pause without losing progress.",
+        "sources": [
+          "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/5-detrimental-use-of-data/"
+        ]
+      }
+    ],
+    "rules": [
+      "Session = 10 questions (Tom's unit set), about 5-10 minutes for Year 3, up to 15 minutes for GCSE. Session has a clear end screen; no auto-start of the next set.",
+      "Mix inside each set: about 7 new questions from the chosen unit + up to 3 'due' review questions from earlier units in the same book (spacing + interleaving for maths). For English, keep review questions within the same skill type (EEF: interleaving evidence is maths-only).",
+      "Immediate feedback after each answer: right/wrong, the correct answer, and a 1-3 sentence explanation of the method or the misconception. Tell pupils what to do next, not how clever they are.",
+      "Wrong answer: re-ask a sibling question (same skill, different numbers/wording) at the end of the same session (relearn to criterion 1), then schedule again 1 day later.",
+      "Spacing ladder per skill after a correct answer: 1 day, 3 days, 7 days, 21 days (roughly within Cepeda's 10-20% band for a term-length retention goal). A wrong answer drops the skill back to the 1-day step.",
+      "'Secure' = the skill answered correctly first time in 3 separate sessions on 3 different days, the last at least 7 days after the first (successive relearning: 3 spaced correct recalls). Show 'Practising' / 'Getting there' / 'Secure' rather than scores or ranks.",
+      "Start difficulty so pupils get most right (EEF: pupils should retrieve at least some content); if a pupil scores 3/10 or less, next set offers an easier 'warm-up' version and points to the book page.",
+      "Allowed motivation: progress bar within a session, per-unit 'secure' ticks, a certificate per completed unit. Avoid: streaks that break, leaderboards, points competitions, push notifications to children, 'you'll lose your progress' messages. Give a 'stop and save' button on every question."
+    ]
+  },
+  "accessibility": {
+    "points": [
+      {
+        "claim": "WCAG 2.2 AA new criteria to build for: 2.4.11 Focus Not Obscured (sticky headers must not hide focused items), 2.5.7 Dragging Movements (every drag-to-match/order question needs a tap/click alternative), 2.5.8 Target Size minimum 24x24 CSS px, 3.2.6 Consistent Help (help in same place), 3.3.7 Redundant Entry (don't ask for the same data twice in sign-up), 3.3.8 Accessible Authentication (no memory/puzzle tests). 4.1.1 Parsing removed.",
+        "sources": [
+          "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/"
+        ]
+      },
+      {
+        "claim": "3.3.8: remembering a password is a cognitive function test, so the site must allow paste and password managers; name/email are not cognitive tests.",
+        "sources": [
+          "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html"
+        ]
+      },
+      {
+        "claim": "BDA style guide: sans serif (e.g. Arial, Comic Sans); 12-14pt or 16-19px body; letter spacing about 35% of average letter width; word spacing at least 3.5x letter spacing; 60-70 characters per line; dark text on cream/soft pastel not white; headings at least 20% larger; bold not italics/underline; no all-caps; left aligned, not justified; short active sentences.",
+        "sources": [
+          "https://www.bdadyslexia.org.uk/advice/employers/creating-a-dyslexia-friendly-workplace/dyslexia-friendly-style-guide"
+        ]
+      },
+      {
+        "claim": "Hughes and Wilkins 2000: some children benefit from larger text and spacing than reading schemes use, and no children were disadvantaged by it.",
+        "sources": [
+          "https://eric.ed.gov/?id=EJ624606"
+        ]
+      },
+      {
+        "claim": "Dyslexie font gives no reading benefit over standard fonts once spacing is matched; spacing, not letter shape, drove earlier gains.",
+        "sources": [
+          "https://link.springer.com/article/10.1007/s11881-017-0154-6"
+        ]
+      },
+      {
+        "claim": "Equality Act 2010 s.29 reasonable-adjustments duty applies to service providers, paid or free.",
+        "sources": [
+          "https://www.legislation.gov.uk/ukpga/2010/15/section/29"
+        ]
+      }
+    ],
+    "rules": [
+      "Body text 20-22px for Year 3 profiles, 18px for Year 6/8, 16-18px for GCSE (above the BDA 16-19px floor for young readers, per Hughes and Wilkins; exact child px sizes are a design judgement, see unverified).",
+      "Line height 1.5, max 65 characters per line, left aligned, sans-serif system font, bold for emphasis, no italics in questions (conflicts with book house style where italics mark titles; use bold or quotes online).",
+      "Default background off-white/cream (#FBF8F1 or similar) with a setting for white, cream, blue, yellow tints; contrast at least 4.5:1 for text.",
+      "Tap targets 44px for the 7-8 audience (WCAG minimum is 24px); every drag question has buttons; full keyboard use; visible focus ring.",
+      "Read-aloud button on maths questions for Year 3 (not on reading-comprehension questions where decoding is the skill being tested)."
+    ]
+  },
+  "auto_marking": {
+    "points": [
+      {
+        "claim": "Oak's short-answer questions store an array of acceptable answers; match and order types also exist, all auto-markable without AI.",
+        "sources": [
+          "https://open-api.thenational.academy/api/v0/swagger.json"
+        ]
+      },
+      {
+        "claim": "Moodle short-answer marking: multiple accepted answers evaluated in order, optional case sensitivity, * wildcard, per-answer feedback, a catch-all wildcard for feedback on unmatched answers; keep accepted answers short; pilot questions to collect variants.",
+        "sources": [
+          "https://docs.moodle.org/en/Short-Answer_question_type"
+        ]
+      },
+      {
+        "claim": "STA KS2 reading marking: acceptable points are 'marking principles, not the exact response'; markers focus on content, not quality of writing or grammar. For find-and-copy questions the core word(s) are required, bracketed words show the maximum quotation, and minor copying errors or 'The answer is...' introductions are permitted.",
+        "sources": [
+          "https://assets.publishing.service.gov.uk/media/664dc202f34f9b5a56adcc26/STA248812e_2024_ks2_English_reading_mark_schemes.pdf"
+        ]
+      },
+      {
+        "claim": "Seneca marks exam-style long answers with AI and lets teachers re-mark.",
+        "sources": [
+          "https://help.senecalearning.com/en/articles/6536455-ai-marked-exam-questions-for-teachers"
+        ]
+      },
+      {
+        "claim": "Self-assessment meta-analysis: students overestimate slightly (g = 0.206); correlation with expert marks z = 0.472; feedback, experience and content knowledge reduce overestimation; primary and secondary pupils were better calibrated than older learners.",
+        "sources": [
+          "https://link.springer.com/article/10.1007/s10648-023-09819-0"
+        ]
+      },
+      {
+        "claim": "Grade 4 pupils who self-scored maths answers against correct answers improved monitoring accuracy; about 10% still misjudged, and low attainers needed extra support.",
+        "sources": [
+          "https://link.springer.com/article/10.1007/s11409-021-09281-9"
+        ]
+      }
+    ],
+    "rules": [
+      "Prefer selected-response formats wherever the skill allows: multiple choice, tick-two, true/false, match, order, cloze with drop-downs, 'find and copy' as tap-to-highlight a word in the passage (removes spelling as a variable).",
+      "Normalise typed answers before matching: trim, collapse spaces, lower-case (unless case is the skill), strip trailing full stop and quotation marks, strip lead-ins such as 'the answer is', 'it is', unify curly/straight apostrophes, numbers: accept '1,000' '1000' '1 000', allow units optional unless unit is the skill.",
+      "Spelling tolerance: for comprehension answers accept an edit distance of 1 for words of 5+ letters (content not spelling is being marked, per STA); for spelling or vocabulary questions require exact match.",
+      "Each typed-answer question has: accepted answers list, 'common wrong answers' list with targeted feedback, and a catch-all feedback. Log unmatched answers so Jezreel/Tom can add valid variants weekly.",
+      "Extended English responses (KS3 workbook, GCSE Language, Macbeth, An Inspector Calls): pupil writes, then reveals a model answer plus a 3-5 item checklist of what earns marks (e.g. 'Did you quote a word from the extract?'). Pupil ticks each item; ticks give a self-score recorded as 'self-marked', never mixed into auto-marked 'secure' status. Always show the model answer after submission (feedback reduces overestimation)."
+    ]
+  },
+  "access_codes": {
+    "points": [
+      {
+        "claim": "CGP RevisionHub: unique 16-digit numeric code per copy on first page; account needed; 3 years' access from first use.",
+        "sources": [
+          "https://www.cgpbooks.co.uk/revision-hub/unlock",
+          "https://www.cgpbooks.co.uk/revision-hub/frequently-asked-questions"
+        ]
+      },
+      {
+        "claim": "CGP Online Edition: each code is a licence for one person and expires once redeemed.",
+        "sources": [
+          "https://www.cgpbooks.co.uk/info/online-editions-digital-products"
+        ]
+      },
+      {
+        "claim": "Crockford Base32 drops I, L, O, U to avoid confusion with 1 and 0 (and obscenity); decoding maps i/l to 1 and o to 0 and ignores hyphens.",
+        "sources": [
+          "https://www.crockford.com/base32.html"
+        ]
+      },
+      {
+        "claim": "OWASP: rate-limit/throttle attempts, tie lockout to the account not just IP, CAPTCHA only as defence in depth, generic error messages, password minimum 8 with MFA or 15 without, max at least 64.",
+        "sources": [
+          "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html"
+        ]
+      },
+      {
+        "claim": "Supabase Auth defaults: 30 sign-up/sign-in requests per 5 minutes per IP; custom SMTP needed beyond 2 emails/hour.",
+        "sources": [
+          "https://supabase.com/docs/guides/auth/rate-limits"
+        ]
+      }
+    ],
+    "options": [
+      {
+        "option": "A. One shared code per title (Tom's current plan)",
+        "pros": "No variable-data printing; cheap; simple.",
+        "cons": "Once posted online (forums, TikTok) anyone can register; the order number check is the only brake and cannot be verified without Amazon data.",
+        "mitigation": "Code + format-valid order number; each order number usable for 1 adult account and up to 3 child profiles; rotate the code on each reprint (e.g. INK-Y3M-2610); monitor redemptions per code per day."
+      },
+      {
+        "option": "B. Unique code per copy (CGP model)",
+        "pros": "Controls sharing; no order number needed, so less personal data; standard practice.",
+        "cons": "Needs variable-data printing or a printed sticker applied at prep; codes must be generated and loaded before print; second-hand buyers get a used code.",
+        "mitigation": "Generate 12-char Crockford Base32 codes shown as XXXX-XXXX-XXXX with a check character; store only a hash; allow a support route for second-hand buyers."
+      }
+    ],
+    "rules": [
+      "Format: prefix per title + random part, e.g. Y3M-7K2F-9QHD (Crockford Base32, case-insensitive, hyphens optional, check character to catch typos before a server round-trip).",
+      "Rate limits: 5 failed code attempts per account per hour and 20 per IP per hour, then a 15-minute cool-down; same generic message for wrong code and used code.",
+      "Access length: 6 months from redemption as Tom decided, but show the end date on the dashboard, email the adult 14 days before, and keep progress read-only (not deleted) for 30 days after expiry so a new book purchase can reactivate it. CGP gives 3 years (cgp_revhub_faq), so 6 months will look short next to it: consider 12 months or 'until the end of the school year after purchase'.",
+      "One adult account can hold several titles; adding a second book = enter that book's code in the dashboard."
+    ]
+  },
+  "recommendations": [
+    {
+      "priority": 1,
+      "decision": "Parent/teacher account with child profiles; children under 13 never register or log in with their own email.",
+      "reason": "UK GDPR Art 8 and Children's Code apply; a 7-year-old cannot consent. Child profile = first name/nickname + year group only. GCSE titles may allow 13+ self-registration.",
+      "sources": [
+        "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/children-and-the-uk-gdpr/what-are-the-rules-about-an-iss-and-consent/",
+        "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/code-standards/"
+      ]
+    },
+    {
+      "priority": 2,
+      "decision": "Print the access code and URL as a page inside the book (like CGP), never as a loose insert card, and never mention reviews anywhere in that page, the sign-up or emails.",
+      "reason": "Amazon forbids messages that prompt customers to visit external websites and any review steering; a moderator said insert QR codes to external sites are not allowed. Book content is lower risk but not officially confirmed.",
+      "sources": [
+        "https://m.media-amazon.com/images/G/65/rainier/help/Selling_Policies_and_Seller_Code_of_Conduct_SG_new_version_clean_PDF.pdf",
+        "https://sellercentral.amazon.co.uk/seller-forums/discussions/t/a0e2ad9f-4ac2-4977-b20e-4435414d7848",
+        "https://www.webretailer.com/amazon/amazon-package-inserts/"
+      ]
+    },
+    {
+      "priority": 3,
+      "decision": "Mailing list via a separate unticked optional box for the adult; access never conditional on it; no marketing to children.",
+      "reason": "Soft opt-in does not apply to Amazon-sourced customers; PECR fines now up to £17.5m.",
+      "sources": [
+        "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-direct-marketing-using-electronic-mail/what-are-the-rules-on-direct-marketing-using-electronic-mail/",
+        "https://www.cliffordchance.com/insights/resources/blogs/talking-tech/en/articles/2026/02/key-aspects-of-the-data--use-and-access--act-take-effect.html",
+        "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/direct-marketing-guidance/plan-direct-marketing/"
+      ]
+    },
+    {
+      "priority": 4,
+      "decision": "Treat the order number as optional or remove it; if kept, format-check only, hash it, cap redemptions per order, delete at access end. Better long-term: unique per-copy codes and drop the order number.",
+      "reason": "Data minimisation (Children's Code standard 8) and Amazon's rule that customer information is used only to fulfil orders.",
+      "sources": [
+        "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/code-standards/",
+        "https://m.media-amazon.com/images/G/65/rainier/help/Selling_Policies_and_Seller_Code_of_Conduct_SG_new_version_clean_PDF.pdf",
+        "https://www.cgpbooks.co.uk/revision-hub/unlock"
+      ]
+    },
+    {
+      "priority": 5,
+      "decision": "Hosting: Supabase Pro in London (eu-west-2), Vercel Pro with functions pinned to lhr1, custom SMTP (e.g. a UK/EU email provider) for auth emails.",
+      "reason": "Vercel Hobby bans commercial use including advertising products; Supabase Free pauses after a week and has no backups; Supabase default email is 2/hour.",
+      "sources": [
+        "https://vercel.com/docs/limits/fair-use-guidelines",
+        "https://vercel.com/docs/functions/configuring-functions/region",
+        "https://supabase.com/docs/guides/platform/regions",
+        "https://supabase.com/pricing",
+        "https://supabase.com/docs/guides/auth/rate-limits"
+      ]
+    },
+    {
+      "priority": 6,
+      "decision": "Do a DPIA and write two privacy notices (adult + child-friendly) before launch; add an electronic complaints route with 30-day acknowledgement.",
+      "reason": "DPIA mandatory for children's ISS; transparency standard; DUAA complaints duty from 19 June 2026.",
+      "sources": [
+        "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/children-and-the-uk-gdpr/what-are-the-rules-about-an-iss-and-consent/",
+        "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/the-right-to-be-informed/what-privacy-information-should-we-provide/",
+        "https://www.cliffordchance.com/insights/resources/blogs/talking-tech/en/articles/2026/02/key-aspects-of-the-data--use-and-access--act-take-effect.html"
+      ]
+    },
+    {
+      "priority": 7,
+      "decision": "Practice engine: 10-question sets, ~7 new + ~3 spaced review, immediate explained feedback, sibling re-ask for wrong answers, 1/3/7/21-day ladder, 'Secure' after 3 correct first attempts on 3 days spanning 7+ days.",
+      "reason": "Practice testing and spacing are the strongest-evidenced techniques; successive relearning shows 3 spaced correct recalls is the efficient point.",
+      "sources": [
+        "https://journals.sagepub.com/doi/10.1177/1529100612453266",
+        "https://d2tic4wvo1iusb.cloudfront.net/documents/guidance/Cognitive_science_approaches_in_the_classroom_-_A_review_of_the_evidence.pdf",
+        "https://journals.sagepub.com/doi/full/10.1177/09637214221100484",
+        "https://files.eric.ed.gov/fulltext/ED505660.pdf"
+      ]
+    },
+    {
+      "priority": 8,
+      "decision": "No streaks, leaderboards, points or push notifications for children; use progress bars, unit ticks and certificates; stop-and-save on every screen.",
+      "reason": "Children's Code on sticky features and neutral continue options; badges/leaderboards/points most associated with negative effects.",
+      "sources": [
+        "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/5-detrimental-use-of-data/",
+        "https://www.sciencedirect.com/science/article/abs/pii/S0950584922002518"
+      ]
+    },
+    {
+      "priority": 9,
+      "decision": "Use Oak API (Collection 2 only) for maths question seeds and misconceptions; run check-restricted per lesson; store attribution per item; never imply Oak endorsement. Write English passages in-house or use public-domain texts.",
+      "reason": "OGL allows commercial reuse with attribution; Collection 1 and third-party texts do not; Oak terms forbid implied endorsement.",
+      "sources": [
+        "https://www.thenational.academy/legal/terms-and-conditions-api-version",
+        "https://support.thenational.academy/a-guide-to-our-website-licensing",
+        "https://open-api.thenational.academy/api/v0/swagger.json"
+      ]
+    },
+    {
+      "priority": 10,
+      "decision": "Auto-mark English with selected-response formats and normalised accept-lists; extended answers self-marked against a model answer and checklist, kept separate from auto-marked progress.",
+      "reason": "STA marks content not writing quality; self-scoring improves pupil monitoring but pupils slightly overestimate, so keep it labelled.",
+      "sources": [
+        "https://assets.publishing.service.gov.uk/media/664dc202f34f9b5a56adcc26/STA248812e_2024_ks2_English_reading_mark_schemes.pdf",
+        "https://docs.moodle.org/en/Short-Answer_question_type",
+        "https://link.springer.com/article/10.1007/s10648-023-09819-0",
+        "https://link.springer.com/article/10.1007/s11409-021-09281-9"
+      ]
+    },
+    {
+      "priority": 11,
+      "decision": "WCAG 2.2 AA plus BDA style: 18-22px text for primary profiles, cream default background, 44px targets, tap alternatives to drag, paste allowed in password fields.",
+      "reason": "Equality Act duty; WCAG 2.2 new criteria 2.5.7, 2.5.8, 3.3.8; BDA guidance; larger text helps young readers.",
+      "sources": [
+        "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/",
+        "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html",
+        "https://www.bdadyslexia.org.uk/advice/employers/creating-a-dyslexia-friendly-workplace/dyslexia-friendly-style-guide",
+        "https://eric.ed.gov/?id=EJ624606",
+        "https://www.legislation.gov.uk/ukpga/2010/15/section/29"
+      ]
+    },
+    {
+      "priority": 12,
+      "decision": "Reconsider 6 months access: CGP gives 3 years from first use.",
+      "reason": "The free access is the USP; 6 months looks weak beside CGP and cuts the window for cross-selling the next book.",
+      "sources": [
+        "https://www.cgpbooks.co.uk/revision-hub/frequently-asked-questions"
+      ]
+    }
+  ],
+  "unverified": [
+    "Whether Amazon treats a URL/access-code page printed inside the book itself (not an insert) as diverting customers. No official Amazon text found on book content; CGP and others sell code-bearing books, but that is precedent, not a ruling. Amazon Seller Central help pages (e.g. G200386250, G1801) returned only login shells.",
+    "Whether cross-checking a buyer-supplied order number against Seller Central order reports breaches Amazon's customer-data rules. Amazon SP-API data protection policy page redirected and was not read.",
+    "Whether a free code redemption tied to a book bought on Amazon could ever count as 'in the course of a sale' for PECR soft opt-in. ICO guidance does not address free registrations; treated as not applying.",
+    "Exact Seneca Premium prices (help pages do not list them).",
+    "Whether BBC Bitesize offers accounts/progress tracking for pupils (bbc.co.uk blocked for fetching).",
+    "Corbettmaths 5-a-day price (page fetched did not state it; commonly understood to be free).",
+    "Whether Oak's pupil quizzes need a login.",
+    "Copyright status of An Inspector Calls (J.B. Priestley, died 1984, so UK copyright likely runs to end of 2054 under life+70) - not checked against a source; treat as in copyright and quote only short extracts under the quotation/criticism exceptions after advice.",
+    "Specific pixel sizes for ages 7-8 on screen: no source found giving exact screen px for children; recommendations are design judgement built on BDA 16-19px and Hughes and Wilkins.",
+    "Whether Tom's printer can do variable-data (unique code) printing, or whether Prepared4You can apply unique code stickers, and at what cost.",
+    "Online Safety Act 2023 applicability: a quiz site with no user-to-user features or search is probably out of scope, but this was not confirmed from Ofcom guidance.",
+    "EEF feedback guidance PDF itself was not opened; its recommendations are taken from a Research School summary."
+  ],
+  "sources": [
+    "https://apps.apple.com/us/app/1-minute-maths/id1584136366",
+    "https://assets.publishing.service.gov.uk/media/664dc202f34f9b5a56adcc26/STA248812e_2024_ks2_English_reading_mark_schemes.pdf",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+    "https://corbettmaths.com/5-a-day/",
+    "https://d2tic4wvo1iusb.cloudfront.net/documents/guidance/Cognitive_science_approaches_in_the_classroom_-_A_review_of_the_evidence.pdf",
+    "https://d2tic4wvo1iusb.cloudfront.net/production/eef-guidance-reports/feedback/Teacher_Feedback_to_Improve_Pupil_Learning.pdf",
+    "https://docs.moodle.org/en/Short-Answer_question_type",
+    "https://edtechimpact.com/products/sparx-maths-homework/",
+    "https://en.wikipedia.org/wiki/BBC_Bitesize",
+    "https://eric.ed.gov/?id=EJ624606",
+    "https://files.eric.ed.gov/fulltext/ED505660.pdf",
+    "https://help.senecalearning.com/en/articles/2663301-what-is-premium",
+    "https://help.senecalearning.com/en/articles/3746290-how-much-is-premium",
+    "https://help.senecalearning.com/en/articles/6536455-ai-marked-exam-questions-for-teachers",
+    "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/direct-marketing-guidance/plan-direct-marketing/",
+    "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-direct-marketing-using-electronic-mail/what-are-the-rules-on-direct-marketing-using-electronic-mail/",
+    "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/",
+    "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/children-and-the-uk-gdpr/what-are-the-rules-about-an-iss-and-consent/",
+    "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/11-parental-controls/",
+    "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/13-nudge-techniques/",
+    "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/5-detrimental-use-of-data/",
+    "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/code-standards/",
+    "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/the-right-to-be-informed/what-privacy-information-should-we-provide/",
+    "https://journals.sagepub.com/doi/10.1177/1529100612453266",
+    "https://journals.sagepub.com/doi/full/10.1177/09637214221100484",
+    "https://link.springer.com/article/10.1007/s10648-023-09819-0",
+    "https://link.springer.com/article/10.1007/s11409-021-09281-9",
+    "https://link.springer.com/article/10.1007/s11881-017-0154-6",
+    "https://m.media-amazon.com/images/G/65/rainier/help/Selling_Policies_and_Seller_Code_of_Conduct_SG_new_version_clean_PDF.pdf",
+    "https://mathsbot.com/",
+    "https://open-api.thenational.academy/",
+    "https://open-api.thenational.academy/api/v0/swagger.json",
+    "https://privacymatters.dlapiper.com/2026/06/uk-protecting-children-online-a-changing-regulatory-landscape/",
+    "https://researchschool.org.uk/durrington/news/summary-of-the-eefs-new-guidance-report-teacher-feedback-to-improve-pupil-learning",
+    "https://sellercentral.amazon.co.uk/seller-forums/discussions/t/a0e2ad9f-4ac2-4977-b20e-4435414d7848",
+    "https://sellercentral.amazon.com/seller-forums/discussions/t/aeb394323a9a28c7e737c5295c48d987",
+    "https://supabase.com/docs/guides/auth/rate-limits",
+    "https://supabase.com/docs/guides/platform/regions",
+    "https://supabase.com/pricing",
+    "https://support.shiptheory.com/support/solutions/articles/24000060106-a-valid-amazon-order-id-can-not-be-found-for-this-order",
+    "https://support.thenational.academy/a-guide-to-our-website-licensing",
+    "https://travelynnfamily.com/doodlelearning-review/",
+    "https://vercel.com/docs/functions/configuring-functions/region",
+    "https://vercel.com/docs/limits/fair-use-guidelines",
+    "https://www.atomlearning.com/pricing",
+    "https://www.bdadyslexia.org.uk/advice/employers/creating-a-dyslexia-friendly-workplace/dyslexia-friendly-style-guide",
+    "https://www.cgpbooks.co.uk/info/online-editions-digital-products",
+    "https://www.cgpbooks.co.uk/info/online-editions-help",
+    "https://www.cgpbooks.co.uk/revision-hub/frequently-asked-questions",
+    "https://www.cgpbooks.co.uk/revision-hub/unlock",
+    "https://www.cliffordchance.com/insights/resources/blogs/talking-tech/en/articles/2026/02/key-aspects-of-the-data--use-and-access--act-take-effect.html",
+    "https://www.crockford.com/base32.html",
+    "https://www.doodlelearning.com/pricing",
+    "https://www.gov.uk/government/publications/key-stage-2-tests-2024-english-reading-test-materials/2024-copyright-ownership-key-stage-2-national-curriculum-tests",
+    "https://www.legislation.gov.uk/ukpga/2010/15/section/29",
+    "https://www.mdpi.com/2227-7102/14/6/639",
+    "https://www.mumsnet.com/talk/secondary/4645695-sparx-maths-how-is-it-for-you",
+    "https://www.sciencedirect.com/science/article/abs/pii/S0950584922002518",
+    "https://www.thenational.academy/legal/terms-and-conditions-api-version",
+    "https://www.thinkingineducating.com/why-sparx-maths-sparks-frustration-among-students-and-parents/",
+    "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html",
+    "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/",
+    "https://www.webretailer.com/amazon/amazon-package-inserts/"
+  ]
+}

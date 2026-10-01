@@ -9,6 +9,7 @@ import { SqliteStore } from "../src/lib/db/sqlite";
 import { DEFAULT_SQLITE_PATH } from "../src/lib/db";
 import { CONTENT_TABLES, pkFor } from "../src/lib/db/store";
 import { seedDemo } from "./seed-demo";
+import { demoCodesAllowed, importInkworks } from "../src/practice/importer";
 
 const BUILT_AT = new Date().toISOString();
 const VOLATILE: Record<string, string[]> = { sources: ["created_at", "updated_at"], ingest_checkpoints: ["updated_at"], coverage_matrix: ["computed_at"], dataset_stats: ["computed_at"] };
@@ -40,6 +41,8 @@ export async function buildDb(dbPath = DEFAULT_SQLITE_PATH, force = false) {
   } else {
     console.log("No JSONL export found; run `npm run ingest` first.");
   }
+  const ink = await importInkworks(store, { demoCodesActive: demoCodesAllowed() });
+  console.log(`inkworks practice banks: ${ink.books} imported (${ink.units} units, ${ink.questions} questions), ${ink.skipped.length} unchanged`);
   await seedDemo(store);
   await store.close();
 }
